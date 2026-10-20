@@ -413,13 +413,13 @@ class Component extends DCLogic {
     const R = (co, years, project, need, owned, changed) => ({ co, years, project, need, owned, changed });
     const RA = '[dates]';
     this.rows = [
+      R('Applied AI', '2026 → now', 'Agentic research & diligence platform', 'Research for regulated finance that can prove every claim.', 'Discovery, architecture, prototype and evals.', '5 committed design partners from 50 interviews'),
+      R('Applied AI', 'Open source', 'attestor', 'Audit evidence for LLM outputs in regulated industries.', 'Author and maintainer.', 'Public on GitHub, finance pack included'),
+      R('Applied AI', 'Open source', 'regulated-ai-pm', 'PM skills for shipping AI features in regulated products.', 'Author; a Claude Code plugin with evals.', 'Public on GitHub, worked example included'),
       R('BCAA', '2025 → now', 'Predictive fleet dashboard', 'Turn telemetry from 2,500 cars and 600+ e-bikes into pricing and rebalancing calls.', 'Product lead, from POC to operational deployment.', '+36% portfolio profitability, +33% revenue (contributing)'),
       R('BCAA', '2025 → now', 'Monolith to modular AWS', 'Ship faster and cheaper across a multi-product portfolio.', 'Requirements and build-buy-partner calls with engineering.', '+40% delivery velocity, −53% operating cost'),
       R('BCAA', '2025 → now', 'Product team & governance', 'Meet SOC 2 expectations without slowing delivery.', 'Built the team, delivery standards and controls.', '−45% audit cycles, 93% of compliance gaps closed'),
       R('BCAA', '2025 → now', 'EVO: EVOLVE portfolio', 'Prioritize apps, fleet ops, back office and analytics for 250K users in seven markets.', 'Portfolio strategy and prioritization.', '[one result for the portfolio]'),
-      R('Applied AI', '2026 → now', 'Agentic research & diligence platform', 'Research for regulated finance that can prove every claim.', 'Discovery, architecture, prototype and evals.', '5 committed design partners from 50 interviews'),
-      R('Applied AI', 'Open source', 'attestor', 'Audit evidence for LLM outputs in regulated industries.', 'Author and maintainer.', 'Public on GitHub, finance pack included'),
-      R('Applied AI', 'Open source', 'regulated-ai-pm', 'PM skills for shipping AI features in regulated products.', 'Author; a Claude Code plugin with evals.', 'Public on GitHub, worked example included'),
       R('Guidepoint', '2023–2025', 'Gen Z mobile banking', 'Fix a high-churn onboarding journey in South Asia.', 'A/B-tested onboarding, incentives and premium pricing.', '+32% premium conversion'),
       R('Guidepoint', '2023–2025', 'Family office reporting', 'Replace manual reporting for a family office under $500M AUM.', 'Product strategy and delivery as consultant.', '70% of account sources unified, daily automation'),
       R('Grupa', '2022–2023', 'Three-sided venture marketplace', 'Replace spreadsheet sourcing between VCs, startups and talent.', 'Head of Product, 0→1.', '+40% vetted talent network'),
@@ -467,31 +467,31 @@ class Component extends DCLogic {
       R('Ogaco', '2011–2016', 'Optical pen', '[what it did]', 'Product design and operations.', '[licensed? stage?]')
     ];
     const T = {
-      'Predictive fleet dashboard': ['AI', 'Mobility'],
+      'Predictive fleet dashboard': ['AI', 'Mobility', 'IoT'],
       'Monolith to modular AWS': ['Mobility', 'Platforms & SaaS'],
-      'Product team & governance': ['Mobility', 'Platforms & SaaS'],
-      'EVO: EVOLVE portfolio': ['Mobility', 'Design & UX'],
-      'Agentic research & diligence platform': ['AI', 'Fintech'],
-      'attestor': ['AI', 'Fintech'],
-      'regulated-ai-pm': ['AI', 'Fintech'],
-      'Gen Z mobile banking': ['Fintech', 'Design & UX'],
-      'Family office reporting': ['Fintech', 'Platforms & SaaS'],
+      'Product team & governance': ['Mobility', 'Platforms & SaaS', 'Regulated'],
+      'EVO: EVOLVE portfolio': ['Mobility', 'IoT', 'Design & UX'],
+      'Agentic research & diligence platform': ['AI', 'Fintech', 'Regulated'],
+      'attestor': ['AI', 'Fintech', 'Regulated'],
+      'regulated-ai-pm': ['AI', 'Fintech', 'Regulated'],
+      'Gen Z mobile banking': ['Fintech', 'Regulated', 'Design & UX'],
+      'Family office reporting': ['Fintech', 'Regulated', 'Platforms & SaaS'],
       'Three-sided venture marketplace': ['Marketplaces', 'Fintech'],
-      'Self-serve intake & KYC': ['Marketplaces', 'Fintech', 'Design & UX'],
-      'Investor Experience Platform (IXP)': ['Fintech', 'Marketplaces', 'Platforms & SaaS'],
-      'Investor Discovery Platform (IDP)': ['Fintech', 'Marketplaces', 'Platforms & SaaS'],
-      'Onboarding, KYC & activation': ['Fintech', 'Design & UX'],
-      'Subscription architecture': ['Fintech', 'Platforms & SaaS'],
-      'Sensing platform commercialization': ['AI', 'IoT & hardware'],
-      'Automotive ADAS/AV': ['Mobility', 'IoT & hardware'],
-      'Developer console': ['IoT & hardware', 'Platforms & SaaS'],
-      'Smart banknote': ['Fintech', 'IoT & hardware'],
-      'Smart car (Carfield)': ['Mobility', 'IoT & hardware'],
+      'Self-serve intake & KYC': ['Marketplaces', 'Fintech', 'Regulated', 'Design & UX'],
+      'Investor Experience Platform (IXP)': ['Fintech', 'Regulated', 'Marketplaces', 'Platforms & SaaS'],
+      'Investor Discovery Platform (IDP)': ['Fintech', 'Regulated', 'Marketplaces', 'Platforms & SaaS'],
+      'Onboarding, KYC & activation': ['Fintech', 'Regulated', 'Design & UX'],
+      'Subscription architecture': ['Fintech', 'Regulated', 'Platforms & SaaS'],
+      'Sensing platform commercialization': ['AI', 'Semiconductors', 'IoT'],
+      'Automotive ADAS/AV': ['AI', 'Semiconductors', 'Mobility'],
+      'Developer console': ['Semiconductors', 'IoT', 'Platforms & SaaS', 'Design & UX'],
+      'Smart banknote': ['Semiconductors', 'Fintech', 'Regulated'],
+      'Smart car (Carfield)': ['Semiconductors', 'IoT', 'Mobility'],
       'Fluid self-serve platform': ['Ad-tech & media', 'Platforms & SaaS'],
       'Publisher partnerships': ['Ad-tech & media'],
       'More brand launches (15)': ['Ad-tech & media']
     };
-    const byCo = { 'EPIC': ['IoT & hardware'], 'ResponsiveAds': ['Ad-tech & media', 'Design & UX'], 'Ogaco': ['IoT & hardware', 'Design & UX'] };
+    const byCo = { 'EPIC': ['Semiconductors', 'IoT', 'AI'], 'ResponsiveAds': ['Ad-tech & media', 'Design & UX'], 'Ogaco': ['IoT', 'Design & UX'] };
     this.rows.forEach((r) => { r.tags = T[r.project] || byCo[r.co] || []; r.tagLine = r.tags.join(' · '); });
     // Confidentiality and links. EPIC: partnership-led, confidential. Guidepoint: confidential clients.
     this.rows.forEach((r) => {
@@ -633,7 +633,7 @@ class Component extends DCLogic {
           : "font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; line-height: 1.4"
       });
     });
-    const cos = ['All', 'AI', 'Fintech', 'Mobility', 'Marketplaces', 'Platforms & SaaS', 'IoT & hardware', 'Ad-tech & media', 'Design & UX'];
+    const cos = ['All', 'AI', 'Regulated', 'Fintech', 'Mobility', 'Marketplaces', 'Platforms & SaaS', 'Semiconductors', 'IoT', 'Ad-tech & media', 'Design & UX'];
     const filters = cos.map((c) => {
       const on = c === co;
       return {
