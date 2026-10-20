@@ -181,7 +181,7 @@ html{scrollbar-gutter:stable}
 
 <section aria-label="The vibration plate" style="position: relative; margin-top: 8px">
 <div class="rule"></div>
-<p style="margin: 0; padding: 10px 0; font-size: 13.5px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap"><span>Lab · Things I build with my own hands</span><span class="hint labhint">Chroma blocks · The monster always comes back · Click to switch</span></p>
+<p style="margin: 0; padding: 10px 0; font-size: 13.5px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap"><span>Lab · Things I build with my own hands</span><span class="hint labhint">The monster always comes back · Click to switch</span></p>
 <div class="rule"></div>
 <div ref="{{plateWrap}}" onClick="{{reroll}}" onPointerMove="{{plateMove}}" onPointerLeave="{{plateLeave}}" class="hero" style="position: relative; cursor: crosshair">
 <canvas ref="{{plateRef}}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: .78"></canvas>
@@ -893,7 +893,7 @@ class Component extends DCLogic {
   }
 }
 
-DC.mount(Component, {"openEffect":{"editor":"enum","options":["Fizz","Off"],"default":"Off"},"table":{"editor":"enum","options":["Lab bench","Steel","None"],"default":"Lab bench"},"pageShapes":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":3300}});
+DC.mount(Component, {"openEffect":{"editor":"enum","options":["Fizz","Off"],"default":"Fizz"},"table":{"editor":"enum","options":["Lab bench","Steel","None"],"default":"Lab bench"},"pageShapes":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":3300}});
 </script>
 </body>
 </html>
