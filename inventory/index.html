@@ -152,6 +152,11 @@ html{scrollbar-gutter:stable}
 .logos-cap{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:1px}
 @media (max-width:600px){.lg{height:48px;padding:0 14px}.lg svg{zoom:.85}.lg .wm{font-size:11px}}
 @media (prefers-reduced-motion:reduce){.logos .track{animation:none;flex-wrap:wrap;width:auto}}
+
+/* chips that scroll sideways: fade the hidden edge and nudge once so people see there is more */
+.chips[data-more="r"]{-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 96px),transparent);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 96px),transparent)}
+.chips[data-more="l"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px);mask-image:linear-gradient(90deg,transparent,#000 40px)}
+.chips[data-more="lr"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 96px),transparent);mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 96px),transparent)}
 </style>
 
 </head>
@@ -544,6 +549,16 @@ class Component extends DCLogic {
     });
   }
   componentDidMount() {
+    // scrollable chip rows: show which edge hides more, and peek once when the row first scrolls
+    const chipCheck = () => { document.querySelectorAll('.chips').forEach((c) => {
+      const over = c.scrollWidth > c.clientWidth + 4; if (!over) { c.removeAttribute('data-more'); return; }
+      const l = c.scrollLeft > 4, r = c.scrollLeft + c.clientWidth < c.scrollWidth - 4; const v = (l ? 'l' : '') + (r ? 'r' : '');
+      if (c.getAttribute('data-more') !== v) { if (v) c.setAttribute('data-more', v); else c.removeAttribute('data-more'); }
+      if (!c.__peeked) { c.__peeked = true; c.addEventListener('scroll', chipCheck, { passive: true });
+        let reduce = false; try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+        if (!reduce && c.scrollTo) { setTimeout(() => { c.scrollTo({ left: 70, behavior: 'smooth' }); setTimeout(() => c.scrollTo({ left: 0, behavior: 'smooth' }), 650); }, 900); } }
+    }); };
+    this.chipT = setInterval(chipCheck, 600); window.addEventListener('resize', chipCheck);
     try { this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { this.reduce = false; }
     this.mx = (window.innerWidth || 1440) * 0.7; this.my = (window.innerHeight || 900) * 0.4;
     this.tx = this.mx; this.ty = this.my;
