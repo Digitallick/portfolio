@@ -27,7 +27,7 @@ html,body{overflow-x:clip}
 .hint{right:max(20px,calc(50vw - 640px)) !important}
 .pit canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}
 .over{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;padding:24px}
-.big{margin:0;font-size:clamp(3rem,9vw,8.5rem);line-height:.88;letter-spacing:-3px;color:#262626;text-shadow:0 0 1px #fff,4px 4px 0 #FFFFFF,-2px -2px 0 #FFFFFF}
+.big{margin:0;font-size:clamp(3rem,9vw,8.5rem);line-height:.88;letter-spacing:-3px;color:#262626;}
 .sub{margin:18px 0 0;font-size:1.05rem;line-height:1.5;background:rgba(255,255,255,.88);padding:8px 14px;border-radius:999px}
 .ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:22px;pointer-events:auto}
 .cta{min-height:56px;padding:0 26px;border-radius:999px;border:0;cursor:pointer;font-size:15px;letter-spacing:.5px;display:inline-flex;align-items:center;gap:10px}
@@ -262,7 +262,7 @@ class Component extends DCLogic {
       if (el && (fit() || mode !== (this.props.objects || 'Mixed'))) reset();
       if (el && ctx) {
         // slowly but surely: a new object every ~120ms until each layer is full
-        if (t - last > (reduce ? 0 : 140)) { last = t; for (let l = 0; l < 2; l++) { if (L[l].length >= cap[l]) continue; let top = H; for (const b of L[l]) { if (Math.abs(b.y - b.py) < 0.6 && b.y < top) top = b.y; } if (top > H * 0.28) spawn(l); } }
+        if (t - last > (reduce ? 0 : 140)) { last = t; for (let l = 0; l < 2; l++) { if (L[l].length >= cap[l]) continue; let top = H; for (const b of L[l]) { if (Math.abs(b.y - b.py) < 0.6 && b.y < top) top = b.y; } if (top > H * (W < 600 ? 0.64 : W < 1024 ? 0.42 : 0.28)) spawn(l); } }
         sim(L[0], 0.5); sim(L[1], 1);
         ctx.clearRect(0, 0, W, H);
         draw(L[0], 0.5);

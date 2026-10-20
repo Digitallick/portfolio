@@ -305,10 +305,6 @@ class Component extends DCLogic {
     const sc = this.screenEl; if (!sc || !sc.animate) return;
     let reduce = false; try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
     const x = this.px, y = this.py + 40 * (this.s || 1);
-    const say = document.createElement('span'); say.textContent = 'waaah!'; say.setAttribute('aria-hidden', 'true');
-    say.style.cssText = "position:absolute;left:" + (x + 40) + "px;top:" + (y - 70) + "px;font-family:'Caveat',cursive;font-weight:700;font-size:34px;color:#00B8B2;pointer-events:none;z-index:4";
-    sc.appendChild(say);
-    say.animate([{ opacity: 0, transform: 'scale(.4) rotate(-8deg)' }, { opacity: 1, transform: 'scale(1.1) rotate(-8deg)', offset: .2 }, { opacity: 1, offset: .75 }, { opacity: 0, transform: 'translate(16px,-20px) rotate(-12deg)' }], { duration: 1500 }).onfinish = () => say.remove();
     for (let i = 0; i < (reduce ? 0 : 10); i++) {
       const t = document.createElement('span'); t.textContent = '💧'; t.setAttribute('aria-hidden', 'true');
       t.style.cssText = 'position:absolute;left:' + (x + (i % 2 ? 14 : -14)) + 'px;top:' + (y - 30) + 'px;font-size:' + (12 + Math.random() * 10) + 'px;pointer-events:none;z-index:4';

@@ -77,6 +77,16 @@ header .nav-links{display:none !important}
 .invt td:nth-child(4){padding-top:8px !important}
 .peek{display:none !important}
 }
+@media (min-width:601px) and (max-width:1023px){
+.invt{min-width:0 !important}
+.invt thead{display:none}
+.invt tr{display:grid;grid-template-columns:1fr 1fr;gap:6px 28px;padding:22px 0}
+.invt td{display:block;padding:0 !important}
+.invt td:nth-child(1),.invt td:nth-child(4){grid-column:1 / -1}
+.invt td:nth-child(2)::before{content:'Need · ';font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:#5E5E5E}
+.invt td:nth-child(3)::before{content:'Owned · ';font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:#5E5E5E}
+.invt td:nth-child(4){padding-top:6px !important}
+}
 @media (hover:none){.rows:hover .row td{opacity:1 !important;background-size:0% 3px !important}}
 @media (max-width:600px){.bgc{opacity:.45}}
 
@@ -223,7 +233,7 @@ html{scrollbar-gutter:stable}
 </table>
 <template sc-if value="{{empty}}" hint-placeholder-val="{{ false }}">
 <div style="padding: 64px 0; text-align: center">
-<div style="position: relative; display: inline-block; width: 150px; height: 150px; margin-right: 96px"><img src="{{animSrc}}" width="150" height="150" alt="" onClick="{{wiggle}}" style="display: block; cursor: pointer"><template sc-if value="{{burpOn}}" hint-placeholder-val="{{ false }}"><span class="{{burpKey}}" aria-hidden="true">*burp*</span></template><svg viewBox="0 0 140 90" width="112" height="72" style="position: absolute; right: -96px; bottom: 2px" aria-hidden="true">
+<div style="position: relative; display: inline-block; width: 150px; height: 150px; margin-right: 96px"><img src="{{animSrc}}" width="150" height="150" alt="" onClick="{{wiggle}}" style="display: block; cursor: pointer"><svg viewBox="0 0 140 90" width="112" height="72" style="position: absolute; right: -96px; bottom: 2px" aria-hidden="true">
 <defs>
 <linearGradient id="bx" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7A6E"></stop><stop offset=".55" stop-color="#E5262B"></stop><stop offset="1" stop-color="#A8121A"></stop></linearGradient>
 <radialGradient id="bxin" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#4A0A0D"></stop><stop offset="1" stop-color="#8E1418"></stop></radialGradient>
