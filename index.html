@@ -85,6 +85,12 @@ html{scrollbar-gutter:stable}
 .chips[data-more="r"]{-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 96px),transparent);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 96px),transparent)}
 .chips[data-more="l"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px);mask-image:linear-gradient(90deg,transparent,#000 40px)}
 .chips[data-more="lr"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 96px),transparent);mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 96px),transparent)}
+
+/* every project takes the same room, so switching never moves the footer */
+@media (min-width:901px){.proof > div:first-child{min-height:200px}}
+
+/* short laptop screens (13"): tighten the hero so the whole page, footer included, fits without scrolling */
+@media (min-width:901px) and (max-height:900px){.hh{font-size:min(5rem,8.6vh) !important;margin-top:14px !important}.hh + div{margin:18px 0 16px !important}.proof{padding-top:16px !important}}
 </style>
 
 </head>
@@ -115,7 +121,7 @@ html{scrollbar-gutter:stable}
 <p style="margin: 0; padding: 10px 0; font-size: 13.5px">I am Mo · Shany Mo</p>
 <div class="rule"></div>
 
-<h1 style="margin: 28px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; text-transform: uppercase; max-width: 1200px">I turn <span style="background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00); padding: 0 10px; box-decoration-break: clone; -webkit-box-decoration-break: clone">new technology</span> into products, partnerships and revenue.</h1>
+<h1 class="hh" style="margin: 28px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; text-transform: uppercase; max-width: 1200px">I turn <span style="background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00); padding: 0 10px; box-decoration-break: clone; -webkit-box-decoration-break: clone">new technology</span> into products, partnerships and revenue.</h1>
 
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 32px 0 28px">
 <p style="margin: 0 6px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.35rem; text-transform: uppercase; color: transparent; -webkit-text-stroke: 1px #262626">What are we building?</p>
@@ -129,8 +135,8 @@ html{scrollbar-gutter:stable}
 <div role="tabpanel" aria-live="polite" class="proof" style="border-top: 1px solid #262626; padding-top: 24px">
 <div>
 <p style="margin: 0 0 10px; font-size: 13.5px; text-transform: uppercase">{{current.where}}</p>
-<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 2rem; line-height: 1.05; text-transform: uppercase; letter-spacing: -0.5px">{{current.headline}}</p>
-<p style="margin: 12px 0 0; font-size: 1.05rem; line-height: 1.55; max-width: 620px">{{current.body}}</p>
+<p class="pf-h" style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 2rem; line-height: 1.05; text-transform: uppercase; letter-spacing: -0.5px">{{current.headline}}</p>
+<p class="pf-b" style="margin: 12px 0 0; font-size: 1.05rem; line-height: 1.55; max-width: 620px">{{current.body}}</p>
 <p style="margin: 14px 0 0; line-height: 1.45">{{current.note}} <a href="{{current.href}}" style="white-space: nowrap; text-transform: uppercase; font-size: 13.5px; margin-left: 6px">{{current.cta}} ↗</a></p>
 </div>
 <div>
@@ -291,7 +297,7 @@ class Component extends DCLogic {
       { label: '0 → 1', where: 'Grupa · Head of Product, Fintech Marketplace', headline: 'Three sides, one marketplace', body: 'VCs, startups and vetted talent, matched digitally instead of by spreadsheet.', metric: '−60%', note: 'Talent onboarding time. Vetted network up 40%.', href: '/work/', cta: 'The bet' },
       { label: 'AI', where: 'Agentic Research & Diligence Platform · 2026', headline: 'Show your sources, or say nothing', body: 'An evidence-backed research agent for wealth management, built hands-on with golden-set evals and human review.', metric: '50→5', note: '50 discovery interviews in, 5 committed design partners out.', href: '/work/', cta: 'The bet' },
       { label: 'Transformation', where: 'BCAA · Head of Product, Strategic Ventures · now', headline: 'Telemetry into profit', body: 'A predictive fleet dashboard for Evo Car Share and Evolve e-bikes, while moving the platform from a monolith to AWS.', metric: '+36%', note: 'Portfolio profitability, with revenue up 33%.', href: '/work/', cta: 'The bet' },
-      { label: 'Innovation', where: 'EPIC Semiconductors · Director, Product Commercialization', headline: 'A chip with no category, until we made one', body: 'Built a 0→1 developer console so partners like Adidas, GE, Mercedes-Benz and Razer could test a new sensing chip themselves, then turned their pilots into products.', metric: '$50M+', note: 'Commercial pipeline, growing 29% a year.', href: '/work/', cta: 'The bet' },
+      { label: 'Innovation', where: 'EPIC Semiconductors · Director, Product Commercialization', headline: 'A chip with no category, until we made one', body: 'A 0→1 developer console let partners like Adidas, GE, Mercedes-Benz and Razer test a new sensing chip themselves.', metric: '$50M+', note: 'Commercial pipeline, growing 29% a year.', href: '/work/', cta: 'The bet' },
       { label: 'Partnerships', where: '6ix Inc. · VP Product Management', headline: 'Partner first, build second', body: 'Moved 6ix from bespoke investor-relations services to recurring SaaS, delivered through a partner model and a buy-not-build subscription stack.', metric: '~20%', note: 'Revenue growth a year. Development cost projected 65% lower.', href: '/work/', cta: 'The bet' },
       { label: 'Design', where: 'Guidepoint · Product Strategy Consultant', headline: 'Fix the journey, fix the revenue', body: 'Rebuilt a high-churn Gen Z mobile banking journey in South Asia: shorter onboarding, better activation incentives, smarter upgrade triggers.', metric: '+32%', note: 'Premium conversion.', href: '/inventory/', cta: 'The project' }
     ];
