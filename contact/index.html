@@ -118,7 +118,7 @@ class Component extends DCLogic {
     if (this.started) return; this.started = true;
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const rex = new Image(); rex.src = '/assets/trex-fluent-3d.png';
-    const TREATS = ['/assets/french_fries-128.png', '/assets/red_heart-128.png', '/assets/rainbow-128.png', '/assets/lollipop-128.png', '/assets/sparkles-128.png'].map((u) => { const im = new Image(); im.src = u; return im; });
+    const TREATS = ['/assets/fries_smile-128.png', '/assets/heart_pink-128.png', '/assets/rainbow_brand-128.png', '/assets/lollipop-128.png', '/assets/sparkles-128.png'].map((u) => { const im = new Image(); im.src = u; return im; });
     const L = [[], []]; // 0 = back layer, 1 = front layer
     let el = null, ctx = null, W = 0, H = 0, mode = '', drag = null, last = 0, cap = [0, 0];
     const ptr = { x: -999, y: -999, vx: 0, vy: 0, down: false };
