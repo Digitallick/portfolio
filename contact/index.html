@@ -76,6 +76,13 @@ header .nav-links{display:none !important}
 .ask{position:fixed !important;min-height:44px !important;padding:0 16px 0 14px !important;right:16px !important;bottom:16px !important;font-size:13px !important;z-index:60}
 .panel{position:fixed !important;right:12px !important;left:12px !important;bottom:12px !important;width:auto !important;max-height:calc(100vh - 24px);overflow-y:auto;z-index:70}
 }
+
+/* boxed frame: the pile sits inside the page gutters, in a flat box like the jars */
+.pit.boxed{margin:18px 0 0;width:auto;border:2px solid #262626;border-radius:30px 30px 22px 22px;background:linear-gradient(to top,#FFF3FE 0%,#FFFFFF 40%);height:calc(100vh - 214px);height:calc(100svh - 214px);min-height:520px}
+.pit.boxed .over{justify-content:flex-start;padding-top:clamp(36px,8vh,96px)}
+.pit.boxed .mini{left:18px !important}
+.pit.boxed .hint{right:18px !important}
+@media (max-width:600px){.pit.boxed{border-radius:20px;height:calc(100vh - 250px);height:calc(100svh - 250px);min-height:480px}}
 </style>
 
 </head>
@@ -98,14 +105,13 @@ header .nav-links{display:none !important}
 <div class="rule"></div>
 <p style="margin: 0; padding: 12px 0; font-size: 13.5px">Contact · Roles and projects</p>
 <div class="rule" style="margin-bottom: 0"></div>
-<section class="pit" aria-label="Contact">
+<section class="{{pitCls}}" aria-label="Contact">
 <canvas ref="{{pitRef}}" aria-hidden="true"></canvas>
 <div class="over">
 <p class="sub" style="margin: 0 0 16px">Hiring, or building something new? Either way, say hi.</p>
 <h1 class="H big">Let's build<br>something.</h1>
 <div class="ctas">
-<button class="cta dark H" onClick="{{hire}}">Hire me ↗</button>
-<button class="cta light H" onClick="{{project}}">Start a project ↗</button>
+<button class="cta dark H" onClick="{{sayHello}}">Say hello ↗</button>
 </div>
 </div>
 <div class="mini">
@@ -197,6 +203,7 @@ class Component extends DCLogic {
     if (this.started) return; this.started = true;
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const rex = new Image(); rex.src = '/assets/trex-fluent-3d.png';
+    const FLAT = ["<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g stroke=\"#262626\" stroke-width=\"3.5\" stroke-linejoin=\"round\"><rect x=\"30\" y=\"8\" width=\"9\" height=\"44\" rx=\"3\" fill=\"#FFFF00\" transform=\"rotate(-10 34 30)\"/><rect x=\"44\" y=\"4\" width=\"9\" height=\"46\" rx=\"3\" fill=\"#FFFFA8\"/><rect x=\"58\" y=\"8\" width=\"9\" height=\"44\" rx=\"3\" fill=\"#FFFF00\" transform=\"rotate(10 62 30)\"/><rect x=\"37\" y=\"12\" width=\"9\" height=\"40\" rx=\"3\" fill=\"#FFFFA8\" transform=\"rotate(-4 41 30)\"/><rect x=\"51\" y=\"12\" width=\"9\" height=\"40\" rx=\"3\" fill=\"#FFFF00\" transform=\"rotate(5 55 30)\"/><path d=\"M20 40 L80 40 L72 94 L28 94 Z\" fill=\"#FCA002\"/></g><circle cx=\"41\" cy=\"62\" r=\"3.6\" fill=\"#262626\"/><circle cx=\"59\" cy=\"62\" r=\"3.6\" fill=\"#262626\"/><path d=\"M41 72 Q50 80 59 72\" stroke=\"#262626\" stroke-width=\"3.5\" fill=\"none\" stroke-linecap=\"round\"/><ellipse cx=\"33\" cy=\"70\" rx=\"5\" ry=\"3\" fill=\"#F5C9FF\"/><ellipse cx=\"67\" cy=\"70\" rx=\"5\" ry=\"3\" fill=\"#F5C9FF\"/></svg>", "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M50 88 C 20 68 6 50 10 32 C 14 16 34 10 50 28 C 66 10 86 16 90 32 C 94 50 80 68 50 88 Z\" fill=\"#DD00FF\" stroke=\"#262626\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M24 34 Q26 24 36 22\" stroke=\"#F5C9FF\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/></svg>", "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path d=\"M10 74 A 40 40 0 0 1 90 74\" stroke=\"#DD00FF\" stroke-width=\"9\" fill=\"none\"/><path d=\"M19 74 A 31 31 0 0 1 81 74\" stroke=\"#00FFF7\" stroke-width=\"9\" fill=\"none\"/><path d=\"M28 74 A 22 22 0 0 1 72 74\" stroke=\"#FCA002\" stroke-width=\"9\" fill=\"none\"/><path d=\"M37 74 A 13 13 0 0 1 63 74\" stroke=\"#FFFF00\" stroke-width=\"9\" fill=\"none\"/><g fill=\"none\" stroke=\"#262626\" stroke-width=\"3.5\"><path d=\"M5.5 74 A 44.5 44.5 0 0 1 94.5 74\"/><path d=\"M41.5 74 A 8.5 8.5 0 0 1 58.5 74\"/></g><g fill=\"#FFFFFF\" stroke=\"#262626\" stroke-width=\"3.5\"><circle cx=\"13\" cy=\"78\" r=\"10\"/><circle cx=\"25\" cy=\"81\" r=\"8\"/><circle cx=\"87\" cy=\"78\" r=\"10\"/><circle cx=\"75\" cy=\"81\" r=\"8\"/></g></svg>", "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect x=\"46\" y=\"52\" width=\"8\" height=\"44\" rx=\"3\" fill=\"#FFFFFF\" stroke=\"#262626\" stroke-width=\"3.5\"/><circle cx=\"50\" cy=\"38\" r=\"30\" fill=\"#FFFF00\" stroke=\"#262626\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"38\" r=\"21\" fill=\"none\" stroke=\"#DD00FF\" stroke-width=\"8\"/><circle cx=\"50\" cy=\"38\" r=\"10\" fill=\"none\" stroke=\"#00FFF7\" stroke-width=\"8\"/><circle cx=\"50\" cy=\"38\" r=\"3.5\" fill=\"#FCA002\"/></svg>", "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><polygon points=\"50.0,10.0 61.2,38.6 91.8,40.4 68.1,59.9 75.9,89.6 50.0,73.0 24.1,89.6 31.9,59.9 8.2,40.4 38.8,38.6\" fill=\"#00FFF7\" stroke=\"#262626\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M40 40 Q44 34 50 32\" stroke=\"#B8FFFC\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></svg>"].map((svg) => { const im = new Image(); im.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg); return im; });
     const TREATS = ['/assets/fries_smile-128.png', '/assets/heart_pink-128.png', '/assets/rainbow_brand-128.png', '/assets/lollipop-128.png', '/assets/sparkles-128.png'].map((u) => { const im = new Image(); im.src = u; return im; });
     const L = [[], []]; // 0 = back layer, 1 = front layer
     let el = null, ctx = null, W = 0, H = 0, mode = '', drag = null, last = 0, cap = [0, 0];
@@ -205,9 +212,11 @@ class Component extends DCLogic {
     const kindFor = () => { const m = this.props.objects || 'Mixed'; return m === 'Monsters only' ? 'rex' : m === 'Treats only' ? 'treat' : (Math.random() < 0.55 ? 'treat' : 'rex'); };
     const spawn = (layer) => {
       const small = W < 600, base = (small ? 0.75 : 1) * (layer === 0 ? 0.72 : 1);
-      const kind = kindFor(), r = base * (kind === 'rex' ? 30 + Math.random() * 14 : 26 + Math.random() * 10);
-      L[layer].push({ kind, r, x: r + Math.random() * (W - 2 * r), y: -r * 2 - Math.random() * 60, px: 0, py: 0, a: (Math.random() - .5) * 0.5, va: (Math.random() - .5) * .012, img: TREATS[(Math.random() * TREATS.length) | 0] });
-      const b = L[layer][L[layer].length - 1]; b.px = b.x + (Math.random() - .5) * 2; b.py = b.y - 3;
+      const mix = this.props.mix || 'Monsters + a few fries'; const q = Math.random(); let kind = 'rex', ti = 0;
+      if (q < 0.16) { kind = 'treat'; ti = 0; } else if (mix !== 'Monsters + a few fries' && q < 0.26) { kind = 'treat'; ti = 1; }
+      const r = base * (kind === 'rex' ? 30 + Math.random() * 14 : ti === 1 ? 15 + Math.random() * 4 : 26 + Math.random() * 8);
+      L[layer].push({ kind, r, x: r + Math.random() * (W - 2 * r), y: -r * 2 - Math.random() * 60, px: 0, py: 0, a: (Math.random() - .5) * 0.5, va: (Math.random() - .5) * .012, ti });
+      const b = L[layer][L[layer].length - 1]; b.img = TREATS[b.ti]; b.px = b.x + (Math.random() - .5) * 2; b.py = b.y - 3;
     };
     const reset = () => { mode = this.props.objects || 'Mixed'; L[0] = []; L[1] = [];
       const small = W < 600; cap[1] = Math.round(0.75 * W * H / (small ? 2600 : 3800)); cap[0] = cap[1];
@@ -249,7 +258,7 @@ class Component extends DCLogic {
       for (const b of B) {
         if (b.y < -b.r * 2) continue;
         ctx.save(); ctx.translate(b.x, b.y); ctx.rotate(b.a);
-        if (b.kind === 'treat') { if (b.img.complete && b.img.naturalWidth) { const s2 = b.r * 2.2; ctx.drawImage(b.img, -s2 / 2, -s2 / 2, s2, s2); } }
+        if (b.kind === 'treat') { const im = b.img; if (im.complete && im.naturalWidth) { const s2 = b.r * 2.2; ctx.drawImage(im, -s2 / 2, -s2 / 2, s2, s2); } }
         else if (rex.complete && rex.naturalWidth) { const s2 = b.r * 2.3; ctx.drawImage(rex, -s2 / 2, -s2 / 2, s2, s2); }
         ctx.restore();
       }
@@ -262,7 +271,7 @@ class Component extends DCLogic {
       if (el && (fit() || mode !== (this.props.objects || 'Mixed'))) reset();
       if (el && ctx) {
         // slowly but surely: a new object every ~120ms until each layer is full
-        if (t - last > (reduce ? 0 : 140)) { last = t; for (let l = 0; l < 2; l++) { if (L[l].length >= cap[l]) continue; let top = H; for (const b of L[l]) { if (Math.abs(b.y - b.py) < 0.6 && b.y < top) top = b.y; } if (top > H * (W < 600 ? 0.64 : W < 1024 ? 0.42 : 0.28)) spawn(l); } }
+        if (t - last > (reduce ? 0 : 140)) { last = t; for (let l = 0; l < 2; l++) { if (L[l].length >= cap[l]) continue; let top = H; for (const b of L[l]) { if (Math.abs(b.y - b.py) < 0.6 && b.y < top) top = b.y; } if (top > H * 0.66) spawn(l); } }
         sim(L[0], 0.5); sim(L[1], 1);
         ctx.clearRect(0, 0, W, H);
         draw(L[0], 0.5);
@@ -275,13 +284,14 @@ class Component extends DCLogic {
   }
   renderVals() {
     const st = this.state, role = st.kind === 'role';
-    const open = (kind) => this.setState({ mail: true, kind, subject: kind === 'role' ? '🦖 A role at your team' : '🦖 A project for you' });
+    const open = (kind) => this.setState({ mail: true, kind, subject: kind === 'role' ? '🦖 A role at your team' : kind === 'project' ? '🦖 A project for you' : "🦖 Let's build something" });
     return { ...this.menuVals(),
       pitRef: (el) => { if (el) this.pitEl = el; },
-      hire: () => open('role'), project: () => open('project'),
-      mailOpen: st.mail, segRole: role ? 'on' : '', segProj: role ? '' : 'on',
+      pitCls: (this.props.frame || 'Boxed') === 'Boxed' ? 'pit boxed' : 'pit',
+      hire: () => open('role'), project: () => open('project'), sayHello: () => open('any'),
+      mailOpen: st.mail, segRole: role ? 'on' : '', segProj: st.kind === 'project' ? 'on' : '',
       from: st.from, subject: st.subject, msg: st.msg,
-      placeholder: role ? 'The role, the team, and what you need the person to fix in their first 90 days.' : 'The product, the problem, the timeline, and how you like to work with consultants.',
+      placeholder: role ? 'The role, the team, and what you need the person to fix in their first 90 days.' : st.kind === 'project' ? 'The product, the problem, the timeline, and how you like to work with consultants.' : 'A role or a project? Pick one above, or just tell me what you are building.',
       onFrom: (e) => this.setState({ from: e.target.value }), onSubj: (e) => this.setState({ subject: e.target.value }), onMsg: (e) => this.setState({ msg: e.target.value }),
       send: () => { const body = (st.msg || '') + (st.from ? '\n\nReply to: ' + st.from : ''); window.location.href = 'mailto:hello@shanymo.com?subject=' + encodeURIComponent(st.subject) + '&body=' + encodeURIComponent(body); },
       closeMail: () => this.setState({ mail: false }), bgClose: (e) => { if (e && e.target === e.currentTarget) this.setState({ mail: false }); },
@@ -291,7 +301,7 @@ class Component extends DCLogic {
   }
 }
 
-DC.mount(Component, {"objects":{"editor":"enum","options":["Mixed","Monsters only","Treats only"],"default":"Mixed"},"$preview":{"width":1440,"height":900}});
+DC.mount(Component, {"mix":{"editor":"enum","options":["Monsters + a few fries","Monsters + fries + small hearts"],"default":"Monsters + a few fries"},"frame":{"editor":"enum","options":["Boxed","Full-bleed"],"default":"Boxed"},"objects":{"editor":"enum","options":["Mixed","Monsters only","Treats only"],"default":"Mixed"},"$preview":{"width":1440,"height":900}});
 </script>
 </body>
 </html>
