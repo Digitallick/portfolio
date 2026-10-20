@@ -20,7 +20,11 @@ a{color:#262626}a:hover{color:#8A00A3}
 a:focus-visible,button:focus-visible{outline:2px solid #8A00A3;outline-offset:3px}
 .nav-links{display:flex;flex-wrap:wrap;gap:4px 28px}
 .H{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase}
-.pit{position:relative;height:calc(100vh - 136px);height:calc(100svh - 136px);min-height:560px;overflow:hidden;border-radius:28px;background:#F4F4F4}
+.pit{position:relative;height:calc(100vh - 136px);height:calc(100svh - 136px);min-height:560px;overflow:hidden;background:transparent}
+.pit{margin:0 calc(50% - 50vw);width:100vw}
+html,body{overflow-x:clip}
+.mini{left:max(20px,calc(50vw - 640px)) !important}
+.hint{right:max(20px,calc(50vw - 640px)) !important}
 .pit canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}
 .over{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;padding:24px}
 .big{margin:0;font-size:clamp(3rem,9vw,8.5rem);line-height:.88;letter-spacing:-3px;color:#262626;text-shadow:0 0 1px #fff,4px 4px 0 #FFFFFF,-2px -2px 0 #FFFFFF}
@@ -46,7 +50,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #8A00A3;outline-offset:3p
 .seg button{border:0;background:transparent;border-radius:999px;padding:6px 12px;font:inherit;font-size:12px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;color:#262626}
 .seg button.on{background:#262626;color:#FFFFFF}
 .mfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 18px 16px;flex-wrap:wrap}
-@media (max-width:600px){.nav-links a:not(:first-child):not(:last-child){display:none}.nav-links{gap:2px 16px}.pit{border-radius:20px;height:calc(100vh - 140px);height:calc(100svh - 140px)}.big{letter-spacing:-1.5px}.hint{display:none}.mini{left:12px;bottom:12px}}
+@media (max-width:600px){.nav-links a:not(:first-child):not(:last-child){display:none}.nav-links{gap:2px 16px}.pit{height:calc(100vh - 140px);height:calc(100svh - 140px)}.big{letter-spacing:-1.5px}.hint{display:none}.mini{left:12px;bottom:12px}}
 
 .nav-links a{padding:12px 8px !important;margin:0 -8px;border-radius:8px;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 
@@ -186,7 +190,7 @@ class Component extends DCLogic {
         sim(L[0], 0.5); sim(L[1], 1);
         ctx.clearRect(0, 0, W, H);
         draw(L[0], 0.5);
-        ctx.fillStyle = 'rgba(244,244,244,.35)'; ctx.fillRect(0, 0, W, H);
+        ctx.fillStyle = 'rgba(255,255,255,.35)'; ctx.fillRect(0, 0, W, H);
         draw(L[1], 1);
       }
       requestAnimationFrame(step);
