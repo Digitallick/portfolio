@@ -144,12 +144,12 @@ html{scrollbar-gutter:stable}
 
 <section aria-label="The vibration plate" style="position: relative; margin-top: 8px">
 <div class="rule"></div>
-<p style="margin: 0; padding: 10px 0; font-size: 13.5px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap"><span>Lab — things I build with my own hands.</span><span class="hint labhint">Chroma blocks · The monster always comes back · Click to switch</span></p>
+<p style="margin: 0; padding: 10px 0; font-size: 13.5px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap"><span>Lab · Things I build with my own hands</span><span class="hint labhint">Chroma blocks · The monster always comes back · Click to switch</span></p>
 <div class="rule"></div>
 <div ref="{{plateWrap}}" onClick="{{reroll}}" onPointerMove="{{plateMove}}" onPointerLeave="{{plateLeave}}" class="hero" style="position: relative; cursor: crosshair">
 <canvas ref="{{plateRef}}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: .78"></canvas>
 <div style="position: absolute; left: 0; bottom: 28px; pointer-events: none">
-<h1 class="H big" style="margin: 0; font-size: 5.4rem; line-height: .95; letter-spacing: -2px">The Lab.</h1>
+<h1 class="H big" style="margin: 0; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px">The Lab.</h1>
 <p class="H sub" style="margin: 10px 0 0; font-size: 1.5rem; letter-spacing: -0.3px">A head of product who still <span style="background: linear-gradient(90deg,#00FFF7,#DD00FF); padding: 0 8px">ships code.</span></p>
 </div>
 <div class="asst">
@@ -218,7 +218,7 @@ html{scrollbar-gutter:stable}
 <template sc-for list="{{srcList}}" as="s" hint-placeholder-count="3">
 <p style="margin: 0 0 8px; padding: 10px 12px; border-radius: 12px; background: #F6F6F6; font-size: 13px; line-height: 1.5"><b>[{{s.id}}]</b> {{s.text}}</p>
 </template>
-<button onClick="{{run}}" class="H" style="margin-top: 8px; min-height: 52px; padding: 0 26px; border-radius: 999px; border: 0; background: #262626; color: #FFFFFF; cursor: pointer; font-size: 14px">Run attestor ▸</button>
+<button onClick="{{run}}" class="H" style="margin-top: 8px; min-height: 56px; padding: 0 26px; border-radius: 999px; border: 0; background: #262626; color: #FFFFFF; cursor: pointer; font-size: 14px">Run attestor ▸</button>
 </div>
 <div class="term">
 <div class="bar"><span class="dot" style="background: #DD00FF"></span><span class="dot" style="background: #FCA002"></span><span class="dot" style="background: #00FFF7"></span><span style="margin-left: 8px; font-size: 12px; color: #BDBDBD">attestor — finance pack</span></div>
@@ -313,7 +313,7 @@ html{scrollbar-gutter:stable}
 <p class="H" style="margin: 0 0 8px; font-size: 1.6rem">Ask Mo is in the incubator</p>
 <p style="margin: 0; line-height: 1.6">Right now it answers four FAQs and sends everything else to the original. Next: answers from this site only, every answer checked by attestor before you see it. It lives bottom-right on every page.</p>
 </div>
-<button onClick="{{openChat}}" class="ask H" style="min-height: 52px; padding: 0 22px; border-radius: 999px; cursor: pointer; font-size: 14px; color: #262626">Open Ask Mo</button>
+<button onClick="{{openChat}}" class="ask H" style="min-height: 56px; padding: 0 22px; border-radius: 999px; cursor: pointer; font-size: 14px; color: #262626">Open Ask Mo</button>
 </div>
 </template>
 
@@ -333,7 +333,11 @@ html{scrollbar-gutter:stable}
 
 </section>
 
-<div style="height: 100px"></div>
+<footer style="border-top: 1px solid #262626; padding: 56px 0 72px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center">
+<a href="/work/" style="font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.6rem; text-transform: uppercase; padding: 8px 0">The work behind the experiments ↗</a>
+<a href="/contact/" style="font-size: 13.5px; text-transform: uppercase; padding: 12px 0">Say hello ↗</a>
+</footer>
+
 
 </div>
 <div style="position: relative; overflow: hidden; border-top: 1px solid #E4E4E4; padding: 10px 0; background: rgba(255,255,255,0.7)">
@@ -352,7 +356,7 @@ html{scrollbar-gutter:stable}
 </div>
 
 <template sc-if value="{{chatClosed}}" hint-placeholder-val="{{ true }}">
-<button class="ask" onClick="{{openChat}}" aria-expanded="false" aria-controls="askmo" style="position: fixed; right: 32px; bottom: 32px; z-index: 50; min-height: 52px; padding: 0 22px 0 18px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: #262626; box-shadow: 0 10px 30px rgba(221,0,255,0.18)">
+<button class="ask" onClick="{{openChat}}" aria-expanded="false" aria-controls="askmo" style="position: fixed; right: 32px; bottom: 32px; z-index: 50; min-height: 56px; padding: 0 22px 0 18px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: #262626; box-shadow: 0 10px 30px rgba(221,0,255,0.18)">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>
 Ask Mo
 </button>
