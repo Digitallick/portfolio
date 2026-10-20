@@ -133,7 +133,7 @@ html{scrollbar-gutter:stable}
 <a href="/work/" style="text-decoration: none; padding: 12px 0">Work</a>
 <a href="/inventory/" style="text-decoration: none; padding: 12px 0">Inventory</a>
 <a href="/lab/" aria-current="page" style="text-decoration: underline; text-decoration-color: #00C4BD; text-decoration-thickness: 3px; text-underline-offset: 6px; padding: 12px 0">Lab</a>
-<a href="mailto:hello@shanymo.com" style="text-decoration: none; padding: 12px 0">Contact ↗</a>
+<a href="/contact/" style="text-decoration: none; padding: 12px 0">Contact</a>
 </nav>
 <button class="mmenu-btn" onClick="{{openMenu}}" aria-label="Open menu"><svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="2"></path></svg>Menu</button>
 </header>
@@ -421,6 +421,7 @@ Ask Mo
 <a class="ml" href="/work/">Work</a>
 <a class="ml" href="/inventory/">Inventory</a>
 <a class="ml on" href="/lab/" aria-current="page">Lab</a>
+<a class="ml" href="/contact/">Contact</a>
 </nav>
 <div style="height: 1px; margin: 30px 0 18px; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div>
 <a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com ↗</a>
@@ -535,7 +536,7 @@ class Component extends DCLogic {
     ];
     const qi = st.askq || 0;
     const items = [
-      { label: 'Contact me to make awesomeness', href: 'mailto:hello@shanymo.com' },
+      { label: 'Contact me to make awesomeness', href: '/contact/' },
       { label: 'Working from Earth', href: '/' },
       { label: 'Made on Earth by Shany Mo while eating 🍟', href: '/' },
       { label: 'hello@shanymo.com', href: 'mailto:hello@shanymo.com' }
