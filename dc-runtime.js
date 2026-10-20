@@ -108,13 +108,21 @@
     let i = 0;
     for (; i < vlist.length; i++) {
       const v = vlist[i], n = managed[i];
-      if (n && same(n, v)) {
+      // look a few nodes ahead before replacing, so a block that appears or disappears
+      // doesn't force every following element (links included) to be rebuilt
+      if (n && !same(n, v)) {
+        for (let k = i + 1; k < Math.min(managed.length, i + 6); k++) {
+          if (same(managed[k], v)) { parent.insertBefore(managed[k], n); managed.splice(i, 0, managed.splice(k, 1)[0]); break; }
+        }
+      }
+      if (managed[i] && same(managed[i], v)) {
+        const n = managed[i];
         if (v.t !== undefined) { if (n.__dc.t !== v.t) { n.nodeValue = v.t; n.__dc.t = v.t; } }
         else { setAttrs(n, v.a); patch(n, v.c, refs); if (v.ref) refs.push([n, v.ref]); }
       } else {
-        const fresh = create(v, refs);
-        if (n) parent.replaceChild(fresh, n); else parent.appendChild(fresh);
-        managed[i] = fresh;
+        const fresh = create(v, refs), cur = managed[i];
+        if (cur) parent.insertBefore(fresh, cur); else parent.appendChild(fresh);
+        if (cur) managed.splice(i, 0, fresh); else managed[i] = fresh;
       }
     }
     for (; i < managed.length; i++) managed[i].remove();

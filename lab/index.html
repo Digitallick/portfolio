@@ -115,7 +115,9 @@ section h3.H{font-size:1.7rem !important}
 html{scrollbar-gutter:stable}
 
 .nav-links a{padding:12px 8px !important;margin:0 -8px;border-radius:8px;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-.nav-links a:hover{background:rgba(221,0,255,.06)}
+
+
+@media (max-width:900px){.asst p{display:none}}
 </style>
 
 </head>
@@ -140,7 +142,7 @@ html{scrollbar-gutter:stable}
 
 <section aria-label="The vibration plate" style="position: relative; margin-top: 8px">
 <div class="rule"></div>
-<p style="margin: 0; padding: 10px 0; font-size: 13.5px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap"><span>Lab — things I build with my own hands.</span><span class="hint">Chroma blocks · {{modeName}} · the monster always comes back · click to skip ahead</span></p>
+<p style="margin: 0; padding: 10px 0; font-size: 13.5px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap"><span>Lab — things I build with my own hands.</span><span class="hint">The monster always comes back · click to skip ahead.</span></p>
 <div class="rule"></div>
 <div ref="{{plateWrap}}" onClick="{{reroll}}" onPointerMove="{{plateMove}}" onPointerLeave="{{plateLeave}}" class="hero" style="position: relative; cursor: crosshair">
 <canvas ref="{{plateRef}}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: .78"></canvas>
@@ -698,14 +700,15 @@ class Component extends DCLogic {
       const word = this.exp === 2 ? '_mo' : 'LAB';
       const ff = 'px "TeX Gyre Heros", "Helvetica Neue", Helvetica, Arial, sans-serif';
       // letters as tall as the monster; squeeze sideways (pixel style) before shrinking
-      let fs = Math.round((phone ? R * 0.72 : R * 0.98) / 0.72); l.font = '700 ' + fs + ff;
-      const maxW = phone ? C * 0.84 : right - C * 0.46; let tw = l.measureText(word).width;
+      const mid = !phone && this.w < 1100;
+      let fs = Math.round((phone ? R * 0.72 : mid ? R * 0.52 : R * 0.98) / 0.72); l.font = '700 ' + fs + ff;
+      const maxW = phone ? C * 0.84 : mid ? right - C * 0.12 : right - C * 0.46; let tw = l.measureText(word).width;
       let sx = 1; if (tw > maxW) sx = Math.max(0.5, maxW / tw);
       if (tw * sx > maxW) { fs = Math.floor(fs * maxW / (tw * sx)); l.font = '700 ' + fs + ff; tw = l.measureText(word).width; }
       const rx = phone ? C * 0.08 + Math.min(maxW, tw * sx) : right;
       const gr = l.createLinearGradient(rx - tw * sx, 0, rx, R); gr.addColorStop(0, '#1A1A1A'); gr.addColorStop(0.5, '#8A8A8A'); gr.addColorStop(1, '#E0E0E0');
       l.save(); l.translate(rx, 0); l.scale(sx, 1); l.textAlign = 'right'; l.textBaseline = 'alphabetic';
-      l.fillStyle = gr; l.fillText(word, 0, (phone ? R * 0.86 : R * 0.97) - (word === '_mo' ? fs * 0.17 : 0)); l.restore();
+      l.fillStyle = gr; l.fillText(word, 0, (phone ? R * 0.86 : mid ? R * 0.64 : R * 0.97) - (word === '_mo' ? fs * 0.17 : 0)); l.restore();
       const w2 = Math.min(maxW, tw * sx); this.subj = [rx - w2, rx];
     }
     const ang = this.reduce ? 0 : Math.sin(t * 0.00045) * 0.95;
