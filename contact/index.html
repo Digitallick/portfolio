@@ -165,6 +165,32 @@ class Component extends DCLogic {
     super(props);
     this.state = { mail: false, kind: 'role', from: '', subject: '🦖 A role at your team', msg: '', copied: false };
   }
+  moVoice(kind) {
+    // one small synth voice for every sound on the site: rawr, squeak, cry, whimper, yay
+    if (this.props && this.props.sound === false) return;
+    try {
+      const A = window.AudioContext || window.webkitAudioContext; if (!A) return;
+      const ctx = this.actx || (this.actx = new A()); if (ctx.resume) ctx.resume(); const t0 = ctx.currentTime;
+      const out = ctx.createGain(); out.gain.value = 0.9; out.connect(ctx.destination);
+      const note = (t, dur, f0, f1, f2, opt) => {
+        opt = opt || {};
+        const o = ctx.createOscillator(); o.type = opt.type || 'sawtooth';
+        o.frequency.setValueAtTime(f0, t); o.frequency.exponentialRampToValueAtTime(f1, t + dur * (opt.peak || 0.3)); o.frequency.exponentialRampToValueAtTime(f2, t + dur);
+        const tr = ctx.createOscillator(); tr.frequency.value = opt.trill || 22; const tg = ctx.createGain(); tg.gain.value = f0 * (opt.depth || 0.06); tr.connect(tg); tg.connect(o.frequency);
+        const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.Q.value = 4; bp.frequency.setValueAtTime(opt.f1 || 900, t); bp.frequency.linearRampToValueAtTime(opt.f2 || 1300, t + dur * 0.35); bp.frequency.linearRampToValueAtTime(opt.f3 || 700, t + dur);
+        const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 3200;
+        const g = ctx.createGain(); const v = opt.vol || 0.5; g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(v, t + 0.03); g.gain.setValueAtTime(v, t + dur * 0.6); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+        o.connect(bp); bp.connect(lp); lp.connect(g); g.connect(out); o.start(t); tr.start(t); o.stop(t + dur + 0.02); tr.stop(t + dur + 0.02);
+      };
+      const r = 0.9 + Math.random() * 0.25;
+      if (kind === 'rawr') note(t0, 0.62, 240 * r, 435 * r, 210 * r, { trill: 24, depth: 0.08 });
+      else if (kind === 'squeak') note(t0, 0.18, 700 * r, 1150 * r, 900 * r, { type: 'triangle', trill: 30, depth: 0.03, f1: 1600, f2: 2400, f3: 1800, peak: 0.5, vol: 0.4 });
+      else if (kind === 'cry') { note(t0, 0.5, 520, 560, 380, { trill: 7, depth: 0.05, f1: 1100, f2: 1400, f3: 800, peak: 0.2 }); note(t0 + 0.55, 0.9, 540, 600, 300, { trill: 6, depth: 0.07, f1: 1100, f2: 1500, f3: 700, peak: 0.15 }); }
+      else if (kind === 'whimper') { note(t0, 0.28, 520, 600, 430, { type: 'triangle', trill: 8, depth: 0.04, f1: 1200, f2: 1500, f3: 900, vol: 0.35 }); note(t0 + 0.34, 0.5, 470, 520, 330, { type: 'triangle', trill: 6, depth: 0.05, f1: 1100, f2: 1300, f3: 700, vol: 0.35 }); }
+      else if (kind === 'burp') { const o = ctx.createOscillator(); o.type = 'square'; o.frequency.setValueAtTime(110, t0); o.frequency.linearRampToValueAtTime(70, t0 + 0.45); const lfo = ctx.createOscillator(); lfo.frequency.value = 38; const lg = ctx.createGain(); lg.gain.value = 30; lfo.connect(lg); lg.connect(o.frequency); const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.Q.value = 3; bp.frequency.setValueAtTime(500, t0); bp.frequency.linearRampToValueAtTime(320, t0 + 0.45); const g = ctx.createGain(); g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(0.7, t0 + 0.04); g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.5); o.connect(bp); bp.connect(g); g.connect(out); o.start(t0); lfo.start(t0); o.stop(t0 + 0.52); lfo.stop(t0 + 0.52); }
+      else if (kind === 'yay') { [0, 0.11, 0.22].forEach((d, i) => note(t0 + d, 0.2, [520, 660, 780][i], [600, 760, 990][i], [560, 700, 1040][i], { type: 'triangle', trill: 30, depth: 0.02, f1: 1400, f2: 2000, f3: 1600, peak: 0.5, vol: 0.38 })); note(t0 + 0.36, 0.42, 300, 520, 360, { trill: 24, depth: 0.08 }); }
+    } catch (e) {}
+  }
   componentDidMount() { this.startPit(); }
   componentWillUnmount() { this.dead = true; }
   startPit() {
@@ -194,7 +220,8 @@ class Component extends DCLogic {
     const attach = (c) => c.addEventListener('pointerdown', (e) => {
       const p = toLocal(e); ptr.x = p.x; ptr.y = p.y; ptr.down = true; let best = null, bd = 1e9;
       for (const b of L[1]) { const d = (b.x - p.x) ** 2 + (b.y - p.y) ** 2; if (d < b.r * b.r * 1.4 && d < bd) { bd = d; best = b; } }
-      if (best) { drag = best; return; }
+      if (best) { drag = best; this.moVoice(best.kind === 'rex' ? 'rawr' : 'squeak'); return; }
+      this.moVoice('squeak');
       for (const lay of L) for (const b of lay) { const dx = b.x - p.x, dy = b.y - p.y, d = Math.sqrt(dx * dx + dy * dy) + 1; if (d < 280) { const k = (280 - d) / 280 * 28; b.px = b.x - dx / d * k; b.py = b.y - dy / d * k - k * 0.6; b.va += (Math.random() - .5) * .08; } }
     });
     const sim = (B, push) => {
