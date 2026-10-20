@@ -343,11 +343,11 @@ class Component extends DCLogic {
         // a cartoon snore: a soft wobbly hum breathing in, then a little whistle breathing out
         const o = ctx.createOscillator(); o.type = 'sine'; o.frequency.setValueAtTime(150, t0); o.frequency.linearRampToValueAtTime(190, t0 + 1.0);
         const vib = ctx.createOscillator(); vib.frequency.value = 5.5; const vg = ctx.createGain(); vg.gain.value = 9; vib.connect(vg); vg.connect(o.frequency);
-        const og = ctx.createGain(); og.gain.setValueAtTime(0.0001, t0); og.gain.exponentialRampToValueAtTime(0.32, t0 + 0.45); og.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.1);
+        const og = ctx.createGain(); og.gain.setValueAtTime(0.0001, t0); og.gain.exponentialRampToValueAtTime(0.24, t0 + 0.45); og.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.1);
         const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 900;
         o.connect(lp); lp.connect(og); og.connect(out); o.start(t0); vib.start(t0); o.stop(t0 + 1.15); vib.stop(t0 + 1.15);
         const w = ctx.createOscillator(); w.type = 'sine'; const ts = t0 + 1.25; w.frequency.setValueAtTime(900, ts); w.frequency.exponentialRampToValueAtTime(1500, ts + 0.25); w.frequency.exponentialRampToValueAtTime(620, ts + 0.85);
-        const wg = ctx.createGain(); wg.gain.setValueAtTime(0.0001, ts); wg.gain.exponentialRampToValueAtTime(0.16, ts + 0.12); wg.gain.exponentialRampToValueAtTime(0.0001, ts + 0.9);
+        const wg = ctx.createGain(); wg.gain.setValueAtTime(0.0001, ts); wg.gain.exponentialRampToValueAtTime(0.12, ts + 0.12); wg.gain.exponentialRampToValueAtTime(0.0001, ts + 0.9);
         w.connect(wg); wg.connect(out); w.start(ts); w.stop(ts + 0.95); }
       else if (kind === 'yay') { [0, 0.11, 0.22].forEach((d, i) => note(t0 + d, 0.2, [520, 660, 780][i], [600, 760, 990][i], [560, 700, 1040][i], { type: 'triangle', trill: 30, depth: 0.02, f1: 1400, f2: 2000, f3: 1600, peak: 0.5, vol: 0.38 })); note(t0 + 0.36, 0.42, 300, 520, 360, { trill: 24, depth: 0.08 }); }
     } catch (e) {}
@@ -365,7 +365,7 @@ class Component extends DCLogic {
     this.chipT = setInterval(chipCheck, 600); window.addEventListener('resize', chipCheck);
     const unlock = () => { this.audioOk = true; try { const A = window.AudioContext || window.webkitAudioContext; if (A && !this.actx) this.actx = new A(); if (this.actx && this.actx.resume) this.actx.resume(); } catch (e) {} };
     ['pointerdown', 'keydown', 'touchstart'].forEach((t) => window.addEventListener(t, unlock, { passive: true }));
-    this.snoreT = setInterval(() => { const on = this.override === 'zzz'; if (on && this.audioOk && !document.hidden) { if (!this.snoreOn || Date.now() - (this.lastSnore || 0) > 2700) { this.lastSnore = Date.now(); this.moVoice('snore'); } } this.snoreOn = on; }, 300);
+    this.snoreT = setInterval(() => { const on = this.override === 'zzz'; if (!on) this.snores = 0; if (on && this.audioOk && !document.hidden && (this.snores || 0) < 3) { if (!this.snoreOn || Date.now() - (this.lastSnore || 0) > 2700) { this.lastSnore = Date.now(); this.snores = (this.snores || 0) + 1; this.moVoice('snore'); } } this.snoreOn = on; }, 300);
     try { this.reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { this.reduce = false; }
     this.onResize = () => { this.resize(); this.retarget(); };
     window.addEventListener('resize', this.onResize);
