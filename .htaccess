@@ -1,0 +1,22 @@
+# shanymo.com static site
+ErrorDocument 404 /404.html
+Options -Indexes
+DirectoryIndex index.html
+<IfModule mod_headers.c>
+  SetEnvIf Host "^staging\." IS_STAGING
+  Header set X-Robots-Tag "noindex, nofollow" env=IS_STAGING
+</IfModule>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # old WordPress addresses
+  RewriteRule ^bets/?$ /work/ [L,R=301]
+  RewriteRule ^ads/?$ /work/ [L,R=301]
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType video/mp4 "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+</IfModule>
