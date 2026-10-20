@@ -230,7 +230,7 @@ class Component extends DCLogic {
     const attach = (c) => c.addEventListener('pointerdown', (e) => {
       const p = toLocal(e); ptr.x = p.x; ptr.y = p.y; ptr.down = true; let best = null, bd = 1e9;
       for (const b of L[1]) { const d = (b.x - p.x) ** 2 + (b.y - p.y) ** 2; if (d < b.r * b.r * 1.4 && d < bd) { bd = d; best = b; } }
-      if (best) { drag = best; this.moVoice(best.kind === 'rex' ? 'rawr' : 'squeak'); return; }
+      if (best) { drag = best; this.moVoice('squeak'); return; }
       this.moVoice('squeak');
       for (const lay of L) for (const b of lay) { const dx = b.x - p.x, dy = b.y - p.y, d = Math.sqrt(dx * dx + dy * dy) + 1; if (d < 280) { const k = (280 - d) / 280 * 28; b.px = b.x - dx / d * k; b.py = b.y - dy / d * k - k * 0.6; b.va += (Math.random() - .5) * .08; } }
     });
