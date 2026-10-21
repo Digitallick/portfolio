@@ -157,6 +157,24 @@ html{scrollbar-gutter:stable}
 .chips[data-more="r"]{-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 96px),transparent);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 96px),transparent)}
 .chips[data-more="l"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px);mask-image:linear-gradient(90deg,transparent,#000 40px)}
 .chips[data-more="lr"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 96px),transparent);mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 96px),transparent)}
+
+/* phones and tablets: one underline per project (not per line), and a small cover card on tap or Surprise me */
+.mcard{display:none}
+@media (max-width:1023px),(hover:none){
+.rows .row td{background-image:none !important}
+.rows .row{background:linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) 0 100% / 0% 4px no-repeat;transition:background-size .45s cubic-bezier(.2,.8,.2,1);cursor:pointer}
+.rows .row.flash,.rows .row.open{background-size:100% 4px}
+.mcard{display:block;margin:14px 0 4px;border:1.5px solid #262626;border-radius:18px;overflow:hidden;background:#FFFFFF;transform:rotate(-1.5deg);box-shadow:0 10px 24px rgba(38,38,38,.14);animation:mcin .35s cubic-bezier(.3,1.4,.5,1)}
+.mc-cover{position:relative;height:118px;padding:14px 16px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between}
+.mc-kick{font-size:11px;text-transform:uppercase;letter-spacing:1px;max-width:52%}
+.mc-name{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:1.15rem;line-height:1.05;text-transform:uppercase;max-width:62%}
+.mc-rex{position:absolute;right:8px;bottom:4px;width:76px;height:76px}
+.mc-rex img{width:76px;height:76px;display:block}
+.mc-prop{position:absolute;left:4px;top:30px;font-size:22px}
+.mc-say{position:absolute;right:10px;top:10px;background:#262626;color:#FFFFFF;font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;padding:4px 8px;border-radius:10px 10px 2px 10px;white-space:nowrap}
+@keyframes mcin{from{opacity:0;transform:rotate(-6deg) translateY(8px) scale(.96)}to{opacity:1;transform:rotate(-1.5deg)}}
+}
+@media (prefers-reduced-motion:reduce){.mcard{animation:none}}
 </style>
 
 </head>
@@ -223,11 +241,18 @@ html{scrollbar-gutter:stable}
 </thead>
 <tbody class="{{tbodyCls}}">
 <template sc-for list="{{rows}}" as="r" hint-placeholder-count="14">
-<tr id="{{r.domId}}" class="{{r.cls}}" onMouseEnter="{{r.enter}}" onMouseMove="{{move}}" style="border-top: 1px solid #E4E4E4; vertical-align: top">
+<tr id="{{r.domId}}" class="{{r.cls}}" onMouseEnter="{{r.enter}}" onMouseMove="{{move}}" onClick="{{r.tap}}" style="border-top: 1px solid #E4E4E4; vertical-align: top">
 <td style="padding: 20px 16px 20px 0">
 <p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.02rem; line-height: 1.3; text-transform: uppercase"><template sc-if value="{{r.noLink}}" hint-placeholder-val="{{ true }}"><span class="pname">{{r.project}}</span></template><template sc-if value="{{r.hasLink}}" hint-placeholder-val="{{ false }}"><a class="pname" href="{{r.link}}" target="_blank" rel="noopener" title="Visit Evo" style="color: #262626; text-decoration-color: #DD00FF; text-decoration-thickness: 2px; text-underline-offset: 4px">{{r.project}} <span aria-hidden="true">↗</span></a></template></p>
 <p style="margin: 8px 0 0; font-size: 12px"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: {{r.dot}}; margin-right: 6px"></span>{{r.co}} · {{r.years}}</p>
 <p style="margin: 4px 0 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #5E5E5E">{{r.tagLine}}</p>
+<template sc-if value="{{r.showCard}}" hint-placeholder-val="{{ false }}">
+<div class="mcard" aria-hidden="true">
+<div class="mc-cover" style="background: {{r.cover}}"><span class="mc-kick">{{r.co}} · {{r.years}}</span><span class="mc-name">{{r.project}}</span>
+<div class="mc-rex"><img src="/assets/trex-fluent-anim.webp" alt=""><span class="mc-prop">{{r.prop}}</span></div><span class="mc-say">{{r.say}}</span></div>
+<div style="height: 5px; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div>
+</div>
+</template>
 </td>
 <td style="padding: 20px 16px; line-height: 1.55">{{r.need}}</td>
 <td style="padding: 20px 16px; line-height: 1.55">{{r.owned}}</td>
@@ -711,7 +736,9 @@ class Component extends DCLogic {
       const gap = r.changed.charAt(0) === '[';
       return Object.assign({}, r, {
         domId: 'inv-' + r.id,
-        cls: this.state.flash === r.id ? 'row flash' : 'row',
+        cls: 'row' + (this.state.flash === r.id ? ' flash' : '') + (this.state.open === r.id ? ' open' : ''),
+        tap: (e) => { const t = e && e.target && e.target.closest ? e.target.closest('a') : null; if (t) return; if (!(window.matchMedia && window.matchMedia('(max-width: 1023px), (hover: none)').matches)) return; this.setState({ open: this.state.open === r.id ? null : r.id }); },
+        showCard: this.state.open === r.id || this.state.flash === r.id, cover: covers[r.co] || '#F2F2F2',
         enter: (e) => { this.setState({ hover: r.id }); if (e) this.placePeek(e.clientX, e.clientY); },
         dot: dots[r.co],
         hasStamp: (this.props.stamps ?? true),
@@ -732,6 +759,9 @@ class Component extends DCLogic {
         style: 'min-height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13.5px; letter-spacing: 0.5px; text-transform: uppercase; ' + (on ? 'background: #262626; color: #FFFFFF; border: 1px solid #262626' : 'background: #FFFFFF; color: #262626; border: 1px solid #CFCFCF')
       };
     });
+    rows.forEach((x) => { const st = x.stamp || '';
+      const m = st.indexOf('Confidential') >= 0 ? ['🔒', 'shh. confidential.'] : st === 'Shipped' ? ['🍟', 'shipped. snack time.'] : st === 'Paid out' ? ['💸', 'this one paid out.'] : st === 'In play' ? ['⚡', 'still cooking.'] : st === 'Concept' ? ['❓', 'a concept. hmm…'] : ['', 'to confirm'];
+      x.prop = m[0]; x.say = m[1]; });
     const gapCount = this.rows.filter((r) => r.changed.charAt(0) === '[').length;
     const h = this.state.hover;
     const hr = (h === undefined || h === null) ? null : this.rows[h];
