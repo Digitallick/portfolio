@@ -156,6 +156,17 @@ html{scrollbar-gutter:stable}
 
 .nav-links a{padding:12px 8px !important;margin:0 -8px;border-radius:8px;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 
+
+/* real screens and process boards (Evo + Evolve case) */
+.phone.real{width:300px;height:626px;background:#F4F5F7}
+.phone.real .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+@media (max-width:600px){.phone.real{width:230px;height:474px}}
+.boards{margin-top:48px}
+.bgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.bcard{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:#262626;font-size:13.5px;text-transform:uppercase}
+.bcard img{width:100%;aspect-ratio:1440/1024;object-fit:cover;border-radius:14px;border:1px solid #E4E4E4;display:block;transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
+.bcard:hover img{transform:translateY(-4px) rotate(-.6deg)}
+@media (max-width:900px){.bgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 
 </head>
@@ -180,7 +191,7 @@ html{scrollbar-gutter:stable}
 
 <section class="topsec" style="padding: 8px 0 56px">
 <div class="rule"></div>
-<p style="margin: 0; padding: 12px 0; font-size: 13.5px">Work · Seven cases · Two lenses on every one</p>
+<p style="margin: 0; padding: 12px 0; font-size: 13.5px">Work · Eight cases · Two lenses on every one</p>
 <div class="rule"></div>
 <h1 class="big" style="margin: 36px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; text-transform: uppercase; max-width: 1100px">The bet. The craft. <span style="background: linear-gradient(90deg,#00FFF7,#FFFF00); padding: 0 12px">What moved.</span></h1>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 36px">
@@ -231,7 +242,9 @@ html{scrollbar-gutter:stable}
 <div class="dstage">
 <div class="dev" style="display: flex">
 <template sc-if value="{{c.isPhone}}" hint-placeholder-val="{{ true }}">
-<div class="phone" role="img" aria-label="{{c.screenAlt}}">
+<div class="{{c.phoneCls}}" role="img" aria-label="{{c.screenAlt}}">
+<template sc-if value="{{c.hasShot}}" hint-placeholder-val="{{ false }}"><img class="shot" src="{{c.shot}}" alt=""></template>
+<template sc-if value="{{c.noShot}}" hint-placeholder-val="{{ true }}">
 <div style="position: absolute; inset: 0; padding: 40px 16px 16px; display: flex; flex-direction: column; gap: 10px; background: linear-gradient(to bottom, {{c.tint}} 0%, #FFFFFF 45%)">
 <p style="margin: 0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px">{{c.stepTag}}</p>
 <p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.1; text-transform: uppercase">{{c.stepTitle}}</p>
@@ -240,6 +253,7 @@ html{scrollbar-gutter:stable}
 <div class="sk" style="height: 44px; margin-top: auto; border-radius: 999px; background: #262626"></div>
 <p style="margin: 0; text-align: center"><span class="need">[screen needed]</span></p>
 </div>
+</template>
 </div>
 </template>
 <template sc-if value="{{c.isDesk}}" hint-placeholder-val="{{ false }}">
@@ -252,7 +266,7 @@ html{scrollbar-gutter:stable}
 </div>
 </template>
 </div>
-<div class="pins" aria-hidden="true"><template sc-for list="{{c.craft}}" as="x"><span class="pin" style="{{x.pin}}; background: {{c.ink}}">{{x.n}}</span></template></div>
+<template sc-if value="{{c.showPins}}" hint-placeholder-val="{{ true }}"><div class="pins" aria-hidden="true"><template sc-for list="{{c.craft}}" as="x"><span class="pin" style="{{x.pin}}; background: {{c.ink}}">{{x.n}}</span></template></div></template>
 <div class="flowbar" role="group" aria-label="The flow"><span class="fl">The flow</span>
 <template sc-for list="{{c.steps}}" as="s" hint-placeholder-count="3"><button class="{{s.cls}}" onClick="{{s.pick}}" aria-pressed="{{s.pressed}}">{{s.label}}</button></template>
 </div>
@@ -262,6 +276,12 @@ html{scrollbar-gutter:stable}
 <div class="s4 dcalls"><p style="margin: 0 0 8px; font-size: 13.5px; text-transform: uppercase">Design calls</p><template sc-for list="{{c.craft}}" as="x" hint-placeholder-count="3"><p style="margin: 0 0 10px; line-height: 1.6; padding-left: 18px; position: relative"><span aria-hidden="true" class="cdot" style="background: {{c.ink}}">{{x.n}}</span>{{x.t}}</p></template></div>
 <div class="s4 dtrade"><p style="margin: 0 0 8px; font-size: 13.5px; text-transform: uppercase">The trade-off</p><p style="margin: 0; line-height: 1.65">{{c.tradeoff}}</p></div>
 </div>
+<template sc-if value="{{c.hasBoards}}" hint-placeholder-val="{{ false }}">
+<div class="boards">
+<p style="margin: 0 0 14px; font-size: 13.5px; text-transform: uppercase">Behind the screens</p>
+<div class="bgrid"><template sc-for list="{{c.boards}}" as="b" hint-placeholder-count="4"><a class="bcard" href="{{b.src}}" target="_blank" rel="noopener"><img src="{{b.src}}" alt="{{b.alt}}" loading="lazy"><span>{{b.label}} ↗</span></a></template></div>
+</div>
+</template>
 </div>
 </div>
 </template>
@@ -497,6 +517,21 @@ class Component extends DCLogic {
         brief: 'Turn raw telemetry into a call an operator can make in under a minute.',
         craft: ['Map first, numbers second: where cars are against where demand will be.', 'Pricing tests framed as a switch with a predicted outcome.', 'Alerts ranked by revenue at stake, not by time.'],
         designNumber: '+36% portfolio profitability', tradeoff: 'Ranking alerts by revenue at stake means low-value issues wait longer. (draft)' },
+      { id: 'evo', meta: 'Evo + Evolve — BCAA · Head of Product, Strategic Ventures · Shared mobility · 2025 → 2026', title: 'One app to find, ride and park, whatever you ride',
+        chips: [['E-bikes · e-scooters · e-cargo · Evo cars', '#B8FFFC'], ['One map · one account · one wallet', '#F5C9FF'], ['Six rider questions · 18 screens', '#FFE2B0']],
+        scrib: 'no "trip ended" until the bike says so.', ink: '#00B8B2', inkDark: '#00756F', rot: '-2deg',
+        situation: 'Visitors don\'t know the zones, the rates or where a trip may end. Ambiguous "ended?" states cause most billing support contacts.',
+        bet: 'Put Evolve e-bikes, e-scooters, e-cargo bikes and Evo cars in one map, one account and one wallet, and never tell a rider a trip, lock or charge is done until the system confirms it.',
+        didLabel: 'What I did', did: 'Owned the product and the experience: the rider promise, the information architecture and platform map, the first-ride flow and journey, and the screens from onboarding to receipt.',
+        extra: 'Every screen answers one rider question: is there a usable bike near me, can it get me there and back, what will it cost, where can I end the trip, has billing actually stopped, and what if something goes wrong.',
+        kind: 'phone', tint: '#B8FFFC',
+        steps: ['Near me?', 'There and back?', 'What will it cost?', 'Unlocked?', 'Where can I end?', 'Billing stopped?', 'Receipt', 'Something wrong?'],
+        shots: ['/assets/UI-S01-Explore.webp', '/assets/UI-S04-Vehicle.webp', '/assets/UI-S10-Price.webp', '/assets/UI-S13-Unlock.webp', '/assets/UI-S15-Parking.webp', '/assets/UI-S17-Verify.webp', '/assets/UI-S18-Receipt.webp', '/assets/UI-S21-Support.webp'],
+        shotAlt: ['S01 Home: map of nearby e-bikes, Evo cars and parking zones in Whistler', 'S04 Choose a ride: bikes with range in km, labelled estimated', 'S10 Ride confirmation: itemised price and the hold explained', 'S13 Unlocking: no success screen until the bike confirms', 'S15 Parking: inside the Rainbow Park zone, with capacity', 'S17 Verifying: named states while the end is checked', 'S18 Trip ended: billing stopped at a confirmed time, receipt pending', 'S21 Report a problem: the trip and photos prefilled'],
+        boards: [{ src: '/assets/Journey.webp', label: 'Journey map', alt: 'Journey map of a weekend visitor: trust dips at sign-up and at the end of the ride' }, { src: '/assets/Flow.webp', label: 'First-ride flow', alt: 'User flow from the map to a confirmed receipt' }, { src: '/assets/IA.webp', label: 'Information architecture', alt: 'Four tabs, one ride flow, and a trip that is never hidden' }, { src: '/assets/System.webp', label: 'Platform', alt: 'The rider app on one shared mobility platform' }],
+        brief: 'Answer six rider questions fast, and never claim a trip, lock or charge is done before the system confirms it.',
+        craft: ['No success screen until the bike confirms the unlock. Billing starts at that moment.', 'Range shown in km (≈34 km), a cautious estimate labelled "estimated", not just a battery %.', 'Ending a trip has named states, a photo frame guide and two tries max, so "has it ended?" always has an answer.'],
+        designNumber: 'Six rider questions, answered fast', tradeoff: 'Waiting for confirmation adds seconds at unlock and at the end of a ride. We chose an honest wait over a fast "done" that might be wrong. (draft)' },
       { id: 'gp', meta: 'Guidepoint · Product Strategy Consultant · Fintech, South Asia', title: 'Fix the journey, fix the revenue',
         chips: [['+32% premium conversion', '#FFE2B0']],
         scrib: '', ink: '#FCA002', inkDark: '#9A5A00', rot: '0deg',
@@ -649,8 +684,9 @@ class Component extends DCLogic {
         flipCls: design ? 'flip d' : 'flip',
         flip: () => { this.moVoice('rawr'); const o = Object.assign({}, st.over); o[d.id] = design ? 'product' : 'design'; this.setState({ over: o }); },
         isPhone: d.kind === 'phone', isDesk: d.kind === 'desk', tint: d.tint,
+        hasShot: !!d.shots, noShot: !d.shots, shot: d.shots ? d.shots[si] : '', phoneCls: d.shots ? 'phone real' : 'phone', showPins: !d.shots, hasBoards: !!d.boards, boards: d.boards || [],
         stepTag: 'Step ' + (si + 1) + ' of ' + d.steps.length, stepTitle: d.steps[si],
-        screenAlt: 'Placeholder for the ' + d.steps[si] + ' screen',
+        screenAlt: d.shotAlt ? d.shotAlt[si] : 'Placeholder for the ' + d.steps[si] + ' screen',
         steps: d.steps.map((s, k) => ({ label: (k + 1) + ' · ' + s, cls: k === si ? 'step on' : 'step', pressed: k === si ? 'true' : 'false', pick: () => { const m = Object.assign({}, st.step); m[d.id] = k; this.setState({ step: m }); } })),
         brief: d.brief, craft: d.craft.map((t, k) => ({ t, n: k + 1, pin: ['left: 22%; top: 30%', 'left: 64%; top: 22%', 'left: 72%; top: 62%'][k % 3] })), designNumber: d.designNumber, tradeoff: d.tradeoff
       };
