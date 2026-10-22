@@ -158,15 +158,31 @@ html{scrollbar-gutter:stable}
 
 
 /* real screens and process boards (Evo + Evolve case) */
-.phone.real{width:300px;height:626px;background:#F4F5F7}
+.phone.real{width:300px;height:650px;background:#F4F5F7;border:1px solid #E4E4E4;border-radius:34px;box-shadow:0 24px 60px rgba(38,38,38,.12),0 4px 12px rgba(38,38,38,.06)}
+.phone.real:before{display:none}
 .phone.real .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
-@media (max-width:600px){.phone.real{width:230px;height:474px}}
-.boards{margin-top:48px}
-.bgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.bcard{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:#262626;font-size:13.5px;text-transform:uppercase}
-.bcard img{width:100%;aspect-ratio:1440/1024;object-fit:cover;border-radius:14px;border:1px solid #E4E4E4;display:block;transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
-.bcard:hover img{transform:translateY(-4px) rotate(-.6deg)}
-@media (max-width:900px){.bgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.phone.real{width:240px;height:520px;border-radius:28px}}
+.boards{margin-top:56px}
+.dhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px;margin-bottom:22px}
+.dtabs{display:flex;flex-wrap:wrap;gap:8px}
+.dtabs button{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid #262626;background:#FFFFFF;color:#262626;font:inherit;font-size:13px;letter-spacing:.4px;cursor:pointer}
+.dtabs button.on{background:#262626;color:#FFFFFF}
+.deck{position:relative;aspect-ratio:1440/1024;margin:0 28px 0 0;touch-action:pan-y;user-select:none}
+.dcard{position:absolute;inset:0;border-radius:20px;overflow:hidden;background:#FFFFFF;border:1px solid #E4E4E4;box-shadow:0 18px 48px rgba(38,38,38,.12);transition:transform .55s cubic-bezier(.3,1.25,.5,1),opacity .4s ease;transform-origin:50% 100%;display:block}
+.dcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.dcard.p0{z-index:4;transform:none}
+.dcard.p1{z-index:3;transform:translate(14px,-14px) rotate(1.2deg) scale(.985);opacity:.9}
+.dcard.p2{z-index:2;transform:translate(28px,-28px) rotate(2.4deg) scale(.97);opacity:.75}
+.dcard.p3{z-index:1;transform:translate(40px,-40px) rotate(3.4deg) scale(.955);opacity:.5}
+.dcard.out{z-index:5;transform:translate(-60%,8%) rotate(-10deg);opacity:0;pointer-events:none}
+.dcard:not(.p0){pointer-events:none}
+.dnav{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
+.dbtn{width:44px;height:44px;border-radius:50%;border:1px solid #262626;background:#FFFFFF;color:#262626;font-size:18px;cursor:pointer}
+.dbtn:hover{background:#262626;color:#FFFFFF}
+.dcount{font-size:13px;letter-spacing:1px;min-width:44px;text-align:center}
+.dhint{font-size:12px;color:#5E5E5E;margin-left:8px}
+@media (max-width:600px){.deck{margin-right:16px}.dcard{border-radius:12px}.dhint{display:none}.dcard.p1{transform:translate(8px,-8px) rotate(1deg) scale(.985)}.dcard.p2{transform:translate(16px,-16px) rotate(2deg) scale(.97)}.dcard.p3{transform:translate(22px,-22px) rotate(3deg) scale(.955)}}
+@media (prefers-reduced-motion:reduce){.dcard{transition:none}}
 </style>
 
 </head>
@@ -278,8 +294,14 @@ html{scrollbar-gutter:stable}
 </div>
 <template sc-if value="{{c.hasBoards}}" hint-placeholder-val="{{ false }}">
 <div class="boards">
-<p style="margin: 0 0 14px; font-size: 13.5px; text-transform: uppercase">Behind the screens</p>
-<div class="bgrid"><template sc-for list="{{c.boards}}" as="b" hint-placeholder-count="4"><a class="bcard" href="{{b.src}}" target="_blank" rel="noopener"><img src="{{b.src}}" alt="{{b.alt}}" loading="lazy"><span>{{b.label}} ↗</span></a></template></div>
+<div class="dhead">
+<p style="margin: 0; font-size: 13.5px; text-transform: uppercase">Behind the screens</p>
+<div class="dtabs" role="tablist" aria-label="Behind the screens"><template sc-for list="{{c.boards}}" as="b" hint-placeholder-count="4"><button role="tab" class="{{b.tabCls}}" aria-selected="{{b.sel}}" onClick="{{b.pick}}">{{b.label}}</button></template></div>
+</div>
+<div class="deck" onPointerDown="{{c.deckDown}}" onPointerUp="{{c.deckUp}}">
+<template sc-for list="{{c.boards}}" as="b" hint-placeholder-count="4"><a class="{{b.cardCls}}" href="{{b.src}}" target="_blank" rel="noopener" tabindex="{{b.tab}}" aria-hidden="{{b.hidden}}" onClick="{{b.cardClick}}" draggable="false"><img src="{{b.src}}" alt="{{b.alt}}" draggable="false"></a></template>
+</div>
+<div class="dnav"><button class="dbtn" onClick="{{c.deckPrev}}" aria-label="Previous board">←</button><span class="dcount">{{c.deckCount}}</span><button class="dbtn" onClick="{{c.deckNext}}" aria-label="Next board">→</button><span class="dhint">Swipe, use the arrows, or tap the board to open it full size</span></div>
 </div>
 </template>
 </div>
@@ -525,7 +547,7 @@ class Component extends DCLogic {
         didLabel: 'What I did', did: 'Owned the product and the experience: the rider promise, the information architecture and platform map, the first-ride flow and journey, and the screens from onboarding to receipt.',
         extra: 'Every screen answers one rider question: is there a usable bike near me, can it get me there and back, what will it cost, where can I end the trip, has billing actually stopped, and what if something goes wrong.',
         kind: 'phone', tint: '#B8FFFC',
-        steps: ['Near me?', 'There and back?', 'What will it cost?', 'Unlocked?', 'Where can I end?', 'Billing stopped?', 'Receipt', 'Something wrong?'],
+        steps: ['Home', 'Choose a ride', 'Ride confirmation', 'Unlocking', 'Parking', 'Verifying', 'Trip ended', 'Report a problem'],
         shots: ['/assets/UI-S01-Explore.webp', '/assets/UI-S04-Vehicle.webp', '/assets/UI-S10-Price.webp', '/assets/UI-S13-Unlock.webp', '/assets/UI-S15-Parking.webp', '/assets/UI-S17-Verify.webp', '/assets/UI-S18-Receipt.webp', '/assets/UI-S21-Support.webp'],
         shotAlt: ['S01 Home: map of nearby e-bikes, Evo cars and parking zones in Whistler', 'S04 Choose a ride: bikes with range in km, labelled estimated', 'S10 Ride confirmation: itemised price and the hold explained', 'S13 Unlocking: no success screen until the bike confirms', 'S15 Parking: inside the Rainbow Park zone, with capacity', 'S17 Verifying: named states while the end is checked', 'S18 Trip ended: billing stopped at a confirmed time, receipt pending', 'S21 Report a problem: the trip and photos prefilled'],
         boards: [{ src: '/assets/Journey.webp', label: 'Journey map', alt: 'Journey map of a weekend visitor: trust dips at sign-up and at the end of the ride' }, { src: '/assets/Flow.webp', label: 'First-ride flow', alt: 'User flow from the map to a confirmed receipt' }, { src: '/assets/IA.webp', label: 'Information architecture', alt: 'Four tabs, one ride flow, and a trip that is never hidden' }, { src: '/assets/System.webp', label: 'Platform', alt: 'The rider app on one shared mobility platform' }],
@@ -684,7 +706,18 @@ class Component extends DCLogic {
         flipCls: design ? 'flip d' : 'flip',
         flip: () => { this.moVoice('rawr'); const o = Object.assign({}, st.over); o[d.id] = design ? 'product' : 'design'; this.setState({ over: o }); },
         isPhone: d.kind === 'phone', isDesk: d.kind === 'desk', tint: d.tint,
-        hasShot: !!d.shots, noShot: !d.shots, shot: d.shots ? d.shots[si] : '', phoneCls: d.shots ? 'phone real' : 'phone', showPins: !d.shots, hasBoards: !!d.boards, boards: d.boards || [],
+        hasShot: !!d.shots, noShot: !d.shots, shot: d.shots ? d.shots[si] : '', phoneCls: d.shots ? 'phone real' : 'phone', showPins: !d.shots, hasBoards: !!d.boards, ...(() => {
+          const B = d.boards || [], n = B.length, cur = ((st.deck || {})[d.id] || 0), last = (st.deckOut || {})[d.id];
+          const go = (k) => { const m = Object.assign({}, st.deck); const o = Object.assign({}, st.deckOut); o[d.id] = k > 0 ? cur : null; m[d.id] = (cur + k + n) % n; this.setState({ deck: m, deckOut: o }); };
+          return {
+            boards: B.map((b, i) => { const pos = (i - cur + n) % n; return { src: b.src, alt: b.alt, label: b.label,
+              cardCls: 'dcard ' + (i === last && pos === n - 1 ? 'out' : 'p' + Math.min(pos, 3)), tab: pos === 0 ? '0' : '-1', hidden: pos === 0 ? 'false' : 'true',
+              cardClick: (e) => { if (this.deckDragged) { if (e && e.preventDefault) e.preventDefault(); this.deckDragged = false; } },
+              tabCls: i === cur ? 'on' : '', sel: i === cur ? 'true' : 'false', pick: () => go((i - cur + n) % n || 0) }; }),
+            deckCount: (cur + 1) + ' / ' + n, deckNext: () => go(1), deckPrev: () => go(-1),
+            deckDown: (e) => { this.deckX = e ? e.clientX : null; this.deckDragged = false; },
+            deckUp: (e) => { if (this.deckX == null || !e) return; const dx = e.clientX - this.deckX; this.deckX = null; if (Math.abs(dx) > 40) { this.deckDragged = true; go(dx < 0 ? 1 : -1); } }
+          }; })(),
         stepTag: 'Step ' + (si + 1) + ' of ' + d.steps.length, stepTitle: d.steps[si],
         screenAlt: d.shotAlt ? d.shotAlt[si] : 'Placeholder for the ' + d.steps[si] + ' screen',
         steps: d.steps.map((s, k) => ({ label: (k + 1) + ' · ' + s, cls: k === si ? 'step on' : 'step', pressed: k === si ? 'true' : 'false', pick: () => { const m = Object.assign({}, st.step); m[d.id] = k; this.setState({ step: m }); } })),
