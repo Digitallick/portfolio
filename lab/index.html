@@ -168,6 +168,9 @@ html{scrollbar-gutter:stable}
 .chips{padding-top:8px !important;padding-bottom:18px !important;margin-top:-8px !important;margin-bottom:-18px !important;padding-left:8px !important;margin-left:-8px !important}
 .sitecopy{padding-bottom:84px !important}
 }
+
+/* footer (4 Nov): ribbon and copyright sit on solid white on every page */
+.siteribbon,.sitecopy{position:relative;z-index:3;background:#FFFFFF !important}
 </style>
 
 </head>
@@ -393,7 +396,7 @@ html{scrollbar-gutter:stable}
 
 
 </div>
-<div style="position: relative; overflow: hidden; border-top: 1px solid #E4E4E4; padding: 10px 0; background: rgba(255,255,255,0.7)">
+<div class="siteribbon" style="position: relative; overflow: hidden; border-top: 1px solid #E4E4E4; padding: 10px 0; background: rgba(255,255,255,0.7)">
 <div class="mqtrack" style="font-size: 11px; align-items: center">
 <template sc-for list="{{askMarquee}}" as="m" hint-placeholder-count="12">
 <span style="display: inline-flex; align-items: center; gap: 10px; padding-right: 12px; white-space: nowrap">

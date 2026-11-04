@@ -68,7 +68,6 @@ main{padding-bottom:8px !important}
 .slot{height:110px !important}
 .proof{padding-top:16px !important}
 .proof p{font-size:15px}
-.screen{padding-bottom:72px}
 }
 
 .askwig{animation:askwig .7s cubic-bezier(.3,1.6,.5,1)}
@@ -102,6 +101,9 @@ h1.hh span{background-size:100% 76% !important;background-repeat:no-repeat !impo
 .napper{display:none !important}
 .proof{padding-bottom:32px !important}
 }
+
+/* footer (4 Nov): ribbon and copyright sit on solid white on every page */
+.siteribbon,.sitecopy{position:relative;z-index:3;background:#FFFFFF !important}
 </style>
 
 </head>
@@ -161,7 +163,7 @@ h1.hh span{background-size:100% 76% !important;background-repeat:no-repeat !impo
 </main>
 </div>
 
-<div style="position: relative; overflow: hidden; border-top: 1px solid #E4E4E4; padding: 10px 0; background: rgba(255,255,255,0.7)">
+<div class="siteribbon" style="position: relative; overflow: hidden; border-top: 1px solid #E4E4E4; padding: 10px 0; background: rgba(255,255,255,0.7)">
 <div class="track" style="font-size: 11px; align-items: center">
 <template sc-for list="{{marquee}}" as="m" hint-placeholder-count="12">
 <span style="display: inline-flex; align-items: center; gap: 10px; padding-right: 12px; white-space: nowrap">
@@ -173,7 +175,7 @@ h1.hh span{background-size:100% 76% !important;background-repeat:no-repeat !impo
 </template>
 </div>
 </div>
-<p style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4; background: rgba(255,255,255,0.7)">©Made on Earth by Shany Mo while eating 🍟</p>
+<p class="sitecopy" style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4; background: rgba(255,255,255,0.7)">©Made on Earth by Shany Mo while eating 🍟</p>
 
 <template sc-if value="{{chatClosed}}" hint-placeholder-val="{{ true }}">
 <button class="ask" onClick="{{openChat}}" aria-expanded="false" aria-controls="askmo" style="position: absolute; right: 32px; bottom: 64px; min-height: 56px; padding: 0 22px 0 18px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: #262626; box-shadow: 0 10px 30px rgba(221,0,255,0.18)">
