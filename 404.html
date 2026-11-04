@@ -76,7 +76,10 @@ header .nav-links{display:none !important}
 
 /* footer (4 Nov): ribbon and copyright sit on solid white on every page */
 .siteribbon,.sitecopy{position:relative;z-index:3;background:#FFFFFF !important}
-@media (max-width:600px){.sitecopy{padding-bottom:84px !important}}
+@media (max-width:600px){.sitecopy{padding-bottom:140px !important}}
+
+/* arrow icon (4 Nov): same weight on every device, no emoji on iOS */
+.ar{display:inline-block;width:.68em;height:.68em;margin-left:.18em;vertical-align:-.02em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat}
 </style>
 
 </head>
@@ -108,8 +111,8 @@ header .nav-links{display:none !important}
 <p class="say" style="margin: 10px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 3.4rem; line-height: 1.04; letter-spacing: -1px; text-transform: uppercase">Sounds like a <span style="background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00); padding: 0 10px">0→1 opportunity.</span></p>
 <p style="margin: 20px 0 0; font-size: 1.1rem; line-height: 1.6; max-width: 640px">The monster ate it. He has been warned. Now he's on fries. <span style="font-size: 13px; opacity: .7">(Grab him if you like. He swings. Click and he cries.)</span></p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px">
-<a href="/" class="btn" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 26px; border-radius: 999px; background: #262626; color: #FFFFFF; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px; transition: transform .2s ease">Back home ↗︎</a>
-<a href="/contact/" class="btn" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 26px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px; transition: transform .2s ease">Pitch me this page ↗︎</a>
+<a href="/" class="btn" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 26px; border-radius: 999px; background: #262626; color: #FFFFFF; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px; transition: transform .2s ease">Back home<i class="ar" aria-hidden="true"></i></a>
+<a href="/contact/" class="btn" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 26px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px; transition: transform .2s ease">Pitch me this page<i class="ar" aria-hidden="true"></i></a>
 </div>
 </main>
 </div>
@@ -175,7 +178,7 @@ Ask Mo
 </div>
 <div style="padding: 16px 24px 6px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
 <button onClick="{{askCopy}}" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; background: #262626; color: #FFFFFF; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px; border: 0; cursor: pointer; font-family: inherit; font-size: 13px">{{copyLabel}}</button>
-<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px">LinkedIn ↗︎</a>
+<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px">LinkedIn<i class="ar" aria-hidden="true"></i></a>
 </div>
 <div style="padding: 4px 24px 10px; text-align: center">
 <button onClick="{{backToFaq}}" style="min-height: 44px; padding: 0 12px; border: 0; background: transparent; color: #262626; cursor: pointer; font-family: inherit; font-size: 13px; text-decoration: underline">← Back to the FAQs</button>
@@ -206,8 +209,8 @@ Ask Mo
 <a class="ml" href="/contact/">Contact</a>
 </nav>
 <div style="height: 1px; margin: 30px 0 18px; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div>
-<a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com ↗︎</a>
-<a href="https://www.linkedin.com/in/shanymo/" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">LinkedIn ↗︎</a>
+<a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com<i class="ar" aria-hidden="true"></i></a>
+<a href="https://www.linkedin.com/in/shanymo/" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">LinkedIn<i class="ar" aria-hidden="true"></i></a>
 <div style="margin-top: auto; padding-top: 24px; display: flex; align-items: flex-end; gap: 10px">
 <img src="/assets/trex-fluent-3d.png" width="64" height="64" alt="">
 <p style="margin: 0 0 12px; font-size: 13px; line-height: 1.4">I guard the menu.<br>Tiny arms, big welcome.</p>

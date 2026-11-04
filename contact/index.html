@@ -89,8 +89,11 @@ header .nav-links{display:none !important}
 /* phone fixes (4 Nov): chip glow not clipped, footer clear of Ask Mo */
 @media (max-width:600px){
 .chips{padding-top:8px !important;padding-bottom:18px !important;margin-top:-8px !important;margin-bottom:-18px !important;padding-left:8px !important;margin-left:-8px !important}
-.sitecopy{padding-bottom:84px !important}
+.sitecopy{padding-bottom:140px !important}
 }
+
+/* arrow icon (4 Nov): same weight on every device, no emoji on iOS */
+.ar{display:inline-block;width:.68em;height:.68em;margin-left:.18em;vertical-align:-.02em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat}
 </style>
 
 </head>
@@ -119,12 +122,12 @@ header .nav-links{display:none !important}
 <p class="sub" style="margin: 0 0 16px">Hiring, or building something new? Either way, say hi.</p>
 <h1 class="H big">Let's build<br>something.</h1>
 <div class="ctas">
-<button class="cta light H" onClick="{{sayHello}}">Say hello ↗︎</button>
+<button class="cta light H" onClick="{{sayHello}}">Say hello<i class="ar" aria-hidden="true"></i></button>
 </div>
 </div>
 <div class="mini">
 <button onClick="{{copyEmail}}">{{copyLabel}}</button>
-<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener">LinkedIn ↗︎</a>
+<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener">LinkedIn<i class="ar" aria-hidden="true"></i></a>
 </div>
 <p class="hint">Grab one · click to make the pile jump</p>
 </section>
@@ -142,7 +145,7 @@ header .nav-links{display:none !important}
 <div class="mrow"><label for="cf-subj">Subject</label><input id="cf-subj" type="text" value="{{subject}}" onInput="{{onSubj}}"></div>
 <label for="cf-msg" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Message</label>
 <textarea id="cf-msg" placeholder="{{placeholder}}" onInput="{{onMsg}}">{{msg}}</textarea>
-<div class="mfoot"><span style="font-size: 12px; color: #5E5E5E">Opens in your email app, ready to send.</span><button class="cta dark H" style="min-height: 48px; padding: 0 22px; box-shadow: none" onClick="{{send}}">Send ↗︎</button></div>
+<div class="mfoot"><span style="font-size: 12px; color: #5E5E5E">Opens in your email app, ready to send.</span><button class="cta dark H" style="min-height: 48px; padding: 0 22px; box-shadow: none" onClick="{{send}}">Send<i class="ar" aria-hidden="true"></i></button></div>
 </div>
 </div>
 </template>
@@ -160,8 +163,8 @@ header .nav-links{display:none !important}
 <a class="ml on" href="/contact/" aria-current="page">Contact</a>
 </nav>
 <div style="height: 1px; margin: 30px 0 18px; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div>
-<a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com ↗︎</a>
-<a href="https://www.linkedin.com/in/shanymo/" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">LinkedIn ↗︎</a>
+<a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com<i class="ar" aria-hidden="true"></i></a>
+<a href="https://www.linkedin.com/in/shanymo/" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">LinkedIn<i class="ar" aria-hidden="true"></i></a>
 <div style="margin-top: auto; padding-top: 24px; display: flex; align-items: flex-end; gap: 10px">
 <img src="/assets/trex-fluent-3d.png" width="64" height="64" alt="">
 <p style="margin: 0 0 12px; font-size: 13px; line-height: 1.4">I guard the menu.<br>Tiny arms, big welcome.</p>
