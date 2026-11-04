@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work — Shany Mo</title>
-<meta name="description" content="Seven cases, two lenses: the product calls and the design behind them.">
+<meta name="description" content="Six cases, two lenses: the product calls and the design behind them.">
 <meta property="og:title" content="Work — Shany Mo">
-<meta property="og:description" content="Seven cases, two lenses: the product calls and the design behind them.">
+<meta property="og:description" content="Six cases, two lenses: the product calls and the design behind them.">
 <meta property="og:type" content="website">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/heros-bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -207,9 +207,9 @@ html{scrollbar-gutter:stable}
 
 <section class="topsec" style="padding: 8px 0 56px">
 <div class="rule"></div>
-<p style="margin: 0; padding: 12px 0; font-size: 13.5px">Work · Eight cases · Two lenses on every one</p>
+<p style="margin: 0; padding: 12px 0; font-size: 13.5px">Work · Seven cases · Two lenses on every one</p>
 <div class="rule"></div>
-<h1 class="big" style="margin: 36px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; text-transform: uppercase; max-width: 1100px">The bet. The craft. <span style="background: linear-gradient(90deg,#00FFF7,#FFFF00); padding: 0 12px">What moved.</span></h1>
+<h1 class="big" style="margin: 36px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; text-transform: uppercase; max-width: 1100px">The bet. The craft. <span style="display: inline-block; line-height: 1.08; background: linear-gradient(90deg,#00FFF7,#FFFF00); padding: 0 12px">What moved.</span></h1>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 36px">
 <div class="lens2" role="group" aria-label="Choose a lens for every case">
 <span class="pill" aria-hidden="true" style="left: {{pillLeft}}; width: {{pillW}}"></span>
@@ -693,7 +693,7 @@ class Component extends DCLogic {
   renderVals() {
     const st = this.state;
     const scribOn = this.props.scribbles ?? true;
-    const cases = this.data.map((d, i) => {
+    const cases = this.data.filter((d) => d.id !== 'agent' /* hidden for now */).map((d, i) => {
       const lens = st.over[d.id] || st.lens;
       const design = lens === 'design';
       const si = st.step[d.id] || 0;
