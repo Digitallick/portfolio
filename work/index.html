@@ -22,13 +22,13 @@ html,body{margin:0;background:var(--bg);overflow-x:hidden}
 body{color:var(--ink);font-family:var(--sans);font-size:15px;letter-spacing:.5px;line-height:1.55;-webkit-font-smoothing:antialiased;background:linear-gradient(to top,var(--wash) 0%,var(--bg) 12%)}
 canvas.bgfx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
 .wrap{position:relative;z-index:1;max-width:1320px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px),2rem) 0}
-@media (max-width:600px){.wrap{padding-left:16px;padding-right:16px}}
+@media (max-width:600px){.wrap{padding-left:2rem;padding-right:2rem}}
 a{color:var(--ink)}
 :focus-visible{outline:2px solid var(--magd);outline-offset:3px}
 h1,h2,h3{font-weight:700;text-transform:uppercase;margin:0;text-wrap:balance}
 p{margin:0}
 header.site{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:24px 0}
-header.site svg{display:block;height:30px;width:auto}
+header.site>a svg{display:block;height:30px;width:auto}
 .nav{display:flex;flex-wrap:wrap;gap:4px 28px;font-size:13.5px;text-transform:uppercase}
 .nav a{text-decoration:none;padding:12px 0}
 .nav a.on{text-decoration:underline;text-decoration-color:var(--mag);text-decoration-thickness:3px;text-underline-offset:6px}
@@ -126,7 +126,7 @@ body[data-way="tab"] .go,body[data-way="link"] .tab{display:none}
 .dock .jumps::-webkit-scrollbar{display:none}
 .dock .jc{min-height:40px;padding:0 14px;font-size:12.5px;border-color:transparent}
 .dock .jc[aria-current="true"]{border-color:#262626}
-@media (max-width:600px){.jumps:not(.dk){flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px}.jumps::-webkit-scrollbar{display:none}.jc .nm{display:none}.dock .jc{padding:0 12px}}
+@media (max-width:600px){.jumps:not(.dk){flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:28px -2rem 14px -8px;padding:8px 2rem 18px 8px}.jumps::-webkit-scrollbar{display:none}.jc .nm{display:none}.dock .jc{padding:0 12px}}
 @media (prefers-reduced-motion:reduce){.dock{transition:none}}
 
 
@@ -195,8 +195,8 @@ body[data-way="tab"] .go,body[data-way="link"] .tab{display:none}
   <div id="cases"></div>
   <div style="height:72px"></div>
 <footer class="sitefoot" style="border-top: 1px solid #262626; padding: 56px 0 72px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; font-family: 'Heros','TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif; letter-spacing: .5px">
-<a href="/inventory/" style="font-weight: 700; font-size: 1.6rem; text-transform: uppercase; padding: 8px 0; color: #262626">Every other project ↗</a>
-<a href="/contact/" style="font-size: 13.5px; text-transform: uppercase; padding: 12px 0; color: #262626">Say hello ↗</a>
+<a href="/inventory/" style="font-weight: 700; font-size: 1.6rem; text-transform: uppercase; padding: 8px 0; color: #262626">Every other project ↗︎</a>
+<a href="/contact/" style="font-size: 13.5px; text-transform: uppercase; padding: 12px 0; color: #262626">Say hello ↗︎</a>
 </footer>
 </div>
 <div class="siteribbon" style="position: relative; z-index: 1; overflow: hidden; border-top: 1px solid #E4E4E4; padding: 10px 0; background: rgba(255,255,255,0.7); font-family: 'Heros','TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif; letter-spacing: .5px; color: #262626">
@@ -222,7 +222,7 @@ body[data-way="tab"] .go,body[data-way="link"] .tab{display:none}
     <div class="knock"><button class="lockbtn" type="button" aria-label="Knock on the lock"><img src="img/locked.png" alt=""></button><p class="tapline">Tap the lock or the monster</p></div>
     <form class="keyrow" hidden><label for="code" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Key</label><input id="code" type="password" placeholder="The key, please" autocomplete="off"><button type="submit">Unlock</button></form>
     <p class="msg" aria-live="polite"></p>
-    <p class="nokey">No key? <a href="/contact/">Ask Mo for one ↗</a></p>
+    <p class="nokey">No key? <a href="/contact/">Ask Mo for one ↗︎</a></p>
   </div>
 </div>
 

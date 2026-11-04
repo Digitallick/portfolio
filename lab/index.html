@@ -162,6 +162,12 @@ html{scrollbar-gutter:stable}
 .chips[data-more="r"]{-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 96px),transparent);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 96px),transparent)}
 .chips[data-more="l"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px);mask-image:linear-gradient(90deg,transparent,#000 40px)}
 .chips[data-more="lr"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 96px),transparent);mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 96px),transparent)}
+
+/* phone fixes (4 Nov): chip glow not clipped, footer clear of Ask Mo */
+@media (max-width:600px){
+.chips{padding-top:8px !important;padding-bottom:18px !important;margin-top:-8px !important;margin-bottom:-18px !important;padding-left:8px !important;margin-left:-8px !important}
+.sitecopy{padding-bottom:84px !important}
+}
 </style>
 
 </head>
@@ -250,7 +256,7 @@ html{scrollbar-gutter:stable}
 <p style="margin: 0 0 8px; font-size: 13.5px; text-transform: uppercase">Live demo · attestor v0.1.0 · runs in your browser</p>
 <h3 class="H" style="margin: 0; font-size: 2.4rem; line-height: 1; letter-spacing: -1px">Try to sneak a bad memo past it</h3>
 </div>
-<a href="https://github.com/digitallick/attestor" target="_blank" rel="noopener" style="font-size: 13.5px; text-transform: uppercase; padding: 10px 0">Repo ↗</a>
+<a href="https://github.com/digitallick/attestor" target="_blank" rel="noopener" style="font-size: 13.5px; text-transform: uppercase; padding: 10px 0">Repo ↗︎</a>
 </div>
 <div class="lab2">
 <div>
@@ -294,7 +300,7 @@ html{scrollbar-gutter:stable}
 <p style="margin: 0 0 8px; font-size: 13.5px; text-transform: uppercase">AI agent plugin · 7 skills · eval results v0.1.0</p>
 <h3 class="H" style="margin: 0; font-size: 2.4rem; line-height: 1; letter-spacing: -1px">Same model. With and without the kit.</h3>
 </div>
-<a href="https://github.com/digitallick/regulated-ai-pm" target="_blank" rel="noopener" style="font-size: 13.5px; text-transform: uppercase; padding: 10px 0">Repo ↗</a>
+<a href="https://github.com/digitallick/regulated-ai-pm" target="_blank" rel="noopener" style="font-size: 13.5px; text-transform: uppercase; padding: 10px 0">Repo ↗︎</a>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px">
 <template sc-for list="{{skills}}" as="k" hint-placeholder-count="7">
@@ -381,8 +387,8 @@ html{scrollbar-gutter:stable}
 </section>
 
 <footer style="border-top: 1px solid #262626; padding: 56px 0 72px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center">
-<a href="/work/" style="font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.6rem; text-transform: uppercase; padding: 8px 0">The work behind the experiments ↗</a>
-<a href="/contact/" style="font-size: 13.5px; text-transform: uppercase; padding: 12px 0">Say hello ↗</a>
+<a href="/work/" style="font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.6rem; text-transform: uppercase; padding: 8px 0">The work behind the experiments ↗︎</a>
+<a href="/contact/" style="font-size: 13.5px; text-transform: uppercase; padding: 12px 0">Say hello ↗︎</a>
 </footer>
 
 
@@ -399,7 +405,7 @@ html{scrollbar-gutter:stable}
 </template>
 </div>
 </div>
-<p style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4">©Made on Earth by Shany Mo while eating 🍟</p>
+<p class="sitecopy" style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4">©Made on Earth by Shany Mo while eating 🍟</p>
 </div>
 
 <template sc-if value="{{chatClosed}}" hint-placeholder-val="{{ true }}">
@@ -448,7 +454,7 @@ Ask Mo
 </div>
 <div style="padding: 16px 24px 6px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
 <button onClick="{{askCopy}}" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; background: #262626; color: #FFFFFF; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px; border: 0; cursor: pointer; font-family: inherit; font-size: 13px">{{copyLabel}}</button>
-<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px">LinkedIn ↗</a>
+<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px">LinkedIn ↗︎</a>
 </div>
 <div style="padding: 4px 24px 10px; text-align: center">
 <button onClick="{{backToFaq}}" style="min-height: 44px; padding: 0 12px; border: 0; background: transparent; color: #262626; cursor: pointer; font-family: inherit; font-size: 13px; text-decoration: underline">← Back to the FAQs</button>
@@ -479,8 +485,8 @@ Ask Mo
 <a class="ml" href="/contact/">Contact</a>
 </nav>
 <div style="height: 1px; margin: 30px 0 18px; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div>
-<a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com ↗</a>
-<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">LinkedIn ↗</a>
+<a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com ↗︎</a>
+<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">LinkedIn ↗︎</a>
 <div style="margin-top: auto; padding-top: 24px; display: flex; align-items: flex-end; gap: 10px">
 <img src="/assets/inline/9c036bdc2ad0.png" width="64" height="64" alt="">
 <p style="margin: 0 0 12px; font-size: 13px; line-height: 1.4">I guard the menu.<br>Tiny arms, big welcome.</p>

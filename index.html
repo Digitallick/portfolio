@@ -91,6 +91,17 @@ html{scrollbar-gutter:stable}
 
 /* short laptop screens (13"): tighten the hero so the whole page, footer included, fits without scrolling */
 @media (min-width:901px) and (max-height:900px){.hh{font-size:min(5rem,8.6vh) !important;margin-top:14px !important}.hh + div{margin:18px 0 16px !important}.proof{padding-top:16px !important}}
+
+/* phone fixes (4 Nov): chip glow not clipped, footer clear of Ask Mo */
+@media (max-width:600px){
+.chips{padding-top:8px !important;padding-bottom:18px !important;margin-top:-8px !important;margin-bottom:-18px !important;padding-left:8px !important;margin-left:-8px !important}
+.sitecopy{padding-bottom:84px !important}
+}
+@media (max-width:600px){
+h1.hh span{background-size:100% 76% !important;background-repeat:no-repeat !important;background-position:0 62% !important}
+.napper{display:none !important}
+.proof{padding-bottom:32px !important}
+}
 </style>
 
 </head>
@@ -137,7 +148,7 @@ html{scrollbar-gutter:stable}
 <p style="margin: 0 0 10px; font-size: 13.5px; text-transform: uppercase">{{current.where}}</p>
 <p class="pf-h" style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 2rem; line-height: 1.05; text-transform: uppercase; letter-spacing: -0.5px">{{current.headline}}</p>
 <p class="pf-b" style="margin: 12px 0 0; font-size: 1.05rem; line-height: 1.55; max-width: 620px">{{current.body}}</p>
-<p style="margin: 14px 0 0; line-height: 1.45">{{current.note}} <a href="{{current.href}}" style="white-space: nowrap; text-transform: uppercase; font-size: 13.5px; margin-left: 6px">{{current.cta}} ↗</a></p>
+<p style="margin: 14px 0 0; line-height: 1.45">{{current.note}} <a href="{{current.href}}" style="white-space: nowrap; text-transform: uppercase; font-size: 13.5px; margin-left: 6px">{{current.cta}} ↗︎</a></p>
 </div>
 <div>
 <template sc-if value="{{eggNote}}" hint-placeholder-val="{{ false }}">
@@ -210,7 +221,7 @@ Ask Mo
 </div>
 <div style="padding: 16px 24px 6px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
 <button onClick="{{askCopy}}" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; background: #262626; color: #FFFFFF; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px; border: 0; cursor: pointer; font-family: inherit; font-size: 13px">{{copyLabel}}</button>
-<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px">LinkedIn ↗</a>
+<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px">LinkedIn ↗︎</a>
 </div>
 <div style="padding: 4px 24px 10px; text-align: center">
 <button onClick="{{backToFaq}}" style="min-height: 44px; padding: 0 12px; border: 0; background: transparent; color: #262626; cursor: pointer; font-family: inherit; font-size: 13px; text-decoration: underline">← Back to the FAQs</button>
@@ -243,8 +254,8 @@ Ask Mo
 <a class="ml" href="/contact/">Contact</a>
 </nav>
 <div style="height: 1px; margin: 30px 0 18px; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div>
-<a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com ↗</a>
-<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">LinkedIn ↗</a>
+<a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com ↗︎</a>
+<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">LinkedIn ↗︎</a>
 <div style="margin-top: auto; padding-top: 24px; display: flex; align-items: flex-end; gap: 10px">
 <img src="/assets/inline/9c036bdc2ad0.png" width="64" height="64" alt="">
 <p style="margin: 0 0 12px; font-size: 13px; line-height: 1.4">I guard the menu.<br>Tiny arms, big welcome.</p>

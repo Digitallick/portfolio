@@ -85,6 +85,12 @@ header .nav-links{display:none !important}
 .pit.boxed .mini{left:18px !important}
 .pit.boxed .hint{right:18px !important}
 @media (max-width:600px){.pit.boxed{border-radius:20px;height:calc(100vh - 250px);height:calc(100svh - 250px);min-height:480px}}
+
+/* phone fixes (4 Nov): chip glow not clipped, footer clear of Ask Mo */
+@media (max-width:600px){
+.chips{padding-top:8px !important;padding-bottom:18px !important;margin-top:-8px !important;margin-bottom:-18px !important;padding-left:8px !important;margin-left:-8px !important}
+.sitecopy{padding-bottom:84px !important}
+}
 </style>
 
 </head>
@@ -113,12 +119,12 @@ header .nav-links{display:none !important}
 <p class="sub" style="margin: 0 0 16px">Hiring, or building something new? Either way, say hi.</p>
 <h1 class="H big">Let's build<br>something.</h1>
 <div class="ctas">
-<button class="cta light H" onClick="{{sayHello}}">Say hello ↗</button>
+<button class="cta light H" onClick="{{sayHello}}">Say hello ↗︎</button>
 </div>
 </div>
 <div class="mini">
 <button onClick="{{copyEmail}}">{{copyLabel}}</button>
-<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener">LinkedIn ↗</a>
+<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener">LinkedIn ↗︎</a>
 </div>
 <p class="hint">Grab one · click to make the pile jump</p>
 </section>
@@ -136,7 +142,7 @@ header .nav-links{display:none !important}
 <div class="mrow"><label for="cf-subj">Subject</label><input id="cf-subj" type="text" value="{{subject}}" onInput="{{onSubj}}"></div>
 <label for="cf-msg" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Message</label>
 <textarea id="cf-msg" placeholder="{{placeholder}}" onInput="{{onMsg}}">{{msg}}</textarea>
-<div class="mfoot"><span style="font-size: 12px; color: #5E5E5E">Opens in your email app, ready to send.</span><button class="cta dark H" style="min-height: 48px; padding: 0 22px; box-shadow: none" onClick="{{send}}">Send ↗</button></div>
+<div class="mfoot"><span style="font-size: 12px; color: #5E5E5E">Opens in your email app, ready to send.</span><button class="cta dark H" style="min-height: 48px; padding: 0 22px; box-shadow: none" onClick="{{send}}">Send ↗︎</button></div>
 </div>
 </div>
 </template>
@@ -154,8 +160,8 @@ header .nav-links{display:none !important}
 <a class="ml on" href="/contact/" aria-current="page">Contact</a>
 </nav>
 <div style="height: 1px; margin: 30px 0 18px; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div>
-<a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com ↗</a>
-<a href="https://www.linkedin.com/in/shanymo/" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">LinkedIn ↗</a>
+<a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com ↗︎</a>
+<a href="https://www.linkedin.com/in/shanymo/" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">LinkedIn ↗︎</a>
 <div style="margin-top: auto; padding-top: 24px; display: flex; align-items: flex-end; gap: 10px">
 <img src="/assets/trex-fluent-3d.png" width="64" height="64" alt="">
 <p style="margin: 0 0 12px; font-size: 13px; line-height: 1.4">I guard the menu.<br>Tiny arms, big welcome.</p>
