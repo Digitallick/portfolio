@@ -63,11 +63,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .bk{border-radius:24px;min-height:220px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;border:1px dashed #9A9A9A}
 .wig{animation:wig .7s cubic-bezier(.3,1.6,.5,1)}
 @keyframes wig{0%{transform:rotate(0) scale(1)}20%{transform:rotate(-14deg) scale(1.08)}40%{transform:rotate(12deg) scale(.96)}60%{transform:rotate(-8deg)}80%{transform:rotate(5deg)}100%{transform:rotate(0) scale(1)}}
-.hero{height:440px}
+.hero{height:520px}
 .asst{position:absolute;right:0;bottom:18px;display:flex;align-items:flex-end;gap:8px;pointer-events:none}
 .asst .pet{pointer-events:auto;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .nudge{display:none}
-@media (max-width:600px){.hero{height:300px}.big{font-size:3rem !important}.sub{font-size:1rem !important}.asst p{display:none}.asst .pet{transform:scale(.7);transform-origin:100% 100%}.nudge{display:flex}.asst{bottom:auto;top:6px}.hint{display:none}.shelf{grid-template-columns:minmax(0,1fr)}.term{font-size:12px}}
+@media (max-width:600px){.hero{height:360px}.big{font-size:2.4rem !important}.sub{font-size:1rem !important}.asst p{display:none}.asst .pet{transform:scale(.7);transform-origin:100% 100%}.nudge{display:flex}.asst{bottom:auto;top:6px}.hint{display:none}.shelf{grid-template-columns:minmax(0,1fr)}.term{font-size:12px}}
 .lab2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
 @media (max-width:900px){.lab2{grid-template-columns:minmax(0,1fr)}.big{font-size:3rem !important}.panel{left:16px !important;right:16px !important;width:auto !important}}
 @media (prefers-reduced-motion:reduce){.rule,.bubble,.fry,.tube i{animation:none}.jar:hover .glass{transform:none}.ask:hover{transform:none}}
@@ -177,7 +177,12 @@ html{scrollbar-gutter:stable}
 
 /* arrow icon (4 Nov): same weight on every device, no emoji on iOS */
 .ar{display:inline-block;width:.68em;height:.68em;margin-left:.18em;vertical-align:-.02em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat}
-@media (max-width:600px){.hlt{background-size:100% 80% !important;background-repeat:no-repeat !important;background-position:0 60% !important;line-height:1.3}.egg{margin-bottom:40px}}
+@media (max-width:600px){.egg{margin-bottom:40px}}
+
+/* Ask Mo: one type setting on every page */
+#askmo{font-family:'Neue Haas Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;letter-spacing:.5px;color:#262626}
+#askmo button,#askmo input{font-family:inherit}
+.ask{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif}
 </style>
 
 </head>
@@ -207,8 +212,7 @@ html{scrollbar-gutter:stable}
 <div ref="{{plateWrap}}" onClick="{{reroll}}" onPointerMove="{{plateMove}}" onPointerLeave="{{plateLeave}}" class="hero" style="position: relative; cursor: crosshair">
 <canvas ref="{{plateRef}}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: .78"></canvas>
 <div style="position: absolute; left: 0; bottom: 28px; pointer-events: none">
-<h1 class="H big" style="margin: 0; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px">The Lab.</h1>
-<p class="H sub" style="margin: 10px 0 0; font-size: 1.5rem; letter-spacing: -0.3px">A head of product who still <span class="hlt" style="background: linear-gradient(90deg,#00FFF7,#DD00FF); padding: 0 8px; box-decoration-break: clone; -webkit-box-decoration-break: clone">ships code.</span></p>
+<h1 class="H big" style="margin: 0; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; max-width: 1100px">The Lab. A head of product who still <span style="background: linear-gradient(90deg,#00FFF7,#DD00FF) 0 64% / 100% 74% no-repeat; box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 12px">ships code.</span></h1>
 </div>
 <div class="asst">
 <p style="margin: 0 0 24px; font-size: 12px; text-align: right; line-height: 1.4">Lab assistant.<br>Not insured.<br>Tiny arms, steady hands.</p>
@@ -436,11 +440,14 @@ Ask Mo
 </div>
 <template sc-if value="{{faqMode}}" hint-placeholder-val="{{ true }}">
 <div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; min-height: 180px">
+<template sc-if value="{{askNone}}" hint-placeholder-val="{{ true }}"><div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px"><p style="margin: 0; line-height: 1.55">Hi, I'm Mo's FAQ twin. Pick a question below, or type your own.</p></div></template>
+<template sc-if value="{{askHas}}" hint-placeholder-val="{{ false }}">
 <div style="align-self: flex-end; max-width: 85%; background: #262626; color: #FFFFFF; border-radius: 18px 18px 4px 18px; padding: 12px 16px; line-height: 1.45">{{q.question}}</div>
 <div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px">
 <p style="margin: 0; line-height: 1.55">{{q.answer}}</p>
 <p style="margin: 10px 0 0; font-size: 11px; text-transform: uppercase">Source — {{q.source}}</p>
 </div>
+</template>
 </div>
 <div style="padding: 0 20px 14px; display: flex; flex-wrap: wrap; gap: 6px">
 <template sc-for list="{{questions}}" as="item" hint-placeholder-count="4">
@@ -600,9 +607,9 @@ class Component extends DCLogic {
   askVals() {
     const st = this.state || {};
     const qs = [
-      { question: 'What are you doing now?', answer: 'Head of Product, Strategic Ventures Incubation at BCAA since February 2025. My predictive fleet dashboard work contributed to 36% higher portfolio profitability and 33% revenue growth.', source: 'Work, 02' },
-      { question: 'Do you build with AI yourself?', answer: 'Yes. I built an evidence-backed research prototype on Gemini, Qdrant and Streamlit, and I maintain attestor, an open-source compliance checker for LLM outputs.', source: 'Work, 01 · Lab' },
-      { question: 'Biggest partnership win?', answer: 'At EPIC Semiconductors I built a $50M+ commercial pipeline growing 29% a year, including a $7M ADAS/AV OEM opportunity.', source: 'Work, 06' },
+      { question: 'What are you doing now?', answer: 'Head of Product, Strategic Ventures Incubation at BCAA since February 2025. My predictive fleet dashboard work contributed to 36% higher portfolio profitability and 33% revenue growth.', source: 'Work, 01' },
+      { question: 'Do you build with AI yourself?', answer: 'Yes. I built an evidence-backed research prototype on Gemini, Qdrant and Streamlit, and I maintain attestor, an open-source compliance checker for LLM outputs.', source: 'Lab' },
+      { question: 'Biggest partnership win?', answer: 'At EPIC Semiconductors I built a $50M+ commercial pipeline growing 29% a year, including a $7M ADAS/AV OEM opportunity.', source: 'Inventory' },
       { question: 'Rates & salary?', answer: 'Depends on the shape: a full-time role or a consulting project. That is not in my published record, so I will not guess. Email hello@shanymo.com with a line about the role or project and Shany will answer directly.', source: 'none — guardrail' }
     ];
     const qi = st.askq || 0;
@@ -643,7 +650,7 @@ class Component extends DCLogic {
   menuVals() { const st = this.state || {}; return { menuOpen: !!st.menu, openMenu: () => this.setState({ menu: true }), closeMenu: () => this.setState({ menu: false }) }; }
   constructor(props) {
     super(props);
-    this.state = { open: 'attestor', stage: 'All', preset: 0, ran: false, skill: 4, step: 0, chat: false, q: 0 };
+    this.state = { open: 'attestor', stage: 'All', preset: 0, ran: false, skill: 4, step: 0, chat: false, q: null };
     // ── THE SHELF. To add an experiment, add one line here. stage: Alive | Hatching | Idea | Fossil
     this.experiments = [
       { id: 'attestor', name: 'attestor', kind: 'Python · MIT · v0.1.0', stage: 'Alive', line: 'Checks AI answers against finance rules and points at the sentence that fails.', cta: 'Run it ▸', tint: '#F5C9FF' },
@@ -860,7 +867,12 @@ class Component extends DCLogic {
         o.connect(bp); bp.connect(lp); lp.connect(g); g.connect(out); o.start(t); tr.start(t); o.stop(t + dur + 0.02); tr.stop(t + dur + 0.02);
       };
       const r = 0.9 + Math.random() * 0.25;
-      if (kind === 'rawr') note(t0, 0.62, 240 * r, 435 * r, 210 * r, { trill: 24, depth: 0.08 });
+      if (kind === 'pop') { const o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'sine'; o.frequency.setValueAtTime(950, t0); o.frequency.exponentialRampToValueAtTime(180, t0 + 0.09); g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(0.6, t0 + 0.005); g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.12); o.connect(g); g.connect(out); o.start(t0); o.stop(t0 + 0.14);
+        const len = Math.floor(ctx.sampleRate * 0.5), buf = ctx.createBuffer(1, len, ctx.sampleRate), dd = buf.getChannelData(0); for (let i = 0; i < len; i++) dd[i] = Math.random() * 2 - 1;
+        const nz = ctx.createBufferSource(); nz.buffer = buf; const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.Q.value = 0.8; bp.frequency.setValueAtTime(2400, t0 + 0.06); bp.frequency.exponentialRampToValueAtTime(700, t0 + 0.5);
+        const ng = ctx.createGain(); ng.gain.setValueAtTime(0.0001, t0 + 0.06); ng.gain.exponentialRampToValueAtTime(0.22, t0 + 0.1); ng.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.55); nz.connect(bp); bp.connect(ng); ng.connect(out); nz.start(t0 + 0.06); nz.stop(t0 + 0.56); }
+      else if (kind === 'clink') { [0, 0.07].forEach((d, k) => { const o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'sine'; o.frequency.value = k ? 2650 : 1980; g.gain.setValueAtTime(0.0001, t0 + d); g.gain.exponentialRampToValueAtTime(0.18, t0 + d + 0.004); g.gain.exponentialRampToValueAtTime(0.0001, t0 + d + 0.35); o.connect(g); g.connect(out); o.start(t0 + d); o.stop(t0 + d + 0.36); }); }
+      else if (kind === 'rawr') note(t0, 0.62, 240 * r, 435 * r, 210 * r, { trill: 24, depth: 0.08 });
       else if (kind === 'squeak') note(t0, 0.18, 700 * r, 1150 * r, 900 * r, { type: 'triangle', trill: 30, depth: 0.03, f1: 1600, f2: 2400, f3: 1800, peak: 0.5, vol: 0.4 });
       else if (kind === 'cry') { note(t0, 0.5, 520, 560, 380, { trill: 7, depth: 0.05, f1: 1100, f2: 1400, f3: 800, peak: 0.2 }); note(t0 + 0.55, 0.9, 540, 600, 300, { trill: 6, depth: 0.07, f1: 1100, f2: 1500, f3: 700, peak: 0.15 }); }
       else if (kind === 'whimper') { note(t0, 0.28, 520, 600, 430, { type: 'triangle', trill: 8, depth: 0.04, f1: 1200, f2: 1500, f3: 900, vol: 0.35 }); note(t0 + 0.34, 0.5, 470, 520, 330, { type: 'triangle', trill: 6, depth: 0.05, f1: 1100, f2: 1300, f3: 700, vol: 0.35 }); }
@@ -878,13 +890,13 @@ class Component extends DCLogic {
     const st = this.state;
     const stageColor = { Alive: '#00756F', Hatching: '#9A5A00', Idea: '#8A00A3', Fossil: '#6B6B6B' };
     const stageList = ['All', 'Alive', 'Hatching', 'Idea'];
-    const stages = stageList.map((s) => ({ label: s, pressed: st.stage === s ? 'true' : 'false', cls: st.stage === s ? 'chip on' : 'chip', pick: () => this.setState({ stage: s }) }));
+    const stages = stageList.map((s) => ({ label: s, pressed: st.stage === s ? 'true' : 'false', cls: st.stage === s ? 'chip on' : 'chip', pick: () => { this.moVoice('clink'); this.setState({ stage: s }); } }));
     const jars = this.experiments.filter((e) => st.stage === 'All' || e.stage === st.stage).map((e, i) => ({
       name: e.name, kind: e.kind, stage: e.stage, line: e.line, cta: e.cta, tint: e.tint,
       stampColor: stageColor[e.stage] || '#262626',
       cls: (st.open === e.id ? 'jar on' : 'jar') + ((this.props.table || 'Lab bench') === 'None' ? ' nobench' : '') + (st.fizzId === e.id ? (st.fizzN % 2 ? ' f1' : ' f2') : ''), fill: e.stage === 'Alive' ? '72%' : e.stage === 'Hatching' ? '42%' : '10%', pressed: st.open === e.id ? 'true' : 'false',
       bubbles: e.stage === 'Idea' ? [] : [0, 1, 2].map((k) => 'left: ' + (30 + k * 22 + (i * 7) % 15) + '%; width: ' + (6 + k * 3) + 'px; height: ' + (6 + k * 3) + 'px; animation-delay: ' + (k * 1.1 + i * 0.4).toFixed(1) + 's'),
-      pick: () => { const fz = (this.props.openEffect || 'Fizz') === 'Fizz' && !this.reduce; this.setState({ open: e.id, step: 0, fizzId: fz ? e.id : null, fizzN: (st.fizzN || 0) + 1 }); setTimeout(() => { const t = document.getElementById('lab-open'); if (t && t.scrollIntoView) t.scrollIntoView({ behavior: this.reduce ? 'auto' : 'smooth', block: 'start' }); }, fz ? 750 : 60); }
+      pick: () => { const fz = (this.props.openEffect || 'Fizz') === 'Fizz' && !this.reduce; this.moVoice(fz ? 'pop' : 'clink'); this.setState({ open: e.id, step: 0, fizzId: fz ? e.id : null, fizzN: (st.fizzN || 0) + 1 }); setTimeout(() => { const t = document.getElementById('lab-open'); if (t && t.scrollIntoView) t.scrollIntoView({ behavior: this.reduce ? 'auto' : 'smooth', block: 'start' }); }, fz ? 750 : 60); }
     }));
     const c = this.cases[st.preset];
     const presets = this.cases.map((p, i) => ({ label: p.label, pressed: st.preset === i ? 'true' : 'false', cls: st.preset === i ? 'preset on' : 'preset', pick: () => { this.memo = p.answer; if (this.memoEl) this.memoEl.value = p.answer; this.setState({ preset: i, ran: false }); } }));
@@ -918,9 +930,9 @@ class Component extends DCLogic {
     const sNow = Math.min(st.step, stepData.length - 1);
     const steps = stepData.map((s, i) => ({ n: String(i + 1).padStart(2, '0'), title: s.title, body: s.body, cls: i <= sNow ? 'step' : 'step off' }));
     const qs = [
-      { question: 'What are you doing now?', answer: 'Head of Product, Strategic Ventures Incubation at BCAA since February 2025. My predictive fleet dashboard work contributed to 36% higher portfolio profitability and 33% revenue growth.', source: 'Bets, 01' },
-      { question: 'Do you build with AI yourself?', answer: 'Yes. I built an evidence-backed research prototype on Gemini, Qdrant and Streamlit, and I maintain attestor, an open-source compliance checker for LLM outputs.', source: 'Bets, 02 · Lab' },
-      { question: 'Biggest partnership win?', answer: 'At EPIC Semiconductors I built a $50M+ commercial pipeline growing 29% a year, including a $7M ADAS/AV OEM opportunity.', source: 'Bets, 05' },
+      { question: 'What are you doing now?', answer: 'Head of Product, Strategic Ventures Incubation at BCAA since February 2025. My predictive fleet dashboard work contributed to 36% higher portfolio profitability and 33% revenue growth.', source: 'Work, 01' },
+      { question: 'Do you build with AI yourself?', answer: 'Yes. I built an evidence-backed research prototype on Gemini, Qdrant and Streamlit, and I maintain attestor, an open-source compliance checker for LLM outputs.', source: 'Lab' },
+      { question: 'Biggest partnership win?', answer: 'At EPIC Semiconductors I built a $50M+ commercial pipeline growing 29% a year, including a $7M ADAS/AV OEM opportunity.', source: 'Inventory' },
       { question: 'Rates & salary?', answer: 'Depends on the shape: a full-time role or a consulting project. That is not in my published record, so I will not guess. Email hello@shanymo.com with a line about the role or project and Shany will answer directly.', source: 'none — guardrail' }
     ];
     const questions = qs.map((d, i) => ({ question: d.question, pressed: st.q === i ? 'true' : 'false', pick: () => { this.setState({ q: i }); if (/salary/i.test(d.question)) this.moneyRain(); }, style: 'min-height: 44px; padding: 0 14px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13px; letter-spacing: 0.3px; ' + (st.q === i ? 'background: #FFFFFF; color: #262626; border: 1px solid #262626; font-weight: 700; box-shadow: -5px 4px 14px -6px rgba(221,0,255,0.45), 5px 4px 14px -6px rgba(0,255,247,0.55), 0 7px 12px -8px rgba(252,160,2,0.5)' : 'background: #FFFFFF; color: #262626; border: 1px solid #CFCFCF') }));
@@ -954,7 +966,7 @@ class Component extends DCLogic {
       send: () => this.setState({ mode: 'onb' }),
       onAskKey: (e) => { if (e && e.key === 'Enter') { if (e.preventDefault) e.preventDefault(); this.setState({ mode: 'onb' }); } },
       backToFaq: () => this.setState({ mode: 'faq' }),
-      questions, q: qs[st.q]
+      questions, q: qs[st.q] || qs[0], askHas: st.q !== null && st.q !== undefined, askNone: st.q === null || st.q === undefined
     };
   }
 }
