@@ -4,750 +4,477 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work — Shany Mo</title>
-<meta name="description" content="Six cases, two lenses: the product calls and the design behind them.">
+<meta name="description" content="Four case files: predictive AI operations, a legacy rider-app transformation, a regulated investor-relations platform and a three-sided venture marketplace.">
 <meta property="og:title" content="Work — Shany Mo">
-<meta property="og:description" content="Six cases, two lenses: the product calls and the design behind them.">
+<meta property="og:description" content="Four case files: the bet, the call and the outcome, with the live product behind each.">
 <meta property="og:type" content="website">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/heros-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <script>if(/^staging\./.test(location.hostname)){var m=document.createElement('meta');m.name='robots';m.content='noindex,nofollow';document.head.appendChild(m);}</script>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&amp;display=swap">
-<style>
-body{margin:0;background:#FFFFFF}
-a{color:#262626}a:hover{color:#8A00A3}
-a:focus-visible{outline:2px solid #8A00A3;outline-offset:3px}
-.rule{height:1px;background:linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00,#DD00FF);background-size:200% 100%;animation:slide 8s linear infinite}
-@keyframes slide{from{background-position:0 0}to{background-position:200% 0}}
-.nav-links{display:flex;flex-wrap:wrap;gap:4px 28px}
-.split{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px}
-.s3{grid-column:span 3}.s4{grid-column:span 4}.s8{grid-column:span 8}.s9{grid-column:span 9}
-.num{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:9rem;line-height:.85;letter-spacing:-6px;color:transparent;-webkit-text-stroke:2px #262626}
-.chip{display:inline-block;padding:10px 18px;border-radius:999px;font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:1.1rem;color:#262626}
-@media (max-width:900px){.s3,.s4,.s8,.s9{grid-column:span 12}.big{font-size:2.6rem !important}.num{font-size:5rem}}
-@media (prefers-reduced-motion:reduce){.rule{animation:none}}
-
-.mmenu-btn{display:none;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #262626;background:#FFFFFF;color:#262626;font-family:inherit;font-size:13px;text-transform:uppercase;letter-spacing:1px;align-items:center;gap:8px;cursor:pointer}
-.mmenu{position:fixed;inset:0;z-index:90;font-family:'Neue Haas Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;letter-spacing:.5px;color:#262626;background:linear-gradient(to top,#FFF3FE 0%,#FFFFFF 45%);display:flex;flex-direction:column;padding:20px 24px 28px;box-sizing:border-box;overflow-y:auto;animation:mpop .25s ease-out}
-@keyframes mpop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
-.mmenu .ml{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:2.6rem;line-height:1.1;letter-spacing:-1px;text-transform:uppercase;text-decoration:none;color:#262626;padding:4px 0;align-self:flex-start}
-.mmenu .ml.on{background:linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00);padding:0 8px}
-.mmenu-x{width:44px;height:44px;border-radius:50%;border:1px solid #262626;background:#FFFFFF;color:#262626;font-size:16px;cursor:pointer}
-@media (max-width:600px){
-html,body{overflow-x:hidden}
-header .nav-links{display:none !important}
-.mmenu-btn{display:inline-flex}
-.topsec{padding-top:8px !important;padding-bottom:28px !important}
-.chips{flex-wrap:nowrap !important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-right:-2rem;padding-right:2rem;padding-bottom:4px}
-.chips::-webkit-scrollbar{display:none}
-.chips>*{flex:none}
-.big{font-size:2.4rem !important;letter-spacing:-1px !important}
-.ask{position:fixed !important;min-height:44px !important;padding:0 16px 0 14px !important;right:16px !important;bottom:16px !important;font-size:13px !important;z-index:60}
-.panel{position:fixed !important;right:12px !important;left:12px !important;bottom:12px !important;width:auto !important;max-height:calc(100vh - 24px);overflow-y:auto;z-index:70}
-}
-@media (max-width:600px){
-.split{grid-template-columns:minmax(0,1fr) !important;gap:18px 0 !important}
-.s3,.s4,.s8,.s9{grid-column:auto !important}
-article{padding:44px 0 !important}
-article h2{font-size:1.9rem !important;margin-bottom:22px !important}
-.num{font-size:4rem !important;letter-spacing:-3px !important}
-.chip{font-size:.95rem !important;padding:8px 14px !important}
-}
-
-.lens2{display:inline-flex;position:relative;border:2px solid #262626;border-radius:999px;padding:4px;background:#FFFFFF}
-.lens2 button{width:120px;position:relative;z-index:1;min-height:44px;padding:0 22px;border:0;background:transparent;border-radius:999px;cursor:pointer;font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:#262626;transition:color .25s ease}
-.lens2 button.on{color:#FFFFFF}
-.lens2 .pill{position:absolute;top:4px;bottom:4px;border-radius:999px;background:#262626;transition:left .35s cubic-bezier(.3,1.3,.5,1),width .35s ease}
-.flip{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid #CFCFCF;background:#FFFFFF;cursor:pointer;font-family:inherit;font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:#262626}
-.flip:hover{border-color:#262626}
-.flip .sw{width:30px;height:16px;border-radius:999px;background:#E4E4E4;position:relative;transition:background .25s}
-.flip .sw i{position:absolute;top:2px;left:2px;width:12px;height:12px;border-radius:50%;background:#262626;transition:left .25s cubic-bezier(.3,1.4,.5,1)}
-.flip.d .sw{background:linear-gradient(90deg,#DD00FF,#00FFF7)}
-.flip.d .sw i{left:16px}
-.view{animation:vin .4s ease-out}
-@keyframes vin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.phone{width:250px;height:510px;border-radius:40px;border:10px solid #262626;background:#FFFFFF;position:relative;overflow:hidden;box-sizing:border-box;flex:none;transition:transform .35s cubic-bezier(.3,1.3,.5,1)}
-.phone:before{content:'';position:absolute;top:8px;left:50%;width:70px;height:18px;margin-left:-35px;border-radius:12px;background:#262626;z-index:2}
-.desk{width:480px;max-width:100%;aspect-ratio:16/10;border-radius:16px;border:2px solid #262626;background:#FFFFFF;overflow:hidden;flex:none;transition:transform .35s cubic-bezier(.3,1.3,.5,1)}
-.desk .bar{height:26px;border-bottom:2px solid #262626;display:flex;align-items:center;gap:6px;padding:0 10px}
-.desk .bar i{width:8px;height:8px;border-radius:50%;border:1.5px solid #262626}
-.dev:hover .phone,.dev:hover .desk{transform:rotate(-1.5deg) translateY(-4px)}
-.sk{border-radius:8px;background:#F1F1F1}
-.step{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid #CFCFCF;background:#FFFFFF;cursor:pointer;font-family:inherit;font-size:13px;color:#262626}
-.step.on{background:#262626;color:#FFFFFF;border-color:#262626}
-.need{display:inline-block;padding:3px 10px;border-radius:6px;background:#FFF3FE;border:1px dashed #C000D8;color:#8A00A3;font-size:12px}
-.dgrid{display:grid;grid-template-columns:auto minmax(0,1fr);gap:40px;align-items:start}
-.reel{border-radius:24px;border:2px solid #262626;overflow:hidden;position:relative;aspect-ratio:16/7;background:linear-gradient(120deg,#F5C9FF,#B8FFFC,#FFE2B0,#FFFFA8);background-size:300% 300%;animation:reel 9s ease-in-out infinite}
-@keyframes reel{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-@media (max-width:900px){.dgrid{grid-template-columns:minmax(0,1fr)}.dev{justify-content:center}.desk{width:100%}}
-@media (max-width:600px){.phone{width:210px;height:430px}.lens2 button{padding:0 16px;font-size:13px}.reel{aspect-ratio:4/3}}
-@media (prefers-reduced-motion:reduce){.view,.reel{animation:none}.lens2 .pill{transition:none}}
-
-@media (prefers-reduced-motion:reduce){.ad{transition:none}}
-
-.bgfx{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:0}
-.lift{position:relative;z-index:1}
-.lensrex{position:relative;width:86px;height:86px;flex:none;cursor:pointer;border:0;background:transparent;padding:0}
-.lensrex img{width:86px;height:86px;display:block}
-.lensrex.hopA img{animation:hopA .55s cubic-bezier(.3,1.6,.5,1)}
-.lensrex.hopB img{animation:hopB .55s cubic-bezier(.3,1.6,.5,1)}
-@keyframes hopA{0%{transform:translateY(0)}40%{transform:translateY(-22px) rotate(-8deg)}100%{transform:none}}
-@keyframes hopB{0%{transform:translateY(0)}40%{transform:translateY(-22px) rotate(8deg)}100%{transform:none}}
-.lensrex .say{position:absolute;left:78px;top:-6px;white-space:nowrap;font-family:'Caveat',cursive;font-weight:600;font-size:24px;color:#8A00A3;transform:rotate(-4deg)}
-.adtiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.adtile{position:relative;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:#141414;border:1px solid #262626}
-.adtile video{width:100%;height:100%;object-fit:cover;display:block}
-.adtile span{position:absolute;left:6px;bottom:6px;background:#FFFF00;color:#262626;font-size:10.5px;padding:2px 6px;text-transform:uppercase;font-family:ui-monospace,Menlo,monospace}
-@media (max-width:600px){.adtiles{grid-template-columns:repeat(2,minmax(0,1fr))}.lensrex .say{display:none}}
-@media (prefers-reduced-motion:reduce){.lensrex img{animation:none !important}}
-
-.mqtrack{display:flex;width:max-content;animation:mqmarq 150s linear infinite}
-@keyframes mqmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.ask{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box;border:2px solid transparent;transition:transform .2s ease}
-.ask:hover{transform:translateY(-2px) rotate(-1deg)}
-.q:hover{border-color:#262626 !important}
-.askegg{animation:askpop .35s ease-out}
-@keyframes askpop{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}}
-@media (max-width:900px){.panel{left:16px !important;right:16px !important;width:auto !important}}
-@media (prefers-reduced-motion:reduce){.mqtrack{animation:none}.ask:hover{transform:none}}
-
-.askwig{animation:askwig .7s cubic-bezier(.3,1.6,.5,1)}
-@keyframes askwig{0%{transform:rotate(0) scale(1)}20%{transform:rotate(-14deg) scale(1.1)}40%{transform:rotate(12deg) scale(.95)}60%{transform:rotate(-8deg)}80%{transform:rotate(5deg)}100%{transform:rotate(0) scale(1)}}
-
-.panel,.ask{font-family:'Neue Haas Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;color:#262626;letter-spacing:.5px}
-
-.dstage{display:flex;flex-direction:column;align-items:center;gap:18px;padding:28px;border-radius:24px;background:#FAFAFA;border:1px solid #E4E4E4}
-.dstage .dev{width:100%;justify-content:center}
-.dstage .desk{width:min(760px,100%)}
-.flowbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
-.flowbar .fl{font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-right:6px;color:#5E5E5E}
-@media (max-width:600px){.dstage{padding:16px}}
-
-.dstage{position:relative}
-.cdot{position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;font-size:0;color:#FFFFFF}
-.pins{display:none}
-/* Beside */
-.dl-beside .dwrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:start}
-.dl-beside .dtext{margin-top:0 !important;display:flex !important;flex-direction:column;gap:24px}
-/* Annotated */
-.dl-annotated .dtext{margin-top:28px !important;display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 32px;align-items:start}
-.dl-annotated .dtext>.s4{grid-column:auto}
-@media (max-width:900px){.dl-annotated .dtext{grid-template-columns:minmax(0,1fr)}}
-.dl-annotated .pins{display:block;position:absolute;inset:28px 28px 80px 28px;pointer-events:none}
-.dl-annotated .pin{position:absolute;width:30px;height:30px;border-radius:50%;color:#FFFFFF;font:700 14px/30px 'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif;text-align:center;box-shadow:0 0 0 4px #FFFFFF,0 6px 14px rgba(38,38,38,.25);animation:pinpop .4s cubic-bezier(.3,1.6,.5,1) both}
-.dl-annotated .pin:nth-child(2){animation-delay:.08s}.dl-annotated .pin:nth-child(3){animation-delay:.16s}
-@keyframes pinpop{from{transform:scale(0)}to{transform:none}}
-.dl-annotated .cdot{width:24px;height:24px;top:0;font:700 12px/24px 'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif;text-align:center}
-.dl-annotated .dcalls p[style*="padding-left: 18px"]{padding-left:34px !important}
-.dl-annotated .dbrief{background:#FFFFA8;padding:16px 18px;transform:rotate(-1.5deg);box-shadow:0 8px 20px rgba(38,38,38,.12)}
-.dl-annotated .dbrief p:last-child{font-family:'Caveat',cursive;font-weight:600;font-size:1.6rem;line-height:1.15}
-.dl-annotated .dtrade{border-top:1px dashed #262626;padding-top:14px}
-@media (max-width:900px){.dl-beside .dwrap,.dl-annotated .dwrap{grid-template-columns:minmax(0,1fr)}}
-@media (prefers-reduced-motion:reduce){.pin{animation:none !important}}
-
-@media (max-width:600px){.scribt{font-size:21px !important;line-height:1.1}}
-.betbadge{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:6px 12px;border-radius:999px;background:#FFFFA8;border:1.5px dashed #262626;font-size:11.5px;text-transform:uppercase;letter-spacing:.6px}
-.betbadge i{width:8px;height:8px;border-radius:50%;background:#00C4BD;animation:betpulse 1.4s ease-in-out infinite}
-@keyframes betpulse{50%{opacity:.25}}
-@media (prefers-reduced-motion:reduce){.betbadge i{animation:none}}
-
-html{scrollbar-gutter:stable}
-
-.nav-links a{padding:12px 8px !important;margin:0 -8px;border-radius:8px;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-
-
-/* real screens and process boards (Evo + Evolve case) */
-.phone.real{width:300px;height:650px;background:#F4F5F7;border:1px solid #E4E4E4;border-radius:34px;box-shadow:0 24px 60px rgba(38,38,38,.12),0 4px 12px rgba(38,38,38,.06)}
-.phone.real:before{display:none}
-.phone.real .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
-@media (max-width:600px){.phone.real{width:240px;height:520px;border-radius:28px}}
-.boards{margin-top:56px}
-.dhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px;margin-bottom:22px}
-.dtabs{display:flex;flex-wrap:wrap;gap:8px}
-.dtabs button{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid #262626;background:#FFFFFF;color:#262626;font:inherit;font-size:13px;letter-spacing:.4px;cursor:pointer}
-.dtabs button.on{background:#262626;color:#FFFFFF}
-.deck{position:relative;aspect-ratio:1440/1024;margin:0 28px 0 0;touch-action:pan-y;user-select:none}
-.dcard{position:absolute;inset:0;border-radius:20px;overflow:hidden;background:#FFFFFF;border:1px solid #E4E4E4;box-shadow:0 18px 48px rgba(38,38,38,.12);transition:transform .55s cubic-bezier(.3,1.25,.5,1),opacity .4s ease;transform-origin:50% 100%;display:block}
-.dcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
-.dcard.p0{z-index:4;transform:none}
-.dcard.p1{z-index:3;transform:translate(14px,-14px) rotate(1.2deg) scale(.985);opacity:.9}
-.dcard.p2{z-index:2;transform:translate(28px,-28px) rotate(2.4deg) scale(.97);opacity:.75}
-.dcard.p3{z-index:1;transform:translate(40px,-40px) rotate(3.4deg) scale(.955);opacity:.5}
-.dcard.out{z-index:5;transform:translate(-60%,8%) rotate(-10deg);opacity:0;pointer-events:none}
-.dcard:not(.p0){pointer-events:none}
-.dnav{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
-.dbtn{width:44px;height:44px;border-radius:50%;border:1px solid #262626;background:#FFFFFF;color:#262626;font-size:18px;cursor:pointer}
-.dbtn:hover{background:#262626;color:#FFFFFF}
-.dcount{font-size:13px;letter-spacing:1px;min-width:44px;text-align:center}
-.dhint{font-size:12px;color:#5E5E5E;margin-left:8px}
-@media (max-width:600px){.deck{margin-right:16px}.dcard{border-radius:12px}.dhint{display:none}.dcard.p1{transform:translate(8px,-8px) rotate(1deg) scale(.985)}.dcard.p2{transform:translate(16px,-16px) rotate(2deg) scale(.97)}.dcard.p3{transform:translate(22px,-22px) rotate(3deg) scale(.955)}}
-@media (prefers-reduced-motion:reduce){.dcard{transition:none}}
-</style>
-
 </head>
 <body>
-<template id="dc-tpl">
+<style>
+:root{--ink:#262626;--bg:#FFFFFF;--line:#E4E4E4;--line2:#CFCFCF;--mute:#5E5E5E;--wash:#FFF3FE;--mag:#DD00FF;--magd:#8A00A3;--cyan:#00FFF7;--orange:#FCA002;--yellow:#FFFF00;
+  --sans:'Heros','TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);overflow-x:hidden}
+body{color:var(--ink);font-family:var(--sans);font-size:15px;letter-spacing:.5px;line-height:1.55;-webkit-font-smoothing:antialiased;background:linear-gradient(to top,var(--wash) 0%,var(--bg) 12%)}
+canvas.bgfx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:1320px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px),2rem) 0}
+@media (max-width:600px){.wrap{padding-left:16px;padding-right:16px}}
+a{color:var(--ink)}
+:focus-visible{outline:2px solid var(--magd);outline-offset:3px}
+h1,h2,h3{font-weight:700;text-transform:uppercase;margin:0;text-wrap:balance}
+p{margin:0}
+header.site{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:24px 0}
+header.site svg{display:block;height:30px;width:auto}
+.nav{display:flex;flex-wrap:wrap;gap:4px 28px;font-size:13.5px;text-transform:uppercase}
+.nav a{text-decoration:none;padding:12px 0}
+.nav a.on{text-decoration:underline;text-decoration-color:var(--mag);text-decoration-thickness:3px;text-underline-offset:6px}
+@media (max-width:600px){.nav{display:none}}
+.rule{height:1px;background:linear-gradient(90deg,var(--mag),var(--cyan),var(--orange),var(--yellow),var(--mag));background-size:200% 100%;animation:slide 8s linear infinite}
+@keyframes slide{from{background-position:0 0}to{background-position:200% 0}}
+.topline{padding:12px 0;font-size:13.5px}
+.big{margin:36px 0 56px;font-size:clamp(2.4rem,5.6vw,5rem);line-height:1.02;letter-spacing:-1.5px;max-width:1100px}
+.hl{display:inline-block;line-height:1.08;padding:0 12px;background:linear-gradient(90deg,var(--cyan),var(--yellow))}
 
-<div style="position: relative; background: linear-gradient(to top, #FFF3FE 0%, #FFFFFF 12%); color: #262626; font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; letter-spacing: 0.5px; min-height: 100%">
-<canvas class="bgfx" ref="{{bgRef}}" aria-hidden="true"></canvas>
-<div class="lift" style="max-width: 1320px; margin: 0 auto; padding: 0 2rem; width: 100%; box-sizing: border-box">
+/* case block: the live layout (number left, story right, creative edge to edge below) */
+.case{padding:72px 0 0;scroll-margin-top:8px}
+.case:first-child{padding-top:24px}
+.row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px;padding-bottom:40px}
+.row .l{grid-column:span 3}.row .r{grid-column:span 9;display:grid;gap:18px;align-content:start}
+.num{margin:0;font-weight:700;font-size:9rem;line-height:.85;letter-spacing:-6px;color:transparent;-webkit-text-stroke:2px var(--ink)}
+.meta{font-size:13.5px;text-transform:uppercase}
+.title{font-size:clamp(1.9rem,3.2vw,3.1rem);line-height:1.02;letter-spacing:-1px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:inline-flex;align-items:center;padding:7px 14px;border-radius:999px;font-weight:700;font-size:14.5px;letter-spacing:.3px}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;border:1px solid var(--line2);background:#fff}
+.tag.ai{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,var(--mag),var(--cyan)) border-box}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 36px}
+.cols .lbl{font-size:13px;text-transform:uppercase;margin-bottom:6px}
+.cols p.t{line-height:1.6}
+.story1{font-size:clamp(1.15rem,1.6vw,1.4rem);line-height:1.45;max-width:62ch}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stat{border-top:2px solid var(--ink);padding-top:10px;display:grid;gap:2px}
+.stat b{font-size:clamp(1.5rem,2.4vw,2.2rem);letter-spacing:-.5px;line-height:1}
+.stat span{font-size:12.5px;color:var(--mute);text-transform:uppercase;letter-spacing:.5px}
+.case[data-t="B"] .cols,.case:not([data-t="B"]) .tB{display:none}
+@media (max-width:900px){.row{grid-template-columns:minmax(0,1fr);gap:14px}.row .l,.row .r{grid-column:auto}.num{font-size:5rem;letter-spacing:-3px}.cols{grid-template-columns:minmax(0,1fr)}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-<header style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 24px 0">
-<a href="/" aria-label="Shany Mo, home" style="font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: -1px; text-decoration: none; line-height: 1"><svg xmlns="http://www.w3.org/2000/svg" class="mo-logo" style="display: block; height: 30px; width: auto" viewBox="0 0 200 70" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M176.95 70.00C179.05 69.84 182.20 69.11 184.16 68.32C186.22 67.50 187.67 66.81 188.27 66.38C188.55 66.17 188.85 66.00 188.94 66.00C189.19 66.00 191.87 63.93 193.13 62.77C193.78 62.16 194.48 61.42 194.68 61.11C194.88 60.81 195.24 60.32 195.47 60.03C196.14 59.18 196.76 58.24 197.07 57.56C197.23 57.22 197.47 56.74 197.61 56.50C198.30 55.26 198.75 54.17 198.94 53.23C199.20 51.95 199.40 51.44 199.74 51.23C200.00 51.07 200.00 50.99 200.00 46.28C200.00 42.21 199.97 41.48 199.82 41.42C199.54 41.32 199.16 40.42 198.94 39.41C198.84 38.91 198.59 38.18 198.39 37.78C198.20 37.39 198.00 36.89 197.95 36.69C197.90 36.48 197.73 36.11 197.57 35.87C197.41 35.62 197.11 35.08 196.90 34.67C196.46 33.81 194.12 30.72 193.26 29.87C192.95 29.56 192.49 29.17 192.25 29.00C192.01 28.83 191.43 28.37 190.97 27.98C190.51 27.58 189.94 27.16 189.72 27.05C189.50 26.94 188.76 26.48 188.09 26.04C187.42 25.60 186.59 25.13 186.25 25.00C185.90 24.86 185.35 24.61 185.02 24.45C184.68 24.28 184.03 24.05 183.56 23.94C183.09 23.83 182.39 23.60 182.01 23.44C181.63 23.27 180.97 23.08 180.56 23.01C180.15 22.94 179.14 22.74 178.31 22.56C176.98 22.27 176.45 22.22 173.50 22.16C171.34 22.12 169.86 22.14 169.25 22.23C167.17 22.54 164.76 23.04 163.88 23.33C163.36 23.51 162.48 23.78 161.93 23.94C161.37 24.09 160.69 24.36 160.43 24.54C160.16 24.71 159.70 24.92 159.40 25.00C159.11 25.07 158.52 25.36 158.10 25.63C157.68 25.90 157.27 26.13 157.20 26.13C156.84 26.14 153.62 28.53 152.33 29.75C151.39 30.63 149.21 33.30 148.97 33.85C148.89 34.03 148.64 34.48 148.41 34.84C147.93 35.62 147.32 36.82 147.19 37.25C147.14 37.42 146.90 38.06 146.67 38.66C146.16 39.97 145.94 40.97 145.62 43.38C145.28 45.93 145.31 47.27 145.75 50.14C146.31 53.71 147.26 56.21 149.21 59.17C150.07 60.48 150.61 61.12 152.11 62.62C153.92 64.42 154.88 65.18 156.62 66.15C158.24 67.05 159.93 67.88 160.49 68.05C160.80 68.15 161.38 68.37 161.77 68.55C162.16 68.73 162.92 68.97 163.46 69.07C164.00 69.17 164.83 69.36 165.31 69.50C166.10 69.72 167.46 69.93 168.81 70.04C170.00 70.14 175.45 70.11 176.95 70.00ZM43.53 61.99C44.42 61.75 44.39 62.08 44.35 54.33L44.31 47.38L43.97 47.03L43.62 46.69L21.81 46.66L0.00 46.62L0.00 54.37L0.00 62.12L21.53 62.12C36.11 62.12 43.21 62.08 43.53 61.99ZM170.00 56.61C169.62 56.47 168.97 56.24 168.56 56.11C168.15 55.97 167.61 55.73 167.37 55.57C167.12 55.41 166.64 55.13 166.28 54.95C165.67 54.64 164.36 53.30 163.99 52.60C163.90 52.44 163.68 52.12 163.49 51.88C163.30 51.63 162.93 50.79 162.67 50.00L162.19 48.56L162.19 46.19L162.20 43.81L162.76 42.38C163.53 40.41 164.79 38.63 166.05 37.74C167.35 36.82 168.37 36.25 168.93 36.12C170.36 35.78 172.06 35.50 172.69 35.50C173.74 35.50 176.24 35.97 176.88 36.30C178.80 37.27 179.02 37.42 180.28 38.74C181.39 39.90 181.65 40.26 182.21 41.40C182.80 42.59 182.89 42.86 183.06 44.18C183.30 46.00 183.30 46.58 183.06 48.44C182.89 49.73 182.79 50.08 182.35 50.98C182.07 51.55 181.68 52.23 181.50 52.48C180.31 54.12 178.38 55.63 176.85 56.10C176.42 56.24 175.74 56.47 175.35 56.61C174.73 56.84 174.36 56.87 172.66 56.87C170.98 56.87 170.59 56.83 170.00 56.61ZM71.45 46.82C71.59 46.78 71.78 46.60 71.86 46.43C71.96 46.20 72.00 42.57 72.00 32.78C72.00 24.56 72.05 19.14 72.13 18.67C72.28 17.69 73.11 15.90 73.83 14.99C74.13 14.60 74.76 14.02 75.22 13.71C75.98 13.19 76.21 13.10 77.50 12.86C78.81 12.61 79.06 12.60 80.32 12.73C81.08 12.81 81.97 12.95 82.29 13.05C83.07 13.28 84.57 14.29 85.18 14.98C85.72 15.58 86.66 17.16 86.86 17.79C87.19 18.81 87.25 21.26 87.25 33.50C87.25 45.84 87.26 46.23 87.49 46.52L87.73 46.81L94.83 46.88C98.74 46.91 102.11 46.90 102.32 46.84C102.56 46.79 102.77 46.63 102.86 46.43C102.96 46.20 103.00 42.59 103.00 32.64C103.00 23.62 103.04 18.93 103.13 18.45C103.29 17.59 104.18 15.77 104.85 14.92C105.12 14.59 105.72 14.05 106.20 13.72C106.98 13.19 107.20 13.10 108.50 12.86C109.81 12.61 110.06 12.60 111.32 12.73C113.11 12.92 113.67 13.09 114.78 13.82C115.87 14.54 116.50 15.22 117.22 16.49C118.21 18.21 118.16 17.38 118.24 32.71C118.31 45.60 118.33 46.38 118.54 46.59C118.74 46.80 119.26 46.82 125.85 46.88C129.75 46.91 133.11 46.89 133.33 46.84C133.59 46.78 133.77 46.63 133.87 46.40C133.97 46.14 134.00 41.90 133.97 29.81L133.93 13.56L133.47 12.00C133.21 11.14 133.00 10.35 133.00 10.25C133.00 10.14 132.69 9.42 132.31 8.65C131.77 7.55 131.37 6.96 130.48 5.93C128.90 4.10 126.67 2.38 125.22 1.89C124.85 1.76 124.32 1.54 124.04 1.40C123.76 1.25 123.12 1.04 122.61 0.93C121.95 0.77 121.60 0.62 121.34 0.36L120.98 0.00L116.91 -0.00L112.84 -0.00L112.56 0.30C112.37 0.51 111.83 0.75 110.98 1.01C109.77 1.39 109.02 1.75 107.38 2.76C106.14 3.52 105.21 4.28 103.46 6.00C102.52 6.92 101.66 7.73 101.56 7.78C101.28 7.94 100.96 7.70 100.26 6.83C98.65 4.81 95.79 2.44 94.41 1.99C94.15 1.91 93.61 1.68 93.21 1.47C92.80 1.27 92.05 1.03 91.52 0.93C90.51 0.73 90.00 0.48 90.00 0.18C90.00 0.03 89.44 0.00 85.94 0.00L81.89 0.00L81.59 0.30C81.42 0.47 80.79 0.76 80.11 0.98C78.79 1.41 77.58 1.98 76.81 2.52C76.54 2.72 75.83 3.20 75.25 3.59C74.67 3.98 73.88 4.62 73.50 5.02C72.32 6.26 72.09 6.03 72.00 3.62C71.95 2.15 71.90 1.86 71.70 1.63L71.46 1.37L64.22 1.40L56.98 1.44L56.68 1.79L56.38 2.14L56.38 24.24L56.38 46.34L56.64 46.57C56.89 46.80 57.24 46.82 63.86 46.88C71.11 46.94 71.03 46.94 71.45 46.82Z"/></svg></a>
-<nav aria-label="Primary" class="nav-links" style="font-size: 13.5px; text-transform: uppercase">
-<a href="/" style="text-decoration: none; padding: 12px 0">Home</a>
-<a href="/work/" aria-current="page" style="text-decoration: underline; text-decoration-color: #DD00FF; text-decoration-thickness: 3px; text-underline-offset: 6px; padding: 12px 0">Work</a>
-<a href="/inventory/" style="text-decoration: none; padding: 12px 0">Inventory</a>
-<a href="/lab/" style="text-decoration: none; padding: 12px 0">Lab</a>
-<a href="/contact/" style="text-decoration: none; padding: 12px 0">Contact</a>
-</nav>
-<button class="mmenu-btn" onClick="{{openMenu}}" aria-label="Open menu"><svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="2"></path></svg>Menu</button>
-</header>
+/* way in */
+.go{justify-self:start;display:inline-flex;align-items:center;gap:10px;border:0;background:none;padding:6px 0;font:inherit;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.8px;color:var(--ink);cursor:pointer}
+.go .ar{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
+.go:hover .ar{transform:translateX(5px)}
+.lk{font-size:13px}
+.tab{position:absolute;right:max(16px,calc(50vw - 640px));bottom:18px;z-index:8;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--ink);background:#fff;color:var(--ink);font:inherit;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.6px;cursor:pointer;box-shadow:0 10px 26px -12px rgba(38,38,38,.45);transition:transform .25s cubic-bezier(.3,1.4,.5,1)}
+.tab:hover{transform:translateY(-3px)}
+body[data-way="tab"] .go,body[data-way="link"] .tab{display:none}
 
-<section class="topsec" style="padding: 8px 0 56px">
-<div class="rule"></div>
-<p style="margin: 0; padding: 12px 0; font-size: 13.5px">Work · Seven cases · Two lenses on every one</p>
-<div class="rule"></div>
-<h1 class="big" style="margin: 36px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; text-transform: uppercase; max-width: 1100px">The bet. The craft. <span style="display: inline-block; line-height: 1.08; background: linear-gradient(90deg,#00FFF7,#FFFF00); padding: 0 12px">What moved.</span></h1>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 36px">
-<div class="lens2" role="group" aria-label="Choose a lens for every case">
-<span class="pill" aria-hidden="true" style="left: {{pillLeft}}; width: {{pillW}}"></span>
-<button class="{{pBtn}}" onClick="{{allProduct}}" aria-pressed="{{pPressed}}">Product</button>
-<button class="{{dBtn}}" onClick="{{allDesign}}" aria-pressed="{{dPressed}}">Design</button>
-</div>
-<button class="{{rexCls}}" onClick="{{rexPoke}}" aria-label="Poke the monster to switch lenses"><img src="/assets/trex-fluent-anim.webp" alt=""><span class="say" aria-hidden="true">{{rexSay}}</span></button>
-<p style="margin: 0; font-size: 14px; line-height: 1.5; max-width: 520px">{{lensLine}}</p>
-</div>
-</section>
-<template sc-for list="{{cases}}" as="c" hint-placeholder-count="6">
-<article aria-label="{{c.title}}" style="padding: 72px 0; border-top: 1px solid #262626">
-<div class="split">
-<div class="s3"><p class="num" aria-hidden="true" style="margin: 0">{{c.n}}</p>
-<button class="{{c.flipCls}}" onClick="{{c.flip}}" aria-pressed="{{c.isDesign}}" style="margin-top: 18px"><span>Product</span><span class="sw" aria-hidden="true"><i></i></span><span>Design</span></button>
-<template sc-if value="{{c.live}}" hint-placeholder-val="{{ false }}"><br><span class="betbadge"><i aria-hidden="true"></i>Bet in progress</span></template>
-</div>
-<div class="s9">
-<p style="margin: 0 0 12px; font-size: 13.5px; text-transform: uppercase">{{c.meta}}</p>
-<h2 style="margin: 0 0 32px; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 3rem; line-height: 1.02; text-transform: uppercase; letter-spacing: -1px">{{c.title}}</h2>
+/* creatives: edge to edge */
+.band{position:relative;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;transition:height .7s cubic-bezier(.3,.8,.3,1)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;overflow:hidden}
+.slide.on{opacity:1;z-index:2}
+.slide iframe,.ph iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;pointer-events:none}
+.ctrl{position:absolute;left:max(16px,calc(50vw - 640px));bottom:18px;z-index:8;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.92);border-radius:999px;padding:6px 10px;box-shadow:0 8px 20px -12px rgba(38,38,38,.4)}
+.ctrl button{border:0;background:none;cursor:pointer;padding:0}
+.ctrl .dot{width:26px;height:4px;border-radius:2px;background:#CFCFCF}
+.ctrl .dot.on{background:var(--ink)}
+.ctrl .cap{font-size:12px;text-transform:uppercase;letter-spacing:.5px;padding:0 4px;white-space:nowrap}
+@media (max-width:600px){.ctrl .cap{display:none}}
+.phones{display:flex;gap:clamp(12px,3vw,40px);justify-content:center;align-items:center;height:min(86vh,720px);padding:clamp(20px,4vw,48px) 16px}
+.ph{position:relative;height:100%;max-height:640px;aspect-ratio:390/844;border-radius:30px;box-shadow:0 0 0 1px rgba(38,38,38,.1),0 24px 44px -22px rgba(38,38,38,.4);overflow:hidden;background:#fff;flex:none}
+.ph:nth-child(2){transform:translateY(-14px)}
+@media (max-width:600px){.phones .ph:nth-child(3){display:none}}
 
-<template sc-if value="{{c.showProduct}}" hint-placeholder-val="{{ true }}">
-<div class="view">
-<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px">
-<template sc-for list="{{c.chips}}" as="k" hint-placeholder-count="3"><span class="chip" style="background: {{k.bg}}">{{k.t}}</span></template>
-</div>
-<template sc-if value="{{c.hasScrib}}" hint-placeholder-val="{{ true }}">
-<div aria-hidden="true" style="display: flex; align-items: center; gap: 8px; margin: -26px 0 28px 24px; transform: rotate({{c.rot}})">
-<svg width="64" height="40" viewBox="0 0 64 40" fill="none" stroke="{{c.ink}}" stroke-width="2.4" stroke-linecap="round"><path d="M60 34 C 40 36, 18 28, 8 8"></path><path d="M8 8 L 6 20 M8 8 L 19 12"></path></svg>
-<span class="scribt" style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 28px; color: {{c.inkDark}}">{{c.scrib}}</span>
-</div>
-</template>
-<div class="split" style="gap: 24px 40px">
-<div class="s4"><p style="margin: 0 0 8px; font-size: 13.5px; text-transform: uppercase">Situation</p><p style="margin: 0; line-height: 1.65">{{c.situation}}</p></div>
-<div class="s4"><p style="margin: 0 0 8px; font-size: 13.5px; text-transform: uppercase">The bet</p><p style="margin: 0; line-height: 1.65">{{c.bet}}</p></div>
-<div class="s4"><p style="margin: 0 0 8px; font-size: 13.5px; text-transform: uppercase">{{c.didLabel}}</p><p style="margin: 0; line-height: 1.65">{{c.did}}</p></div>
-</div>
-<template sc-if value="{{c.extra}}" hint-placeholder-val="{{ true }}"><p style="margin: 32px 0 0; line-height: 1.65">{{c.extra}}</p></template>
-</div>
-</template>
 
-<template sc-if value="{{c.showDesign}}" hint-placeholder-val="{{ false }}">
-<div class="{{dlCls}}">
-<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px"><span class="chip" style="background: {{c.tint}}">{{c.designNumber}}</span></div>
-<div class="dwrap">
-<div class="dstage">
-<div class="dev" style="display: flex">
-<template sc-if value="{{c.isPhone}}" hint-placeholder-val="{{ true }}">
-<div class="{{c.phoneCls}}" role="img" aria-label="{{c.screenAlt}}">
-<template sc-if value="{{c.hasShot}}" hint-placeholder-val="{{ false }}"><img class="shot" src="{{c.shot}}" alt=""></template>
-<template sc-if value="{{c.noShot}}" hint-placeholder-val="{{ true }}">
-<div style="position: absolute; inset: 0; padding: 40px 16px 16px; display: flex; flex-direction: column; gap: 10px; background: linear-gradient(to bottom, {{c.tint}} 0%, #FFFFFF 45%)">
-<p style="margin: 0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px">{{c.stepTag}}</p>
-<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 20px; line-height: 1.1; text-transform: uppercase">{{c.stepTitle}}</p>
-<div class="sk" style="height: 120px; background: {{c.tint}}"></div>
-<div class="sk" style="height: 14px; width: 80%"></div><div class="sk" style="height: 14px; width: 60%"></div>
-<div class="sk" style="height: 44px; margin-top: auto; border-radius: 999px; background: #262626"></div>
-<p style="margin: 0; text-align: center"><span class="need">[screen needed]</span></p>
-</div>
-</template>
-</div>
-</template>
-<template sc-if value="{{c.isDesk}}" hint-placeholder-val="{{ false }}">
-<div class="desk" role="img" aria-label="{{c.screenAlt}}">
-<div class="bar"><i></i><i></i><i></i><span style="margin-left: 8px; font-size: 11px">{{c.stepTag}}</span></div>
-<div style="display: grid; grid-template-columns: 30% 1fr; gap: 10px; padding: 12px; height: calc(100% - 26px); box-sizing: border-box; background: linear-gradient(135deg, {{c.tint}} 0%, #FFFFFF 55%)">
-<div style="display: flex; flex-direction: column; gap: 8px"><div class="sk" style="height: 16px"></div><div class="sk" style="height: 16px; width: 70%"></div><div class="sk" style="height: 16px; width: 85%"></div><div class="sk" style="flex: 1"></div></div>
-<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase">{{c.stepTitle}}</p><div class="sk" style="flex: 1; background: {{c.tint}}"></div><div style="display: flex; justify-content: space-between; align-items: center"><div class="sk" style="height: 14px; width: 40%"></div><span class="need">[screen needed]</span></div></div>
-</div>
-</div>
-</template>
-</div>
-<template sc-if value="{{c.showPins}}" hint-placeholder-val="{{ true }}"><div class="pins" aria-hidden="true"><template sc-for list="{{c.craft}}" as="x"><span class="pin" style="{{x.pin}}; background: {{c.ink}}">{{x.n}}</span></template></div></template>
-<div class="flowbar" role="group" aria-label="The flow"><span class="fl">The flow</span>
-<template sc-for list="{{c.steps}}" as="s" hint-placeholder-count="3"><button class="{{s.cls}}" onClick="{{s.pick}}" aria-pressed="{{s.pressed}}">{{s.label}}</button></template>
-</div>
-</div>
-<div class="split dtext" style="gap: 24px 40px; margin-top: 40px">
-<div class="s4 dbrief"><p style="margin: 0 0 8px; font-size: 13.5px; text-transform: uppercase">What it had to do</p><p style="margin: 0; line-height: 1.65">{{c.brief}}</p></div>
-<div class="s4 dcalls"><p style="margin: 0 0 8px; font-size: 13.5px; text-transform: uppercase">Design calls</p><template sc-for list="{{c.craft}}" as="x" hint-placeholder-count="3"><p style="margin: 0 0 10px; line-height: 1.6; padding-left: 18px; position: relative"><span aria-hidden="true" class="cdot" style="background: {{c.ink}}">{{x.n}}</span>{{x.t}}</p></template></div>
-<div class="s4 dtrade"><p style="margin: 0 0 8px; font-size: 13.5px; text-transform: uppercase">The trade-off</p><p style="margin: 0; line-height: 1.65">{{c.tradeoff}}</p></div>
-</div>
-<template sc-if value="{{c.hasBoards}}" hint-placeholder-val="{{ false }}">
-<div class="boards">
-<div class="dhead">
-<p style="margin: 0; font-size: 13.5px; text-transform: uppercase">Behind the screens</p>
-<div class="dtabs" role="tablist" aria-label="Behind the screens"><template sc-for list="{{c.boards}}" as="b" hint-placeholder-count="4"><button role="tab" class="{{b.tabCls}}" aria-selected="{{b.sel}}" onClick="{{b.pick}}">{{b.label}}</button></template></div>
-</div>
-<div class="deck" onPointerDown="{{c.deckDown}}" onPointerUp="{{c.deckUp}}">
-<template sc-for list="{{c.boards}}" as="b" hint-placeholder-count="4"><a class="{{b.cardCls}}" href="{{b.src}}" target="_blank" rel="noopener" tabindex="{{b.tab}}" aria-hidden="{{b.hidden}}" onClick="{{b.cardClick}}" draggable="false"><img src="{{b.src}}" alt="{{b.alt}}" draggable="false"></a></template>
-</div>
-<div class="dnav"><button class="dbtn" onClick="{{c.deckPrev}}" aria-label="Previous board">←</button><span class="dcount">{{c.deckCount}}</span><button class="dbtn" onClick="{{c.deckNext}}" aria-label="Next board">→</button><span class="dhint">Swipe, use the arrows, or tap the board to open it full size</span></div>
-</div>
-</template>
-</div>
-</div>
-</template>
-</div>
-</div>
-</article>
-</template>
+/* rider promise display (from the WorkEvo board): six questions flip in like a departures board, a spotlight walks through them with the matching live screen */
+.promise{width:100vw;margin-left:calc(50% - 50vw);background:#F5F6F8;padding:clamp(28px,4vw,56px) 0}
+.promise .in2{max-width:1320px;margin:0 auto;padding:0 max(16px,2rem)}
+.pr-head{width:min(100%,560px);display:block;margin:0 0 22px}
+.pr-body{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:36px;align-items:center}
+.pr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;perspective:900px}
+.pq{position:relative;border:0;padding:0;background:transparent;border-radius:18px;cursor:pointer;transform-origin:50% 0;opacity:0;transform:rotateX(-92deg);transition:transform .7s cubic-bezier(.3,1.5,.5,1),opacity .25s ease,box-shadow .35s ease;transition-delay:calc(var(--d)*110ms)}
+.promise.on .pq{opacity:1;transform:none}
+.pq img{width:100%;display:block;border-radius:18px}
+.pq:after{content:"";position:absolute;inset:-3px;border-radius:21px;padding:3px;background:linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s ease}
+.promise.on .pq.sel{transform:translateY(-6px);box-shadow:0 16px 30px rgba(38,38,38,.14);transition-delay:0s}
+.pq.sel:after{opacity:1}
+.pr-screen{position:relative;width:230px;aspect-ratio:390/844;border-radius:26px;overflow:hidden;border:1px solid #E4E4E4;background:#fff;box-shadow:0 18px 40px rgba(38,38,38,.12);opacity:0;transform:translateY(24px);transition:opacity .5s ease .6s,transform .6s cubic-bezier(.3,1.3,.5,1) .6s}
+.promise.on .pr-screen{opacity:1;transform:none}
+.pr-screen .sc{position:absolute;inset:0;opacity:0;transform:translateY(14px) scale(.98);transition:opacity .45s ease,transform .6s cubic-bezier(.3,1.3,.5,1)}
+.pr-screen .sc.sel{opacity:1;transform:none}
+.pr-screen iframe{position:absolute;left:0;top:0;width:390px;height:844px;border:0;transform-origin:0 0;pointer-events:none}
+.pr-hint{margin:16px 0 0;font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:#5E5E5E}
+@media (max-width:900px){.pr-body{grid-template-columns:minmax(0,1fr) 170px;gap:20px}.pr-screen{width:170px;border-radius:20px}.pr-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.pr-body{grid-template-columns:minmax(0,1fr) 120px;gap:12px}.pr-screen{width:120px;border-radius:14px}.pr-grid{grid-template-columns:minmax(0,1fr);gap:8px}.pq img,.pq{border-radius:12px}.pr-head{margin-bottom:14px}}
+@media (prefers-reduced-motion:reduce){.pq,.pr-screen,.pr-screen .sc{transition:none}}
 
-<section aria-labelledby="vault-h" style="padding: 72px 0 96px; border-top: 1px solid #262626">
-<div class="split">
-<div class="s3"><p class="num" aria-hidden="true" style="margin: 0">07</p>
-<button class="{{raFlipCls}}" onClick="{{raFlip}}" aria-pressed="{{raIsDesign}}" style="margin-top: 18px"><span>Product</span><span class="sw" aria-hidden="true"><i></i></span><span>Design</span></button>
-</div>
-<div class="s9">
-<p style="margin: 0 0 12px; font-size: 13.5px; text-transform: uppercase">ResponsiveAds · Head of Product, Partnerships &amp; GTM · Ad-tech</p>
-<h2 id="vault-h" style="margin: 0 0 32px; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 3rem; line-height: 1.02; text-transform: uppercase; letter-spacing: -1px">One creative, every screen</h2>
-<template sc-if value="{{raProduct}}" hint-placeholder-val="{{ true }}">
-<div class="view">
-<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px"><span class="chip" style="background: #F5C9FF">10× faster creative production</span><span class="chip" style="background: #FFFFA8">+20% annual revenue</span></div>
-<div aria-hidden="true" style="display: flex; align-items: center; gap: 8px; margin: -2px 0 28px 24px; transform: rotate(-2deg)">
-<svg width="64" height="40" viewBox="0 0 64 40" fill="none" stroke="#DD00FF" stroke-width="2.4" stroke-linecap="round"><path d="M60 34 C 40 36, 18 28, 8 8"></path><path d="M8 8 L 6 20 M8 8 L 19 12"></path></svg>
-<span class="scribt" style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 28px; color: #8A00A3">one file. every screen. zero resizing.</span>
-</div>
-<p style="margin: 0 0 24px; line-height: 1.65; max-width: 760px">Turned the patented Fluid platform into a governed self-serve product, so one master creative could scale across every responsive format, for publishers like The Guardian and Mashable.</p>
-</div>
-</template>
-<template sc-if value="{{raDesign}}" hint-placeholder-val="{{ false }}">
-<div class="view">
-<div class="adtiles">
-<template sc-for list="{{raAds}}" as="a" hint-placeholder-count="6"><div class="adtile"><video src="{{a.video}}" poster="{{a.poster}}" autoplay muted loop playsinline aria-label="{{a.brand}} — {{a.title}}"></video><span>{{a.brand}}</span></div></template>
-</div>
-<p style="margin: 18px 0 0; font-size: 12px; color: #5E5E5E">Placeholder: the full 11-campaign showcase goes here once a format is picked on the test board.</p>
-</div>
-</template>
-</div>
-</div>
-</section>
+/* lock */
+.lockbg{position:fixed;inset:0;z-index:90;background:rgba(38,38,38,.35);display:flex;align-items:center;justify-content:center;padding:16px;animation:pop .25s ease-out}
+.lockbg[hidden]{display:none}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+/* case chips: in the hero, then docked to the bottom once you scroll past */
+.jumps{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 32px}
+.jc{min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer;font:inherit;font-size:13.5px;letter-spacing:.5px;text-transform:uppercase;background:#FFFFFF;color:#262626;border:1px solid #CFCFCF;white-space:nowrap;transition:box-shadow .3s,border-color .3s}
+.jc:hover{border-color:#262626}
+.jc b{font-family:'TeX Gyre Heros','Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;margin-right:6px}
+.jc[aria-current="true"]{border-color:#262626;font-weight:700;box-shadow:-5px 4px 14px -6px rgba(221,0,255,.45),5px 4px 14px -6px rgba(0,255,247,.55),0 7px 12px -8px rgba(252,160,2,.5)}
+.dock{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:80;transform:translate(-50%,140%);opacity:0;transition:transform .45s cubic-bezier(.3,1.3,.5,1),opacity .3s;pointer-events:none;max-width:calc(100vw - 32px)}
+.dock.on{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.dock .jumps{margin:0;flex-wrap:nowrap;gap:6px;padding:6px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid #262626;border-radius:999px;box-shadow:0 14px 34px rgba(38,38,38,.16);overflow-x:auto;scrollbar-width:none}
+.dock .jumps::-webkit-scrollbar{display:none}
+.dock .jc{min-height:40px;padding:0 14px;font-size:12.5px;border-color:transparent}
+.dock .jc[aria-current="true"]{border-color:#262626}
+@media (max-width:600px){.jumps:not(.dk){flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px}.jumps::-webkit-scrollbar{display:none}.jc .nm{display:none}.dock .jc{padding:0 12px}}
+@media (prefers-reduced-motion:reduce){.dock{transition:none}}
 
-<footer style="border-top: 1px solid #262626; padding: 56px 0 72px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center">
-<a href="/inventory/" style="font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.6rem; text-transform: uppercase; padding: 8px 0">Every other project ↗</a>
-<a href="/contact/" style="font-size: 13.5px; text-transform: uppercase; padding: 12px 0">Say hello ↗</a>
+
+.mmenu-btn{display:none;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid #262626;background:#fff;color:#262626;font:inherit;font-size:13px;text-transform:uppercase;letter-spacing:1px;align-items:center;gap:8px;cursor:pointer}
+@media (max-width:600px){.mmenu-btn{display:inline-flex}}
+.mmenu{position:fixed;inset:0;z-index:95;color:#262626;background:linear-gradient(to top,#FFF3FE 0%,#FFFFFF 45%);display:flex;flex-direction:column;padding:20px 24px 28px;overflow-y:auto;animation:pop .25s ease-out}
+.mmenu[hidden]{display:none}
+.mmenu .ml{font-weight:700;font-size:2.6rem;line-height:1.1;letter-spacing:-1px;text-transform:uppercase;text-decoration:none;color:#262626;padding:4px 0;align-self:flex-start}
+.mmenu .ml.on{background:linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00);padding:0 8px}
+.mmenu-x{width:44px;height:44px;border-radius:50%;border:1px solid #262626;background:#fff;color:#262626;font-size:16px;cursor:pointer}
+
+.lockcard{width:min(360px,100%);background:#FFFFFF;border:2px solid #262626;border-radius:20px;padding:16px 18px 14px;box-shadow:0 22px 50px rgba(38,38,38,.18);text-align:center;position:relative;margin-top:40px}
+.lockcard .x{position:absolute;right:8px;top:8px;width:36px;height:36px;border:0;background:none;font-size:16px;cursor:pointer;color:#262626}
+.critter{width:72px;height:72px;margin:-48px auto 0;display:block;cursor:pointer;border:0;background:transparent;padding:0}
+.critter img{width:72px;height:72px;display:block}
+.critter.happy img{animation:happy .7s cubic-bezier(.3,1.8,.5,1) 2}
+@keyframes happy{0%{transform:none}30%{transform:translateY(-26px) rotate(-10deg) scale(1.1)}55%{transform:translateY(0) scale(1.15,.85)}75%{transform:translateY(-10px) rotate(8deg)}100%{transform:none}}
+.critter.boo img{animation:boo .8s cubic-bezier(.3,1.7,.5,1)}
+.critter.boo.b2 img{animation:boo2 .8s cubic-bezier(.3,1.7,.5,1)}
+@keyframes boo{0%{transform:scale(1)}20%{transform:scale(1.22,.86) translateY(6px)}45%{transform:scale(.92,1.14) translateY(-10px) rotate(-6deg)}70%{transform:scale(1.06) rotate(4deg)}100%{transform:scale(1)}}
+@keyframes boo2{0%{transform:scale(1)}20%{transform:scale(1.22,.86) translateY(6px)}45%{transform:scale(.92,1.14) translateY(-10px) rotate(6deg)}70%{transform:scale(1.06) rotate(-4deg)}100%{transform:scale(1)}}
+.rawr{position:absolute;left:58%;top:-46px;font-family:'Caveat',cursive;font-weight:700;font-size:2.3rem;color:#DD00FF;pointer-events:none;white-space:nowrap;animation:rawr 1.2s ease-out forwards}
+@keyframes rawr{0%{opacity:0;transform:scale(.4) rotate(-6deg)}22%{opacity:1;transform:scale(1.1) rotate(-6deg)}100%{opacity:0;transform:translate(26px,-22px) rotate(-12deg)}}
+.lockt{margin:6px 0 0;font-family:'TeX Gyre Heros','Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:1.15rem;line-height:1.05;text-transform:uppercase}
+.lockl{margin:6px 0 0;line-height:1.45;font-size:14px}
+.lockbtn{border:0;background:transparent;padding:6px;cursor:pointer;display:inline-block;transition:transform .3s}
+.lockbtn img{width:34px;height:34px;display:block}
+.lockbtn:hover{transform:rotate(-8deg) scale(1.08)}
+.tapline{margin:0;font-size:12px;text-transform:uppercase;letter-spacing:.8px}
+.keyrow{display:flex;gap:8px;margin-top:14px}
+.keyrow[hidden],.knock[hidden]{display:none}
+.keyrow input{flex:1;min-width:0;min-height:48px;padding:0 18px;border-radius:999px;border:2px solid #262626;font:inherit;font-size:16px;color:#262626}
+.keyrow input:focus{outline:2px solid #DD00FF;outline-offset:2px}
+.keyrow button{min-height:48px;padding:0 18px;border-radius:999px;border:2px solid #262626;background:#262626;color:#FFFFFF;font:inherit;font-size:13.5px;text-transform:uppercase;cursor:pointer}
+.nokey{margin:14px 0 0;font-size:13px}
+.nokey a{color:inherit}
+.lockcard .msg{margin:8px 0 0;font-size:13px;min-height:0}
+.lockcard .msg:empty{display:none}
+.lockbg.shake .lockcard{animation:shake .45s}
+@keyframes shake{20%{transform:translateX(-10px)}40%{transform:translateX(9px)}60%{transform:translateX(-6px)}80%{transform:translateX(4px)}}
+.lockbg.open .lockcard{animation:opengate .7s ease-in forwards}
+@keyframes opengate{to{opacity:0;transform:translateY(-30px) scale(.92)}}
+@media (prefers-reduced-motion:reduce){.critter img,.rawr,.lockbg.shake .lockcard,.lockbg.open .lockcard{animation:none!important}}
+
+/* test bar */
+.tbar{position:fixed;left:max(10px,env(safe-area-inset-left,0px));bottom:max(10px,env(safe-area-inset-bottom,0px));z-index:70;background:#fff;border:2px solid var(--ink);border-radius:18px;padding:8px 10px;display:grid;gap:6px;box-shadow:0 12px 30px -12px rgba(38,38,38,.35);max-width:calc(100vw - 20px);font-size:12px}
+.tbar .g{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tbar b{font-size:10.5px;text-transform:uppercase;letter-spacing:.8px;min-width:54px}
+.tbar button{min-height:26px;padding:0 10px;border-radius:999px;border:1px solid var(--line2);background:#fff;font:inherit;font-size:12px;cursor:pointer;color:var(--ink)}
+.tbar button[aria-pressed="true"]{border-color:var(--ink);font-weight:700;box-shadow:-5px 4px 14px -6px rgba(221,0,255,.45),5px 4px 14px -6px rgba(0,255,247,.55),0 7px 12px -8px rgba(252,160,2,.5)}
+.tbar .min{justify-self:end;border:0;min-height:20px;padding:0 4px}
+.tbar.small .g{display:none}
+@media (prefers-reduced-motion:reduce){.rule{animation:none}}
+</style>
+
+<canvas class="bgfx" aria-hidden="true"></canvas>
+<div class="wrap">
+  <header class="site">
+    <a href="/" aria-label="Shany Mo, home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M176.95 70.00C179.05 69.84 182.20 69.11 184.16 68.32C186.22 67.50 187.67 66.81 188.27 66.38C188.55 66.17 188.85 66.00 188.94 66.00C189.19 66.00 191.87 63.93 193.13 62.77C193.78 62.16 194.48 61.42 194.68 61.11C194.88 60.81 195.24 60.32 195.47 60.03C196.14 59.18 196.76 58.24 197.07 57.56C197.23 57.22 197.47 56.74 197.61 56.50C198.30 55.26 198.75 54.17 198.94 53.23C199.20 51.95 199.40 51.44 199.74 51.23C200.00 51.07 200.00 50.99 200.00 46.28C200.00 42.21 199.97 41.48 199.82 41.42C199.54 41.32 199.16 40.42 198.94 39.41C198.84 38.91 198.59 38.18 198.39 37.78C198.20 37.39 198.00 36.89 197.95 36.69C197.90 36.48 197.73 36.11 197.57 35.87C197.41 35.62 197.11 35.08 196.90 34.67C196.46 33.81 194.12 30.72 193.26 29.87C192.95 29.56 192.49 29.17 192.25 29.00C192.01 28.83 191.43 28.37 190.97 27.98C190.51 27.58 189.94 27.16 189.72 27.05C189.50 26.94 188.76 26.48 188.09 26.04C187.42 25.60 186.59 25.13 186.25 25.00C185.90 24.86 185.35 24.61 185.02 24.45C184.68 24.28 184.03 24.05 183.56 23.94C183.09 23.83 182.39 23.60 182.01 23.44C181.63 23.27 180.97 23.08 180.56 23.01C180.15 22.94 179.14 22.74 178.31 22.56C176.98 22.27 176.45 22.22 173.50 22.16C171.34 22.12 169.86 22.14 169.25 22.23C167.17 22.54 164.76 23.04 163.88 23.33C163.36 23.51 162.48 23.78 161.93 23.94C161.37 24.09 160.69 24.36 160.43 24.54C160.16 24.71 159.70 24.92 159.40 25.00C159.11 25.07 158.52 25.36 158.10 25.63C157.68 25.90 157.27 26.13 157.20 26.13C156.84 26.14 153.62 28.53 152.33 29.75C151.39 30.63 149.21 33.30 148.97 33.85C148.89 34.03 148.64 34.48 148.41 34.84C147.93 35.62 147.32 36.82 147.19 37.25C147.14 37.42 146.90 38.06 146.67 38.66C146.16 39.97 145.94 40.97 145.62 43.38C145.28 45.93 145.31 47.27 145.75 50.14C146.31 53.71 147.26 56.21 149.21 59.17C150.07 60.48 150.61 61.12 152.11 62.62C153.92 64.42 154.88 65.18 156.62 66.15C158.24 67.05 159.93 67.88 160.49 68.05C160.80 68.15 161.38 68.37 161.77 68.55C162.16 68.73 162.92 68.97 163.46 69.07C164.00 69.17 164.83 69.36 165.31 69.50C166.10 69.72 167.46 69.93 168.81 70.04C170.00 70.14 175.45 70.11 176.95 70.00ZM43.53 61.99C44.42 61.75 44.39 62.08 44.35 54.33L44.31 47.38L43.97 47.03L43.62 46.69L21.81 46.66L0.00 46.62L0.00 54.37L0.00 62.12L21.53 62.12C36.11 62.12 43.21 62.08 43.53 61.99ZM170.00 56.61C169.62 56.47 168.97 56.24 168.56 56.11C168.15 55.97 167.61 55.73 167.37 55.57C167.12 55.41 166.64 55.13 166.28 54.95C165.67 54.64 164.36 53.30 163.99 52.60C163.90 52.44 163.68 52.12 163.49 51.88C163.30 51.63 162.93 50.79 162.67 50.00L162.19 48.56L162.19 46.19L162.20 43.81L162.76 42.38C163.53 40.41 164.79 38.63 166.05 37.74C167.35 36.82 168.37 36.25 168.93 36.12C170.36 35.78 172.06 35.50 172.69 35.50C173.74 35.50 176.24 35.97 176.88 36.30C178.80 37.27 179.02 37.42 180.28 38.74C181.39 39.90 181.65 40.26 182.21 41.40C182.80 42.59 182.89 42.86 183.06 44.18C183.30 46.00 183.30 46.58 183.06 48.44C182.89 49.73 182.79 50.08 182.35 50.98C182.07 51.55 181.68 52.23 181.50 52.48C180.31 54.12 178.38 55.63 176.85 56.10C176.42 56.24 175.74 56.47 175.35 56.61C174.73 56.84 174.36 56.87 172.66 56.87C170.98 56.87 170.59 56.83 170.00 56.61ZM71.45 46.82C71.59 46.78 71.78 46.60 71.86 46.43C71.96 46.20 72.00 42.57 72.00 32.78C72.00 24.56 72.05 19.14 72.13 18.67C72.28 17.69 73.11 15.90 73.83 14.99C74.13 14.60 74.76 14.02 75.22 13.71C75.98 13.19 76.21 13.10 77.50 12.86C78.81 12.61 79.06 12.60 80.32 12.73C81.08 12.81 81.97 12.95 82.29 13.05C83.07 13.28 84.57 14.29 85.18 14.98C85.72 15.58 86.66 17.16 86.86 17.79C87.19 18.81 87.25 21.26 87.25 33.50C87.25 45.84 87.26 46.23 87.49 46.52L87.73 46.81L94.83 46.88C98.74 46.91 102.11 46.90 102.32 46.84C102.56 46.79 102.77 46.63 102.86 46.43C102.96 46.20 103.00 42.59 103.00 32.64C103.00 23.62 103.04 18.93 103.13 18.45C103.29 17.59 104.18 15.77 104.85 14.92C105.12 14.59 105.72 14.05 106.20 13.72C106.98 13.19 107.20 13.10 108.50 12.86C109.81 12.61 110.06 12.60 111.32 12.73C113.11 12.92 113.67 13.09 114.78 13.82C115.87 14.54 116.50 15.22 117.22 16.49C118.21 18.21 118.16 17.38 118.24 32.71C118.31 45.60 118.33 46.38 118.54 46.59C118.74 46.80 119.26 46.82 125.85 46.88C129.75 46.91 133.11 46.89 133.33 46.84C133.59 46.78 133.77 46.63 133.87 46.40C133.97 46.14 134.00 41.90 133.97 29.81L133.93 13.56L133.47 12.00C133.21 11.14 133.00 10.35 133.00 10.25C133.00 10.14 132.69 9.42 132.31 8.65C131.77 7.55 131.37 6.96 130.48 5.93C128.90 4.10 126.67 2.38 125.22 1.89C124.85 1.76 124.32 1.54 124.04 1.40C123.76 1.25 123.12 1.04 122.61 0.93C121.95 0.77 121.60 0.62 121.34 0.36L120.98 0.00L116.91 -0.00L112.84 -0.00L112.56 0.30C112.37 0.51 111.83 0.75 110.98 1.01C109.77 1.39 109.02 1.75 107.38 2.76C106.14 3.52 105.21 4.28 103.46 6.00C102.52 6.92 101.66 7.73 101.56 7.78C101.28 7.94 100.96 7.70 100.26 6.83C98.65 4.81 95.79 2.44 94.41 1.99C94.15 1.91 93.61 1.68 93.21 1.47C92.80 1.27 92.05 1.03 91.52 0.93C90.51 0.73 90.00 0.48 90.00 0.18C90.00 0.03 89.44 0.00 85.94 0.00L81.89 0.00L81.59 0.30C81.42 0.47 80.79 0.76 80.11 0.98C78.79 1.41 77.58 1.98 76.81 2.52C76.54 2.72 75.83 3.20 75.25 3.59C74.67 3.98 73.88 4.62 73.50 5.02C72.32 6.26 72.09 6.03 72.00 3.62C71.95 2.15 71.90 1.86 71.70 1.63L71.46 1.37L64.22 1.40L56.98 1.44L56.68 1.79L56.38 2.14L56.38 24.24L56.38 46.34L56.64 46.57C56.89 46.80 57.24 46.82 63.86 46.88C71.11 46.94 71.03 46.94 71.45 46.82Z"/></svg></a>
+    <nav class="nav" aria-label="Primary"><a href="/">Home</a><a href="/work/" class="on" aria-current="page">Work</a><a href="/inventory/">Inventory</a><a href="/lab/">Lab</a><a href="/contact/">Contact</a></nav>
+    <button class="mmenu-btn" type="button" aria-label="Open menu"><svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="2"></path></svg>Menu</button>
+  </header>
+  <div class="rule"></div><p class="topline">Work · Four case files · Eyes only</p><div class="rule"></div>
+  <h1 class="big">The bet. The craft. <span class="hl">What moved.</span></h1>
+  <nav class="jumps" id="jumps" aria-label="Jump to a case"></nav>
+  <div id="cases"></div>
+  <div style="height:72px"></div>
+<footer class="sitefoot" style="border-top: 1px solid #262626; padding: 56px 0 72px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; font-family: 'Heros','TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif; letter-spacing: .5px">
+<a href="/inventory/" style="font-weight: 700; font-size: 1.6rem; text-transform: uppercase; padding: 8px 0; color: #262626">Every other project ↗</a>
+<a href="/contact/" style="font-size: 13.5px; text-transform: uppercase; padding: 12px 0; color: #262626">Say hello ↗</a>
 </footer>
+</div>
+<div class="siteribbon" style="position: relative; z-index: 1; overflow: hidden; border-top: 1px solid #E4E4E4; padding: 10px 0; background: rgba(255,255,255,0.7); font-family: 'Heros','TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif; letter-spacing: .5px; color: #262626">
+<div class="mqtrack" style="font-size: 11px; align-items: center"></div>
+</div>
+<p class="sitecopy" style="position: relative; z-index: 1; margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4; background: #fff; font-family: 'Heros','TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif; letter-spacing: .5px; color: #262626">©Made on Earth by Shany Mo while eating 🍟</p>
+<style>.mqtrack{display:flex;width:max-content;animation:mqmarq 150s linear infinite}@keyframes mqmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}.mqtrack a{color:#262626;text-decoration:none}@media (prefers-reduced-motion:reduce){.mqtrack{animation:none}}</style>
+<script>(()=>{ const items=[['Contact me to make awesomeness','/contact/'],['Working from Earth','/'],['Made on Earth by Shany Mo while eating 🍟','/'],['hello@shanymo.com','mailto:hello@shanymo.com']]; const t=document.querySelector('.siteribbon .mqtrack'); let h='';
+  for(let r=0;r<8;r++) items.forEach(([l,u])=>{ h+=`<span style="display:inline-flex;align-items:center;gap:10px;padding-right:12px;white-space:nowrap"><span aria-hidden="true">←</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><path d="M9 9h.01M15 9h.01"></path></svg><span aria-hidden="true">→</span><a href="${u}" tabindex="${r?'-1':'0'}">${l}</a></span>`; }); t.innerHTML=h; })();</script>
 
-</div>
-<div style="position: relative; overflow: hidden; border-top: 1px solid #E4E4E4; padding: 10px 0; background: rgba(255,255,255,0.7)">
-<div class="mqtrack" style="font-size: 11px; align-items: center">
-<template sc-for list="{{askMarquee}}" as="m" hint-placeholder-count="12">
-<span style="display: inline-flex; align-items: center; gap: 10px; padding-right: 12px; white-space: nowrap">
-<span aria-hidden="true">←</span>
-<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><path d="M9 9h.01M15 9h.01"></path></svg>
-<span aria-hidden="true">→</span>
-<a href="{{m.href}}" tabindex="{{m.tab}}" style="text-decoration: none">{{m.label}}</a>
-</span>
-</template>
-</div>
-</div>
-<p class="lift" style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4">©Made on Earth by Shany Mo while eating 🍟</p>
-</div>
-<template sc-if value="{{chatClosed}}" hint-placeholder-val="{{ true }}">
-<button class="ask" onClick="{{openChat}}" aria-expanded="false" aria-controls="askmo" style="position: fixed; right: 32px; bottom: 32px; z-index: 50; min-height: 56px; padding: 0 22px 0 18px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: #262626; box-shadow: 0 10px 30px rgba(221,0,255,0.18)">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>
-Ask Mo
-</button>
-</template>
 
-<template sc-if value="{{chatOpen}}" hint-placeholder-val="{{ false }}">
-<section id="askmo" class="panel" aria-label="Ask Mo" style="position: fixed; right: 32px; bottom: 32px; z-index: 50; width: 420px; border-radius: 26px; padding: 2px; background: linear-gradient(135deg,#DD00FF,#00FFF7,#FCA002,#FFFF00); box-shadow: 0 24px 60px rgba(38,38,38,0.18)">
-<div style="background: #FFFFFF; border-radius: 24px; overflow: hidden">
-<div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 14px 20px; border-bottom: 1px solid #E4E4E4">
-<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 18px">Ask Mo <span style="font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.5px">— FAQ mode</span></p>
-<button onClick="{{closeChat}}" aria-label="Close Ask Mo" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #CFCFCF; background: #FFFFFF; color: #262626; cursor: pointer; display: inline-flex; align-items: center; justify-content: center">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
-</button>
+<div class="dock" id="dock" aria-hidden="true"><nav class="jumps dk" aria-label="Jump to a case (docked)"></nav></div>
+<div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+<div style="display:flex;justify-content:space-between;align-items:center"><a href="/" aria-label="Shany Mo, home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" style="display:block;height:30px;width:auto" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M176.95 70.00C179.05 69.84 182.20 69.11 184.16 68.32C186.22 67.50 187.67 66.81 188.27 66.38C188.55 66.17 188.85 66.00 188.94 66.00C189.19 66.00 191.87 63.93 193.13 62.77C193.78 62.16 194.48 61.42 194.68 61.11C194.88 60.81 195.24 60.32 195.47 60.03C196.14 59.18 196.76 58.24 197.07 57.56C197.23 57.22 197.47 56.74 197.61 56.50C198.30 55.26 198.75 54.17 198.94 53.23C199.20 51.95 199.40 51.44 199.74 51.23C200.00 51.07 200.00 50.99 200.00 46.28C200.00 42.21 199.97 41.48 199.82 41.42C199.54 41.32 199.16 40.42 198.94 39.41C198.84 38.91 198.59 38.18 198.39 37.78C198.20 37.39 198.00 36.89 197.95 36.69C197.90 36.48 197.73 36.11 197.57 35.87C197.41 35.62 197.11 35.08 196.90 34.67C196.46 33.81 194.12 30.72 193.26 29.87C192.95 29.56 192.49 29.17 192.25 29.00C192.01 28.83 191.43 28.37 190.97 27.98C190.51 27.58 189.94 27.16 189.72 27.05C189.50 26.94 188.76 26.48 188.09 26.04C187.42 25.60 186.59 25.13 186.25 25.00C185.90 24.86 185.35 24.61 185.02 24.45C184.68 24.28 184.03 24.05 183.56 23.94C183.09 23.83 182.39 23.60 182.01 23.44C181.63 23.27 180.97 23.08 180.56 23.01C180.15 22.94 179.14 22.74 178.31 22.56C176.98 22.27 176.45 22.22 173.50 22.16C171.34 22.12 169.86 22.14 169.25 22.23C167.17 22.54 164.76 23.04 163.88 23.33C163.36 23.51 162.48 23.78 161.93 23.94C161.37 24.09 160.69 24.36 160.43 24.54C160.16 24.71 159.70 24.92 159.40 25.00C159.11 25.07 158.52 25.36 158.10 25.63C157.68 25.90 157.27 26.13 157.20 26.13C156.84 26.14 153.62 28.53 152.33 29.75C151.39 30.63 149.21 33.30 148.97 33.85C148.89 34.03 148.64 34.48 148.41 34.84C147.93 35.62 147.32 36.82 147.19 37.25C147.14 37.42 146.90 38.06 146.67 38.66C146.16 39.97 145.94 40.97 145.62 43.38C145.28 45.93 145.31 47.27 145.75 50.14C146.31 53.71 147.26 56.21 149.21 59.17C150.07 60.48 150.61 61.12 152.11 62.62C153.92 64.42 154.88 65.18 156.62 66.15C158.24 67.05 159.93 67.88 160.49 68.05C160.80 68.15 161.38 68.37 161.77 68.55C162.16 68.73 162.92 68.97 163.46 69.07C164.00 69.17 164.83 69.36 165.31 69.50C166.10 69.72 167.46 69.93 168.81 70.04C170.00 70.14 175.45 70.11 176.95 70.00ZM43.53 61.99C44.42 61.75 44.39 62.08 44.35 54.33L44.31 47.38L43.97 47.03L43.62 46.69L21.81 46.66L0.00 46.62L0.00 54.37L0.00 62.12L21.53 62.12C36.11 62.12 43.21 62.08 43.53 61.99ZM170.00 56.61C169.62 56.47 168.97 56.24 168.56 56.11C168.15 55.97 167.61 55.73 167.37 55.57C167.12 55.41 166.64 55.13 166.28 54.95C165.67 54.64 164.36 53.30 163.99 52.60C163.90 52.44 163.68 52.12 163.49 51.88C163.30 51.63 162.93 50.79 162.67 50.00L162.19 48.56L162.19 46.19L162.20 43.81L162.76 42.38C163.53 40.41 164.79 38.63 166.05 37.74C167.35 36.82 168.37 36.25 168.93 36.12C170.36 35.78 172.06 35.50 172.69 35.50C173.74 35.50 176.24 35.97 176.88 36.30C178.80 37.27 179.02 37.42 180.28 38.74C181.39 39.90 181.65 40.26 182.21 41.40C182.80 42.59 182.89 42.86 183.06 44.18C183.30 46.00 183.30 46.58 183.06 48.44C182.89 49.73 182.79 50.08 182.35 50.98C182.07 51.55 181.68 52.23 181.50 52.48C180.31 54.12 178.38 55.63 176.85 56.10C176.42 56.24 175.74 56.47 175.35 56.61C174.73 56.84 174.36 56.87 172.66 56.87C170.98 56.87 170.59 56.83 170.00 56.61ZM71.45 46.82C71.59 46.78 71.78 46.60 71.86 46.43C71.96 46.20 72.00 42.57 72.00 32.78C72.00 24.56 72.05 19.14 72.13 18.67C72.28 17.69 73.11 15.90 73.83 14.99C74.13 14.60 74.76 14.02 75.22 13.71C75.98 13.19 76.21 13.10 77.50 12.86C78.81 12.61 79.06 12.60 80.32 12.73C81.08 12.81 81.97 12.95 82.29 13.05C83.07 13.28 84.57 14.29 85.18 14.98C85.72 15.58 86.66 17.16 86.86 17.79C87.19 18.81 87.25 21.26 87.25 33.50C87.25 45.84 87.26 46.23 87.49 46.52L87.73 46.81L94.83 46.88C98.74 46.91 102.11 46.90 102.32 46.84C102.56 46.79 102.77 46.63 102.86 46.43C102.96 46.20 103.00 42.59 103.00 32.64C103.00 23.62 103.04 18.93 103.13 18.45C103.29 17.59 104.18 15.77 104.85 14.92C105.12 14.59 105.72 14.05 106.20 13.72C106.98 13.19 107.20 13.10 108.50 12.86C109.81 12.61 110.06 12.60 111.32 12.73C113.11 12.92 113.67 13.09 114.78 13.82C115.87 14.54 116.50 15.22 117.22 16.49C118.21 18.21 118.16 17.38 118.24 32.71C118.31 45.60 118.33 46.38 118.54 46.59C118.74 46.80 119.26 46.82 125.85 46.88C129.75 46.91 133.11 46.89 133.33 46.84C133.59 46.78 133.77 46.63 133.87 46.40C133.97 46.14 134.00 41.90 133.97 29.81L133.93 13.56L133.47 12.00C133.21 11.14 133.00 10.35 133.00 10.25C133.00 10.14 132.69 9.42 132.31 8.65C131.77 7.55 131.37 6.96 130.48 5.93C128.90 4.10 126.67 2.38 125.22 1.89C124.85 1.76 124.32 1.54 124.04 1.40C123.76 1.25 123.12 1.04 122.61 0.93C121.95 0.77 121.60 0.62 121.34 0.36L120.98 0.00L116.91 -0.00L112.84 -0.00L112.56 0.30C112.37 0.51 111.83 0.75 110.98 1.01C109.77 1.39 109.02 1.75 107.38 2.76C106.14 3.52 105.21 4.28 103.46 6.00C102.52 6.92 101.66 7.73 101.56 7.78C101.28 7.94 100.96 7.70 100.26 6.83C98.65 4.81 95.79 2.44 94.41 1.99C94.15 1.91 93.61 1.68 93.21 1.47C92.80 1.27 92.05 1.03 91.52 0.93C90.51 0.73 90.00 0.48 90.00 0.18C90.00 0.03 89.44 0.00 85.94 0.00L81.89 0.00L81.59 0.30C81.42 0.47 80.79 0.76 80.11 0.98C78.79 1.41 77.58 1.98 76.81 2.52C76.54 2.72 75.83 3.20 75.25 3.59C74.67 3.98 73.88 4.62 73.50 5.02C72.32 6.26 72.09 6.03 72.00 3.62C71.95 2.15 71.90 1.86 71.70 1.63L71.46 1.37L64.22 1.40L56.98 1.44L56.68 1.79L56.38 2.14L56.38 24.24L56.38 46.34L56.64 46.57C56.89 46.80 57.24 46.82 63.86 46.88C71.11 46.94 71.03 46.94 71.45 46.82Z"/></svg></a><button class="mmenu-x" type="button" aria-label="Close menu">✕</button></div>
+<nav aria-label="Mobile" style="margin-top:40px;display:flex;flex-direction:column;gap:8px"><a class="ml" href="/">Home</a><a class="ml on" href="/work/" aria-current="page">Work</a><a class="ml" href="/inventory/">Inventory</a><a class="ml" href="/lab/">Lab</a><a class="ml" href="/contact/">Contact</a></nav>
 </div>
-<template sc-if value="{{faqMode}}" hint-placeholder-val="{{ true }}">
-<div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; min-height: 180px">
-<div style="align-self: flex-end; max-width: 85%; background: #262626; color: #FFFFFF; border-radius: 18px 18px 4px 18px; padding: 12px 16px; line-height: 1.45">{{askQ.question}}</div>
-<div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px">
-<p style="margin: 0; line-height: 1.55">{{askQ.answer}}</p>
-<p style="margin: 10px 0 0; font-size: 11px; text-transform: uppercase">Source — {{askQ.source}}</p>
+<div class="lockbg" id="lockbg" hidden>
+  <div class="lockcard" role="dialog" aria-modal="true" aria-labelledby="lockh">
+    <button class="x" type="button" aria-label="Close">✕</button>
+    <button class="critter" type="button" aria-label="Poke the monster"><img src="img/monster.webp" alt=""></button>
+    <p class="lockt" id="lockh">This one is confidential.</p>
+    <p class="lockl" id="lockp">The story is open. The screens, flows and numbers need a key.</p>
+    <div class="knock"><button class="lockbtn" type="button" aria-label="Knock on the lock"><img src="img/locked.png" alt=""></button><p class="tapline">Tap the lock or the monster</p></div>
+    <form class="keyrow" hidden><label for="code" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Key</label><input id="code" type="password" placeholder="The key, please" autocomplete="off"><button type="submit">Unlock</button></form>
+    <p class="msg" aria-live="polite"></p>
+    <p class="nokey">No key? <a href="/contact/">Ask Mo for one ↗</a></p>
+  </div>
 </div>
-</div>
-<div style="padding: 0 20px 14px; display: flex; flex-wrap: wrap; gap: 6px">
-<template sc-for list="{{askQuestions}}" as="item" hint-placeholder-count="4">
-<button class="q" onClick="{{item.pick}}" aria-pressed="{{item.pressed}}" style="{{item.style}}">{{item.question}}</button>
-</template>
-</div>
-</template>
-<template sc-if value="{{onbMode}}" hint-placeholder-val="{{ false }}">
-<div class="askegg" aria-live="polite">
-<div style="padding: 22px 24px 6px; display: flex; gap: 16px; align-items: flex-start">
-<img src="/assets/trex-fluent-anim.webp" width="72" height="72" alt="Tickle the monster" title="Tickle me" onClick="{{askTickle}}" style="flex: none; margin: -6px -4px 0 -8px; cursor: pointer">
-<div>
-<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1.1; text-transform: uppercase">Mo's AI twin is still in onboarding.</p>
-<p style="margin: 10px 0 0; line-height: 1.55">Ironic: she redesigned onboarding at 6ix and lifted investor conversion 48%. Her twin is a slower learner. Until it graduates, the original answers faster.</p>
-</div>
-</div>
-<div style="padding: 10px 24px 4px">
-<div style="display: flex; justify-content: space-between; font-size: 11px; text-transform: uppercase; margin-bottom: 6px"><span>Onboarding progress</span><span>99%</span></div>
-<div style="height: 8px; border-radius: 999px; background: #EFEFEF; overflow: hidden"><div style="height: 100%; width: 99%; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div></div>
-<p style="margin: 6px 0 0; font-size: 11px">Stuck at 99% since lunch. Suspected cause: fries.</p>
-</div>
-<div style="padding: 16px 24px 6px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
-<button onClick="{{askCopy}}" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; background: #262626; color: #FFFFFF; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px; border: 0; cursor: pointer; font-family: inherit; font-size: 13px">{{copyLabel}}</button>
-<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px">LinkedIn ↗</a>
-</div>
-<div style="padding: 4px 24px 10px; text-align: center">
-<button onClick="{{backToFaq}}" style="min-height: 44px; padding: 0 12px; border: 0; background: transparent; color: #262626; cursor: pointer; font-family: inherit; font-size: 13px; text-decoration: underline">← Back to the FAQs</button>
-</div>
-</div>
-</template>
-<div style="padding: 12px 20px 18px; border-top: 1px solid #E4E4E4; display: flex; gap: 8px; align-items: center">
-<label for="ask" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Ask a question about Shany's work</label>
-<input id="ask" type="text" onKeyDown="{{onAskKey}}" placeholder="Ask anything else…" style="flex: 1; min-width: 0; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #CFCFCF; background: #FFFFFF; color: #262626; font-family: inherit; font-size: 14px">
-<button onClick="{{send}}" aria-label="Send question" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #262626; color: #FFFFFF; cursor: pointer; display: inline-flex; align-items: center; justify-content: center">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-</button>
-</div>
-</div>
-</section>
-</template>
-<template sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
-<div class="mmenu" role="dialog" aria-modal="true" aria-label="Menu">
-<div style="display: flex; justify-content: space-between; align-items: center">
-<a href="/" aria-label="Shany Mo, home" style="font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: -1px; text-decoration: none; line-height: 1; color: #262626"><svg xmlns="http://www.w3.org/2000/svg" class="mo-logo" style="display: block; height: 30px; width: auto" viewBox="0 0 200 70" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M176.95 70.00C179.05 69.84 182.20 69.11 184.16 68.32C186.22 67.50 187.67 66.81 188.27 66.38C188.55 66.17 188.85 66.00 188.94 66.00C189.19 66.00 191.87 63.93 193.13 62.77C193.78 62.16 194.48 61.42 194.68 61.11C194.88 60.81 195.24 60.32 195.47 60.03C196.14 59.18 196.76 58.24 197.07 57.56C197.23 57.22 197.47 56.74 197.61 56.50C198.30 55.26 198.75 54.17 198.94 53.23C199.20 51.95 199.40 51.44 199.74 51.23C200.00 51.07 200.00 50.99 200.00 46.28C200.00 42.21 199.97 41.48 199.82 41.42C199.54 41.32 199.16 40.42 198.94 39.41C198.84 38.91 198.59 38.18 198.39 37.78C198.20 37.39 198.00 36.89 197.95 36.69C197.90 36.48 197.73 36.11 197.57 35.87C197.41 35.62 197.11 35.08 196.90 34.67C196.46 33.81 194.12 30.72 193.26 29.87C192.95 29.56 192.49 29.17 192.25 29.00C192.01 28.83 191.43 28.37 190.97 27.98C190.51 27.58 189.94 27.16 189.72 27.05C189.50 26.94 188.76 26.48 188.09 26.04C187.42 25.60 186.59 25.13 186.25 25.00C185.90 24.86 185.35 24.61 185.02 24.45C184.68 24.28 184.03 24.05 183.56 23.94C183.09 23.83 182.39 23.60 182.01 23.44C181.63 23.27 180.97 23.08 180.56 23.01C180.15 22.94 179.14 22.74 178.31 22.56C176.98 22.27 176.45 22.22 173.50 22.16C171.34 22.12 169.86 22.14 169.25 22.23C167.17 22.54 164.76 23.04 163.88 23.33C163.36 23.51 162.48 23.78 161.93 23.94C161.37 24.09 160.69 24.36 160.43 24.54C160.16 24.71 159.70 24.92 159.40 25.00C159.11 25.07 158.52 25.36 158.10 25.63C157.68 25.90 157.27 26.13 157.20 26.13C156.84 26.14 153.62 28.53 152.33 29.75C151.39 30.63 149.21 33.30 148.97 33.85C148.89 34.03 148.64 34.48 148.41 34.84C147.93 35.62 147.32 36.82 147.19 37.25C147.14 37.42 146.90 38.06 146.67 38.66C146.16 39.97 145.94 40.97 145.62 43.38C145.28 45.93 145.31 47.27 145.75 50.14C146.31 53.71 147.26 56.21 149.21 59.17C150.07 60.48 150.61 61.12 152.11 62.62C153.92 64.42 154.88 65.18 156.62 66.15C158.24 67.05 159.93 67.88 160.49 68.05C160.80 68.15 161.38 68.37 161.77 68.55C162.16 68.73 162.92 68.97 163.46 69.07C164.00 69.17 164.83 69.36 165.31 69.50C166.10 69.72 167.46 69.93 168.81 70.04C170.00 70.14 175.45 70.11 176.95 70.00ZM43.53 61.99C44.42 61.75 44.39 62.08 44.35 54.33L44.31 47.38L43.97 47.03L43.62 46.69L21.81 46.66L0.00 46.62L0.00 54.37L0.00 62.12L21.53 62.12C36.11 62.12 43.21 62.08 43.53 61.99ZM170.00 56.61C169.62 56.47 168.97 56.24 168.56 56.11C168.15 55.97 167.61 55.73 167.37 55.57C167.12 55.41 166.64 55.13 166.28 54.95C165.67 54.64 164.36 53.30 163.99 52.60C163.90 52.44 163.68 52.12 163.49 51.88C163.30 51.63 162.93 50.79 162.67 50.00L162.19 48.56L162.19 46.19L162.20 43.81L162.76 42.38C163.53 40.41 164.79 38.63 166.05 37.74C167.35 36.82 168.37 36.25 168.93 36.12C170.36 35.78 172.06 35.50 172.69 35.50C173.74 35.50 176.24 35.97 176.88 36.30C178.80 37.27 179.02 37.42 180.28 38.74C181.39 39.90 181.65 40.26 182.21 41.40C182.80 42.59 182.89 42.86 183.06 44.18C183.30 46.00 183.30 46.58 183.06 48.44C182.89 49.73 182.79 50.08 182.35 50.98C182.07 51.55 181.68 52.23 181.50 52.48C180.31 54.12 178.38 55.63 176.85 56.10C176.42 56.24 175.74 56.47 175.35 56.61C174.73 56.84 174.36 56.87 172.66 56.87C170.98 56.87 170.59 56.83 170.00 56.61ZM71.45 46.82C71.59 46.78 71.78 46.60 71.86 46.43C71.96 46.20 72.00 42.57 72.00 32.78C72.00 24.56 72.05 19.14 72.13 18.67C72.28 17.69 73.11 15.90 73.83 14.99C74.13 14.60 74.76 14.02 75.22 13.71C75.98 13.19 76.21 13.10 77.50 12.86C78.81 12.61 79.06 12.60 80.32 12.73C81.08 12.81 81.97 12.95 82.29 13.05C83.07 13.28 84.57 14.29 85.18 14.98C85.72 15.58 86.66 17.16 86.86 17.79C87.19 18.81 87.25 21.26 87.25 33.50C87.25 45.84 87.26 46.23 87.49 46.52L87.73 46.81L94.83 46.88C98.74 46.91 102.11 46.90 102.32 46.84C102.56 46.79 102.77 46.63 102.86 46.43C102.96 46.20 103.00 42.59 103.00 32.64C103.00 23.62 103.04 18.93 103.13 18.45C103.29 17.59 104.18 15.77 104.85 14.92C105.12 14.59 105.72 14.05 106.20 13.72C106.98 13.19 107.20 13.10 108.50 12.86C109.81 12.61 110.06 12.60 111.32 12.73C113.11 12.92 113.67 13.09 114.78 13.82C115.87 14.54 116.50 15.22 117.22 16.49C118.21 18.21 118.16 17.38 118.24 32.71C118.31 45.60 118.33 46.38 118.54 46.59C118.74 46.80 119.26 46.82 125.85 46.88C129.75 46.91 133.11 46.89 133.33 46.84C133.59 46.78 133.77 46.63 133.87 46.40C133.97 46.14 134.00 41.90 133.97 29.81L133.93 13.56L133.47 12.00C133.21 11.14 133.00 10.35 133.00 10.25C133.00 10.14 132.69 9.42 132.31 8.65C131.77 7.55 131.37 6.96 130.48 5.93C128.90 4.10 126.67 2.38 125.22 1.89C124.85 1.76 124.32 1.54 124.04 1.40C123.76 1.25 123.12 1.04 122.61 0.93C121.95 0.77 121.60 0.62 121.34 0.36L120.98 0.00L116.91 -0.00L112.84 -0.00L112.56 0.30C112.37 0.51 111.83 0.75 110.98 1.01C109.77 1.39 109.02 1.75 107.38 2.76C106.14 3.52 105.21 4.28 103.46 6.00C102.52 6.92 101.66 7.73 101.56 7.78C101.28 7.94 100.96 7.70 100.26 6.83C98.65 4.81 95.79 2.44 94.41 1.99C94.15 1.91 93.61 1.68 93.21 1.47C92.80 1.27 92.05 1.03 91.52 0.93C90.51 0.73 90.00 0.48 90.00 0.18C90.00 0.03 89.44 0.00 85.94 0.00L81.89 0.00L81.59 0.30C81.42 0.47 80.79 0.76 80.11 0.98C78.79 1.41 77.58 1.98 76.81 2.52C76.54 2.72 75.83 3.20 75.25 3.59C74.67 3.98 73.88 4.62 73.50 5.02C72.32 6.26 72.09 6.03 72.00 3.62C71.95 2.15 71.90 1.86 71.70 1.63L71.46 1.37L64.22 1.40L56.98 1.44L56.68 1.79L56.38 2.14L56.38 24.24L56.38 46.34L56.64 46.57C56.89 46.80 57.24 46.82 63.86 46.88C71.11 46.94 71.03 46.94 71.45 46.82Z"/></svg></a>
-<button class="mmenu-x" onClick="{{closeMenu}}" aria-label="Close menu">✕</button>
-</div>
-<nav aria-label="Mobile" style="margin-top: 40px; display: flex; flex-direction: column; gap: 8px">
-<a class="ml" href="/">Home</a>
-<a class="ml on" href="/work/" aria-current="page">Work</a>
-<a class="ml" href="/inventory/">Inventory</a>
-<a class="ml" href="/lab/">Lab</a>
-<a class="ml" href="/contact/">Contact</a>
-</nav>
-<div style="height: 1px; margin: 30px 0 18px; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div>
-<a href="mailto:hello@shanymo.com" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">hello@shanymo.com ↗</a>
-<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="font-size: 15px; text-transform: uppercase; color: #262626; padding: 10px 0; align-self: flex-start">LinkedIn ↗</a>
-<div style="margin-top: auto; padding-top: 24px; display: flex; align-items: flex-end; gap: 10px">
-<img src="/assets/inline/9c036bdc2ad0.png" width="64" height="64" alt="">
-<p style="margin: 0 0 12px; font-size: 13px; line-height: 1.4">I guard the menu.<br>Tiny arms, big welcome.</p>
-</div>
-</div>
-</template>
-</template>
-<div id="dc-root"></div>
-<script src="/dc-runtime.js"></script>
+
+
 <script>
+const META={"bcaa01": [1440, 1220, "01 \u00b7 Global Portfolio (cars \u00b7 e-bikes \u00b7 e-scooters)"], "bcaa02": [1440, 2090, "02 \u00b7 Regional Operations"], "bcaa03": [1440, 1300, "03 \u00b7 Corridor Dispatch"], "bcaa09": [1600, 1000, "Image 1 \u00b7 Customer journey map"], "bcaa10": [1600, 1080, "Image 2 \u00b7 User flow: R-1042 rebalancing"], "bcaa11": [1600, 1000, "Image 3 \u00b7 Design system"], "bcaa12": [1600, 1000, "Image 4 \u00b7 Design architecture"], "bcaa13": [1600, 1000, "Image 5 \u00b7 System architecture"], "bcaa14": [1600, 1000, "Image 6 \u00b7 AI architecture (human in the loop)"], "bcaa15": [1600, 1000, "Image 7 \u00b7 Layout grid"], "evo01": [1440, 1024, "Information architecture"], "evo02": [1440, 1024, "System architecture"], "evo03": [1440, 1024, "User flow \u00b7 first ride"], "evo04": [1440, 1024, "Journey map \u00b7 visitor"], "evo05": [1440, 1024, "Wireframes \u00b7 lo-fi"], "evo06": [390, 844, "Onboarding"], "evo07": [390, 844, "Sign in"], "evo08": [390, 844, "S01 Home"], "evo09": [390, 844, "S03 Where to?"], "evo10": [390, 844, "S04 Choose a ride"], "evo11": [390, 844, "S10 Ride confirmation"], "evo12": [390, 844, "S12 Scan to unlock"], "evo13": [390, 844, "S13 Unlocking"], "evo14": [390, 844, "S14 Riding"], "evo15": [390, 844, "S15 Parking"], "evo16": [390, 844, "S16a Camera permission"], "evo17": [390, 844, "S16 Parking photo"], "evo18": [390, 844, "S17 Verifying"], "evo19": [390, 844, "S18 Trip ended"], "evo20": [390, 844, "S19 My trips"], "evo21": [390, 844, "S20 Wallet"], "evo22": [390, 844, "S21 Report a problem"], "evo23": [390, 844, "S22 Profile"], "evo24": [1440, 1024, "Design system"], "evo25": [1440, 1024, "Layout grid"], "grupa00": [1440, 1540, "G-S05 \u00b7 Startup \u00b7 Match results"], "grupa02": [1440, 1520, "G-T05 \u00b7 Talent \u00b7 Compensation & equity"], "grupa08": [1440, 900, "G-V04 \u00b7 VC \u00b7 Deal pipeline"], "six04": [1280, 1500, "E \u00b7 Company library (chosen direction)"], "six27": [1280, 1000, "Reviewer \u00b7 Audit log"], "six28": [1280, 1500, "States: loading, empty, error, delayed, consent re-check, correction"], "bcaa00": [1440, 2650, "00 \u00b7 Design system: EVOLVE CORE (BCAA \u00d7 Evo on Radix)"], "bcaa04": [1440, 1420, "04 \u00b7 Fleet Telemetry Grid"], "bcaa05": [1440, 1240, "05 \u00b7 Zone Deficit Matrix"], "bcaa06": [1440, 1560, "06 \u00b7 Hardware Quarantine"], "bcaa07": [1440, 1250, "07 \u00b7 Municipal GBFS Feed Audit"], "bcaa08": [1440, 1500, "08 \u00b7 Pricing Experiments"], "grupa03": [1440, 1220, "G-D01\u2013D03 \u00b7 Startup \u00b7 Data room"], "grupa04": [1440, 1220, "G-X01 \u00b7 Shared \u00b7 Mutual opt-in"], "grupa07": [1440, 1160, "G-E06 \u00b7 Shared \u00b7 Engagement workspace"], "grupa09": [1440, 1040, "G-LND / G-O1\u2013O3 \u00b7 Role selection"], "grupa11": [1440, 1040, "G-E02\u2013E05 \u00b7 Shared \u00b7 Agreement"], "grupa12": [1440, 1100, "G-A01 \u00b7 Curator \u00b7 Verification queue"], "grupa14": [390, 844, "Mobile \u00b7 Match review"], "grupa15": [390, 844, "Mobile \u00b7 Approvals"], "grupa16": [390, 844, "Mobile \u00b7 Messages"], "grupa18": [1600, 1040, "Information architecture"], "grupa19": [1600, 1040, "System architecture"], "grupa20": [1600, 1120, "Design system overview"], "grupa21": [1600, 1360, "Layout grid"], "grupa22": [2080, 1240, "Three-sided flow"], "grupa23": [2240, 1200, "Journey map \u00b7 three roles"], "grupa24": [1840, 1000, "Onboarding flow \u00b7 three roles"], "six06": [1280, 1000, "Investor \u00b7 Live event"], "six08": [1280, 1000, "Reviewer \u00b7 Review queue"], "six10": [1280, 1000, "Investor \u00b7 Brokerage handoff"], "six11": [1280, 1000, "Issuer \u00b7 Campaign builder"], "six24": [1280, 1000, "Issuer \u00b7 Content editor + correction"], "six26": [1280, 1000, "Reviewer \u00b7 Corrections"], "six29": [1280, 1500, "Layout grid (12 columns over E)"], "six30": [1900, 1300, "User flow"], "six31": [1900, 1100, "User journey map"], "six32": [1600, 2100, "Design system"], "six33": [1900, 1200, "System architecture"], "six34": [1900, 1200, "API map"], "bcaa20": [1440, 1060, "02b \u00b7 City map: zoomed-out corridor, Co-Pilot docked"], "bcaa21": [1440, 1230, "09 \u00b7 Fleet AI Co-Pilot workspace"]};
 
-class Component extends DCLogic {
-  moneyRain() {
-    const panel = document.getElementById('askmo'); if (!panel || !panel.animate) return;
-    const box = panel.firstElementChild || panel; if (getComputedStyle(box).position === 'static') box.style.position = 'relative';
-    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const em = ['💰', '💵', '💸', '💲', '🤑'], n = reduce ? 6 : 70, H = box.clientHeight || 400, W = box.clientWidth || 400;
-    for (let i = 0; i < n; i++) {
-      const s = document.createElement('span'); s.textContent = em[i % em.length]; s.setAttribute('aria-hidden', 'true');
-      s.style.cssText = 'position:absolute;top:-40px;left:' + (Math.random() * (W - 20)) + 'px;font-size:' + (16 + Math.random() * 22) + 'px;pointer-events:none;z-index:5;will-change:transform';
-      box.appendChild(s);
-      const dur = reduce ? 1 : 1100 + Math.random() * 1300, rot = (Math.random() - .5) * 720, drift = (Math.random() - .5) * 80;
-      const an = s.animate([{ transform: 'translate(0,0) rotate(0)', opacity: 1 }, { transform: 'translate(' + drift + 'px,' + (H + 80) + 'px) rotate(' + rot + 'deg)', opacity: 1 }], { duration: dur, delay: Math.random() * 500, easing: 'cubic-bezier(.4,.05,.7,1)', fill: 'both' });
-      an.onfinish = () => s.remove();
-    }
-  }
-  askExtra() {
-    const st = this.state || {};
-    return {
-      copyLabel: st.copied ? 'Copied ✓' : 'Copy email',
-      askCopy: () => {
-        const t = 'hello@shanymo.com'; let ok = false;
-        const legacy = () => { try { const x = document.createElement('textarea'); x.value = t; document.body.appendChild(x); x.select(); document.execCommand('copy'); x.remove(); } catch (e) {} };
-        try { if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(t).catch(legacy); ok = true; } } catch (e) {}
-        if (!ok) legacy();
-        this.setState({ copied: true }); clearTimeout(this.copyT); this.copyT = setTimeout(() => this.setState({ copied: false }), 2600);
-      },
-      askTickle: (e) => { const el = e && e.currentTarget; if (!el) return; el.classList.remove('askwig'); void el.offsetWidth; el.classList.add('askwig'); }
-    };
-  }
-  askVals() {
-    const st = this.state || {};
-    const qs = [
-      { question: 'What are you doing now?', answer: 'Head of Product, Strategic Ventures Incubation at BCAA since February 2025. My predictive fleet dashboard work contributed to 36% higher portfolio profitability and 33% revenue growth.', source: 'Work, 02' },
-      { question: 'Do you build with AI yourself?', answer: 'Yes. I built an evidence-backed research prototype on Gemini, Qdrant and Streamlit, and I maintain attestor, an open-source compliance checker for LLM outputs.', source: 'Work, 01 · Lab' },
-      { question: 'Biggest partnership win?', answer: 'At EPIC Semiconductors I built a $50M+ commercial pipeline growing 29% a year, including a $7M ADAS/AV OEM opportunity.', source: 'Work, 06' },
-      { question: 'Rates & salary?', answer: 'Depends on the shape: a full-time role or a consulting project. That is not in my published record, so I will not guess. Email hello@shanymo.com with a line about the role or project and Shany will answer directly.', source: 'none — guardrail' }
-    ];
-    const qi = st.askq || 0;
-    const items = [
-      { label: 'Contact me to make awesomeness', href: '/contact/' },
-      { label: 'Working from Earth', href: '/' },
-      { label: 'Made on Earth by Shany Mo while eating 🍟', href: '/' },
-      { label: 'hello@shanymo.com', href: 'mailto:hello@shanymo.com' }
-    ];
-    const askMarquee = [];
-    for (let r = 0; r < 8; r++) items.forEach((it) => askMarquee.push({ label: it.label, href: it.href, tab: r === 0 ? '0' : '-1' }));
-    return {
-      askMarquee,
-      chatOpen: !!st.chat, chatClosed: !st.chat,
-      openChat: () => this.setState({ chat: true }), closeChat: () => this.setState({ chat: false }),
-      faqMode: st.askmode !== 'onb', onbMode: st.askmode === 'onb',
-      send: () => this.setState({ askmode: 'onb' }),
-      onAskKey: (e) => { if (e && e.key === 'Enter') { if (e.preventDefault) e.preventDefault(); this.setState({ askmode: 'onb' }); } },
-      backToFaq: () => this.setState({ askmode: 'faq' }),
-      askQuestions: qs.map((d, i) => ({ question: d.question, pressed: qi === i ? 'true' : 'false', pick: () => { this.setState({ askq: i }); if (/salary/i.test(d.question)) this.moneyRain(); }, style: 'min-height: 44px; padding: 0 14px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13px; letter-spacing: 0.3px; ' + (qi === i ? 'background: #262626; color: #FFFFFF; border: 1px solid #262626' : 'background: #FFFFFF; color: #262626; border: 1px solid #CFCFCF') })),
-      askQ: qs[qi]
-    };
-  }
-  menuVals() { const st = this.state || {}; return { menuOpen: !!st.menu, openMenu: () => this.setState({ menu: true }), closeMenu: () => this.setState({ menu: false }) }; }
-  constructor(props) {
-    super(props);
-    this.state = { lens: 'product', over: {}, step: {}, hop: 0 };
-    this.raAds = [{"brand": "Amazon Prime Video", "title": "The Grand Tour", "video": "/assets/ads/tgt.mp4", "poster": "/assets/ads/tgt-poster.jpg"}, {"brand": "Uber × Canon", "title": "Hidden Cities", "video": "/assets/ads/uberhidden.mp4", "poster": "/assets/ads/uberhidden-poster.jpg"}, {"brand": "Olay", "title": "Skin Advisor", "video": "/assets/ads/olay.mp4", "poster": "/assets/ads/olay-poster.jpg"}, {"brand": "Acer", "title": "Predator Triton 700", "video": "/assets/ads/acer.mp4", "poster": "/assets/ads/acer-poster.jpg"}, {"brand": "DJI", "title": "Wherever You Go", "video": "/assets/ads/dji.mp4", "poster": "/assets/ads/dji-poster.jpg"}, {"brand": "Shell", "title": "#makethefuture", "video": "/assets/ads/shell.mp4", "poster": "/assets/ads/shell-poster.jpg"}];
-    // To add a case: one object here. kind: 'phone' or 'desk'. Craft notes are drafts.
-    this.data = [
-      { id: 'agent', meta: 'Agentic Research & Diligence Platform · Wealth management · Jan 2026 → now', title: 'An AI researcher that has to show its sources',
-        chips: [['50 discovery interviews', '#F5C9FF'], ['5 committed design partners', '#B8FFFC']],
-        scrib: '50 coffees. 5 yeses. worth every cup.', ink: '#00B8B2', inkDark: '#00756F', rot: '1.5deg',
-        situation: 'Wealth managers, family offices, VC, M&A and PE teams research by hand and have to defend every claim to compliance.',
-        bet: 'Trust beats speed in regulated research: every synthesized claim links back to its source, and a human reviews before anything ships.',
-        didLabel: 'What I built', did: 'The prototype itself — source intake, retrieval, tool calls and synthesis on Gemini, Qdrant and Streamlit — plus golden-set evals for source fidelity, latency and cost per call.',
-        extra: 'Controls for provenance, step-level traceability and OAuth/RBAC, informed by SEC/FINRA, Canadian securities rules and GDPR. Related open source lives in the Lab: attestor and regulated-ai-pm.',
-        kind: 'desk', tint: '#B8FFFC', steps: ['Ask', 'Sources', 'Draft', 'Review'],
-        brief: 'Make trust visible: an analyst should see where every sentence came from before believing it.',
-        craft: ['Every claim carries a source chip; tapping it shows the passage.', 'Unsupported sentences are flagged inline, not in a separate report.', 'Human approval is a step in the flow, not an afterthought.'],
-        designNumber: '5 design partners committed', tradeoff: 'Source chips on every sentence add visual noise. We kept them: trust has to be visible. (draft)' },
-      { id: 'bcaa', meta: 'BCAA — Insurance & Mobility · Head of Product, Strategic Ventures Incubation · Feb 2025 → now', title: 'Turning connected-vehicle telemetry into pricing and profit',
-        chips: [['+36% portfolio profitability', '#F5C9FF'], ['+33% revenue', '#B8FFFC'], ['+40% delivery velocity', '#FFE2B0'], ['−53% operating cost', '#FFFFA8']],
-        scrib: 'cars that tell you where to put themselves', ink: '#DD00FF', inkDark: '#8A00A3', rot: '-2.5deg',
-        situation: 'Evo Car Share and Evolve e-bikes — 2,500 connected cars, 600+ e-bikes, 250K active users in seven markets — inside a 1M+ member insurance business, running on monolithic systems.',
-        bet: 'Use the telemetry the fleet already produced to drive dynamic-pricing tests and proactive rebalancing, and modernize the platform in parallel instead of first.',
-        didLabel: 'What I did', did: 'Took a predictive fleet dashboard from POC to operations, ran build-buy-partner calls through the AWS migration, and built the product team with SOC 2-aligned governance.',
-        extra: 'Also: audit cycles down 45% and 93% of identified compliance gaps closed.',
-        kind: 'desk', tint: '#F5C9FF', steps: ['Fleet map', 'Demand forecast', 'Pricing test', 'Rebalance'],
-        brief: 'Turn raw telemetry into a call an operator can make in under a minute.',
-        craft: ['Map first, numbers second: where cars are against where demand will be.', 'Pricing tests framed as a switch with a predicted outcome.', 'Alerts ranked by revenue at stake, not by time.'],
-        designNumber: '+36% portfolio profitability', tradeoff: 'Ranking alerts by revenue at stake means low-value issues wait longer. (draft)' },
-      { id: 'evo', meta: 'Evo + Evolve — BCAA · Head of Product, Strategic Ventures · Shared mobility · 2025 → 2026', title: 'One app to find, ride and park, whatever you ride',
-        chips: [['E-bikes · e-scooters · e-cargo · Evo cars', '#B8FFFC'], ['One map · one account · one wallet', '#F5C9FF'], ['Six rider questions · 18 screens', '#FFE2B0']],
-        scrib: 'no "trip ended" until the bike says so.', ink: '#00B8B2', inkDark: '#00756F', rot: '-2deg',
-        situation: 'Visitors don\'t know the zones, the rates or where a trip may end. Ambiguous "ended?" states cause most billing support contacts.',
-        bet: 'Put Evolve e-bikes, e-scooters, e-cargo bikes and Evo cars in one map, one account and one wallet, and never tell a rider a trip, lock or charge is done until the system confirms it.',
-        didLabel: 'What I did', did: 'Owned the product and the experience: the rider promise, the information architecture and platform map, the first-ride flow and journey, and the screens from onboarding to receipt.',
-        extra: 'Every screen answers one rider question: is there a usable bike near me, can it get me there and back, what will it cost, where can I end the trip, has billing actually stopped, and what if something goes wrong.',
-        kind: 'phone', tint: '#B8FFFC',
-        steps: ['Home', 'Choose a ride', 'Ride confirmation', 'Unlocking', 'Parking', 'Verifying', 'Trip ended', 'Report a problem'],
-        shots: ['/assets/UI-S01-Explore.webp', '/assets/UI-S04-Vehicle.webp', '/assets/UI-S10-Price.webp', '/assets/UI-S13-Unlock.webp', '/assets/UI-S15-Parking.webp', '/assets/UI-S17-Verify.webp', '/assets/UI-S18-Receipt.webp', '/assets/UI-S21-Support.webp'],
-        shotAlt: ['S01 Home: map of nearby e-bikes, Evo cars and parking zones in Whistler', 'S04 Choose a ride: bikes with range in km, labelled estimated', 'S10 Ride confirmation: itemised price and the hold explained', 'S13 Unlocking: no success screen until the bike confirms', 'S15 Parking: inside the Rainbow Park zone, with capacity', 'S17 Verifying: named states while the end is checked', 'S18 Trip ended: billing stopped at a confirmed time, receipt pending', 'S21 Report a problem: the trip and photos prefilled'],
-        boards: [{ src: '/assets/Journey.webp', label: 'Journey map', alt: 'Journey map of a weekend visitor: trust dips at sign-up and at the end of the ride' }, { src: '/assets/Flow.webp', label: 'First-ride flow', alt: 'User flow from the map to a confirmed receipt' }, { src: '/assets/IA.webp', label: 'Information architecture', alt: 'Four tabs, one ride flow, and a trip that is never hidden' }, { src: '/assets/System.webp', label: 'Platform', alt: 'The rider app on one shared mobility platform' }],
-        brief: 'Answer six rider questions fast, and never claim a trip, lock or charge is done before the system confirms it.',
-        craft: ['No success screen until the bike confirms the unlock. Billing starts at that moment.', 'Range shown in km (≈34 km), a cautious estimate labelled "estimated", not just a battery %.', 'Ending a trip has named states, a photo frame guide and two tries max, so "has it ended?" always has an answer.'],
-        designNumber: 'Six rider questions, answered fast', tradeoff: 'Waiting for confirmation adds seconds at unlock and at the end of a ride. We chose an honest wait over a fast "done" that might be wrong. (draft)' },
-      { id: 'gp', meta: 'Guidepoint · Product Strategy Consultant · Fintech, South Asia', title: 'Fix the journey, fix the revenue',
-        chips: [['+32% premium conversion', '#FFE2B0']],
-        scrib: '', ink: '#FCA002', inkDark: '#9A5A00', rot: '0deg',
-        situation: 'A Gen Z mobile banking app in South Asia was losing new users during onboarding.',
-        bet: 'A shorter onboarding, better activation incentives and smarter upgrade triggers would lift premium conversion.',
-        didLabel: 'What I did', did: 'A/B-tested onboarding, incentives and premium pricing.',
-        extra: '',
-        kind: 'phone', tint: '#FFE2B0', steps: ['Sign up', 'First reward', 'Upgrade'],
-        brief: 'Get a first-time user to a moment of value before asking for anything.',
-        craft: ['Fewer screens before the first reward.', 'Incentives shown at the moment they matter, not in a tour.', 'Upgrade prompts triggered by behaviour, not by a calendar.'],
-        designNumber: '+32% premium conversion', tradeoff: 'Fewer screens before the first reward meant collecting less data up front. (draft)' },
-      { id: 'grupa', meta: 'Grupa · Head of Product, Fintech Marketplace · Feb 2022 – Sep 2023', title: 'A three-sided venture marketplace, from zero',
-        chips: [['−60% onboarding time', '#FFE2B0'], ['+40% vetted talent network', '#FFFFA8']],
-        scrib: 'the spreadsheet era ended here', ink: '#FCA002', inkDark: '#9A5A00', rot: '-2deg',
-        situation: 'Deal and talent sourcing between VCs and startups ran on spreadsheets and manual screening.',
-        bet: 'One marketplace for all three sides — VCs, startups and vetted talent — with matching designed around what VCs and startups actually need.',
-        didLabel: 'What I did', did: 'Replaced manual screening with self-service intake and automated KYC, and designed the multi-variable matching.',
-        extra: '',
-        kind: 'desk', tint: '#FFFFA8', steps: ['Apply', 'Verify', 'Match'],
-        brief: 'Let talent onboard themselves without a person screening every application.',
-        craft: ['Intake split into short steps with progress always visible.', 'KYC runs in the background instead of a separate wait.', 'Each match explains the variables that drove it.'],
-        designNumber: '−60% onboarding time', tradeoff: 'Self-serve intake over hand-picked screening on every applicant. (draft)' },
-      { id: 'six', meta: '6ix Inc. · VP Product Management, Capital Markets Platform · Feb 2020 – Feb 2022', title: 'From bespoke services to recurring SaaS',
-        chips: [['~20% revenue growth a year', '#F5C9FF'], ['+48% investor conversion', '#B8FFFC'], ['−25% support demand', '#FFE2B0']],
-        scrib: 'recurring revenue: the least boring words in finance', ink: '#DD00FF', inkDark: '#8A00A3', rot: '2deg',
-        situation: '6ix sold investor-relations work as bespoke services. Growth meant more custom delivery.',
-        bet: 'A SOC 2-compliant platform and marketplace connecting public issuers with retail investors — IXP for issuers, IDP for investors — delivered with partners.',
-        didLabel: 'What I did', did: 'Built the product team and partner delivery model, redesigned onboarding, KYC and self-service activation, and picked a cloud-native subscription architecture.',
-        extra: 'That architecture, with online billing and payment APIs, was projected to cut development cost 65% versus building in-house.',
-        kind: 'phone', tint: '#B8FFFC', steps: ['Discover', 'Verify identity', 'Follow & invest'],
-        brief: 'Get retail investors from curious to activated without opening a support ticket.',
-        craft: ['Issuer discovery before account creation, so value comes first.', 'KYC explained in plain language, with progress always visible.', 'Self-service activation replaced most support calls.'],
-        designNumber: '+48% investor conversion · −25% support', tradeoff: 'Discovery before sign-up delays account creation, but value comes first. (draft)' },
-      { id: 'epic', meta: 'EPIC Semiconductors · Director, Product Commercialization (IoT/AI)', title: 'Finding buyers for a chip with no category',
-        chips: [['$50M+ pipeline', '#FFFFA8'], ['+29% pipeline value a year', '#F5C9FF'], ['$7M ADAS/AV OEM opportunity', '#B8FFFC']],
-        scrib: 'yes, the chip really had no category. we made one.', ink: '#00B8B2', inkDark: '#00756F', rot: '-1.5deg',
-        situation: 'A semiconductor sensing platform with machine-learning applications, and no single obvious market.',
-        bet: 'Sell use cases, not specs: run POCs and pilots across industrial, retail, fintech and automotive, and let partner feedback shape the product.',
-        didLabel: 'What I did', did: 'Led partner discovery and pilots, and the 0→1 developer console that let engineers test sensor behavior directly.',
-        extra: 'Customers and partners included Adidas, GE, Mercedes-Benz, Razer and the Bank of Canada.',
-        kind: 'desk', tint: '#FFE2B0', steps: ['Connect sensor', 'Live signal', 'Save workflow'],
-        brief: 'Let partner engineers test a sensor with no category, without us in the room.',
-        craft: ['Live signal first; settings tucked behind it.', 'Workflows saved and reused across verticals.', 'Plain-language labels for an unfamiliar sensing method.'],
-        designNumber: 'Reusable workflows across verticals', tradeoff: 'Live signal first; advanced settings tucked away for experts. (draft)' }
-    ];
-  }
-  componentDidMount() { this.startBg(); }
-  componentWillUnmount() { this.bgDead = true; }
-  startBg() {
-    if (this.bgStarted || typeof window === 'undefined') return; this.bgStarted = true;
-    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const cols = ['221,0,255', '0,196,189', '252,160,2', '200,190,0'];
-    const mouse = { x: -9999, y: -9999 };
-    let el = null, ctx = null, W = 0, H = 0, P = [], mode = '', t = 0, frames = 0;
-    window.addEventListener('pointermove', (e) => { if (!el) return; const r = el.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; }, { passive: true });
-    const fit = () => {
-      const r = el.getBoundingClientRect(); const w = Math.max(1, Math.round(r.width)), h = Math.max(1, Math.round(r.height));
-      if (w === W && h === H) return false;
-      W = w; H = h; const dpr = Math.min(window.devicePixelRatio || 1, 2, Math.sqrt(12e6 / (W * H)));
-      el.width = Math.round(W * dpr); el.height = Math.round(H * dpr); ctx = el.getContext('2d'); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); return true;
-    };
-    const seed = (m) => { mode = m; if (ctx) ctx.clearRect(0, 0, W, H); const n = m === 'Flow field' ? Math.min(1600, Math.round(W * H / 2200)) : Math.min(260, Math.round(W * H / 14000)); P = []; for (let i = 0; i < n; i++) P.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3, c: cols[i % 4], life: Math.random() * 200 }); };
-    const draw = () => {
-      const m = (this.props && this.props.background) || 'Flow field';
-      if (m !== mode) seed(m);
-      t += 1;
-      if (m === 'Off') { ctx.clearRect(0, 0, W, H); return; }
-      if (m === 'Flow field') {
-        ctx.globalCompositeOperation = 'destination-out'; ctx.fillStyle = 'rgba(0,0,0,0.045)'; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = 'source-over';
-        ctx.lineWidth = 1.4;
-        for (const p of P) {
-          let a = (Math.sin(p.x * 0.0022 + t * 0.0016) + Math.cos(p.y * 0.0019 - t * 0.0011) + Math.sin((p.x + p.y) * 0.0009)) * Math.PI * 0.9;
-          const dx = p.x - mouse.x, dy = p.y - mouse.y, d2 = dx * dx + dy * dy;
-          if (d2 < 26000) a = Math.atan2(dy, dx) + Math.PI / 2 + 0.6;
-          const nx = p.x + Math.cos(a) * 1.1, ny = p.y + Math.sin(a) * 1.1;
-          ctx.strokeStyle = 'rgba(' + p.c + ',' + (d2 < 26000 ? 0.7 : 0.38) + ')';
-          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(nx, ny); ctx.stroke();
-          p.x = nx; p.y = ny; p.life -= 1;
-          if (p.life < 0 || p.x < -5 || p.x > W + 5 || p.y < -5 || p.y > H + 5) { p.x = Math.random() * W; p.y = Math.random() * H; p.life = 120 + Math.random() * 200; }
-        }
-      } else {
-        ctx.clearRect(0, 0, W, H);
-        for (const p of P) { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; }
-        for (let i = 0; i < P.length; i++) {
-          const p = P[i];
-          for (let j = i + 1; j < P.length; j++) { const q = P[j], dx = p.x - q.x, dy = p.y - q.y, d = dx * dx + dy * dy; if (d < 17000) { ctx.strokeStyle = 'rgba(38,38,38,' + (0.16 * (1 - d / 17000)).toFixed(3) + ')'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke(); } }
-          const mx = p.x - mouse.x, my = p.y - mouse.y, md = mx * mx + my * my;
-          if (md < 40000) { ctx.strokeStyle = 'rgba(221,0,255,' + (0.55 * (1 - md / 40000)).toFixed(3) + ')'; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); }
-          ctx.fillStyle = 'rgba(' + p.c + ',0.7)'; ctx.beginPath(); ctx.arc(p.x, p.y, 2.2, 0, 6.283); ctx.fill();
-        }
-      }
-    };
-    const loop = () => {
-      if (this.bgDead) return;
-      const cur = (this.bgEl && this.bgEl.isConnected) ? this.bgEl : document.querySelector('canvas.bgfx');
-      if (cur && cur.isConnected) {
-        if (cur !== el) { el = cur; W = 0; H = 0; }
-        if ((frames++ % 30 === 0 || !ctx) && fit()) mode = '';
-        if (ctx && W > 1) { if (reduce) { if (frames < 3) for (let k = 0; k < 160; k++) draw(); } else draw(); }
-      }
-      requestAnimationFrame(loop);
-    };
-    requestAnimationFrame(loop);
-  }
-  moVoice(kind) {
-    // one small synth voice for every sound on the site: rawr, squeak, cry, whimper, yay
-    if (this.props && this.props.sound === false) return;
-    try {
-      const A = window.AudioContext || window.webkitAudioContext; if (!A) return;
-      const ctx = this.actx || (this.actx = new A()); if (ctx.resume) ctx.resume(); const t0 = ctx.currentTime;
-      const out = ctx.createGain(); out.gain.value = 0.9; out.connect(ctx.destination);
-      const note = (t, dur, f0, f1, f2, opt) => {
-        opt = opt || {};
-        const o = ctx.createOscillator(); o.type = opt.type || 'sawtooth';
-        o.frequency.setValueAtTime(f0, t); o.frequency.exponentialRampToValueAtTime(f1, t + dur * (opt.peak || 0.3)); o.frequency.exponentialRampToValueAtTime(f2, t + dur);
-        const tr = ctx.createOscillator(); tr.frequency.value = opt.trill || 22; const tg = ctx.createGain(); tg.gain.value = f0 * (opt.depth || 0.06); tr.connect(tg); tg.connect(o.frequency);
-        const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.Q.value = 4; bp.frequency.setValueAtTime(opt.f1 || 900, t); bp.frequency.linearRampToValueAtTime(opt.f2 || 1300, t + dur * 0.35); bp.frequency.linearRampToValueAtTime(opt.f3 || 700, t + dur);
-        const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 3200;
-        const g = ctx.createGain(); const v = opt.vol || 0.5; g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(v, t + 0.03); g.gain.setValueAtTime(v, t + dur * 0.6); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-        o.connect(bp); bp.connect(lp); lp.connect(g); g.connect(out); o.start(t); tr.start(t); o.stop(t + dur + 0.02); tr.stop(t + dur + 0.02);
-      };
-      const r = 0.9 + Math.random() * 0.25;
-      if (kind === 'rawr') note(t0, 0.62, 240 * r, 435 * r, 210 * r, { trill: 24, depth: 0.08 });
-      else if (kind === 'squeak') note(t0, 0.18, 700 * r, 1150 * r, 900 * r, { type: 'triangle', trill: 30, depth: 0.03, f1: 1600, f2: 2400, f3: 1800, peak: 0.5, vol: 0.4 });
-      else if (kind === 'cry') { note(t0, 0.5, 520, 560, 380, { trill: 7, depth: 0.05, f1: 1100, f2: 1400, f3: 800, peak: 0.2 }); note(t0 + 0.55, 0.9, 540, 600, 300, { trill: 6, depth: 0.07, f1: 1100, f2: 1500, f3: 700, peak: 0.15 }); }
-      else if (kind === 'whimper') { note(t0, 0.28, 520, 600, 430, { type: 'triangle', trill: 8, depth: 0.04, f1: 1200, f2: 1500, f3: 900, vol: 0.35 }); note(t0 + 0.34, 0.5, 470, 520, 330, { type: 'triangle', trill: 6, depth: 0.05, f1: 1100, f2: 1300, f3: 700, vol: 0.35 }); }
-      else if (kind === 'burp') { const o = ctx.createOscillator(); o.type = 'square'; o.frequency.setValueAtTime(110, t0); o.frequency.linearRampToValueAtTime(70, t0 + 0.45); const lfo = ctx.createOscillator(); lfo.frequency.value = 38; const lg = ctx.createGain(); lg.gain.value = 30; lfo.connect(lg); lg.connect(o.frequency); const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.Q.value = 3; bp.frequency.setValueAtTime(500, t0); bp.frequency.linearRampToValueAtTime(320, t0 + 0.45); const g = ctx.createGain(); g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(0.7, t0 + 0.04); g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.5); o.connect(bp); bp.connect(g); g.connect(out); o.start(t0); lfo.start(t0); o.stop(t0 + 0.52); lfo.stop(t0 + 0.52); }
-      else if (kind === 'boil') { for (let i = 0; i < 16; i++) { const t = t0 + i * 0.07 + Math.random() * 0.05, o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'sine'; const f = 260 + Math.random() * 520; o.frequency.setValueAtTime(f, t); o.frequency.exponentialRampToValueAtTime(f * 2.2, t + 0.06); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.22, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.08); o.connect(g); g.connect(out); o.start(t); o.stop(t + 0.1); } }
-      else if (kind === 'snore') { const len = Math.floor(ctx.sampleRate * 2.4), buf = ctx.createBuffer(1, len, ctx.sampleRate), dd = buf.getChannelData(0); for (let i = 0; i < len; i++) dd[i] = Math.random() * 2 - 1;
-        const nz = ctx.createBufferSource(); nz.buffer = buf; const lp = ctx.createBiquadFilter(); lp.type = 'bandpass'; lp.Q.value = 1.2; lp.frequency.setValueAtTime(300, t0); lp.frequency.linearRampToValueAtTime(650, t0 + 1.1); lp.frequency.linearRampToValueAtTime(240, t0 + 2.3);
-        const ng = ctx.createGain(); ng.gain.setValueAtTime(0.0001, t0); ng.gain.exponentialRampToValueAtTime(0.05, t0 + 0.9); ng.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.2); ng.gain.exponentialRampToValueAtTime(0.04, t0 + 1.6); ng.gain.exponentialRampToValueAtTime(0.0001, t0 + 2.3);
-        nz.connect(lp); lp.connect(ng); ng.connect(out); nz.start(t0); nz.stop(t0 + 2.4);
-        const o = ctx.createOscillator(); o.type = 'sawtooth'; o.frequency.setValueAtTime(70, t0 + 0.2); o.frequency.linearRampToValueAtTime(95, t0 + 1.0); const bp = ctx.createBiquadFilter(); bp.type = 'lowpass'; bp.frequency.value = 420; const og = ctx.createGain(); og.gain.setValueAtTime(0.0001, t0 + 0.2); og.gain.exponentialRampToValueAtTime(0.09, t0 + 0.8); og.gain.exponentialRampToValueAtTime(0.0001, t0 + 1.15); o.connect(bp); bp.connect(og); og.connect(out); o.start(t0 + 0.2); o.stop(t0 + 1.2); }
-      else if (kind === 'yay') { [0, 0.11, 0.22].forEach((d, i) => note(t0 + d, 0.2, [520, 660, 780][i], [600, 760, 990][i], [560, 700, 1040][i], { type: 'triangle', trill: 30, depth: 0.02, f1: 1400, f2: 2000, f3: 1600, peak: 0.5, vol: 0.38 })); note(t0 + 0.36, 0.42, 300, 520, 360, { trill: 24, depth: 0.08 }); }
-    } catch (e) {}
-  }
-  renderVals() {
-    const st = this.state;
-    const scribOn = this.props.scribbles ?? true;
-    const cases = this.data.filter((d) => d.id !== 'agent' /* hidden for now */).map((d, i) => {
-      const lens = st.over[d.id] || st.lens;
-      const design = lens === 'design';
-      const si = st.step[d.id] || 0;
-      return {
-        n: String(i + 1).padStart(2, '0'), meta: d.meta, title: d.title,
-        chips: d.chips.map((c) => ({ t: c[0], bg: c[1] })),
-        live: d.id === 'agent', hasScrib: scribOn && !!d.scrib, scrib: d.scrib, ink: d.ink, inkDark: d.inkDark, rot: d.rot,
-        situation: d.situation, bet: d.bet, didLabel: d.didLabel, did: d.did, extra: d.extra,
-        showProduct: !design, showDesign: design, isDesign: design ? 'true' : 'false',
-        flipCls: design ? 'flip d' : 'flip',
-        flip: () => { this.moVoice('rawr'); const o = Object.assign({}, st.over); o[d.id] = design ? 'product' : 'design'; this.setState({ over: o }); },
-        isPhone: d.kind === 'phone', isDesk: d.kind === 'desk', tint: d.tint,
-        hasShot: !!d.shots, noShot: !d.shots, shot: d.shots ? d.shots[si] : '', phoneCls: d.shots ? 'phone real' : 'phone', showPins: !d.shots, hasBoards: !!d.boards, ...(() => {
-          const B = d.boards || [], n = B.length, cur = ((st.deck || {})[d.id] || 0), last = (st.deckOut || {})[d.id];
-          const go = (k) => { const m = Object.assign({}, st.deck); const o = Object.assign({}, st.deckOut); o[d.id] = k > 0 ? cur : null; m[d.id] = (cur + k + n) % n; this.setState({ deck: m, deckOut: o }); };
-          return {
-            boards: B.map((b, i) => { const pos = (i - cur + n) % n; return { src: b.src, alt: b.alt, label: b.label,
-              cardCls: 'dcard ' + (i === last && pos === n - 1 ? 'out' : 'p' + Math.min(pos, 3)), tab: pos === 0 ? '0' : '-1', hidden: pos === 0 ? 'false' : 'true',
-              cardClick: (e) => { if (this.deckDragged) { if (e && e.preventDefault) e.preventDefault(); this.deckDragged = false; } },
-              tabCls: i === cur ? 'on' : '', sel: i === cur ? 'true' : 'false', pick: () => go((i - cur + n) % n || 0) }; }),
-            deckCount: (cur + 1) + ' / ' + n, deckNext: () => go(1), deckPrev: () => go(-1),
-            deckDown: (e) => { this.deckX = e ? e.clientX : null; this.deckDragged = false; },
-            deckUp: (e) => { if (this.deckX == null || !e) return; const dx = e.clientX - this.deckX; this.deckX = null; if (Math.abs(dx) > 40) { this.deckDragged = true; go(dx < 0 ? 1 : -1); } }
-          }; })(),
-        stepTag: 'Step ' + (si + 1) + ' of ' + d.steps.length, stepTitle: d.steps[si],
-        screenAlt: d.shotAlt ? d.shotAlt[si] : 'Placeholder for the ' + d.steps[si] + ' screen',
-        steps: d.steps.map((s, k) => ({ label: (k + 1) + ' · ' + s, cls: k === si ? 'step on' : 'step', pressed: k === si ? 'true' : 'false', pick: () => { const m = Object.assign({}, st.step); m[d.id] = k; this.setState({ step: m }); } })),
-        brief: d.brief, craft: d.craft.map((t, k) => ({ t, n: k + 1, pin: ['left: 22%; top: 30%', 'left: 64%; top: 22%', 'left: 72%; top: 62%'][k % 3] })), designNumber: d.designNumber, tradeoff: d.tradeoff
-      };
-    });
-    const isD = st.lens === 'design';
-    return { ...this.menuVals(), ...this.askVals(), ...this.askExtra(),
-      cases,
-      pBtn: isD ? '' : 'on', dBtn: isD ? 'on' : '',
-      pPressed: isD ? 'false' : 'true', dPressed: isD ? 'true' : 'false',
-      pillLeft: isD ? '124px' : '4px', pillW: '120px',
-      bgRef: (el) => { if (el) { this.bgEl = el; this.startBg(); } },
-      dlCls: 'view dl-' + String(this.props.designLayout || 'Annotated').toLowerCase(),
-      rexCls: 'lensrex' + (st.hop ? (st.hop % 2 ? ' hopA' : ' hopB') : ''),
-      rexSay: isD ? 'pixels, please' : 'show me the numbers',
-      rexPoke: () => this.moVoice('rawr') || this.setState({ lens: isD ? 'product' : 'design', over: {}, hop: (st.hop || 0) + 1 }),
-      raProduct: (st.over.ra || st.lens) !== 'design', raDesign: (st.over.ra || st.lens) === 'design',
-      raIsDesign: (st.over.ra || st.lens) === 'design' ? 'true' : 'false', raFlipCls: (st.over.ra || st.lens) === 'design' ? 'flip d' : 'flip',
-      raFlip: () => { const o = Object.assign({}, st.over); o.ra = (st.over.ra || st.lens) === 'design' ? 'product' : 'design'; this.setState({ over: o }); },
-      raAds: this.raAds,
-      allProduct: () => this.moVoice('rawr') || this.setState({ lens: 'product', over: {}, hop: (st.hop || 0) + 1 }),
-      allDesign: () => this.moVoice('rawr') || this.setState({ lens: 'design', over: {}, hop: (st.hop || 0) + 1 }),
+const $=s=>document.querySelector(s);
+const el=(t,c,h)=>{const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+['contextmenu','dragstart','selectstart'].forEach(ev=>document.addEventListener(ev,e=>{ if(e.target.closest('.band')) e.preventDefault(); }));
 
-      lensLine: isD ? 'Design lens: the flows and screens behind the same results. Flip any case back on its own.' : 'Product lens: the bet, the calls and the numbers. Flip any case to see its design.'
-    };
-  }
-}
+/* ---------- cases (order and copy for review) ---------- */
+const CASES=[
+ {id:'bcaa',n:'01',meta:'BCAA × Evo · Head of Product, Strategic Ventures · Predictive operations',
+  title:'An AI co-pilot that moves the fleet before demand does',ai:true,tags:['0 → 1','Scale'],
+  pills:[['+36% portfolio profitability','#F5C9FF'],['+33% revenue','#B8FFFC'],['−53% operating cost','#FFE2B0'],['250K riders · 7 markets','#FFFFA8']],
+  T:[['The bet','Data beats new vehicles. The fleet already streamed telemetry all day; if it reached decisions, we could grow trips without growing the fleet or waiting for a new platform.'],
+     ['The call','Put the telemetry we already had to work before replacing the platform. AI forecasts each shortage and proposes the move, a named person approves it, and dock counts prove it.'],
+     ['The outcome','Rebalancing went from reactive to forecast, 20 to 30 minutes ahead. Operating cost fell 53%, delivery ran 40% faster, and portfolio profit rose 36% with revenue up 33%.']],
+  slides:[{src:'bcaa20',anim:'ask',bg:'#EEF0F5',cap:'Ask the map: the hubs that matter light up'},{src:'bcaa21',anim:'answer',opt:{pretyped:true},bg:'#EEF0F5',cap:'The co-pilot answers, a person decides'},{src:'bcaa01',bg:'#EEF0F5',cap:'Global portfolio'}]},
+ {id:'evo',n:'02',meta:'BCAA × Evo + Evolve · Head of Product, Strategic Ventures · Legacy transformation',
+  title:'Two legacy apps became one rider platform',tags:['Legacy transformation','Mobile','Back office'],
+  pills:[['250K riders · 7 markets','#B8FFFC'],['Cars + e-bikes, one account','#F5C9FF'],['[rider-app number to come]','#FFFFA8']],
+  T:[['The bet','Trust is the product. If every unlock, end and charge is confirmed before the app says so, disputes and support calls fall and one-off riders come back as regulars.'],
+     ['The call','Rebuild around confirmed states, not optimistic ones. Nothing says unlocked, ended or charged until the system confirms it, and back-office tools and analytics run on the same events.'],
+     ['The outcome','One map, one account and one wallet for every vehicle. Riders browse before sign-up, see the price before paying, and end a trip without calling support.']],
+  phones:['evo08','evo11','evo19']},
+ {id:'six',n:'03',meta:'6ix · VP Product Management · Investor relations platform',
+  title:'From bespoke services to a regulated SaaS platform',tags:['Regulated','SaaS','Partners'],
+  pills:[['+48% investor conversion','#B8FFFC'],['−25% support demand','#F5C9FF'],['~20% revenue growth a year','#FFE2B0']],
+  T:[['The bet','Subscriptions beat services. Listed companies would pay monthly for compliant investor relations if we could ship it fast, without building the commodity parts ourselves.'],
+     ['The call','Partner first, build second: a SOC 2 platform for issuers and investors, delivered through partners on a buy-not-build stack that cut projected development cost by 65%.'],
+     ['The outcome','Investor conversion rose 48% and support demand fell 25%, with revenue growing about 20% a year from subscriptions instead of one-off services.']],
+  slides:[{src:'six06',bg:'#121212',cap:'Investor · live event'},{src:'six11',bg:'#121212',cap:'Issuer · campaign builder'},{src:'six27',bg:'#121212',cap:'Reviewer · audit log'}]},
+ {id:'grupa',n:'04',meta:'Grupa · Head of Product · Venture marketplace',
+  title:'A three-sided venture marketplace, from zero',ai:true,tags:['0 → 1','Marketplace','Trust'],
+  pills:[['−60% talent onboarding time','#FFE2B0'],['3 sides, 1 marketplace','#B8FFFC']],
+  T:[['The bet','Trust scales when checking does. Automate the evidence work (identity, documents, references), keep people for judgment, and all three sides can grow together.'],
+     ['The call','Self-service intake with automated KYC, and matching built on what founders and investors actually need. AI reads the documents and proposes matches; a curator decides.'],
+     ['The outcome','Talent onboarding time fell 60%, so supply grew without adding screeners, and every match arrives with its reasons, its gaps and the evidence already checked.']],
+  slides:[{src:'grupa00',bg:'#FFFFFF',cap:'Startup · matches with their reasons'},{src:'grupa12',bg:'#FFFFFF',cap:'Curator · AI-read documents, a person confirms'},{src:'grupa04',bg:'#FFFFFF',cap:'Startup × talent · both opt in'}]}
+];
 
-DC.mount(Component, {"scribbles":{"editor":"boolean","default":true},"designLayout":{"editor":"enum","options":["Annotated","Beside","Below"],"default":"Annotated"},"background":{"editor":"enum","options":["Flow field","Constellation","Off"],"default":"Flow field"},"$preview":{"width":1440,"height":6400}});
+/* ---------- scroll build: as a screen scrolls into view, its own blocks rise into place (her markup, nothing redrawn) ---------- */
+const SB=(()=>{ const list=[]; let q=false;
+  const css='.__sb{opacity:0;translate:0 24px}.__sb.__sbin{opacity:1;translate:0 0;transition:opacity .6s ease,translate .7s cubic-bezier(.2,.8,.3,1)}@media (prefers-reduced-motion:reduce){.__sb{opacity:1;translate:none}}';
+  const SEL='section,article,aside,table,tr,li,[class*=card],[class*=Card],[class*=row],[class*=tile],[class*=panel],[class*=kpi],[class*=stat]';
+  function prep(f){ const d=f.contentDocument; if(!d||!d.body||!d.head) return false; const st=d.createElement('style'); st.textContent=css; d.head.append(st);
+    const W=f.offsetWidth||d.documentElement.clientWidth;
+    const box=e=>{ const cs=getComputedStyle(e); if(cs.position==='fixed') return false; const bg=cs.backgroundColor; const hasBg=bg&&bg!=='rgba(0, 0, 0, 0)'&&bg!=='transparent'&&e.parentElement&&getComputedStyle(e.parentElement).backgroundColor!==bg; return hasBg||parseFloat(cs.borderTopWidth)>0||parseFloat(cs.borderBottomWidth)>0||cs.boxShadow!=='none'||e.matches(SEL); };
+    let c=[...d.body.querySelectorAll('*')].filter(e=>{ if(e.tagName==='SCRIPT'||e.tagName==='STYLE'||e.closest('svg')&&e.tagName!=='svg') return false; const r=e.getBoundingClientRect(); return r.height>28&&r.height<560&&r.width>90&&r.width<W*.9&&box(e); });
+    c=c.filter(e=>!c.some(o=>o!==e&&o.contains(e)&&o.getBoundingClientRect().height<240)).slice(0,120);
+    c.forEach(e=>{ e.__y=e.getBoundingClientRect().top+e.getBoundingClientRect().height*.25; e.classList.add('__sb'); }); f.__sbItems=c; return true; }
+  function tick(){ q=false; const vh=innerHeight;
+    for(const it of list){ const f=it.f; if(!it.ok()) continue;
+      if(!f.__sbItems){ const d=f.contentDocument; if(!d||d.readyState!=='complete'||!f.src) continue; if(!prep(f)) continue; }
+      const r=f.getBoundingClientRect(); if(!r.height) continue; const k=r.height/(f.offsetHeight||1);
+      if(r.top>vh*1.02){ f.__sbItems.forEach(e=>e.classList.remove('__sbin')); continue; }
+      for(const e of f.__sbItems){ if(r.top+e.__y*k<vh*.95) e.classList.add('__sbin'); } } }
+  const kick=()=>{ if(!q){ q=true; requestAnimationFrame(tick); } };
+  addEventListener('scroll',kick,{passive:true}); addEventListener('resize',kick); setInterval(kick,600);
+  return { add(f,ok=()=>true){ list.push({f,ok}); f.addEventListener('load',()=>{ f.__sbItems=null; setTimeout(kick,300); }); kick(); } };
+})();
+
+/* ---------- hairline edge: when a screen's top or bottom row is near white it would blend into the page, so the band gets a 1px line in the screen's own side-panel colour ---------- */
+const EDGE=(()=>{ const css='.edged::before,.edged::after{content:"";position:absolute;left:0;right:0;height:1px;background:var(--edge);z-index:9;pointer-events:none}.edged::before{top:0;transform-origin:0 0;transform:scaleY(.5)}.edged::after{bottom:0;transform-origin:0 100%;transform:scaleY(.5)}';
+  const st=document.createElement('style'); st.textContent=css; document.head.append(st);
+  const rgb=s=>{ const m=(s||'').match(/[\d.]+/g); return m&&m.length>=3?m.slice(0,4).map(Number):null; };
+  const lum=c=>(0.2126*c[0]+0.7152*c[1]+0.0722*c[2])/255;
+  const bgAt=(d,x,y)=>{ let e=d.elementFromPoint(x,y); while(e){ const c=rgb(getComputedStyle(e).backgroundColor); if(c&&(c.length<4||c[3]>.5)) return c; e=e.parentElement; } return null; };
+  const info=f=>{ if(f.__edge!==undefined) return f.__edge; const d=f.contentDocument; if(!d||!d.body||d.readyState!=='complete'||!f.src||!/\/b\//.test(d.URL||'')||!d.body.children.length) return null;
+    const W=f.offsetWidth, H=f.offsetHeight; const top=bgAt(d,W*.6,3), bot=bgAt(d,W*.6,H-3); const side=bgAt(d,10,H*.5);
+    const blends=((top&&lum(top)>.93)||(bot&&lum(bot)>.93)); /* any screen whose top or bottom row is near white */ const line=side&&lum(side)>.8&&lum(side)<.99?side.map(v=>Math.round(v*.86)):[228,228,231];
+    f.__edge=blends?`rgb(${line[0]},${line[1]},${line[2]})`:false; return f.__edge; };
+  const shown=b=>b.querySelector('.slide.on iframe')||b.querySelector('.stage iframe.on')||b.querySelector('iframe');
+  setInterval(()=>document.querySelectorAll('.band:not(.phones-band),.fband').forEach(b=>{ if(b.querySelector('.phones')) return; const f=shown(b); if(!f) return; const e=info(f); if(e===null) return; if(e&&!b.__edge) b.__edge=e; /* one decision per band: if any screen in it needs the line, every screen in it gets the same line */ if(b.__edge){ b.style.setProperty('--edge',b.__edge); b.classList.add('edged'); } else b.classList.remove('edged'); [...b.querySelectorAll('iframe')].forEach(x=>{ const v=info(x); if(v&&!b.__edge) b.__edge=v; }); }),500);
+  return {}; })();
+
+/* ---------- console naming (4 Nov): the product is "Fleet Console" everywhere; the duplicate "FLEET CONSOLE" title on white is hidden so its labels move left. Applied as each screen is shown; her design files are untouched. EVOLVE as the e-bike service brand stays. ---------- */
+setInterval(()=>document.querySelectorAll('iframe').forEach(f=>{ const u=f.getAttribute('src')||''; if(!/bcaa\d/.test(u)) return; const d=f.contentDocument; if(!d||!d.body||d.readyState!=='complete'||!/bcaa\d/.test(d.URL||'')||!d.body.children.length) return; if(Date.now()-(f.__rbT||0)<1500) return; f.__rbT=Date.now(); f.__rb=1; /* re-applied every 1.5 s so a re-render inside the screen can't bring the old name back */
+  try{ d.querySelectorAll('div').forEach(dv=>{ const k=[...dv.children]; if(k.length>=2&&k[0].textContent.trim()==='EVOLVE'&&k[1].textContent.trim()==='CORE'){ k[0].textContent='FLEET'; k[1].textContent='CONSOLE'; } });
+    const w=d.createTreeWalker(d.body,NodeFilter.SHOW_TEXT); const ns=[]; let n; while(n=w.nextNode()) ns.push(n);
+    ns.forEach(n=>{ const p=n.parentElement; if(!p||p.tagName==='SCRIPT'||p.tagName==='STYLE') return; let t=n.nodeValue;
+      if(t.trim()==='EVOLVE'){ const nx=n.nextSibling&&n.nextSibling.nodeType===1?n.nextSibling:null; if(nx&&nx.textContent.trim()==='CORE'){ n.nodeValue=t.replace('EVOLVE','FLEET'); nx.textContent='CONSOLE'; } else n.nodeValue=t.replace('EVOLVE','FLEET CONSOLE'); return; }
+      const t2=t.replace(/EVOLVE CORE/g,'FLEET CONSOLE').replace(/Evolve Core/g,'Fleet Console').replace(/EVOLVE components/g,'Fleet Console components'); if(t2!==t) n.nodeValue=t2; });
+    d.querySelectorAll('strong').forEach(s=>{ if(s.textContent.trim()==='FLEET CONSOLE'&&s.parentElement&&s.parentElement.children.length>=3) s.style.display='none'; }); }catch(e){} }),400);
+
+/* ---------- live screens: edge to edge, moving, reaching into the real UI ---------- */
+let SIZE='full';
+function guard(d){ try{ ['contextmenu','dragstart','selectstart'].forEach(ev=>d.addEventListener(ev,e=>e.preventDefault(),true)); }catch(e){} }
+function replay(f){ try{ const d=f&&f.contentDocument; if(!d||!d.head) return; const s=d.createElement('style'); s.textContent='*,*::before,*::after{animation:none!important}'; d.head.append(s); void d.body.offsetHeight; s.remove(); }catch(e){} }
+function hoverable(d){ try{ if(d.__hv) return; d.__hv=1; const add=[]; for(const sh of d.styleSheets){ let rs; try{ rs=sh.cssRules }catch(e){ continue } for(const r of rs){ if(r.selectorText&&r.selectorText.includes(':hover')) add.push(r.selectorText.replace(/:hover/g,'.__hv')+'{'+r.style.cssText+'}'); } }
+  const st=d.createElement('style'); st.textContent=add.join('\n')+'\nbutton,a,[role=button],[class*=chip],[class*=pill],[class*=card],tr,li{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}\n.__lift{transform:translateY(-2px);box-shadow:0 10px 22px -12px rgba(38,38,38,.45)!important}\ntr.__lift,li.__lift{transform:none;box-shadow:inset 3px 0 0 #DD00FF!important;background-color:rgba(221,0,255,.05)!important}\n.__reveal{opacity:0;transform:translateY(14px)}\n.__in{opacity:1!important;transform:none!important;transition:opacity .35s ease,transform .35s cubic-bezier(.2,.8,.3,1)}\n.__press{box-shadow:0 0 0 3px rgba(221,0,255,.35)!important;transform:scale(.97)}'; d.head.append(st); }catch(e){} }
+function frame(src){ const [w,h,t]=META[src]; const f=document.createElement('iframe'); f.width=w; f.height=h; f.style.width=w+'px'; f.style.height=h+'px'; f.dataset.src='b/'+src+'.html'; f.tabIndex=-1; f.title=t; f.setAttribute('aria-hidden','true'); f.setAttribute('scrolling','no'); f.addEventListener('load',()=>{ try{ guard(f.contentDocument); hoverable(f.contentDocument); }catch(e){} f.__ready=true; }); return f; }
+
+/* scripted moments inside the real screens (her markup, animated in place; nothing redrawn) */
+const textNode=(d,t)=>{ const w=d.createTreeWalker(d.body,NodeFilter.SHOW_TEXT); let n; while(n=w.nextNode()){ if(n.nodeValue.includes(t)) return n.parentElement; } return null; };
+/* map reaction (shared with the case pages) */
+function mapHot(f,on){ try{ const d=f.contentDocument; if(!d) return; if(!d.__hotcss){ d.__hotcss=1; const st=d.createElement('style'); st.textContent='.__hot{transition:transform .5s cubic-bezier(.3,1.5,.5,1),box-shadow .5s ease!important;transform:scale(1.22)!important;box-shadow:0 0 0 4px rgba(221,0,255,.45),0 10px 24px -8px rgba(221,0,255,.55)!important;border-radius:999px;z-index:20;position:relative}.__hotcard{transition:transform .5s ease,box-shadow .5s ease!important;transform:translateY(-6px)!important;box-shadow:0 0 0 3px rgba(221,0,255,.4),0 22px 40px -18px rgba(38,38,38,.45)!important}svg.__dim{transition:opacity .6s ease,filter .6s ease;filter:saturate(.55);opacity:.78}'; d.head.append(st); }
+    const lbl=t=>{ const n=textNode(d,t); return n&&n.closest('.lbl,div'); };
+    const els=[[lbl('H-01'),'__hot'],[lbl('Van-04'),'__hot'],[(textNode(d,'Corridor gap')||{}).closest?textNode(d,'Corridor gap').closest('.card'):null,'__hotcard']];
+    const map=[...d.querySelectorAll('svg')].sort((a,b)=>b.getBoundingClientRect().width-a.getBoundingClientRect().width)[0];
+    if(!on){ els.forEach(([e,c])=>e&&e.classList.remove(c)); map&&map.classList.remove('__dim'); return Promise.resolve(); }
+    map&&map.classList.add('__dim'); return (async()=>{ for(const [e,c] of els){ if(e) e.classList.add(c); await sleep(650); } })(); }catch(e){ return Promise.resolve(); } }
+const ANIM={
+  async ask(f,live,qq){ const d=f.contentDocument; if(!d) return; const inp=[...d.querySelectorAll('input')].find(i=>/Ask about/.test(i.placeholder)); if(!inp) return;
+    /* the question is typed into the co-pilot box on the map, sent, and the map answers: the hubs that matter light up */
+    const ir=inp.getBoundingClientRect(); const send=[...d.querySelectorAll('button')].filter(b=>{ const r=b.getBoundingClientRect(); return r.left>=ir.right-4&&Math.abs((r.top+r.height/2)-(ir.top+ir.height/2))<30; }).sort((a,b)=>a.getBoundingClientRect().left-b.getBoundingClientRect().left)[0];
+    inp.value=''; mapHot(f,false); await sleep(500); if(!live()) return;
+    const q=qq||'Why will H-01 Waterfront run short at 17:30?'; for(const ch of q){ if(!live()) return; inp.value+=ch; await sleep(40); } await sleep(300);
+    if(send){ send.classList.add('__press'); await sleep(260); send.classList.remove('__press'); } inp.value=''; if(!live()) return;
+    await mapHot(f,true); await sleep(1400); },
+  async answer(f,live,opt){ const d=f.contentDocument; if(!d) return; const rs=textNode(d,'Reading sources'); const ans=textNode(d,'runs 11'); const right=textNode(d,'Watching');
+    const conv=rs&&rs.closest('.card')&&rs.closest('.card').parentElement; const art=ans&&ans.closest('article'); const col=right&&right.closest('section')&&right.closest('section').parentElement;
+    const seq=[]; if(conv) [...conv.children].forEach(c=>{ if(c===art&&art) [...art.children].forEach(x=>seq.push(x)); else seq.push(c); }); if(col) [...col.children].forEach(c=>seq.push(c));
+    const chips=rs&&rs.closest('.card')?[...rs.closest('.card').querySelectorAll('span,div')].filter(x=>/✓|▲|missing/.test(x.textContent)&&x.children.length<=1&&x.textContent.length<60):[];
+    seq.forEach(x=>{ x.classList.remove('__in'); x.classList.add('__reveal'); }); if(art){ art.classList.remove('__in'); art.classList.add('__reveal'); } /* the answer card itself stays hidden until its findings arrive, so no empty box shows */ chips.forEach(x=>{ x.classList.remove('__in'); x.classList.add('__reveal'); });
+    /* the question is typed into the chat box at the bottom first, sent, then it appears as the message and the answer builds */
+    const bubble=textNode(d,'Why will H-01'); const full=bubble?bubble.textContent.trim():'';
+    const inp=[...d.querySelectorAll('input')].find(i=>/Ask about the corridor/.test(i.placeholder)); const askB=[...d.querySelectorAll('button')].find(b=>/^Ask/.test(b.textContent.trim()));
+    if(inp) inp.value=''; await sleep(opt&&opt.pretyped?80:250);
+    if(inp&&full&&!(opt&&opt.pretyped)){ for(const ch of full){ if(!live()) return; inp.value+=ch; await sleep(22); } await sleep(250); }
+    if(askB&&!(opt&&opt.pretyped)){ askB.classList.add('__press'); await sleep(260); askB.classList.remove('__press'); }
+    if(inp) inp.value=''; if(!live()) return; if(seq[0]){ seq[0].classList.add('__in'); } await sleep(120);
+    for(let i=1;i<seq.length;i++){ if(!live()) return; if(art&&seq[i].parentElement===art) art.classList.add('__in'); seq[i].classList.add('__in'); if(seq[i]===(rs&&rs.closest('.card'))){ for(const c of chips){ await sleep(45); c.classList.add('__in'); } } await sleep(70); } }
+};
+
+function Screens(host,c){
+  const band=el('div','band'); host.append(band); band.dataset.id=c.id;
+  if(c.phones){ const p=el('div','phones'); p.style.background='#F7F7F8'; band.append(p); band.style.height='auto';
+    const fs=c.phones.map(id=>{ const ph=el('div','ph'); p.append(ph); const f=frame(id); ph.append(f); SB.add(f); const fit=()=>{ const k=ph.clientHeight/844; f.style.transform=`scale(${k})`; }; new ResizeObserver(fit).observe(ph); return f; });
+    band.__frames=fs; band.__slides=null; reg(band); return band; }
+  const S=c.slides.map((s,i)=>{ const sl=el('div','slide'+(i?'':' on')); sl.style.background=s.bg; band.append(sl); const f=frame(s.src); sl.append(f); return {...s,sl,f}; });
+  S.forEach(s=>{ if(!s.anim) SB.add(s.f,()=>s.sl.classList.contains('on')); });
+  const ctrl=el('div','ctrl'); band.append(ctrl); const dots=S.map((s,i)=>{ const b=el('button','dot'+(i?'':' on')); b.type='button'; b.setAttribute('aria-label','Show '+s.cap); b.onclick=()=>go(i,true); ctrl.append(b); return b; }); const cap=el('span','cap',S[0].cap); ctrl.append(cap);
+  let cur=0, run=0, timer=0;
+  const size=()=>{ const W=band.clientWidth||innerWidth; S.forEach(s=>{ const [w,h]=META[s.src]; let k=W/w; if(SIZE==='fit') k=Math.min(k,innerHeight*.86/h); s.k=k; s.H=h*k; s.f.style.transform=`translate(${(W-w*k)/2}px,0) scale(${k})`; }); band.style.height=S[cur].H+'px'; };
+  const play=async(i)=>{ const my=++run; const s=S[i]; const live=()=>my===run && band.__vis; if(!s.f.__ready) await new Promise(r=>{ const t=setInterval(()=>{ if(s.f.__ready||my!==run){ clearInterval(t); r(); } },120); }); if(my!==run) return;
+    replay(s.f); if(s.anim&&ANIM[s.anim]) await ANIM[s.anim](s.f,live,s.opt); else await sleep(5500); if(!live()) return; await sleep(s.anim==='answer'?3800:1800); if(live()) go(i+1); };
+  const go=(i,user)=>{ cur=(i+S.length)%S.length; S.forEach((s,n)=>s.sl.classList.toggle('on',n===cur)); dots.forEach((b,n)=>b.classList.toggle('on',n===cur)); cap.textContent=S[cur].cap; band.style.height=S[cur].H+'px'; clearTimeout(timer); if(band.__vis) play(cur); };
+  band.__frames=S.map(s=>s.f); band.__slides=S; band.__size=size; band.__start=()=>play(cur); band.__stop=()=>{ run++; clearTimeout(timer); };
+  band.__cur=()=>S[cur]; new ResizeObserver(size).observe(band); requestAnimationFrame(size); reg(band); return band; }
+
+/* load when near, run while visible, replay plain animations every 6.5 s, pointer reaches the UI */
+const near=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting) e.target.__frames.forEach(f=>{ if(!f.src) f.src=f.dataset.src; }); }),{rootMargin:'600px 0px'});
+const seen=new IntersectionObserver(es=>es.forEach(e=>{ const b=e.target; const v=e.isIntersecting; if(v===b.__vis) return; b.__vis=v; if(b.__slides){ v?b.__start():b.__stop(); } else if(v) b.__frames.forEach(replay); }),{threshold:.3});
+setInterval(()=>document.querySelectorAll('.band').forEach(b=>{ if(b.__vis&&!b.__slides&&!b.__hover) b.__frames.forEach(replay); }),6500);
+function reg(band){ near.observe(band); seen.observe(band);
+  let prev=[]; const clear=()=>{ prev.forEach(n=>n.classList&&n.classList.remove('__hv','__lift')); prev=[]; };
+  const point=(cx,cy)=>{ let f,k,ox; if(band.__slides){ const s=band.__cur(); f=s.f; k=s.k; } else { f=[...band.__frames].find(x=>{ const r=x.parentElement.getBoundingClientRect(); return cx>=r.left&&cx<=r.right&&cy>=r.top&&cy<=r.bottom; }); if(!f) return clear(); k=f.parentElement.clientHeight/844; }
+    const d=f.contentDocument; if(!d) return; hoverable(d); const r=f.getBoundingClientRect(); const n=d.elementFromPoint((cx-r.left)/k,(cy-r.top)/k); clear(); if(!n) return;
+    let a=n; while(a&&a!==d.body){ a.classList.add('__hv'); prev.push(a); a=a.parentElement; }
+    const t=n.closest('button,a,[role=button],[class*=chip],[class*=pill],tr,li,[class*=card]'); if(t&&t!==d.body&&t.getBoundingClientRect().height<260){ t.classList.add('__lift'); prev.push(t); } };
+  band.addEventListener('pointerenter',()=>{ band.__hover=true; if(!band.__slides) band.__frames.forEach(replay); });
+  band.addEventListener('pointermove',e=>{ if(e.pointerType==='mouse'&&!e.target.closest('.ctrl,.tab')) point(e.clientX,e.clientY); });
+  band.addEventListener('pointerleave',()=>{ band.__hover=false; clear(); });
+  band.addEventListener('pointerdown',e=>{ if(e.pointerType!=='mouse'&&!e.target.closest('.ctrl,.tab')){ point(e.clientX,e.clientY); setTimeout(clear,1400); } }); }
+
+
+/* ---------- rider promise display ---------- */
+const PROMISE=[['78150d46a3b4e626023ab002fecd2d15','evo08','Is there a usable bike near me?'],['5dd58f342e991871130b5f820b5e5ce0','evo10','Can it get me there and back?'],['ad81ce9cb65409b7cab93d12ae94cfc4','evo11','What will it likely cost?'],['8e668024f29de47ee65e73b28e46d088','evo15','Where can I legally end the trip?'],['3a2ab9299bfe188aa84916c7ff6af0ad','evo18','Has billing actually stopped?'],['568e08ee962b55e2eded29cc4ba9b7ef','evo22','What if something goes wrong?']];
+function Promise6(host){ const w=el('div','promise'); host.append(w);
+  w.innerHTML='<div class="in2"><img class="pr-head" src="pr/1d520afef6537ba287eda2068995776b.webp" alt="The rider promise: six questions, answered fast"><div class="pr-body"><div class="pr-grid"></div><div class="pr-screen" aria-hidden="true"></div></div><p class="pr-hint">Point at a question to see the screen that answers it</p></div>';
+  const grid=w.querySelector('.pr-grid'), scr=w.querySelector('.pr-screen'); let i=0, held=false, vis=false;
+  const cards=PROMISE.map(([img,id,alt],k)=>{ const b=el('button','pq'); b.type='button'; b.style.setProperty('--d',k); b.setAttribute('aria-label',alt); b.innerHTML=`<img src="pr/${img}.webp" alt="" draggable="false">`; grid.append(b);
+    b.onmouseenter=()=>{ held=true; set(k); }; b.onfocus=()=>{ held=true; set(k); }; b.onclick=()=>{ held=true; set(k); }; return b; });
+  const shots=PROMISE.map(([,id])=>{ const sc=el('div','sc'); const f=frame(id); sc.append(f); scr.append(sc); return {sc,f}; });
+  const fit=()=>{ const k=scr.clientWidth/390; shots.forEach(s=>s.f.style.transform=`scale(${k})`); }; new ResizeObserver(fit).observe(scr);
+  const set=k=>{ i=k; cards.forEach((c,n)=>c.classList.toggle('sel',n===k)); shots.forEach((s,n)=>{ s.sc.classList.toggle('sel',n===k); if(n===k) replay(s.f); }); };
+  grid.addEventListener('mouseleave',()=>{ held=false; });
+  setInterval(()=>{ if(vis&&!held&&!document.hidden) set((i+1)%PROMISE.length); },2600);
+  new IntersectionObserver(es=>es.forEach(e=>{ vis=e.isIntersecting; if(vis){ w.classList.add('on'); shots.forEach(s=>{ if(!s.f.src) s.f.src=s.f.dataset.src; }); } }),{threshold:.25}).observe(w);
+  set(0); return w; }
+
+/* ---------- lock: the monster gate (her WorkLock design) ---------- */
+let target=null, knocks=0, actx=null;
+const lockbg=$('#lockbg'), card=lockbg.querySelector('.lockcard'), code=$('#code'), msg=lockbg.querySelector('.msg'),
+  crit=lockbg.querySelector('.critter'), knockRow=lockbg.querySelector('.knock'), keyRow=lockbg.querySelector('.keyrow'), lt=$('#lockh'), ll=$('#lockp');
+function voice(kind){ try{ const A=window.AudioContext||window.webkitAudioContext; if(!A) return; const ctx=actx||(actx=new A()); if(ctx.resume) ctx.resume(); const t0=ctx.currentTime;
+  const note=(t,dur,f0,f1,f2,o)=>{ o=o||{}; const os=ctx.createOscillator(); os.type=o.type||'sawtooth'; os.frequency.setValueAtTime(f0,t); os.frequency.exponentialRampToValueAtTime(f1,t+dur*(o.peak||.3)); os.frequency.exponentialRampToValueAtTime(f2,t+dur);
+    const tr=ctx.createOscillator(); tr.frequency.value=o.trill||22; const tg=ctx.createGain(); tg.gain.value=f0*(o.depth||.06); tr.connect(tg); tg.connect(os.frequency);
+    const bp=ctx.createBiquadFilter(); bp.type='bandpass'; bp.Q.value=4; bp.frequency.setValueAtTime(o.f1||900,t); bp.frequency.linearRampToValueAtTime(o.f2||1300,t+dur*.35); bp.frequency.linearRampToValueAtTime(o.f3||700,t+dur);
+    const lp=ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=3200; const g=ctx.createGain(); const v=o.vol||.5; g.gain.setValueAtTime(.0001,t); g.gain.exponentialRampToValueAtTime(v,t+.03); g.gain.setValueAtTime(v,t+dur*.6); g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+    os.connect(bp); bp.connect(lp); lp.connect(g); g.connect(ctx.destination); os.start(t); tr.start(t); os.stop(t+dur+.02); tr.stop(t+dur+.02); };
+  const r=.9+Math.random()*.25;
+  if(kind==='rawr') note(t0,.62,240*r,435*r,210*r,{trill:24,depth:.08});
+  else { [0,.11,.22].forEach((d,i)=>note(t0+d,.2,[520,660,780][i],[600,760,990][i],[560,700,1040][i],{type:'triangle',trill:30,depth:.02,f1:1400,f2:2000,f3:1600,peak:.5,vol:.38})); note(t0+.36,.42,300,520,360,{trill:24,depth:.08}); }
+ }catch(e){} }
+function boo(){ knocks++; crit.className='critter boo'+(knocks%2?'':' b2'); const old=card.querySelector('.rawr'); if(old) old.remove(); const w=el('span','rawr','rawr!'); w.setAttribute('aria-hidden','true'); card.appendChild(w); setTimeout(()=>w.remove(),1250); voice('rawr'); }
+function celebrate(){ let reduce=false; try{ reduce=matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){} if(reduce||!card.animate) return;
+  const em=['🍟','💖','✨','🌈','🍟','🎉'], r=card.getBoundingClientRect();
+  for(let i=0;i<36;i++){ const sp=document.createElement('span'); sp.textContent=em[i%em.length]; sp.setAttribute('aria-hidden','true');
+    sp.style.cssText='position:fixed;left:'+(r.left+r.width/2)+'px;top:'+(r.top+30)+'px;font-size:'+(18+Math.random()*18)+'px;pointer-events:none;z-index:300'; document.body.appendChild(sp);
+    const a=Math.random()*Math.PI*2, d=120+Math.random()*260, dx=Math.cos(a)*d, dy=Math.sin(a)*d-120;
+    const an=sp.animate([{transform:'translate(-50%,-50%) scale(.3)',opacity:1},{transform:'translate(calc(-50% + '+dx+'px), calc(-50% + '+dy+'px)) scale(1) rotate('+((Math.random()-.5)*540)+'deg)',opacity:1,offset:.6},{transform:'translate(calc(-50% + '+dx*1.1+'px), calc(-50% + '+(dy+220)+'px)) scale(.9)',opacity:0}],{duration:1300+Math.random()*500,easing:'cubic-bezier(.2,.7,.4,1)'});
+    an.onfinish=()=>sp.remove(); } }
+function askKey(){ knockRow.hidden=true; keyRow.hidden=false; lt.textContent='Key, please.'; ll.textContent='One key opens every locked case.'; setTimeout(()=>code.focus(),120); }
+function askCase(c){ target=c; knocks=0; crit.className='critter'; lockbg.classList.remove('shake','open'); code.value=''; msg.textContent='';
+  knockRow.hidden=false; keyRow.hidden=true; lt.textContent='This one is confidential.'; ll.textContent='The story is open. The screens, flows and numbers need a key.'; lockbg.hidden=false; }
+const closeLock=()=>{ lockbg.hidden=true; lockbg.classList.remove('open'); };
+crit.onclick=()=>{ boo(); if(keyRow.hidden) askKey(); };
+lockbg.querySelector('.lockbtn').onclick=()=>{ boo(); askKey(); };
+lockbg.querySelector('.x').onclick=closeLock; lockbg.addEventListener('click',e=>{ if(e.target===lockbg) closeLock(); }); addEventListener('keydown',e=>{ if(e.key==='Escape') closeLock(); });
+keyRow.addEventListener('submit',e=>{ e.preventDefault();
+  if(code.value.trim().toLowerCase()==='fries'){ lt.textContent='Yum. Come in!'; crit.className='critter happy'; voice('yay'); celebrate();
+    ll.innerHTML='The full case pages land here soon. Until then, <a href="/contact/">ask me for a walkthrough ↗</a>'; }
+  else { boo(); lt.textContent='Wrong key.'; ll.textContent='Nope! Try again, or ask Mo for the real one.'; lockbg.classList.remove('shake'); void lockbg.offsetWidth; lockbg.classList.add('shake'); setTimeout(()=>lockbg.classList.remove('shake'),500); code.select(); } });
+
+/* ---------- case chips: hero row + bottom dock ---------- */
+const JL={bcaa:['BCAA','Predictive AI'],evo:['Evo + Evolve','Legacy transformation'],six:['6ix','Investor relations'],grupa:['Grupa','Venture marketplace']};
+function chips(){ const rows=[$('#jumps'),$('#dock .jumps')], dock=$('#dock');
+  rows.forEach(r=>{ r.innerHTML=''; CASES.forEach(c=>{ const b=el('button','jc',`<b>${c.n}</b>${JL[c.id][0]}<span class="nm"> · ${JL[c.id][1]}</span>`); b.type='button'; b.dataset.id=c.id;
+    b.onclick=()=>{ const t=document.getElementById('case-'+c.id); if(t) t.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'}); }; r.append(b); }); });
+  const hero=rows[0], foot=document.querySelector('.sitefoot');
+  let cur=null;
+  const tick=()=>{ const vh=innerHeight, hb=hero.getBoundingClientRect(), fb=foot?foot.getBoundingClientRect():{top:1e9};
+    const show=hb.bottom<0 && fb.top>vh-40; dock.classList.toggle('on',show); dock.setAttribute('aria-hidden',show?'false':'true');
+    dock.querySelectorAll('button').forEach(b=>b.tabIndex=show?0:-1);
+    let id=null; CASES.forEach(c=>{ const a=document.getElementById('case-'+c.id); if(a && a.getBoundingClientRect().top<vh*.45) id=c.id; });
+    if(id!==cur){ cur=id; document.querySelectorAll('.jc').forEach(b=>b.setAttribute('aria-current',b.dataset.id===id?'true':'false'));
+      const on=dock.querySelector('.jc[aria-current="true"]'); if(on && show){ const r=on.parentNode; r.scrollTo({left:on.offsetLeft-(r.clientWidth-on.offsetWidth)/2,behavior:'smooth'}); } } };
+  addEventListener('scroll',tick,{passive:true}); addEventListener('resize',tick); tick(); }
+
+/* ---------- mobile menu ---------- */
+(()=>{ const mm=document.getElementById('mmenu'); document.querySelector('.mmenu-btn').onclick=()=>{ mm.hidden=false; }; mm.querySelector('.mmenu-x').onclick=()=>{ mm.hidden=true; }; addEventListener('keydown',e=>{ if(e.key==='Escape') mm.hidden=true; }); })();
+/* ---------- render ---------- */
+function render(){ const root=$('#cases'); root.innerHTML='';
+  CASES.forEach(c=>{ const a=el('article','case'); a.dataset.t=TEXT; a.id='case-'+c.id;
+    const tags=(c.ai?'<span class="tag ai">✦ AI</span>':'')+c.tags.map(t=>`<span class="tag">${t}</span>`).join('');
+    const cols=(c.T).map(([h,t])=>`<div><p class="lbl">${h}</p><p class="t">${t}</p></div>`).join('');
+    a.innerHTML=`<div class="row"><div class="l"><p class="num" aria-hidden="true">${c.n}</p></div><div class="r"><p class="meta">${c.meta}</p><h2 class="title">${c.title}</h2>
+      <div class="pills">${c.pills.map(([t,bg])=>`<span class="pill" style="background:${bg}">${t}</span>`).join('')}</div><div class="pills">${tags}</div>
+      <div class="cols">${cols}</div>
+      <button class="go" type="button"><span class="ar" aria-hidden="true">→</span>Read the full case <span class="lk" aria-hidden="true">🔒</span></button></div></div>`;
+    a.querySelector('.go').onclick=()=>askCase(c);
+    const band=c.promise?Promise6(a):Screens(a,c); const tab=el('button','tab','Full case <span aria-hidden="true">🔒</span>'); tab.type='button'; tab.onclick=()=>askCase(c); band.style.position='relative';
+    root.append(a); }); }
+
+/* ---------- flow-field background: the live Work page field, 20% lighter ---------- */
+(function(){ const c=$('canvas.bgfx'),x=c.getContext('2d'); const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches; const cols=['221,0,255','0,196,189','252,160,2','200,190,0']; const m={x:-9999,y:-9999};
+  let W=0,H=0,P=[],t=0; const fit=()=>{ const d=Math.min(devicePixelRatio||1,2); W=innerWidth; H=innerHeight; c.width=W*d; c.height=H*d; x.setTransform(d,0,0,d,0,0); const n=Math.min(1600,Math.round(W*H/2200)); P=[]; for(let i=0;i<n;i++) P.push({x:Math.random()*W,y:Math.random()*H,c:cols[i%4],life:Math.random()*200}); };
+  addEventListener('resize',fit); addEventListener('pointermove',e=>{ m.x=e.clientX; m.y=e.clientY; },{passive:true}); fit();
+  const draw=()=>{ t++; x.globalCompositeOperation='destination-out'; x.fillStyle='rgba(0,0,0,0.045)'; x.fillRect(0,0,W,H); x.globalCompositeOperation='source-over'; x.lineWidth=1.4;
+    for(const p of P){ let a=(Math.sin(p.x*.0022+t*.0016)+Math.cos(p.y*.0019-t*.0011)+Math.sin((p.x+p.y)*.0009))*Math.PI*.9; const dx=p.x-m.x,dy=p.y-m.y,d2=dx*dx+dy*dy; if(d2<26000) a=Math.atan2(dy,dx)+Math.PI/2+.6;
+      const nx=p.x+Math.cos(a)*1.1, ny=p.y+Math.sin(a)*1.1; x.strokeStyle='rgba('+p.c+','+(d2<26000?.40:.22)+')'; x.beginPath(); x.moveTo(p.x,p.y); x.lineTo(nx,ny); x.stroke(); p.x=nx; p.y=ny; p.life--;
+      if(p.life<0||p.x<-5||p.x>W+5||p.y<-5||p.y>H+5){ p.x=Math.random()*W; p.y=Math.random()*H; p.life=120+Math.random()*200; } } };
+  if(reduce){ for(let k=0;k<160;k++) draw(); return; } const loop=()=>{ if(!document.hidden) draw(); requestAnimationFrame(loop); }; loop(); })();
+
+/* decided: way in = under the story; screens = full width */
+let TEXT='T'; document.body.dataset.way='link'; render(); chips();
 </script>
+
 </body>
 </html>
