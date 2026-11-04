@@ -74,7 +74,7 @@ main{padding-bottom:8px !important}
 .askwig{animation:askwig .7s cubic-bezier(.3,1.6,.5,1)}
 @keyframes askwig{0%{transform:rotate(0) scale(1)}20%{transform:rotate(-14deg) scale(1.1)}40%{transform:rotate(12deg) scale(.95)}60%{transform:rotate(-8deg)}80%{transform:rotate(5deg)}100%{transform:rotate(0) scale(1)}}
 
-@media (max-width:900px){.lens{min-height:34px !important;padding:0 12px !important;font-size:11.5px !important;letter-spacing:.3px !important;box-shadow:none !important}.lens[aria-selected="true"]{box-shadow:0 3px 0 -1px #00FFF7,0 5px 0 -1px #DD00FF !important}}
+@media (max-width:900px){.lens{min-height:34px !important;padding:0 12px !important;font-size:11.5px !important;letter-spacing:.3px !important}}
 
 html{scrollbar-gutter:stable}
 
@@ -379,7 +379,7 @@ class Component extends DCLogic {
     if (this.reduce || this.props.autoplay === false) return;
     this.timer = setInterval(() => {
       if (this.override) return;
-      if (this.state.touched) { clearInterval(this.timer); return; }
+      if (this.state.chat || Date.now() - (this.pickAt || 0) < 9000) return;
       this.setState({ active: (this.state.active + 1) % this.data.length });
     }, 5500);
   }
@@ -502,8 +502,8 @@ class Component extends DCLogic {
       return {
         label: d.label,
         selected: on ? 'true' : 'false',
-        pick: () => this.setState({ active: i, touched: true }),
-        style: 'min-height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; transition: background .2s ease; ' + (on ? 'background: #262626; color: #FFFFFF; border: 1px solid #262626; box-shadow: 0 5px 0 -1px #00FFF7, 0 9px 0 -1px #DD00FF' : 'background: rgba(255,255,255,0.85); color: #262626; border: 1px solid #CFCFCF')
+        pick: () => { this.pickAt = Date.now(); this.setState({ active: i, touched: true }); },
+        style: 'min-height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13.5px; letter-spacing: 0.5px; text-transform: uppercase; ' + (on ? 'background: #FFFFFF; color: #262626; border: 1px solid #262626; font-weight: 700; box-shadow: -5px 4px 14px -6px rgba(221,0,255,0.45), 5px 4px 14px -6px rgba(0,255,247,0.55), 0 7px 12px -8px rgba(252,160,2,0.5)' : 'background: rgba(255,255,255,0.85); color: #262626; border: 1px solid #CFCFCF')
       };
     });
     const qs = [
@@ -519,7 +519,7 @@ class Component extends DCLogic {
         question: d.question,
         pressed: on ? 'true' : 'false',
         pick: () => { this.setState({ q: i }); if (/salary/i.test(d.question)) this.moneyRain(); },
-        style: 'min-height: 44px; padding: 0 14px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13px; letter-spacing: 0.3px; ' + (on ? 'background: #262626; color: #FFFFFF; border: 1px solid #262626' : 'background: #FFFFFF; color: #262626; border: 1px solid #CFCFCF')
+        style: 'min-height: 44px; padding: 0 14px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13px; letter-spacing: 0.3px; ' + (on ? 'background: #FFFFFF; color: #262626; border: 1px solid #262626; font-weight: 700; box-shadow: -5px 4px 14px -6px rgba(221,0,255,0.45), 5px 4px 14px -6px rgba(0,255,247,0.55), 0 7px 12px -8px rgba(252,160,2,0.5)' : 'background: #FFFFFF; color: #262626; border: 1px solid #CFCFCF')
       };
     });
     const items = [

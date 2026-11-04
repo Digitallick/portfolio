@@ -34,8 +34,9 @@ html,body{overflow-x:clip}
 .cta.dark{background:#262626;color:#FFFFFF;box-shadow:0 6px 0 -1px #00FFF7,0 11px 0 -1px #DD00FF}
 .cta.light{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box;border:2px solid transparent;color:#262626}
 .cta:hover{transform:translateY(-2px) rotate(-1deg)}
+.mini a:hover,.mini button:hover{border-color:#262626}
 .mini{position:absolute;left:20px;bottom:18px;display:flex;gap:10px;flex-wrap:wrap;pointer-events:auto}
-.mini a,.mini button{background:rgba(255,255,255,.92);border:1px solid #262626;border-radius:999px;padding:9px 14px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;text-decoration:none;color:#262626;cursor:pointer;font-family:inherit}
+.mini a,.mini button{background:rgba(255,255,255,.92);border:1px solid #CFCFCF;border-radius:999px;min-height:44px;display:inline-flex;align-items:center;padding:0 18px;font-size:13.5px;text-transform:uppercase;letter-spacing:.6px;text-decoration:none;color:#262626;cursor:pointer;font-family:inherit}
 .hint{position:absolute;right:20px;bottom:22px;font-size:11px;text-transform:uppercase;letter-spacing:.8px;background:rgba(255,255,255,.88);padding:6px 10px;border-radius:999px}
 .mailbox{position:fixed;inset:0;z-index:80;background:rgba(38,38,38,.35);display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box;animation:mpop .25s ease-out}
 @keyframes mpop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
@@ -46,9 +47,10 @@ html,body{overflow-x:clip}
 .mrow label{width:64px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:#5E5E5E}
 .mrow input{flex:1;border:0;font:inherit;font-size:15px;padding:6px 0;outline:none;background:transparent;color:#262626}
 .mail textarea{width:100%;box-sizing:border-box;border:0;font:inherit;font-size:15px;line-height:1.5;padding:14px 18px;min-height:170px;resize:vertical;outline:none;color:#262626}
-.seg{display:inline-flex;border:1.5px solid #262626;border-radius:999px;padding:3px;gap:2px}
-.seg button{border:0;background:transparent;border-radius:999px;padding:6px 12px;font:inherit;font-size:12px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;color:#262626}
-.seg button.on{background:#262626;color:#FFFFFF}
+.seg{display:inline-flex;flex-wrap:wrap;gap:8px}
+.seg button{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid #CFCFCF;background:#FFFFFF;font:inherit;font-size:13px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;color:#262626}
+.seg button:hover{border-color:#262626}
+.seg button.on{border-color:#262626;font-weight:700;box-shadow:-5px 4px 14px -6px rgba(221,0,255,.45),5px 4px 14px -6px rgba(0,255,247,.55),0 7px 12px -8px rgba(252,160,2,.5)}
 .mfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 18px 16px;flex-wrap:wrap}
 @media (max-width:600px){.nav-links{gap:2px 16px}.pit{height:calc(100vh - 186px);height:calc(100svh - 186px)}.big{letter-spacing:-1.5px}.hint{display:none}.mini{left:12px;bottom:12px}}
 
@@ -111,7 +113,7 @@ header .nav-links{display:none !important}
 <p class="sub" style="margin: 0 0 16px">Hiring, or building something new? Either way, say hi.</p>
 <h1 class="H big">Let's build<br>something.</h1>
 <div class="ctas">
-<button class="cta dark H" onClick="{{sayHello}}">Say hello ↗</button>
+<button class="cta light H" onClick="{{sayHello}}">Say hello ↗</button>
 </div>
 </div>
 <div class="mini">

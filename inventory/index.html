@@ -468,7 +468,7 @@ class Component extends DCLogic {
       send: () => this.setState({ askmode: 'onb' }),
       onAskKey: (e) => { if (e && e.key === 'Enter') { if (e.preventDefault) e.preventDefault(); this.setState({ askmode: 'onb' }); } },
       backToFaq: () => this.setState({ askmode: 'faq' }),
-      askQuestions: qs.map((d, i) => ({ question: d.question, pressed: qi === i ? 'true' : 'false', pick: () => { this.setState({ askq: i }); if (/salary/i.test(d.question)) this.moneyRain(); }, style: 'min-height: 44px; padding: 0 14px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13px; letter-spacing: 0.3px; ' + (qi === i ? 'background: #262626; color: #FFFFFF; border: 1px solid #262626' : 'background: #FFFFFF; color: #262626; border: 1px solid #CFCFCF') })),
+      askQuestions: qs.map((d, i) => ({ question: d.question, pressed: qi === i ? 'true' : 'false', pick: () => { this.setState({ askq: i }); if (/salary/i.test(d.question)) this.moneyRain(); }, style: 'min-height: 44px; padding: 0 14px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13px; letter-spacing: 0.3px; ' + (qi === i ? 'background: #FFFFFF; color: #262626; border: 1px solid #262626; font-weight: 700; box-shadow: -5px 4px 14px -6px rgba(221,0,255,0.45), 5px 4px 14px -6px rgba(0,255,247,0.55), 0 7px 12px -8px rgba(252,160,2,0.5)' : 'background: #FFFFFF; color: #262626; border: 1px solid #CFCFCF') })),
       askQ: qs[qi]
     };
   }
@@ -756,7 +756,7 @@ class Component extends DCLogic {
         label: c, on,
         pressed: on ? 'true' : 'false',
         pick: () => this.setState({ co: c }),
-        style: 'min-height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13.5px; letter-spacing: 0.5px; text-transform: uppercase; ' + (on ? 'background: #262626; color: #FFFFFF; border: 1px solid #262626' : 'background: #FFFFFF; color: #262626; border: 1px solid #CFCFCF')
+        style: 'min-height: 44px; padding: 0 18px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13.5px; letter-spacing: 0.5px; text-transform: uppercase; ' + (on ? 'background: #FFFFFF; color: #262626; border: 1px solid #262626; font-weight: 700; box-shadow: -5px 4px 14px -6px rgba(221,0,255,0.45), 5px 4px 14px -6px rgba(0,255,247,0.55), 0 7px 12px -8px rgba(252,160,2,0.5)' : 'background: #FFFFFF; color: #262626; border: 1px solid #CFCFCF')
       };
     });
     rows.forEach((x) => { const st = x.stamp || '';
