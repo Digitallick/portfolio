@@ -175,6 +175,8 @@ a:hover>.mo-logo .mo-o{animation:mohop .55s cubic-bezier(.3,1.5,.5,1)}
 /* case chips: in the hero, then docked to the bottom once you scroll past */
 .jumps{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 28px}
 .herorule{border-top:1px solid var(--ink)}
+/* short desktop windows (<=900px tall): same compact hero rhythm as Home */
+@media (min-width:901px) and (max-height:900px){.big{font-size:min(5rem,8.6vh);margin-bottom:18px}.jumps:not(.dk){margin:18px 0 16px}}
 .jc{min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer;font:inherit;font-size:13.5px;letter-spacing:.5px;text-transform:uppercase;background:#FFFFFF;color:#262626;border:1px solid #CFCFCF;white-space:nowrap;transition:box-shadow .3s,border-color .3s}
 .jc:hover{border-color:#262626}
 .jc b{font-family:'TeX Gyre Heros','Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;margin-right:6px}

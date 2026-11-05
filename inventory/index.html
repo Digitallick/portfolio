@@ -208,6 +208,9 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 .mo-seen .mo-intro *{animation:none}
 .mo-seen a:hover>.mo-logo .mo-o,.mo-seen .mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3,1.5,.5,1)}
 @media (prefers-reduced-motion:reduce){.mo-logo *{animation:none!important}}
+
+/* short desktop windows (<=900px tall): same compact hero rhythm as Home */
+@media (min-width:901px) and (max-height:900px){h1.big{font-size:min(5rem,8.6vh) !important}h1.big + p{margin-top:18px !important}}
 </style>
 
 </head>
