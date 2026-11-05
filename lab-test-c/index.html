@@ -203,8 +203,8 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 /* TEST C: Lab hero on the exact Home/Work structure */
 .heroC{height:auto !important;cursor:default}
 .heroC .asst{bottom:20px !important;top:auto !important;z-index:1}
-@media (max-width:900px){.heroC .platec{width:60% !important;opacity:.4 !important}}
-@media (max-width:600px){.heroC .asst{display:none}.heroC .platec{width:70% !important;opacity:.3 !important}.labchips{margin:24px 0 10px !important}.labchips .eyebrow{flex-basis:100%}}
+/* clean start: one monster, no lab assistant in the hero */ .heroC .asst{display:none !important} @media (max-width:900px){.heroC .platec{width:60% !important;opacity:.4 !important}}
+@media (max-width:600px){.heroC .asst{display:none}.heroC .platec{display:none !important}.labchips{margin:24px 0 10px !important}.labchips .eyebrow{flex-basis:100%}}
 </style>
 
 </head>
@@ -229,10 +229,10 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 
 <section aria-label="The vibration plate" style="position: relative; margin-top: 8px">
 <div class="rule"></div>
-<p style="margin: 0; padding: 12px 0; font-size: 13.5px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap"><span>Lab · Things I build with my own hands</span><span class="hint labhint">The monster always comes back · Click to switch</span></p>
+<p style="margin: 0; padding: 12px 0; font-size: 13.5px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap"><span>Lab · Things I build with my own hands</span></p>
 <div class="rule"></div>
-<div ref="{{plateWrap}}" onClick="{{reroll}}" onPointerMove="{{plateMove}}" onPointerLeave="{{plateLeave}}" class="hero heroC" style="position: relative; cursor: crosshair">
-<canvas ref="{{plateRef}}" aria-hidden="true" class="platec" style="position: absolute; top: 0; right: 0; width: 46%; height: 100%; opacity: .58"></canvas>
+<div ref="{{plateWrap}}" onPointerMove="{{plateMove}}" onPointerLeave="{{plateLeave}}" class="hero heroC" style="position: relative">
+<canvas ref="{{plateRef}}" aria-hidden="true" class="platec" style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; opacity: .58"></canvas>
 <div style="position: relative; z-index: 2; pointer-events: none">
 <h1 class="H big" style="margin: 36px 0 0; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; max-width: 1100px">Product lead with <span style="background: linear-gradient(90deg,#00FFF7,#DD00FF) 0 64% / 100% 74% no-repeat; box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 12px">maker's hands.</span></h1>
 </div>
@@ -761,6 +761,7 @@ class Component extends DCLogic {
   }
   componentWillUnmount() { this.dustDead = true; if (this.raf) cancelAnimationFrame(this.raf); if (this.cyc) clearTimeout(this.cyc); window.removeEventListener('resize', this.onResize); }
   advance() {
+    this.exp = 1; return;
     let phone = false; try { phone = window.matchMedia('(max-width:600px)').matches; } catch (e) {}
     if (phone) { this.exp = 1; return; }
     if (this.exp === 1) { this.exp = this.altNext || 2; this.altNext = this.exp === 2 ? 3 : 2; } else this.exp = 1;
@@ -780,13 +781,14 @@ class Component extends DCLogic {
     this.w = c.clientWidth || 1200; this.h = c.clientHeight || 440;
     c.width = this.w * dpr; c.height = this.h * dpr;
     this.ctx = c.getContext('2d'); this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    this.cell = this.w < 600 ? 7 : 6; this.cols = Math.ceil(this.w / this.cell); this.rows = Math.ceil(this.h / this.cell);
+    let ph = false; try { ph = window.matchMedia('(max-width:600px)').matches; } catch (e) {} this.cell = ph ? 7 : 6; this.cols = Math.ceil(this.w / this.cell); this.rows = Math.ceil(this.h / this.cell);
     this.off.width = this.cols; this.off.height = this.rows;
   }
   frame(t) {
+    { const pc = this.plate; if (pc && pc.clientHeight > 1 && (pc.clientWidth !== this.w || pc.clientHeight !== this.h)) this.size(); }
     const o = this.octx, C = this.cols, R = this.rows, ctx = this.ctx; if (!o || !ctx) return;
     o.clearRect(0, 0, C, R);
-    for (let k = 0; k < 3; k++) {
+    for (let k = 0; k < 0; k++) {
       const bx = C * (0.2 + 0.3 * k + 0.08 * Math.sin(t * 0.0003 + k * 2)), by = R * (0.5 + 0.3 * Math.cos(t * 0.00025 + k));
       const g = o.createRadialGradient(bx, by, 0, bx, by, R * 0.55);
       g.addColorStop(0, 'rgba(120,120,120,0.16)'); g.addColorStop(1, 'rgba(120,120,120,0)');
@@ -799,10 +801,10 @@ class Component extends DCLogic {
     const L = this.layer || (this.layer = document.createElement('canvas'));
     if (L.width !== C || L.height !== R) { L.width = C; L.height = R; }
     const l = L.getContext('2d'); l.clearRect(0, 0, C, R);
-    const phone = this.w < 600;
-    const right = phone ? C - 1 : C - Math.ceil(290 / this.cell);
+    let phone = false; try { phone = window.matchMedia('(max-width:600px)').matches; } catch (e) {}
+    const right = C - 1;
     if (this.exp === 1) {
-      const sz = phone ? R * 0.72 : R * 1.05;
+      const sz = phone ? R * 0.72 : R * 1.0;
       try { l.drawImage(this.src, phone ? C * 0.08 : right - sz, phone ? 0 : R - sz * 0.98, sz, sz); } catch (e) {}
       if (phone) { this.subj = [C * 0.08, C * 0.08 + sz]; }
       if (!phone) this.subj = [right - sz, right];
