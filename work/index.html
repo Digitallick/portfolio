@@ -37,7 +37,7 @@ header.site>a svg{display:block;height:30px;width:auto}
 .rule{height:1px;background:linear-gradient(90deg,var(--mag),var(--cyan),var(--orange),var(--yellow),var(--mag));background-size:200% 100%;animation:slide 8s linear infinite}
 @keyframes slide{from{background-position:0 0}to{background-position:200% 0}}
 .topline{padding:12px 0;font-size:13.5px}
-.big{margin:36px 0 32px;font-size:clamp(2.4rem,5.6vw,5rem);line-height:1.02;letter-spacing:-1.5px;max-width:1100px}
+.big{margin:36px 0 40px;font-size:clamp(2.4rem,5.6vw,5rem);line-height:1.02;letter-spacing:-1.5px;max-width:1100px}
 .hl{display:inline;padding:0 12px;background:linear-gradient(90deg,var(--cyan),var(--yellow)) 0 64%/100% 74% no-repeat;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
 /* case block: the live layout (number left, story right, creative edge to edge below) */
@@ -173,10 +173,10 @@ a:hover>.mo-logo .mo-o{animation:mohop .55s cubic-bezier(.3,1.5,.5,1)}
 .lockbg[hidden]{display:none}
 @keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 /* case chips: in the hero, then docked to the bottom once you scroll past */
-.jumps{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 28px}
+.jumps{display:flex;flex-wrap:wrap;gap:8px;margin:40px 0 28px}
 .herorule{border-top:1px solid var(--ink)}
 /* short desktop windows (<=900px tall): same compact hero rhythm as Home */
-@media (min-width:901px) and (max-height:900px){.big{font-size:min(5rem,8.6vh);margin-bottom:18px}.jumps:not(.dk){margin:18px 0 16px}}
+@media (min-width:901px) and (max-height:900px){.big{font-size:min(5rem,8.6vh)}}
 .jc{min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer;font:inherit;font-size:13.5px;letter-spacing:.5px;text-transform:uppercase;background:#FFFFFF;color:#262626;border:1px solid #CFCFCF;white-space:nowrap;transition:box-shadow .3s,border-color .3s}
 .jc:hover{border-color:#262626}
 .jc b{font-family:'TeX Gyre Heros','Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;margin-right:6px}
@@ -187,7 +187,7 @@ a:hover>.mo-logo .mo-o{animation:mohop .55s cubic-bezier(.3,1.5,.5,1)}
 .dock .jumps::-webkit-scrollbar{display:none}
 .dock .jc{min-height:40px;padding:0 14px;font-size:12.5px;border-color:transparent}
 .dock .jc[aria-current="true"]{border-color:#262626}
-@media (max-width:600px){.jumps:not(.dk){flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:24px -2rem 10px -8px;padding:8px 2rem 18px 8px}.jumps::-webkit-scrollbar{display:none}.jc .nm{display:none}.dock .jc{padding:0 12px}}
+@media (max-width:600px){.jumps:not(.dk){flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:24px -2rem 10px -8px;padding:8px 2rem 18px 8px}.big{margin-bottom:32px}.jumps::-webkit-scrollbar{display:none}.jc .nm{display:none}.dock .jc{padding:0 12px}}
 @media (prefers-reduced-motion:reduce){.dock{transition:none}}
 
 .ar{display:inline-block;width:.68em;height:.68em;margin-left:.18em;vertical-align:-.02em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat}
