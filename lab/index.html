@@ -113,7 +113,7 @@ section h3.H{font-size:1.7rem !important}
 .askwig{animation:askwig .7s cubic-bezier(.3,1.6,.5,1)}
 @keyframes askwig{0%{transform:rotate(0) scale(1)}20%{transform:rotate(-14deg) scale(1.1)}40%{transform:rotate(12deg) scale(.95)}60%{transform:rotate(-8deg)}80%{transform:rotate(5deg)}100%{transform:rotate(0) scale(1)}}
 
-.dustfx{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.72}
+.dustfx{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.52}
 
 html{scrollbar-gutter:stable}
 
@@ -169,7 +169,7 @@ html{scrollbar-gutter:stable}
 /* phone fixes (4 Nov): chip glow not clipped, footer clear of Ask Mo */
 @media (max-width:600px){
 .chips{padding-top:8px !important;padding-bottom:18px !important;margin-top:-8px !important;margin-bottom:-18px !important;padding-left:8px !important;margin-left:-8px !important}
-.sitecopy{padding-bottom:140px !important}
+.sitecopy{padding-bottom:76px !important}
 }
 
 /* footer (4 Nov): ribbon and copyright sit on solid white on every page */
@@ -644,7 +644,7 @@ class Component extends DCLogic {
         if (!ok) legacy();
         this.setState({ copied: true }); clearTimeout(this.copyT); this.copyT = setTimeout(() => this.setState({ copied: false }), 2600);
       },
-      askTickle: (e) => { const el = e && e.currentTarget; if (!el) return; el.classList.remove('askwig'); void el.offsetWidth; el.classList.add('askwig'); }
+      askTickle: (e) => { const el = e && e.currentTarget; if (!el) return; this.moVoice('rawr'); el.classList.remove('askwig'); void el.offsetWidth; el.classList.add('askwig'); }
     };
   }
   menuVals() { const st = this.state || {}; return { menuOpen: !!st.menu, openMenu: () => this.setState({ menu: true }), closeMenu: () => this.setState({ menu: false }) }; }
@@ -890,13 +890,13 @@ class Component extends DCLogic {
     const st = this.state;
     const stageColor = { Alive: '#00756F', Hatching: '#9A5A00', Idea: '#8A00A3', Fossil: '#6B6B6B' };
     const stageList = ['All', 'Alive', 'Hatching', 'Idea'];
-    const stages = stageList.map((s) => ({ label: s, pressed: st.stage === s ? 'true' : 'false', cls: st.stage === s ? 'chip on' : 'chip', pick: () => { this.moVoice('clink'); this.setState({ stage: s }); } }));
+    const stages = stageList.map((s) => ({ label: s, pressed: st.stage === s ? 'true' : 'false', cls: st.stage === s ? 'chip on' : 'chip', pick: () => this.setState({ stage: s }) }));
     const jars = this.experiments.filter((e) => st.stage === 'All' || e.stage === st.stage).map((e, i) => ({
       name: e.name, kind: e.kind, stage: e.stage, line: e.line, cta: e.cta, tint: e.tint,
       stampColor: stageColor[e.stage] || '#262626',
       cls: (st.open === e.id ? 'jar on' : 'jar') + ((this.props.table || 'Lab bench') === 'None' ? ' nobench' : '') + (st.fizzId === e.id ? (st.fizzN % 2 ? ' f1' : ' f2') : ''), fill: e.stage === 'Alive' ? '72%' : e.stage === 'Hatching' ? '42%' : '10%', pressed: st.open === e.id ? 'true' : 'false',
       bubbles: e.stage === 'Idea' ? [] : [0, 1, 2].map((k) => 'left: ' + (30 + k * 22 + (i * 7) % 15) + '%; width: ' + (6 + k * 3) + 'px; height: ' + (6 + k * 3) + 'px; animation-delay: ' + (k * 1.1 + i * 0.4).toFixed(1) + 's'),
-      pick: () => { const fz = (this.props.openEffect || 'Fizz') === 'Fizz' && !this.reduce; this.moVoice(fz ? 'pop' : 'clink'); this.setState({ open: e.id, step: 0, fizzId: fz ? e.id : null, fizzN: (st.fizzN || 0) + 1 }); setTimeout(() => { const t = document.getElementById('lab-open'); if (t && t.scrollIntoView) t.scrollIntoView({ behavior: this.reduce ? 'auto' : 'smooth', block: 'start' }); }, fz ? 750 : 60); }
+      pick: () => { const fz = (this.props.openEffect || 'Fizz') === 'Fizz' && !this.reduce; this.moVoice('boil'); this.setState({ open: e.id, step: 0, fizzId: fz ? e.id : null, fizzN: (st.fizzN || 0) + 1 }); setTimeout(() => { const t = document.getElementById('lab-open'); if (t && t.scrollIntoView) t.scrollIntoView({ behavior: this.reduce ? 'auto' : 'smooth', block: 'start' }); }, fz ? 750 : 60); }
     }));
     const c = this.cases[st.preset];
     const presets = this.cases.map((p, i) => ({ label: p.label, pressed: st.preset === i ? 'true' : 'false', cls: st.preset === i ? 'preset on' : 'preset', pick: () => { this.memo = p.answer; if (this.memoEl) this.memoEl.value = p.answer; this.setState({ preset: i, ran: false }); } }));

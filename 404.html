@@ -76,7 +76,7 @@ header .nav-links{display:none !important}
 
 /* footer (4 Nov): ribbon and copyright sit on solid white on every page */
 .siteribbon,.sitecopy{position:relative;z-index:3;background:#FFFFFF !important}
-@media (max-width:600px){.sitecopy{padding-bottom:140px !important}}
+@media (max-width:600px){.sitecopy{padding-bottom:76px !important}}
 
 /* arrow icon (4 Nov): same weight on every device, no emoji on iOS */
 .ar{display:inline-block;width:.68em;height:.68em;margin-left:.18em;vertical-align:-.02em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat}
@@ -257,7 +257,7 @@ class Component extends DCLogic {
         if (!ok) legacy();
         this.setState({ copied: true }); clearTimeout(this.copyT); this.copyT = setTimeout(() => this.setState({ copied: false }), 2600);
       },
-      askTickle: (e) => { const el = e && e.currentTarget; if (!el) return; el.classList.remove('askwig'); void el.offsetWidth; el.classList.add('askwig'); }
+      askTickle: (e) => { const el = e && e.currentTarget; if (!el) return; this.moVoice('rawr'); el.classList.remove('askwig'); void el.offsetWidth; el.classList.add('askwig'); }
     };
   }
   askVals() {

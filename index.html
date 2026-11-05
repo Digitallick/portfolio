@@ -94,7 +94,7 @@ html{scrollbar-gutter:stable}
 /* phone fixes (4 Nov): chip glow not clipped, footer clear of Ask Mo */
 @media (max-width:600px){
 .chips{padding-top:8px !important;padding-bottom:18px !important;margin-top:-8px !important;margin-bottom:-18px !important;padding-left:8px !important;margin-left:-8px !important}
-.sitecopy{padding-bottom:140px !important}
+.sitecopy{padding-bottom:76px !important}
 }
 @media (max-width:600px){
 .napper{display:none !important}
@@ -306,7 +306,7 @@ class Component extends DCLogic {
         if (!ok) legacy();
         this.setState({ copied: true }); clearTimeout(this.copyT); this.copyT = setTimeout(() => this.setState({ copied: false }), 2600);
       },
-      askTickle: (e) => { const el = e && e.currentTarget; if (!el) return; el.classList.remove('askwig'); void el.offsetWidth; el.classList.add('askwig'); }
+      askTickle: (e) => { const el = e && e.currentTarget; if (!el) return; this.moVoice('rawr'); el.classList.remove('askwig'); void el.offsetWidth; el.classList.add('askwig'); }
     };
   }
   menuVals() { const st = this.state || {}; return { menuOpen: !!st.menu, openMenu: () => this.setState({ menu: true }), closeMenu: () => this.setState({ menu: false }) }; }
