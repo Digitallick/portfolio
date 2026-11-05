@@ -515,8 +515,8 @@ crit.onclick=()=>{ boo(); if(keyRow.hidden) askKey(); };
 lockbg.querySelector('.lockbtn').onclick=()=>{ boo(); askKey(); };
 lockbg.querySelector('.x').onclick=closeLock; lockbg.addEventListener('click',e=>{ if(e.target===lockbg) closeLock(); }); addEventListener('keydown',e=>{ if(e.key==='Escape') closeLock(); });
 keyRow.addEventListener('submit',e=>{ e.preventDefault();
-  if(code.value.trim().toLowerCase()==='fries'){ lt.textContent='Yum. Come in!'; crit.className='critter happy'; voice('yay'); celebrate();
-    ll.innerHTML='The full case pages land here soon. Until then, <a href="/contact/">ask me for a walkthrough<i class="ar" aria-hidden="true"></i></a>'; }
+  if(code.value.trim().toLowerCase()==='fries'){ lt.textContent='Yum. Come in!'; ll.textContent='Opening the full case…'; crit.className='critter happy'; voice('yay'); celebrate();
+    setTimeout(()=>lockbg.classList.add('open'),700); setTimeout(()=>{ closeLock(); location.href='/work/files-b0ad465b/#'+target.id; },1350); }
   else { boo(); lt.textContent='Wrong key.'; ll.textContent='Nope! Try again, or ask Mo for the real one.'; lockbg.classList.remove('shake'); void lockbg.offsetWidth; lockbg.classList.add('shake'); setTimeout(()=>lockbg.classList.remove('shake'),500); code.select(); } });
 
 /* ---------- case chips: hero row + bottom dock ---------- */
