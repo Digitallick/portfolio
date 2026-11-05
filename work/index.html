@@ -37,12 +37,12 @@ header.site>a svg{display:block;height:30px;width:auto}
 .rule{height:1px;background:linear-gradient(90deg,var(--mag),var(--cyan),var(--orange),var(--yellow),var(--mag));background-size:200% 100%;animation:slide 8s linear infinite}
 @keyframes slide{from{background-position:0 0}to{background-position:200% 0}}
 .topline{padding:12px 0;font-size:13.5px}
-.big{margin:36px 0 56px;font-size:clamp(2.4rem,5.6vw,5rem);line-height:1.02;letter-spacing:-1.5px;max-width:1100px}
+.big{margin:36px 0 32px;font-size:clamp(2.4rem,5.6vw,5rem);line-height:1.02;letter-spacing:-1.5px;max-width:1100px}
 .hl{display:inline;padding:0 12px;background:linear-gradient(90deg,var(--cyan),var(--yellow)) 0 64%/100% 74% no-repeat;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
 /* case block: the live layout (number left, story right, creative edge to edge below) */
 .case{padding:72px 0 0;scroll-margin-top:8px}
-.case:first-child{padding-top:24px}
+.case:first-child{padding-top:32px}
 .row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px;padding-bottom:40px}
 .row .l{grid-column:span 3}.row .r{grid-column:span 9;display:grid;gap:18px;align-content:start}
 .num{margin:0;font-weight:700;font-size:9rem;line-height:.85;letter-spacing:-6px;color:transparent;-webkit-text-stroke:2px var(--ink)}
@@ -173,7 +173,8 @@ a:hover>.mo-logo .mo-o{animation:mohop .55s cubic-bezier(.3,1.5,.5,1)}
 .lockbg[hidden]{display:none}
 @keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 /* case chips: in the hero, then docked to the bottom once you scroll past */
-.jumps{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 32px}
+.jumps{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 28px}
+.herorule{border-top:1px solid var(--ink)}
 .jc{min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer;font:inherit;font-size:13.5px;letter-spacing:.5px;text-transform:uppercase;background:#FFFFFF;color:#262626;border:1px solid #CFCFCF;white-space:nowrap;transition:box-shadow .3s,border-color .3s}
 .jc:hover{border-color:#262626}
 .jc b{font-family:'TeX Gyre Heros','Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;margin-right:6px}
@@ -184,7 +185,7 @@ a:hover>.mo-logo .mo-o{animation:mohop .55s cubic-bezier(.3,1.5,.5,1)}
 .dock .jumps::-webkit-scrollbar{display:none}
 .dock .jc{min-height:40px;padding:0 14px;font-size:12.5px;border-color:transparent}
 .dock .jc[aria-current="true"]{border-color:#262626}
-@media (max-width:600px){.jumps:not(.dk){flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:28px -2rem 14px -8px;padding:8px 2rem 18px 8px}.jumps::-webkit-scrollbar{display:none}.jc .nm{display:none}.dock .jc{padding:0 12px}}
+@media (max-width:600px){.jumps:not(.dk){flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:24px -2rem 10px -8px;padding:8px 2rem 18px 8px}.jumps::-webkit-scrollbar{display:none}.jc .nm{display:none}.dock .jc{padding:0 12px}}
 @media (prefers-reduced-motion:reduce){.dock{transition:none}}
 
 .ar{display:inline-block;width:.68em;height:.68em;margin-left:.18em;vertical-align:-.02em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat}
@@ -251,6 +252,7 @@ a:hover>.mo-logo .mo-o{animation:mohop .55s cubic-bezier(.3,1.5,.5,1)}
   <div class="rule"></div><p class="topline">Work · Four case files · Eyes only</p><div class="rule"></div>
   <h1 class="big">The bet. The craft. <span class="hl">What moved.</span></h1>
   <nav class="jumps" id="jumps" aria-label="Jump to a case"></nav>
+  <div class="herorule" aria-hidden="true"></div>
   <div id="cases"></div>
   <div style="height:72px"></div>
 <footer class="sitefoot" style="border-top: 1px solid #262626; padding: 56px 0 72px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; font-family: 'Heros','TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif; letter-spacing: .5px">
