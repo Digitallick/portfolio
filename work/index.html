@@ -314,7 +314,7 @@ const CASES=[
   T:[['The bet','Data beats new vehicles. The fleet already streamed telemetry all day; if it reached decisions, we could grow trips without growing the fleet or waiting for a new platform.'],
      ['The call','Put the telemetry we already had to work before replacing the platform. AI forecasts each shortage and proposes the move, a named person approves it, and dock counts prove it.'],
      ['The outcome','Rebalancing went from reactive to forecast, 20 to 30 minutes ahead. Operating cost fell 53%, delivery ran 40% faster, and portfolio profit rose 36% with revenue up 33%.']],
-  slides:[{src:'bcaa20',anim:'ask',fit:true,bg:'#EEF0F5',cap:'Ask the map: the hubs that matter light up'},{src:'bcaa21',anim:'answer',opt:{pretyped:true},bg:'#EEF0F5',cap:'The co-pilot answers, a person decides'},{src:'bcaa01',bg:'#EEF0F5',cap:'Global portfolio'}]},
+  slides:[{src:'bcaa20',anim:'ask',chatY:955,bg:'#EEF0F5',cap:'Ask the map: the hubs that matter light up'},{src:'bcaa21',anim:'answer',opt:{pretyped:true},bg:'#EEF0F5',cap:'The co-pilot answers, a person decides'},{src:'bcaa01',bg:'#EEF0F5',cap:'Global portfolio'}]},
  {id:'evo',n:'02',meta:'BCAA × Evo + Evolve · Head of Product, Strategic Ventures · Legacy transformation',
   title:'Two legacy apps became one rider platform',tags:['Legacy transformation','Mobile','Back office'],
   pills:[['250K riders · 7 markets','#B8FFFC'],['Cars + e-bikes, one account','#F5C9FF'],['[rider-app number to come]','#FFFFA8']],
@@ -431,8 +431,9 @@ function Screens(host,c){
   S.forEach(s=>{ if(!s.anim) SB.add(s.f,()=>s.sl.classList.contains('on')); });
   const ctrl=el('div','ctrl'); band.append(ctrl); const dots=S.map((s,i)=>{ const b=el('button','dot'+(i?'':' on')); b.type='button'; b.setAttribute('aria-label','Show '+s.cap); b.onclick=()=>go(i,true); ctrl.append(b); return b; }); const cap=el('span','cap',S[0].cap); ctrl.append(cap);
   let cur=0, run=0, timer=0;
-  const size=()=>{ const W=band.clientWidth||innerWidth; S.forEach(s=>{ const [w,h]=META[s.src]; let k=W/w; if(SIZE==='fit') k=Math.min(k,innerHeight*.86/h); if(s.fit&&W>900) k=Math.min(k,(innerHeight-40)/h); s.k=k; s.H=h*k; s.f.style.transform=`translate(${(W-w*k)/2}px,0) scale(${k})`; }); band.style.height=S[cur].H+'px'; };
+  const size=()=>{ const W=band.clientWidth||innerWidth; S.forEach(s=>{ const [w,h]=META[s.src]; let k=W/w; if(SIZE==='fit') k=Math.min(k,innerHeight*.86/h); s.k=k; s.H=h*k; s.f.style.transform=`translate(${(W-w*k)/2}px,0) scale(${k})`; }); band.style.height=S[cur].H+'px'; };
   const play=async(i)=>{ const my=++run; const s=S[i]; const live=()=>my===run && band.__vis; if(!s.f.__ready) await new Promise(r=>{ const t=setInterval(()=>{ if(s.f.__ready||my!==run){ clearInterval(t); r(); } },120); }); if(my!==run) return;
+    if(s.chatY){ await new Promise(r=>{ const t=setInterval(()=>{ const y=band.getBoundingClientRect().top+s.chatY*(s.k||1); if((y>60&&y<innerHeight-12)||my!==run){ clearInterval(t); r(); } },150); }); if(my!==run) return; }
     replay(s.f); if(s.anim&&ANIM[s.anim]) await ANIM[s.anim](s.f,live,s.opt); else await sleep(5500); if(!live()) return; await sleep(s.anim==='answer'?3800:1800); if(live()) go(i+1); };
   const go=(i,user)=>{ cur=(i+S.length)%S.length; S.forEach((s,n)=>s.sl.classList.toggle('on',n===cur)); dots.forEach((b,n)=>b.classList.toggle('on',n===cur)); cap.textContent=S[cur].cap; band.style.height=S[cur].H+'px'; clearTimeout(timer); if(band.__vis) play(cur); };
   band.__frames=S.map(s=>s.f); band.__slides=S; band.__size=size; band.__start=()=>play(cur); band.__stop=()=>{ run++; clearTimeout(timer); };
