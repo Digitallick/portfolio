@@ -203,7 +203,7 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 /* TEST C: Lab hero on the exact Home/Work structure */
 .heroC{height:auto !important;cursor:default}
 .heroC .asst{bottom:20px !important;top:auto !important;z-index:1}
-.b3{display:none}@media (min-width:901px){.b3{display:inline}h1.hh,h1.big,h1.H{min-height:3.06em;font-size:min(4.75rem,5.2vw) !important;max-width:none !important}}@media (min-width:901px) and (max-height:900px){h1.hh,h1.big,h1.H{font-size:min(4.75rem,5.2vw,8.6vh) !important}}@media (min-width:601px){.herochips,.invchips{flex-wrap:nowrap !important}.herochips .eyebrow,.invchips .eyebrow{flex:none;white-space:nowrap}.herochips .jumps,.invchips .chips{flex:1 1 auto !important;min-width:0;flex-wrap:nowrap !important;overflow-x:auto;scrollbar-width:none;padding:8px !important;margin:-8px !important}.herochips .jumps::-webkit-scrollbar,.invchips .chips::-webkit-scrollbar{display:none}.invchips .chips .chip{flex:none}} @media (max-width:900px){.heroC .platec{width:60% !important;opacity:.4 !important}}
+.asst-shelf{position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:0 0 24px 0}.asst-shelf::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22px;background:linear-gradient(#FFFFFF 0 3px,var(--bench) 3px 14px,#262626 14px 16px,var(--benchEdge) 16px);border-top:2px solid #262626;border-bottom:2px solid #262626}.asst-shelf .pet{cursor:pointer;-webkit-tap-highlight-color:transparent;margin-bottom:-14px}.asst-shelf p{order:-1;margin:0 0 4px;font-size:12px;line-height:1.4}@media (min-width:901px){.shelf{grid-template-columns:150px repeat(auto-fill,minmax(180px,1fr)) !important}}@media (max-width:900px){.asst-shelf{display:none}}.b3{display:none}@media (min-width:901px){.b3{display:inline}h1.hh,h1.big,h1.H{min-height:3.06em;font-size:min(4.75rem,5.2vw) !important;max-width:none !important}}@media (min-width:901px) and (max-height:900px){h1.hh,h1.big,h1.H{font-size:min(4.75rem,5.2vw,8.6vh) !important}}@media (min-width:601px){.herochips,.invchips{flex-wrap:nowrap !important}.herochips .eyebrow,.invchips .eyebrow{flex:none;white-space:nowrap}.herochips .jumps,.invchips .chips{flex:1 1 auto !important;min-width:0;flex-wrap:nowrap !important;overflow-x:auto;scrollbar-width:none;padding:8px !important;margin:-8px !important}.herochips .jumps::-webkit-scrollbar,.invchips .chips::-webkit-scrollbar{display:none}.invchips .chips .chip{flex:none}} @media (max-width:900px){.heroC .platec{width:60% !important;opacity:.4 !important}}
 @media (max-width:600px){.heroC .asst{display:none}.heroC .platec{display:none !important}.labchips{margin:24px 0 10px !important}.labchips .eyebrow{flex-basis:100%}}
 </style>
 
@@ -244,10 +244,6 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 </template>
 </div>
 </div>
-<div class="asst">
-<p style="margin: 0 0 24px; font-size: 12px; text-align: right; line-height: 1.4">Lab assistant.<br>Not insured.<br>Tiny arms, big ideas.</p>
-<div class="pet" onClick="{{wiggle}}" role="button" aria-label="Poke the lab assistant" style="position: relative; width: 130px; height: 130px"><img src="{{animSrc}}" width="130" height="130" alt="" style="display: block; transform: translate(21px, -11px)"><span class="{{tubeCls}}" aria-hidden="true">🧪<i></i><i></i><i></i></span></div>
-</div>
 </div>
 <div class="herorule" style="border-top: 1px solid #262626"></div>
 </section>
@@ -261,6 +257,10 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 </template>
 <section aria-label="The specimen shelf" style="margin-top: 32px">
 <div class="shelf">
+<div class="asst-shelf" aria-label="Lab assistant" style="--bench: {{bench}}; --benchEdge: {{benchEdge}}">
+<div class="pet" onClick="{{wiggle}}" role="button" aria-label="Poke the lab assistant" style="position: relative; width: 130px; height: 130px"><img src="{{animSrc}}" width="130" height="130" alt="" style="display: block; transform: translate(21px, -11px)"><span class="{{tubeCls}}" aria-hidden="true">🧪<i></i><i></i><i></i></span></div>
+<p>Lab assistant.<br>Not insured.<br>Tiny arms, big ideas.</p>
+</div>
 <template sc-for list="{{jars}}" as="j" hint-placeholder-count="5">
 <button class="{{j.cls}}" onClick="{{j.pick}}" aria-pressed="{{j.pressed}}" style="--tint: {{j.tint}}; --bench: {{bench}}; --benchEdge: {{benchEdge}}">
 <span class="cap" aria-hidden="true"></span><span class="gas" aria-hidden="true"><i style="width:14px;height:14px;margin:-7px;--dx:-34px;--dy:-70px;animation-delay:0s"></i><i style="width:20px;height:20px;margin:-10px;--dx:8px;--dy:-96px;animation-delay:.05s"></i><i style="width:10px;height:10px;margin:-5px;--dx:30px;--dy:-60px;animation-delay:.12s"></i><i style="width:26px;height:26px;margin:-13px;--dx:-12px;--dy:-120px;animation-delay:.18s"></i><i style="width:12px;height:12px;margin:-6px;--dx:44px;--dy:-104px;animation-delay:.24s"></i><i style="width:8px;height:8px;margin:-4px;--dx:-46px;--dy:-112px;animation-delay:.3s"></i></span><span class="neck" aria-hidden="true"></span>
@@ -802,7 +802,7 @@ class Component extends DCLogic {
     if (L.width !== C || L.height !== R) { L.width = C; L.height = R; }
     const l = L.getContext('2d'); l.clearRect(0, 0, C, R);
     let phone = false; try { phone = window.matchMedia('(max-width:600px)').matches; } catch (e) {}
-    const right = phone ? C - 1 : C - Math.ceil(290 / this.cell);
+    const right = C - 1;
     if (this.exp === 1) {
       const sz = phone ? R * 0.72 : R * 1.05;
       try { l.drawImage(this.src, phone ? C * 0.08 : right - sz, phone ? 0 : R - sz * 0.98, sz, sz); } catch (e) {}
