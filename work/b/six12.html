@@ -287,4 +287,10 @@ return o;
 </script>
 
 
-</body></html>
+<script>(()=>{const ks=['14','15','19'];let hov=null,pin=null;
+const r=()=>{const sel=hov||pin;const gs=[...document.querySelectorAll('g.ivg')],rows=[...document.querySelectorAll('.tbl tbody tr')].slice(-3),note=document.querySelector('p.pin');
+ks.forEach((k,i)=>{const on=sel===k,dim=!!sel&&!on;if(gs[i])gs[i].setAttribute('class','ivg'+(on?' on':dim?' dim':''));if(rows[i])rows[i].className=on?'on':dim?'dim':'';});
+if(note)note.textContent=pin?'BL-26-'+pin+' pinned. Click it again to unpin.':'Hover or click an interval or a table row to follow one hole.';};
+const key=e=>{const t=e.target&&e.target.closest&&e.target.closest('g.ivg,.tbl tbody tr');if(!t)return null;const list=t.tagName==='TR'?[...document.querySelectorAll('.tbl tbody tr')].slice(-3):[...document.querySelectorAll('g.ivg')];const i=list.indexOf(t);return i<0?null:ks[i];};
+document.addEventListener('mouseover',e=>{const k=key(e);if(k!==hov){hov=k;r();}});
+document.addEventListener('click',e=>{const k=key(e);if(k){pin=pin===k?null:k;r();}});})();</script></body></html>

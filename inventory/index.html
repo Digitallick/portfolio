@@ -210,7 +210,8 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 @media (prefers-reduced-motion:reduce){.mo-logo *{animation:none!important}}
 
 /* short desktop windows (<=900px tall): same compact hero rhythm as Home */
-@media (min-width:901px) and (max-height:900px){h1.big{font-size:min(5rem,8.6vh) !important}}
+.topsec{padding-bottom:28px !important}.invtoolsr input{flex:1 1 auto !important;width:auto !important}.invtoolsr .surprise{flex:none}@media (max-width:600px){.invtools{display:block !important}.invtools>p{margin:0 0 12px !important}.invtoolsr{flex-wrap:wrap !important}}.b3{display:none}@media (min-width:901px){.b3{display:inline}h1.hh,h1.big,h1.H{min-height:3.06em;font-size:min(4.75rem,5.2vw) !important;max-width:none !important}}@media (min-width:901px) and (max-height:900px){h1.hh,h1.big,h1.H{font-size:min(4.75rem,5.2vw,8.6vh) !important}}@media (min-width:601px){.herochips,.invchips{flex-wrap:nowrap !important}.herochips .eyebrow,.invchips .eyebrow{flex:none;white-space:nowrap}.herochips .jumps,.invchips .chips{flex:1 1 auto !important;min-width:0;flex-wrap:nowrap !important;overflow-x:auto;scrollbar-width:none;padding:8px !important;margin:-8px !important}.herochips .jumps::-webkit-scrollbar,.invchips .chips::-webkit-scrollbar{display:none}.invchips .chips .chip{flex:none}}
+
 </style>
 
 </head>
@@ -243,27 +244,31 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 <section class="topsec" style="padding: 8px 0 48px">
 <div class="rule"></div>
 <p style="margin: 0; padding: 12px 0; font-size: 13.5px">Inventory · 007 Index</p>
-<div class="rule"></div><h1 class="big" style="margin: 36px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; text-transform: uppercase; max-width: 1100px">Every project, read as a <span style="background: linear-gradient(90deg,#DD00FF,#00FFF7) 0 64% / 100% 74% no-repeat; box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 12px">business decision.</span></h1>
-<p style="margin: 40px 0 0; font-size: 1.15rem; line-height: 1.6; max-width: 760px">Each row is a ten-second case study: what the business needed, what I owned, and what changed.</p>
+<div class="rule"></div><h1 class="big" style="margin: 36px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; text-transform: uppercase; max-width: 1100px">Every project,<br class="b3"> read as a<br class="b3"> <span style="background: linear-gradient(90deg,#DD00FF,#00FFF7) 0 64% / 100% 74% no-repeat; box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 12px">business decision.</span></h1>
+<div class="invchips" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 40px 0 0">
+<p class="eyebrow" style="margin: 0 6px 0 0; font-size: 13.5px; letter-spacing: 0.5px; text-transform: uppercase; color: #262626">Filter by company</p>
+<div role="group" aria-label="Filter by company" class="chips" style="display: flex; flex-wrap: wrap; gap: 8px; flex: 0 1 auto">
+<template sc-for list="{{filters}}" as="f" hint-placeholder-count="9">
+<button class="chip" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="{{f.style}}; position: relative">{{f.label}}</button>
+</template>
+</div>
+</div>
 </section>
-<p class="logos-cap" style="margin-top: 22px; font-size: 11px">Worked with · worked for</p>
 <div class="logos" style="--lgo: {{logoOpacity}}" aria-label="Companies I have worked with or for">
 <div class="track">
 <template sc-for list="{{logos}}" as="l" hint-placeholder-count="12"><button class="{{l.cls}}" onClick="{{l.poke}}" onMouseEnter="{{l.tint}}" style="{{l.style}}" aria-label="{{l.n}}" title="{{l.n}}"><template sc-if value="{{l.d}}" hint-placeholder-val="{{ true }}"><svg viewBox="{{l.vb}}" style="{{l.sz}}" aria-hidden="true"><path d="{{l.d}}"></path></svg></template><template sc-if value="{{l.word}}" hint-placeholder-val="{{ false }}"><span class="wm">{{l.n}}</span></template></button></template>
 </div>
 </div>
 
-<div style="display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; margin-bottom: 14px">
-<div role="group" aria-label="Filter by company" class="chips" style="display: flex; flex-wrap: wrap; gap: 8px; flex: 1 1 640px">
-<template sc-for list="{{filters}}" as="f" hint-placeholder-count="9">
-<button class="chip" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="{{f.style}}; position: relative">{{f.label}}</button>
-</template>
-</div>
+<p class="logos-cap" style="margin: 0 0 20px; font-size: 11px">Worked with · worked for</p>
+<div class="invtools" style="display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; margin: 0 0 24px">
+<p style="margin: 0; font-size: 13.5px" aria-live="polite">{{countLabel}}</p>
+<div class="invtoolsr" style="display: flex; flex-wrap: nowrap; gap: 12px; align-items: center; flex: 0 1 460px; min-width: 0">
 <label for="invq" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search projects</label>
 <input id="invq" type="search" value="{{query}}" onInput="{{onQuery}}" placeholder="Search: AI, KYC, Bose, IoT…" style="flex: 0 1 300px; min-width: 0; min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid #262626; background: #FFFFFF; color: #262626; font-family: inherit; font-size: 14px">
 <button class="surprise" onClick="{{surprise}}" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; color: #262626; cursor: pointer; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase; transition: transform .2s ease">Surprise me ✦</button>
 </div>
-<p style="margin: 0 0 24px; font-size: 13.5px" aria-live="polite">{{countLabel}}</p>
+</div>
 
 <div onMouseLeave="{{leave}}" style="overflow-x: auto; margin-bottom: 96px; border-top: 1px solid #262626">
 <table class="invt" style="width: 100%; min-width: 960px; border-collapse: collapse; text-align: left">
