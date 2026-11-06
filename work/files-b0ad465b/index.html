@@ -349,6 +349,54 @@ body[data-hero="story"] #eProto .pnav{grid-column:3;grid-row:1/3}
 @media (max-width:700px){.fbeat .pair{grid-template-columns:minmax(0,1fr)}.fwhy{grid-template-columns:minmax(0,1fr)}}
 
 .fband{-webkit-user-select:none;user-select:none}
+
+/* v2 */
+.own2{position:relative;display:flex;justify-content:space-between;width:100vw;margin-left:calc(50% - 50vw);box-sizing:border-box;padding:10px max(2rem,calc(50vw - 660px + 2rem));font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:#5E5E5E;background:#FFFFFF;border-top:1px solid #E4E4E4}
+.fband .fex,.fband .fhint{display:none!important}
+.fband .stage{height:auto!important;aspect-ratio:var(--ar,1.6)}
+.pinband .pinlayer{position:absolute;inset:0;z-index:5;pointer-events:none;transition:opacity .3s}
+.pinband.zoomed .pinlayer{opacity:0}
+.pinmk{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;width:34px;height:34px;border-radius:50%;border:2px solid #FFFFFF;background:#262626;color:#FFFFFF;font:inherit;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 0 0 4px rgba(221,0,255,.35),0 8px 18px -6px rgba(38,38,38,.6);animation:pinpulse 2.4s ease-in-out infinite}
+.pinmk:hover,.pinmk.on{box-shadow:0 0 0 6px rgba(221,0,255,.55),0 8px 18px -6px rgba(38,38,38,.6)}
+@keyframes pinpulse{0%,100%{box-shadow:0 0 0 4px rgba(221,0,255,.35),0 8px 18px -6px rgba(38,38,38,.6)}50%{box-shadow:0 0 0 9px rgba(221,0,255,.12),0 8px 18px -6px rgba(38,38,38,.6)}}
+.pinback{position:absolute;left:max(16px,calc(50vw - 640px));bottom:16px;z-index:6;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid #262626;background:#fff;color:#262626;font:inherit;font-size:13px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;display:none}
+.pinband.zoomed .pinback{display:inline-flex;align-items:center}
+.pinband .stage .main iframe,.pinband .stage iframe{transition:transform .8s cubic-bezier(.3,.8,.3,1)}
+.pinring{position:absolute;z-index:6;border-radius:12px;pointer-events:none;opacity:0;transition:opacity .3s,left .8s cubic-bezier(.3,.8,.3,1),top .8s cubic-bezier(.3,.8,.3,1),width .8s cubic-bezier(.3,.8,.3,1),height .8s cubic-bezier(.3,.8,.3,1);box-shadow:0 0 0 2px rgba(38,38,38,.8),0 0 0 8px rgba(247,198,236,.75)}
+.pinring.on{opacity:1}
+.pinring b{position:absolute;left:-15px;top:-15px;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#262626;color:#FFFFFF;font-size:13px;box-shadow:0 0 0 3px #FFFFFF}
+.pinlist{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.pinlist button{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;padding:14px 16px;border:0;background:#F5F6F8;color:#262626;font:inherit;cursor:pointer;transition:box-shadow .25s,background .25s}
+.pinlist button:hover{box-shadow:0 0 0 2px rgba(221,0,255,.35)}
+.pinlist li.on button{background:#FFFFFF;box-shadow:0 0 0 2px #DD00FF}
+.pinlist .n{flex:none;display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#262626;color:#FFFFFF;font-size:13px}
+.pinlist span{display:grid;gap:4px}
+.pinlist small{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:#5E5E5E}
+.pinlist strong{font-size:16px;line-height:1.3}
+.pinlist em{font-style:normal;line-height:1.5;font-size:14px}
+.cardrow{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;scrollbar-width:none}
+.cardrow::-webkit-scrollbar{display:none}
+.cardrow[data-more="r"]{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+.cardrow[data-more="l"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 15%);mask-image:linear-gradient(90deg,transparent,#000 15%)}
+.cardrow[data-more="lr"]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.ccard{flex:0 0 560px;scroll-snap-align:start;background:#FFFFFF;border:1px solid #E4E4E4}
+.cshot{position:relative;width:560px;height:380px;overflow:hidden;pointer-events:none;-webkit-user-select:none;user-select:none}
+.cshot iframe{position:absolute;left:0;top:0;border:0}
+.ctext{display:grid;gap:6px;padding:14px 16px 18px;min-height:132px;align-content:start}
+.ctext small{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:#5E5E5E}
+.ctext strong{font-size:17px;line-height:1.3}
+.ctext span{line-height:1.5;font-size:14px}
+.cardbeat .own2{margin-top:6px}
+.fband+.own2,.band+.own2,.herox+.own2{margin-top:calc(-1 * var(--owngap,18px))}
+#bStory,#gStory,#xStory{display:block!important}#bStory>div+div,#gStory>div+div,#xStory>div+div{margin-top:clamp(56px,8vw,110px)}#bStory>div,#gStory>div,#xStory>div{display:block}
+.act{display:grid;gap:10px;padding-top:clamp(20px,3vw,36px);border-top:1px solid #E4E4E4}.act h3{margin:0;font-family:'Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.4px;line-height:1.1}.act p{margin:0;font-size:16px;line-height:1.55;max-width:60ch;color:#262626}
+.actdots{list-style:none;margin:0 0 6px;padding:0;display:flex;gap:18px;align-items:center}.actdots li{position:relative;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid #262626;font-size:13px;font-weight:700;color:#262626;background:#FFFFFF}.actdots li.done{background:#E4E4E4;border-color:#E4E4E4;color:#5E5E5E}.actdots li.on{background:#262626;color:#FFFFFF;box-shadow:0 0 0 4px #F5C9FF}.actdots li+li::before{content:'';position:absolute;right:100%;top:50%;width:18px;border-top:1px solid #BDBDBD}
+#gSys,#xSys{margin-bottom:8px}
+#bStory>div:has(>.act)+div,#gStory>div:has(>.act)+div,#xStory>div:has(>.act)+div{margin-top:clamp(28px,3vw,40px)}
+.pinring.on{animation:ringpulse 1.8s ease-in-out infinite}@keyframes ringpulse{0%,100%{box-shadow:0 0 0 2px rgba(38,38,38,.85),0 0 0 7px rgba(221,0,255,.45)}50%{box-shadow:0 0 0 2px rgba(38,38,38,.85),0 0 0 13px rgba(221,0,255,.18)}}
+#bSys{margin-bottom:8px}
+@media (max-width:900px){.roomfloat{display:none!important}}
+@media (max-width:600px){.ccard{flex-basis:84vw}.cshot{width:84vw;height:calc(84vw * 380 / 560)}.pinmk{width:28px;height:28px;font-size:12px}}
 </style>
 <style>
 .ar{display:inline-block;width:.68em;height:.68em;margin-left:.18em;vertical-align:-.02em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 9.5 9.5 2.5M3.5 2.5h6v6' fill='none' stroke='%23000' stroke-width='1.9'/%3E%3C/svg%3E") center/contain no-repeat}
@@ -432,10 +480,13 @@ html{scrollbar-gutter:stable}body{margin:0}.wrap{box-sizing:border-box;padding-l
       <div class="herox" data-room="bcaa"></div>
     </div>
 
-    <div class="secthead first"><span class="eyebrow">The story</span><h2>One surge, from both sides of the dock.</h2><p class="note">Each moment shows the live screen, then the page of thinking that shaped it. Tap Explore on any screen to pan and zoom.</p></div>
+    <div class="secthead first"><span class="eyebrow">The story</span><h2>One surge, from both sides of the dock.</h2><p class="note">The surge as the controller lives it: see it, ask about it, decide, move, prove it. Numbered pins open the details on each screen.</p></div>
     <div class="story" id="bStory"></div>
 
-    <div class="secthead"><span class="eyebrow">The thinking, laid out</span><h2>Journey, flow, architecture, layout, system.</h2><p class="note">The work in the order it was done. Use the steps to fly between boards, or open the board and move around freely.</p></div>
+    <div class="secthead"><span class="eyebrow">The system</span><h2>One design system, with AI as a first-class state.</h2><p class="note">AI has its own colour and mark, confidence is said in words, and every AI action follows an approval path a person controls. Fleet Console tokens on Radix Themes.</p></div>
+    <div id="bSys"></div>
+
+    <div class="secthead"><span class="eyebrow">The thinking, laid out</span><h2>Journey, flow, architecture, layout.</h2><p class="note">The work in the order it was done. Use the steps to fly between boards, or open the board and move around freely.</p></div>
     <div id="bBoard"></div>
 
     <div class="secthead"><span class="eyebrow">Full case</span><h2>Eight screens, the design system and seven case boards.</h2></div>
@@ -481,6 +532,8 @@ html{scrollbar-gutter:stable}body{margin:0}.wrap{box-sizing:border-box;padding-l
     </div>
     <div class="secthead first"><span class="eyebrow">The story</span><h2>One match, from brief to equity.</h2><p class="note">Each moment pairs the live screen with the page of thinking behind it: the three-role journey map and the three-sided flow.</p></div>
     <div class="story" id="gStory"></div>
+    <div class="secthead"><span class="eyebrow">The system</span><h2>One design system, with AI as a first-class state.</h2><p class="note">Airy, black and purple. AI-read figures carry their own mark, and nothing they say is relied on until a curator confirms it.</p></div>
+    <div id="gSys"></div>
     <div class="secthead"><span class="eyebrow">On the go</span><h2>The three decisions that happen on a phone.</h2><p class="note">Review a match, approve data-room access, reply to a candidate.</p></div>
     <div class="mphones" id="gMobile"></div>
     <div class="secthead"><span class="eyebrow">The thinking, laid out</span><h2>From three-sided flow to design system.</h2></div>
@@ -503,6 +556,8 @@ html{scrollbar-gutter:stable}body{margin:0}.wrap{box-sizing:border-box;padding-l
     </div>
     <div class="secthead first"><span class="eyebrow">The story</span><h2>One disclosure, from draft to proof.</h2><p class="note">Three seats, one record: the investor who reads it, the issuer who corrects it, and the reviewers who approve it.</p></div>
     <div class="story" id="xStory"></div>
+    <div class="secthead"><span class="eyebrow">The system</span><h2>Carbon Gray 100 and IBM Plex. Compliance by layout.</h2><p class="note">Caution at the same size as the claim, a source on every figure, and a fixed place for what a regulator will look for.</p></div>
+    <div id="xSys"></div>
     <div class="secthead"><span class="eyebrow">The thinking, laid out</span><h2>From user flow to API map.</h2></div>
     <div id="xBoard"></div>
     <div class="secthead"><span class="eyebrow">Full case</span><h2>All screens across three roles, the states board and the system.</h2></div>
@@ -526,7 +581,7 @@ html{scrollbar-gutter:stable}body{margin:0}.wrap{box-sizing:border-box;padding-l
 
 <script>
 window.LAYOUT='flow';
-const META = {"bcaa01": [1440, 1258, "01 · Global Portfolio (cars · e-bikes · e-scooters)"], "bcaa02": [1440, 2201, "02 · Regional Operations"], "bcaa03": [1440, 1356, "03 · Corridor Dispatch"], "bcaa09": [1600, 827, "Image 1 · Customer journey map"], "bcaa10": [1600, 1023, "Image 2 · User flow: R-1042 rebalancing"], "bcaa11": [1600, 975, "Image 3 · Design system"], "bcaa12": [1600, 848, "Image 4 · Design architecture"], "bcaa13": [1600, 924, "Image 5 · System architecture"], "bcaa14": [1600, 798, "Image 6 · AI architecture (human in the loop)"], "bcaa15": [1600, 954, "Image 7 · Layout grid"], "evo01": [1440, 1024, "Information architecture"], "evo02": [1440, 1024, "System architecture"], "evo03": [1440, 1024, "User flow · first ride"], "evo04": [1440, 1024, "Journey map · visitor"], "evo05": [1440, 1024, "Wireframes · lo-fi"], "evo06": [390, 844, "Onboarding"], "evo07": [390, 844, "Sign in"], "evo08": [390, 844, "S01 Home"], "evo09": [390, 844, "S03 Where to?"], "evo10": [390, 844, "S04 Choose a ride"], "evo11": [390, 844, "S10 Ride confirmation"], "evo12": [390, 844, "S12 Scan to unlock"], "evo13": [390, 844, "S13 Unlocking"], "evo14": [390, 844, "S14 Riding"], "evo15": [390, 844, "S15 Parking"], "evo16": [390, 844, "S16a Camera permission"], "evo17": [390, 844, "S16 Parking photo"], "evo18": [390, 844, "S17 Verifying"], "evo19": [390, 844, "S18 Trip ended"], "evo20": [390, 844, "S19 My trips"], "evo21": [390, 844, "S20 Wallet"], "evo22": [390, 844, "S21 Report a problem"], "evo23": [390, 844, "S22 Profile"], "evo24": [1440, 1024, "Design system"], "evo25": [1440, 1024, "Layout grid"], "grupa00": [1440, 1358, "G-S05 · Startup · Match results"], "grupa02": [1440, 1413, "G-T05 · Talent · Compensation & equity"], "grupa08": [1440, 655, "G-V04 · VC · Deal pipeline"], "six04": [1280, 1500, "E · Company library (chosen direction)"], "six27": [1280, 1000, "Reviewer · Audit log"], "six28": [1280, 1500, "States: loading, empty, error, delayed, consent re-check, correction"], "bcaa00": [1440, 2592, "00 · Design system: EVOLVE CORE (BCAA × Evo on Radix)"], "bcaa04": [1440, 1464, "04 · Fleet Telemetry Grid"], "bcaa05": [1440, 1357, "05 · Zone Deficit Matrix"], "bcaa06": [1440, 1789, "06 · Hardware Quarantine"], "bcaa07": [1440, 1237, "07 · Municipal GBFS Feed Audit"], "bcaa08": [1440, 1500, "08 · Pricing Experiments"], "grupa03": [1440, 1007, "G-D01–D03 · Startup · Data room"], "grupa04": [1440, 1036, "G-X01 · Shared · Mutual opt-in"], "grupa07": [1440, 979, "G-E06 · Shared · Engagement workspace"], "grupa09": [1440, 834, "G-LND / G-O1–O3 · Role selection"], "grupa11": [1440, 709, "G-E02–E05 · Shared · Agreement"], "grupa12": [1440, 899, "G-A01 · Curator · Verification queue"], "grupa14": [390, 828, "Mobile · Match review"], "grupa15": [390, 828, "Mobile · Approvals"], "grupa16": [390, 844, "Mobile · Messages"], "grupa18": [1600, 967, "Information architecture"], "grupa19": [1600, 968, "System architecture"], "grupa20": [1600, 787, "Design system overview"], "grupa21": [1600, 1282, "Layout grid"], "grupa22": [2080, 1089, "Three-sided flow"], "grupa23": [2240, 1090, "Journey map · three roles"], "grupa24": [1840, 942, "Onboarding flow · three roles"], "six06": [1280, 1000, "Investor · Live event"], "six08": [1280, 1000, "Reviewer · Review queue"], "six10": [1280, 1000, "Investor · Brokerage handoff"], "six11": [1280, 1000, "Issuer · Campaign builder"], "six24": [1280, 1000, "Issuer · Content editor + correction"], "six26": [1280, 1000, "Reviewer · Corrections"], "six29": [1280, 1500, "Layout grid (12 columns over E)"], "six30": [1900, 1300, "User flow"], "six31": [1900, 1100, "User journey map"], "six32": [1600, 2100, "Design system"], "six33": [1900, 1200, "System architecture"], "six34": [1900, 1200, "API map"], "bcaa20": [1440, 1044, "02b · City map: zoomed-out corridor, Co-Pilot docked"], "bcaa21": [1440, 1283, "09 · Fleet AI Co-Pilot workspace"], "six12": [1280, 980, "Investor · Company profile: drill results"], "six17": [1280, 850, "Investor · Compare junior miners"], "six07": [1280, 800, "Issuer · Contacts and consent (CRM)"], "six05": [1280, 720, "Investor · Discover"], "six21": [1280, 640, "Issuer · Overview"]};
+const META = {"bcaa01": [1440, 1262, "01 · Global Portfolio (cars · e-bikes · e-scooters)"], "bcaa02": [1440, 2201, "02 · Regional Operations"], "bcaa03": [1440, 1329, "03 · Corridor Dispatch"], "bcaa09": [1600, 827, "Image 1 · Customer journey map"], "bcaa10": [1600, 1023, "Image 2 · User flow: R-1042 rebalancing"], "bcaa11": [1600, 975, "Image 3 · Design system"], "bcaa12": [1600, 848, "Image 4 · Design architecture"], "bcaa13": [1600, 924, "Image 5 · System architecture"], "bcaa14": [1600, 798, "Image 6 · AI architecture (human in the loop)"], "bcaa15": [1600, 954, "Image 7 · Layout grid"], "evo01": [1440, 1024, "Information architecture"], "evo02": [1440, 1024, "System architecture"], "evo03": [1440, 1024, "User flow · first ride"], "evo04": [1440, 1024, "Journey map · visitor"], "evo05": [1440, 1024, "Wireframes · lo-fi"], "evo06": [390, 844, "Onboarding"], "evo07": [390, 844, "Sign in"], "evo08": [390, 844, "S01 Home"], "evo09": [390, 844, "S03 Where to?"], "evo10": [390, 844, "S04 Choose a ride"], "evo11": [390, 844, "S10 Ride confirmation"], "evo12": [390, 844, "S12 Scan to unlock"], "evo13": [390, 844, "S13 Unlocking"], "evo14": [390, 844, "S14 Riding"], "evo15": [390, 844, "S15 Parking"], "evo16": [390, 844, "S16a Camera permission"], "evo17": [390, 844, "S16 Parking photo"], "evo18": [390, 844, "S17 Verifying"], "evo19": [390, 844, "S18 Trip ended"], "evo20": [390, 844, "S19 My trips"], "evo21": [390, 844, "S20 Wallet"], "evo22": [390, 844, "S21 Report a problem"], "evo23": [390, 844, "S22 Profile"], "evo24": [1440, 1024, "Design system"], "evo25": [1440, 1024, "Layout grid"], "grupa00": [1440, 1431, "G-S05 · Startup · Match results"], "grupa02": [1440, 1466, "G-T05 · Talent · Compensation & equity"], "grupa08": [1440, 655, "G-V04 · VC · Deal pipeline"], "six04": [1280, 1377, "E · Company library (chosen direction)"], "six27": [1280, 587, "Reviewer · Audit log"], "six28": [1280, 1500, "States: loading, empty, error, delayed, consent re-check, correction"], "bcaa00": [1440, 2576, "00 · Design system: EVOLVE CORE (BCAA × Evo on Radix)"], "bcaa04": [1440, 1452, "04 · Fleet Telemetry Grid"], "bcaa05": [1440, 1259, "05 · Zone Deficit Matrix"], "bcaa06": [1440, 1596, "06 · Hardware Quarantine"], "bcaa07": [1440, 1279, "07 · Municipal GBFS Feed Audit"], "bcaa08": [1440, 995, "08 · Pricing Experiments"], "grupa03": [1440, 1114, "G-D01–D03 · Startup · Data room"], "grupa04": [1440, 1109, "G-X01 · Shared · Mutual opt-in"], "grupa07": [1440, 1052, "G-E06 · Shared · Engagement workspace"], "grupa09": [1440, 949, "G-LND / G-O1–O3 · Role selection"], "grupa11": [1440, 761, "G-E02–E05 · Shared · Agreement"], "grupa12": [1440, 951, "G-A01 · Curator · Verification queue"], "grupa14": [390, 828, "Mobile · Match review"], "grupa15": [390, 828, "Mobile · Approvals"], "grupa16": [390, 844, "Mobile · Messages"], "grupa18": [1600, 967, "Information architecture"], "grupa19": [1600, 968, "System architecture"], "grupa20": [1600, 787, "Design system overview"], "grupa21": [1600, 1282, "Layout grid"], "grupa22": [2080, 1089, "Three-sided flow"], "grupa23": [2240, 1090, "Journey map · three roles"], "grupa24": [1840, 942, "Onboarding flow · three roles"], "six06": [1280, 840, "Investor · Live event"], "six08": [1280, 926, "Reviewer · Review queue"], "six10": [1280, 784, "Investor · Brokerage handoff"], "six11": [1280, 1112, "Issuer · Campaign builder"], "six24": [1280, 649, "Issuer · Content editor + correction"], "six26": [1280, 1000, "Reviewer · Corrections"], "six29": [1280, 1500, "Layout grid (12 columns over E)"], "six30": [1900, 1300, "User flow"], "six31": [1900, 1100, "User journey map"], "six32": [1600, 2250, "Design system"], "six33": [1900, 1200, "System architecture"], "six34": [1900, 1200, "API map"], "bcaa20": [1440, 1000, "02b · City map: zoomed-out corridor, Co-Pilot docked"], "bcaa21": [1440, 1204, "09 · Fleet AI Co-Pilot workspace"], "six12": [1280, 1000, "Investor · Company profile: drill results"], "six17": [1280, 850, "Investor · Compare junior miners"], "six07": [1280, 800, "Issuer · Contacts and consent (CRM)"], "six05": [1280, 720, "Investor · Discover"], "six21": [1280, 640, "Issuer · Overview"]};
 const $=s=>document.querySelector(s);
 const el=(t,c,h)=>{const e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e;};
 ['contextmenu','dragstart','selectstart'].forEach(ev=>document.addEventListener(ev,e=>{ if(e.target.closest('.stage,.board,.phone')) e.preventDefault(); }));
@@ -615,7 +670,7 @@ function Story(host,beats,o){
   const setEx=on=>{ L.explore(on); ex.setAttribute('aria-pressed',String(on)); ex.textContent=on?'Back to the story':'Explore this screen'; hint.textContent=on?'Drag to move · scroll or pinch to zoom · tap the map to jump':'Scroll to move the camera'; };
   ex.onclick=()=>setEx(!L.free); row.addEventListener('explore',()=>setEx(true));
   const els=beats.map((b,i)=>{ const d=el('article','beat');
-    d.innerHTML=`<div class="is"><p class="time"><b>${b.time}</b> · ${b.stage}</p></div><h3 class="is">${b.title}</h3><div class="pair is">${b.pain?`<div class="before"><small>Before</small><span>${b.pain}</span></div>`:''}${b.resp?`<div class="${b.ai?'ai':'after'}"><small>${b.ai?'AI response':'Design response'}</small><span>${b.resp}</span></div>`:''}</div>${b.body?`<p class="note is">${b.body}</p>`:''}`;
+    d.innerHTML=`<div class="is"><p class="time">${b.stage}</p></div><h3 class="is">${b.title}</h3><div class="pair is">${b.pain?`<div class="before"><small>Before</small><span>${b.pain}</span></div>`:''}${b.resp?`<div class="${b.ai?'ai':'after'}"><small>${b.ai?'AI response':'Design response'}</small><span>${b.resp}</span></div>`:''}</div>${b.body?`<p class="note is">${b.body}</p>`:''}`;
     col.append(d); return d; });
   let cur=-1;
   const act=i=>{ if(i===cur) return; cur=i; els.forEach((d,n)=>d.classList.toggle('on',n===i)); [...ticks.children].forEach((t,n)=>t.classList.toggle('on',n<=i));
@@ -628,8 +683,8 @@ function Story(host,beats,o){
 /* ---------- Flowing story: one normal section per moment ---------- */
 const flowLive=new Set();
 setInterval(()=>flowLive.forEach(L=>{ if(!L.free && !L.hover && L.cur) replay(L.cur); }),6500);
-function hoverable(d){ try{ if(d.__hv) return; d.__hv=1; const add=[]; for(const sh of d.styleSheets){ let rs; try{ rs=sh.cssRules }catch(e){ continue } for(const r of rs){ if(r.selectorText&&r.selectorText.includes(':hover')) add.push(r.selectorText.replace(/:hover/g,'.__hv')+'{'+r.style.cssText+'}'); } }
-  const st=d.createElement('style'); st.textContent=add.join('\n')+'\nbutton,a,[role=button],[class*=chip],[class*=pill],[class*=card],tr,li{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}\n.__lift{transform:translateY(-2px);box-shadow:0 10px 22px -12px rgba(38,38,38,.45)!important}\ntr.__lift,li.__lift{transform:none;box-shadow:inset 3px 0 0 #DD00FF!important;background-color:rgba(221,0,255,.05)!important}'; d.head.append(st); }catch(e){} }
+function hoverable(d){ try{ if(d.__hv) return; d.__hv=1; const add=[];
+  const st=d.createElement('style'); st.textContent=add.join('\n')+'\nbutton,a,[role=button],[class*=chip],[class*=pill],[class*=card],tr,li{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}\n.__lift{box-shadow:0 0 0 3px rgba(221,0,255,.28),0 6px 18px -6px rgba(221,0,255,.45)!important;outline:none!important}\ntr.__lift,li.__lift{box-shadow:inset 3px 0 0 #DD00FF!important;background-color:rgba(221,0,255,.05)!important}'; d.head.append(st); }catch(e){} }
 
 /* the map answers back: a question is typed into the co-pilot box, the map lights up what matters, then the co-pilot opens and the answer builds */
 function mapHot(f,on){ try{ const d=f.contentDocument; if(!d) return; if(!d.__hotcss){ d.__hotcss=1; const st=d.createElement('style'); st.textContent='.__hot{transition:transform .5s cubic-bezier(.3,1.5,.5,1),box-shadow .5s ease!important;transform:scale(1.22)!important;box-shadow:0 0 0 4px rgba(221,0,255,.45),0 10px 24px -8px rgba(221,0,255,.55)!important;border-radius:999px;z-index:20;position:relative}.__hotcard{transition:transform .5s ease,box-shadow .5s ease!important;transform:translateY(-6px)!important;box-shadow:0 0 0 3px rgba(221,0,255,.4),0 22px 40px -18px rgba(38,38,38,.45)!important}svg.__dim{transition:opacity .6s ease,filter .6s ease;filter:saturate(.55);opacity:.78}'; d.head.append(st); }
@@ -652,9 +707,9 @@ function Flow(host,beats,o){
   host.classList.add('flow'); const col=el('div','flowcol beats'); host.append(col); const seen=new Set();
   beats.forEach(b=>{
     const sec=el('article','fbeat');
-    sec.innerHTML=`<div class="fhead"><p class="time"><b>${b.time}</b> · ${b.stage}</p><h3>${b.title}</h3><div class="pair">${b.pain?`<div class="before"><small>Before</small><span>${b.pain}</span></div>`:''}${b.resp?`<div class="${b.ai?'ai':'after'}"><small>${b.ai?'AI response':'Design response'}</small><span>${b.resp}</span></div>`:''}</div>${b.body?`<p class="note">${b.body}</p>`:''}</div>`;
+    sec.innerHTML=`<div class="fhead"><p class="time">${b.stage}</p><h3>${b.title}</h3><div class="pair">${b.pain?`<div class="before"><small>Before</small><span>${b.pain}</span></div>`:''}${b.resp?`<div class="${b.ai?'ai':'after'}"><small>${b.ai?'AI response':'Design response'}</small><span>${b.resp}</span></div>`:''}</div>${b.body?`<p class="note">${b.body}</p>`:''}</div>`;
     /* every screen in full view the first time it appears; a later moment on the same screen frames one clean component (snapped to its real edges) */
-    const [BW,BH]=META[b.screen.src]; const first=!seen.has(b.screen.src); seen.add(b.screen.src);
+    const [BW,BH]=META[b.screen.src]; const first=true; seen.add(b.screen.src);
     const shot=first?{src:b.screen.src,x:0,y:0,w:BW,h:BH}:{...b.screen};
     const band=el('div','fband'); band.style.setProperty('--ar',(shot.w/shot.h).toFixed(3)); if(o.bg) band.style.setProperty('--fbg',o.bg); sec.append(band);
     const asks=b.screen.src==='bcaa20';
@@ -663,6 +718,7 @@ function Flow(host,beats,o){
     if(!first){ const f=L.frames[shot.src]; f.addEventListener('load',()=>{ try{ const d=f.contentDocument; const cx=shot.x+shot.w/2, cy=shot.y+shot.h/2; let e=d.elementFromPoint(cx,cy), best=null; const A=shot.w*shot.h;
         while(e&&e!==d.body){ const r=e.getBoundingClientRect(); const a=r.width*r.height; if(a>=A*.45&&a<=A*2.2&&r.width<BW*.98){ best=r; break; } e=e.parentElement; }
         if(best){ const p=16; const x=Math.max(0,best.left-p), y=Math.max(0,best.top-p), w=Math.min(BW-x,best.width+p*2), h=Math.min(BH-y,best.height+p*2); L.shots[0]={src:shot.src,x,y,w,h}; band.style.setProperty('--ar',(w/h).toFixed(3)); requestAnimationFrame(()=>L.go(0,false)); } }catch(err){} }); } flowLive.add(L); if(!asks) Object.values(L.frames).forEach(f=>SB.add(f,()=>!L.free));
+    Own(band);
     const hint=el('span','fhint','Drag to move · scroll or pinch to zoom'); band.append(hint);
     const ex=el('button','fex','Explore'); ex.type='button'; ex.setAttribute('aria-pressed','false'); band.append(ex);
     ex.onclick=()=>{ const on=!L.free; L.explore(on); ex.setAttribute('aria-pressed',String(on)); ex.textContent=on?'Done':'Explore'; band.classList.toggle('exploring',on); };
@@ -776,41 +832,87 @@ function Proto(host,cfg){
   let started=false; ph.__load=()=>{ if(started) return; started=true; go(cfg.start,1); hist=[]; }; lazy.observe(ph);
 }
 
+
+/* ---------- v2: copyright line under every screen ---------- */
+function Own(after){ const o=el('div','own2','<span>© Shany Mo · Designed by Shany Mo · shanymo.com</span>'); after.after(o); return o; }
+/* ---------- v2: pinned details — the whole screen once, numbered pins, a list; a pin moves the camera gently (never past 1.8×) ---------- */
+function Pins(host,o){
+  const [BW,BH]=META[o.src];
+  const sec=el('article','fbeat pinbeat'); host.append(sec);
+  sec.innerHTML=`<div class="fhead"><p class="time">${o.stage}</p><h3>${o.title}</h3>${o.body?`<p class="note">${o.body}</p>`:''}</div>`;
+  const band=el('div','fband pinband'); band.style.setProperty('--ar',(BW/BH).toFixed(3)); if(o.bg) band.style.setProperty('--fbg',o.bg); sec.append(band);
+  const wide=p=>{ const w=Math.max(p.w,BW*.56), h=Math.max(p.h,w*BH/BW*.6); const cx=p.x+p.w/2, cy=p.y+p.h/2;
+    const x=Math.max(0,Math.min(BW-w,cx-w/2)), y=Math.max(0,Math.min(BH-h,cy-h/2)); return {src:o.src,x,y,w,h}; };
+  const L=Lens(band,[{src:o.src,x:0,y:0,w:BW,h:BH}],{cls:'main'});
+  Object.values(L.frames).forEach(f=>SB.add(f,()=>true));
+  const layer=el('div','pinlayer'); band.append(layer);
+  const back=el('button','pinback','← Whole screen'); back.type='button'; band.append(back);
+  const ring=el('div','pinring','<b></b>'); band.append(ring); let cur=-1;
+  const place=v=>{ if(cur<0||!v) return; const p=o.pins[cur], W=L.st.clientWidth, H=L.st.clientHeight; let x=v.tx+p.x*v.k, y=v.ty+p.y*v.k, w=p.w*v.k, h=p.h*v.k;
+    const x0=Math.max(6,x), y0=Math.max(6,y), x1=Math.min(W-6,x+w), y1=Math.min(H-6,y+h); Object.assign(ring.style,{left:x0+'px',top:y0+'px',width:Math.max(0,x1-x0)+'px',height:Math.max(0,y1-y0)+'px'}); ring.querySelector('b').textContent=String(cur+1); };
+  L.subs.push(v=>place(v));
+  const list=el('ol','pinlist'); sec.append(list);
+  const mks=[], lis=[];
+  const pick=i=>{ cur=i; ring.classList.toggle('on',i>=0); place(L.v); if(i>=0){ const r=ring.getBoundingClientRect(); if(r.top<0||r.bottom>innerHeight) ring.scrollIntoView({behavior:'smooth',block:r.height>innerHeight*.8?'start':'center'}); } lis.forEach((x,n)=>x.classList.toggle('on',n===i)); mks.forEach((x,n)=>x.classList.toggle('on',n===i)); };
+  o.pins.forEach((p,i)=>{
+    const m=el('button','pinmk',String(i+1)); m.type='button'; m.setAttribute('aria-label',(i+1)+': '+p.title);
+    m.style.left=((p.x+6)/BW*100)+'%'; m.style.top=((p.y+6)/BH*100)+'%'; m.onclick=()=>pick(i); layer.append(m); mks.push(m);
+    const li=el('li',''); li.innerHTML=`<button type="button"><b class="n">${i+1}</b><span><small>${p.stage}</small><strong>${p.title}</strong><em>${p.text}</em></span></button>`;
+    li.querySelector('button').onclick=()=>pick(lis[i].classList.contains('on')?-1:i); list.append(li); lis.push(li); });
+  back.onclick=()=>pick(-1);
+  Own(band);
+}
+/* ---------- v2: a sideways row of same-size cards, each a single detail at its real size or smaller ---------- */
+function Cards(host,o){
+  const sec=el('article','fbeat cardbeat'); host.append(sec);
+  sec.innerHTML=`<div class="fhead"><p class="time">${o.stage}</p><h3>${o.title}</h3></div>`;
+  const row=el('div','cardrow'); sec.append(row);
+  const CW=Math.min(560,innerWidth*.84), CH=CW*380/560;
+  o.cards.forEach(c=>{ const [BW,BH]=META[c.src];
+    const card=el('div','ccard'); card.innerHTML=`<div class="cshot" style="background:${c.bg||'#F2F3F6'}"></div><div class="ctext"><small>${c.stage}</small><strong>${c.title}</strong><span>${c.text}</span></div>`;
+    const box=card.querySelector('.cshot'); const f=mkFrame(c.src); const k=Math.min(1,CW/c.w);
+    f.style.transformOrigin='0 0'; f.style.transform=`translate(${(CW-c.w*k)/2-c.x*k}px,${-c.y*k}px) scale(${k})`; box.append(f);
+    new IntersectionObserver((es,ob)=>es.forEach(e=>{ if(e.isIntersecting){ f.src=f.dataset.src; ob.disconnect(); } }),{rootMargin:'600px'}).observe(box);
+    row.append(card); });
+  const fade=()=>{ const a=row.scrollLeft>4, b=row.scrollLeft+row.clientWidth<row.scrollWidth-4; row.dataset.more=(a?'l':'')+(b?'r':''); };
+  row.addEventListener('scroll',fade,{passive:true}); new ResizeObserver(fade).observe(row); fade();
+}
+/* ---------- acts: one line and a 1 · 2 · 3 marker between parts of the story ---------- */
+function Act(host,n,title,line){ const a=el('div','act'); a.innerHTML=`<ol class="actdots" aria-label="Part ${n} of 3">${[1,2,3].map(i=>`<li class="${i===n?'on':i<n?'done':''}">${i}</li>`).join('')}</ol><h3>${title}</h3><p>${line}</p>`; host.append(a); }
+/* ---------- v2: one full screen, edge to edge, with its copyright ---------- */
+function Full(host,src,bg){ const [BW,BH]=META[src]; const band=el('div','fband'); band.style.setProperty('--ar',(BW/BH).toFixed(3)); if(bg) band.style.setProperty('--fbg',bg); host.append(band);
+  const L=Lens(band,[{src,x:0,y:0,w:BW,h:BH}],{cls:'main'}); Object.values(L.frames).forEach(f=>SB.add(f,()=>true)); Own(band); return L; }
+
 /* ---------- content ---------- */
 const B1='bcaa01',B2='bcaa02',B3='bcaa03',J='bcaa09';
 function bcaa(){
-  const h=$('#bHero'); const H=Lens(h,[
-    {src:B3,x:265,y:132,w:1155,h:104},{src:B3,x:960,y:132,w:460,h:104},{src:B3,x:265,y:132,w:1155,h:560}],{auto:true,ms:3600});
-  Flow($('#bStory'),[
-    {time:'15:30',stage:'Plan · Global portfolio',title:'One picture of the whole fleet.',pain:'Five tools, no single picture.',resp:'One console. Every number links to its detail.',
-      screen:{src:B1,x:265,y:215,w:1150,h:680},why:{src:J,x:236,y:140,w:222,h:700},whyLabel:'Journey map · 15:30 Plan'},
-    {time:'16:32',stage:'See · City map with Co-Pilot',title:'The whole city, and a question box on the map.',pain:'Five tools to see one corridor.',resp:'One map with the forecast gap, the vans and the hubs, plus Co-Pilot docked underneath: “Where will bikes run out?”',ai:true,
-      screen:{src:'bcaa20',x:265,y:135,w:1150,h:800},why:{src:'bcaa14',x:50,y:160,w:1470,h:210},whyLabel:'AI architecture · signals to a person'},
-    {time:'16:30',stage:'Forecast · Zone deficit matrix',title:'Ranges, not points.',pain:'“−42”: one exact number from a model that can only give a range.',resp:'“11–19 bikes short”, with the band the model can actually support, every 30 minutes.',ai:true,
-      screen:{src:'bcaa05',x:265,y:165,w:1150,h:1040},why:{src:'bcaa13',x:672,y:178,w:240,h:585},whyLabel:'System architecture · intelligence'},
-    {time:'16:34',stage:'Detect · Corridor dispatch',title:'26 minutes of warning, not a complaint.',pain:'Learns about gaps from complaints.',resp:'Forecast ranges and an alert 26 minutes ahead.',ai:true,
-      screen:{src:B3,x:265,y:132,w:1155,h:104},why:{src:J,x:453,y:140,w:222,h:700},whyLabel:'Journey map · 16:34 Detect'},
-    {time:'16:38',stage:'Triage · Fleet telemetry',title:'16 units flagged. Only one needs a person.',pain:'Telemetry all day, and almost none of it reached a decision.',resp:'Co-Pilot sorts the anomalies and names the one a person must handle.',ai:true,
-      screen:{src:'bcaa04',x:265,y:130,w:1150,h:400},why:{src:'bcaa13',x:368,y:178,w:240,h:585},whyLabel:'System architecture · ingest and validate'},
-    {time:'16:36',stage:'Ask · Co-Pilot workspace',title:'Ask why. Get options, sources and a confidence level.',pain:'“99.4%” with no reasons to trust.',resp:'Co-Pilot reads its sources, shows three options with their side effects, and says “Moderate” with the reasons. It can’t approve; approval happens in Dispatch.',ai:true,
-      screen:{src:'bcaa21',x:265,y:130,w:760,h:840},why:{src:'bcaa14',x:440,y:170,w:700,h:190},whyLabel:'AI architecture · AI proposes, guardrails'},
-    {time:'Limits',stage:'Co-Pilot boundaries',title:'What the AI can’t do is on the screen.',resp:'Can explain, compare, summarise and draft. Can’t dispatch, change a price, clear a safety hold or immobilize a vehicle. Missing data is named, never filled in.',ai:true,
-      screen:{src:'bcaa21',x:1035,y:130,w:385,h:1000},why:{src:'bcaa14',x:60,y:730,w:730,h:140},whyLabel:'AI architecture · what the AI never does'},
-    {time:'16:40',stage:'Decide · Rebalance solver',title:'The AI proposes. A person decides.',pain:'“99.4%” with no reasons to trust.',resp:'“Why this plan?” with alternatives, and the confidence said in words.',ai:true,
-      screen:{src:B3,x:1078,y:245,w:342,h:600},why:{src:J,x:670,y:140,w:222,h:700},whyLabel:'Journey map · 16:40 Decide'},
-    {time:'16:55',stage:'Move · Corridor schematic',title:'A plan the crew can follow.',pain:'“Dispatched” before the van moved.',resp:'An honest lifecycle and direct contact with the crew.',
-      screen:{src:B3,x:612,y:245,w:466,h:660},why:{src:J,x:887,y:140,w:222,h:700},whyLabel:'Journey map · 16:55 Move'},
-    {time:'17:30',stage:'Arrive · Lifecycle',title:'Done means the docks say so.',pain:'No proof it worked.',resp:'Completed only on evidence: dock count 6 → 16.',
-      screen:{src:B3,x:1078,y:885,w:342,h:160},why:{src:'bcaa10',x:900,y:560,w:520,h:480},whyLabel:'User flow · verify and complete'},
-    {time:'Safety',stage:'Hardware quarantine',title:'A suggestion never clears a hold.',pain:'Safety holds tracked by hand.',resp:'Evidence on the brake trace, a role-gated return to service, and an AI suggestion the maintenance lead can reject.',
-      screen:{src:'bcaa06',x:940,y:250,w:480,h:840},why:{src:'bcaa13',x:976,y:178,w:240,h:585},whyLabel:'System architecture · decide and control'},
-    {time:'Trust',stage:'GBFS feed audit',title:'Stale data is withheld, not guessed.',pain:'Old data shown as if current.',resp:'Every source marked with its age. Advice that depends on a stale source is withheld.',
-      screen:{src:'bcaa07',x:265,y:785,w:1150,h:440},why:{src:'bcaa13',x:368,y:330,w:240,h:260},whyLabel:'System architecture · freshness monitor'},
-    {time:'18:30',stage:'Learn · Pricing experiments',title:'Prices learn, inside guardrails.',pain:'Fixed rates, changed once a year.',resp:'Controlled experiments with guardrails and approval. The builder can’t approve their own test.',ai:true,
-      screen:{src:'bcaa08',x:265,y:130,w:1150,h:810},why:{src:'bcaa14',x:50,y:160,w:1480,h:550},whyLabel:'AI architecture · the loop'},
-    {time:'Zoom out',stage:'The system',title:'Nine screens, one system.',body:'Monitor, act and govern: every screen answers one question for one role, on BCAA × Evo tokens over Radix Themes.',
-      screen:{src:'bcaa00',x:0,y:0,w:1440,h:950},why:{src:'bcaa12',x:0,y:0,w:1600,h:1000},whyLabel:'Design architecture'}
-  ],{minimap:[B1,'bcaa20','bcaa05',B3,'bcaa21','bcaa04','bcaa06','bcaa07','bcaa08','bcaa00'],bg:'#F2F3F6'});
+  const story=$('#bStory'); const part=()=>{ const d=el('div',''); story.append(d); return d; };
+  Act(part(),1,'See it coming','The map shows the gap, Co-Pilot explains it, and the forecast says how big it is.');
+  Pins(part(),{src:'bcaa21',bg:'#F2F3F6',stage:'Ask · Co-Pilot workspace',title:'Ask why. Get options, sources and a confidence level.',
+    body:'Co-Pilot reads its sources, shows three options with their side effects, and says “Moderate” with the reasons. It can’t approve; approval happens in Dispatch.',
+    pins:[
+      {x:265,y:130,w:760,h:840,stage:'Ask',title:'Options, sources and a confidence level.',text:'Three options with their side effects, and the confidence said in words, not “99.4%”.'},
+      {x:1035,y:130,w:385,h:1000,stage:'Boundaries',title:'What the AI can’t do is on the screen.',text:'Can explain, compare, summarise and draft. Can’t dispatch, change a price, clear a safety hold or immobilize a vehicle. Missing data is named, never filled in.'}]});
+  Flow(part(),[
+    {stage:'Forecast · Zone deficit matrix',title:'Ranges, not points.',pain:'“−42”: one exact number from a model that can only give a range.',resp:'“11–19 bikes short”, with the band the model can actually support, every 30 minutes.',ai:true,
+      screen:{src:'bcaa05'}}],{bg:'#F2F3F6'});
+  Act(part(),2,'Decide and act','Only what needs a person reaches one, and the move is proven on the docks.');
+  Flow(part(),[
+    {stage:'Triage · Fleet telemetry',title:'16 units flagged. Only one needs a person.',pain:'Telemetry all day, and almost none of it reached a decision.',resp:'Co-Pilot sorts the anomalies and names the one a person must handle.',ai:true,
+      screen:{src:'bcaa04'}}],{bg:'#F2F3F6'});
+  Pins(part(),{src:'bcaa03',bg:'#F2F3F6',stage:'Corridor dispatch',title:'From warning to proof, on one screen.',
+    body:'The alert, the proposal, the move and the proof that it worked: four steps a dispatcher follows without leaving the page.',
+    pins:[
+      {x:265,y:132,w:1155,h:104,stage:'Detect',title:'26 minutes of warning, not a complaint.',text:'Forecast ranges and an alert 26 minutes ahead.'},
+      {x:1078,y:245,w:342,h:600,stage:'Decide',title:'The AI proposes. A person decides.',text:'“Why this plan?” with alternatives, and the confidence said in words.'},
+      {x:612,y:245,w:466,h:660,stage:'Move',title:'A plan the crew can follow.',text:'An honest lifecycle and direct contact with the crew.'},
+      {x:1078,y:885,w:342,h:160,stage:'Arrive',title:'Done means the docks say so.',text:'Completed only on evidence: dock count 6 → 16.'}]});
+  Act(part(),3,'Keep it safe','Guardrails that hold after the surge, when nobody is watching.');
+  Cards(part(),{stage:'Safety, trust, learning',title:'Guardrails that hold when nobody is watching.',cards:[
+    {src:'bcaa06',x:940,y:250,w:480,h:840,stage:'Safety · Hardware quarantine',title:'A suggestion never clears a hold.',text:'Evidence on the brake trace, a role-gated return to service, and an AI suggestion the lead can reject.'},
+    {src:'bcaa07',x:265,y:785,w:560,h:440,stage:'Trust · GBFS feed audit',title:'Stale data is withheld, not guessed.',text:'Every source marked with its age. Advice that depends on a stale source is withheld.'},
+    {src:'bcaa08',x:265,y:130,w:560,h:420,stage:'Learning · Pricing experiments',title:'Prices learn, inside guardrails.',text:'Controlled experiments with approval. The builder can’t approve their own test.'}]});
+  Full($('#bSys'),'bcaa00','#FFFFFF');
   Board($('#bBoard'),[
     {src:'bcaa09',x:0,y:0,t:'Customer journey',why:'The 17:30 surge from both sides of the dock: rider and controller.'},
     {src:'bcaa10',x:1900,y:0,t:'User flow',why:'Surge alert to verified delivery, with every fork.'},
@@ -870,72 +972,58 @@ function evo(){
 
 
 function grupa(){
-  Lens($('#gHero'),[{src:'grupa00',x:305,y:235,w:730,h:710},{src:'grupa04',x:300,y:80,w:600,h:640},{src:'grupa08',x:300,y:190,w:1100,h:400}],{auto:true,ms:3600,bg:'#fff'});
-  const J='grupa23', F='grupa22', col=n=>({src:J,x:[287,614,941,1268,1595,1922][n],y:130,w:320,h:1010});
-  Flow($('#gStory'),[
-    {time:'01',stage:'Discover · Role selection',title:'Three sides, one front door.',pain:'Vague asks attract the wrong people.',resp:'Each side starts with its own path, and Grupa says plainly what it doesn’t promise.',
-      screen:{src:'grupa09',x:160,y:100,w:1120,h:760},why:col(0),whyLabel:'Journey map · 01 Discover'},
-    {time:'01',stage:'Discover · Brief',title:'A brief with rules, not a job post.',pain:'Vague asks attract the wrong people.',resp:'Must-haves as filters. The marketplace never relaxes them without asking.',
-      screen:{src:'grupa00',x:300,y:25,w:1100,h:205},why:{src:J,x:287,y:180,w:320,h:330},whyLabel:'Journey map · Maya, founder'},
-    {time:'02',stage:'Evaluate · Matches',title:'A match that explains itself.',pain:'Match scores she can’t check.',resp:'Why it fits, what to check before contact, and what is still unverified.',
-      screen:{src:'grupa00',x:305,y:235,w:730,h:710},why:col(1),whyLabel:'Journey map · 02 Evaluate'},
-    {time:'03',stage:'Connect · Mutual opt-in',title:'Nothing is shared until both say yes.',pain:'Cold outreach that goes nowhere.',resp:'Mutual opt-in, then a paid discovery call. Grupa never asks for unpaid spec work.',
-      screen:{src:'grupa04',x:300,y:80,w:600,h:1050},why:{src:F,x:700,y:170,w:560,h:400},whyLabel:'Three-sided flow · both opted in?'},
-    {time:'04',stage:'Commit · Agreement',title:'Terms that are versioned, not emailed.',pain:'Equity she can’t explain to her board.',resp:'A versioned agreement, with equity tracked as a legal record.',
-      screen:{src:'grupa11',x:300,y:40,w:1100,h:590},why:col(3),whyLabel:'Journey map · 04 Commit'},
-    {time:'04',stage:'Commit · Curator check',title:'The documents are read for you. A curator decides.',pain:'Stale data rooms and numbers nobody can check.',resp:'Figures extracted from the documents, matched against the claim, and confirmed by a person before anyone relies on them.',ai:true,
-      screen:{src:'grupa12',x:660,y:150,w:730,h:740},why:{src:J,x:1268,y:840,w:320,h:290},whyLabel:'Journey map · Hannah, investor'},
-    {time:'03',stage:'Connect · Data room',title:'Investors see only what founders grant.',pain:'All-or-nothing sharing.',resp:'Tiered access that expires, with every view logged and revocable.',
-      screen:{src:'grupa03',x:300,y:150,w:1100,h:540},why:{src:F,x:950,y:640,w:600,h:420},whyLabel:'Three-sided flow · funding'},
-    {time:'05',stage:'Deliver · Engagement',title:'Milestones, money and changes in one place.',pain:'Chasing status and invoices.',resp:'Milestones with payment status, and scope changes that both sides accept.',
-      screen:{src:'grupa07',x:300,y:160,w:1100,h:570},why:col(4),whyLabel:'Journey map · 05 Deliver'},
-    {time:'06',stage:'Repeat · Equity record',title:'Equity he can prove later.',pain:'Equity sold as if it were cash.',resp:'Cash and equity as separate records. Equity shows its legal state, never a dollar value.',
-      screen:{src:'grupa02',x:305,y:180,w:1095,h:560},why:col(5),whyLabel:'Journey map · 06 Repeat'}
-  ],{minimap:['grupa09','grupa00','grupa04','grupa11','grupa12','grupa03','grupa07','grupa02'],bg:'#fff'});
-  ['grupa14','grupa15','grupa16'].forEach(id=>{ const p=el('div','phone'); $('#gMobile').append(p); Lens(p,[full(id)],{bg:'#fff'}); });
+  const story=$('#gStory'); const part=()=>{ const d=el('div',''); story.append(d); return d; }; const bg={bg:'#FFFFFF'};
+  Act(part(),1,'Trust the match','AI reads the evidence; a curator confirms it before anyone relies on it.');
+  Flow(part(),[
+    {stage:'Curator check · Verification queue',title:'The documents are read for you. A curator decides.',pain:'Stale data rooms and numbers nobody can check.',resp:'Figures extracted from the documents, matched against the claim, and confirmed by a person before anyone relies on them.',ai:true,screen:{src:'grupa12'}}],bg);
+  Act(part(),2,'Get to yes','From choosing a side to a signed, versioned agreement.');
+  Flow(part(),[
+    {stage:'Discover · Role selection',title:'Three sides, one front door.',pain:'Vague asks attract the wrong people.',resp:'Each side starts with its own path, and Grupa says plainly what it doesn’t promise.',screen:{src:'grupa09'}},
+    {stage:'Connect · Mutual opt-in',title:'Nothing is shared until both say yes.',pain:'Cold outreach that goes nowhere.',resp:'Mutual opt-in, then a paid discovery call. Grupa never asks for unpaid spec work.',screen:{src:'grupa04'}},
+    {stage:'Connect · Data room',title:'Investors see only what founders grant.',pain:'All-or-nothing sharing.',resp:'Tiered access that expires, with every view logged and revocable.',screen:{src:'grupa03'}},
+    {stage:'Commit · Agreement',title:'Terms that are versioned, not emailed.',pain:'Equity she can’t explain to her board.',resp:'A versioned agreement, with equity tracked as a legal record.',screen:{src:'grupa11'}}],bg);
+  Act(part(),3,'Do the work','Milestones, payment and equity on one record.');
+  Flow(part(),[
+    {stage:'Deliver · Engagement',title:'Milestones, money and changes in one place.',pain:'Chasing status and invoices.',resp:'Milestones with payment status, and scope changes that both sides accept.',screen:{src:'grupa07'}},
+    {stage:'Repeat · Equity record',title:'Equity he can prove later.',pain:'Equity sold as if it were cash.',resp:'Cash and equity as separate records. Equity shows its legal state, never a dollar value.',screen:{src:'grupa02'}}],bg);
+  Full($('#gSys'),'grupa20','#FFFFFF');
   Board($('#gBoard'),[
     {src:'grupa22',t:'Three-sided flow',why:'How a brief becomes a signed engagement, and how an investor reaches a company.'},
     {src:'grupa23',t:'Journey map',why:'Three roles, six phases. Every pain point is paired with the screen that answers it.'},
     {src:'grupa24',t:'Onboarding flow',why:'Each role gets in with only what it needs to start.'},
     {src:'grupa18',t:'Information architecture',why:'Three workspaces, kept apart by design.'},
     {src:'grupa19',t:'System architecture',why:'Verification, matching and the data room as services.'},
-    {src:'grupa21',t:'Layout grid',why:'One grid for dense tables and calm profile pages.'},
-    {src:'grupa20',t:'Design system',why:'Airy, black and purple, with states for trust.'}
+    {src:'grupa21',t:'Layout grid',why:'One grid for dense tables and calm profile pages.'}
   ],{id:'g'});
 }
 function six(){
-  Lens($('#xHero'),[{src:'six04',x:220,y:130,w:790,h:430},{src:'six08',x:540,y:60,w:720,h:600},{src:'six27',x:220,y:120,w:1060,h:380}],{auto:true,ms:3600,bg:'#121212'});
-  const J='six31', F='six30', col=n=>({src:J,x:[215,500,785,1065,1345][n],y:110,w:300,h:480});
-  Flow($('#xStory'),[
-    {time:'01',stage:'Investor · Discover',title:'Research, not a sales pitch.',pain:'Paid newsletters look like research.',resp:'Sponsored is labelled and separate. Nothing ranks companies by performance or payment.',
-      screen:{src:'six04',x:220,y:130,w:790,h:430},why:col(0),whyLabel:'Journey map · 1 Discover'},
-    {time:'02',stage:'Investor · Evaluate',title:'Every figure keeps its caution.',pain:'Numbers stripped of category and caution, buried in PDFs.',resp:'Separate resource categories, caution at equal size, and a source on every figure.',
-      screen:{src:'six04',x:220,y:600,w:790,h:390},why:col(1),whyLabel:'Journey map · 2 Evaluate'},
-    {time:'03',stage:'Investor · Engage',title:'The same answers for everyone.',pain:'Selective one-on-ones, with no replay or transcript.',resp:'A moderated, public-only Q&A with captions, a transcript and a replay.',
-      screen:{src:'six06',x:220,y:50,w:1050,h:560},why:col(2),whyLabel:'Journey map · 3 Engage'},
-    {time:'04',stage:'Issuer · Correct',title:'A correction is a new version, not a new PDF.',resp:'v3 becomes current, v2 stays linked as superseded, and every reader of v2 is told.',
-      screen:{src:'six24',x:200,y:50,w:1080,h:500},why:{src:F,x:0,y:640,w:1900,h:260},whyLabel:'User flow · issuer'},
-    {time:'04',stage:'Reviewer · Approve',title:'Two people approve. Every claim is traced.',pain:'Claims published without a source.',resp:'Legal and the qualified person both sign off. An unsupported claim blocks approval.',
-      screen:{src:'six08',x:540,y:60,w:720,h:600},why:{src:F,x:340,y:880,w:800,h:300},whyLabel:'User flow · both approve?'},
-    {time:'04',stage:'Investor · Follow',title:'Readers of the old version hear about it.',pain:'Corrections are buried; nobody tells readers.',resp:'Version lineage, and a notice to every reader of the old version.',
-      screen:{src:'six28',x:650,y:985,w:600,h:420},why:col(3),whyLabel:'Journey map · 4 Follow'},
-    {time:'Send',stage:'Issuer · Campaign',title:'Consent is checked at the moment of sending.',pain:'Lists that outlive the consent behind them.',resp:'Eligibility re-checked at send time. Anyone whose consent has expired is left out automatically.',
-      screen:{src:'six11',x:210,y:230,w:1070,h:330},why:{src:F,x:1380,y:400,w:500,h:250},whyLabel:'User flow · send-time re-check'},
-    {time:'Proof',stage:'Reviewer · Audit log',title:'A log nobody can quietly edit.',resp:'Append-only entries. Each one carries the previous entry’s hash, so the chain shows it is intact.',
-      screen:{src:'six27',x:220,y:120,w:1060,h:380},why:{src:'six33',x:0,y:0,w:1900,h:1200},whyLabel:'System architecture'},
-    {time:'05',stage:'Investor · Act',title:'The fee is shown before you leave.',pain:'Hidden referral payments.',resp:'Names the dealer, what is shared, the fee and the conflict before the handoff.',
-      screen:full('six10'),why:col(4),whyLabel:'Journey map · 5 Act'}
-  ],{minimap:['six04','six06','six24','six08','six28','six11','six27','six10'],bg:'#121212'});
+  const story=$('#xStory'); const part=()=>{ const d=el('div',''); story.append(d); return d; }; const bg={bg:'#121212'};
+  Act(part(),1,'Read it','An investor finds a company and judges it on filed facts, not a pitch.');
+  Pins(part(),{src:'six04',bg:'#121212',stage:'Investor · Company library',title:'Research, not a sales pitch.',
+    body:'Sponsored is labelled and separate, nothing ranks companies by performance or payment, and every figure keeps its caution.',
+    pins:[
+      {x:220,y:130,w:790,h:430,stage:'Discover',title:'Research, not a sales pitch.',text:'Sponsored is labelled and separate. Nothing ranks companies by performance or payment.'},
+      {x:220,y:600,w:790,h:390,stage:'Evaluate',title:'Every figure keeps its caution.',text:'Separate resource categories, caution at equal size, and a source on every figure.'}]});
+  Flow(part(),[
+    {stage:'Investor · Live event',title:'The same answers for everyone.',pain:'Selective one-on-ones, with no replay or transcript.',resp:'A moderated, public-only Q&A with captions, a transcript and a replay.',screen:{src:'six06'}}],bg);
+  Act(part(),2,'Fix it','An issuer corrects a filing, two people approve it, and every reader hears about it.');
+  Flow(part(),[
+    {stage:'Issuer · Correction',title:'A correction is a new version, not a new PDF.',resp:'v3 becomes current, v2 stays linked as superseded, and every reader of v2 is told.',screen:{src:'six24'}},
+    {stage:'Reviewer · Two-person approval',title:'Two people approve. Every claim is traced.',pain:'Claims published without a source.',resp:'Legal and the qualified person both sign off. An unsupported claim blocks approval.',screen:{src:'six08'}}],bg);
+  Act(part(),3,'Prove it','Consent, records and fees that hold up to a regulator.');
+  Flow(part(),[
+    {stage:'Issuer · Campaign',title:'Consent is checked at the moment of sending.',pain:'Lists that outlive the consent behind them.',resp:'Eligibility re-checked at send time. Anyone whose consent has expired is left out automatically.',screen:{src:'six11'}},
+    {stage:'Reviewer · Audit log',title:'A log nobody can quietly edit.',resp:'Append-only entries. Each one carries the previous entry’s hash, so the chain shows it is intact.',screen:{src:'six27'}},
+    {stage:'Investor · Brokerage handoff',title:'The fee is shown before you leave.',pain:'Hidden referral payments.',resp:'Names the dealer, what is shared, the fee and the conflict before the handoff.',screen:{src:'six10'}}],bg);
+  Full($('#xSys'),'six32','#121212');
   Board($('#xBoard'),[
     {src:'six30',t:'User flow',why:'Investor, 6ix system, issuer and reviewer, with every approval gate.'},
     {src:'six31',t:'Journey map',why:'A retail investor who distrusts anything that looks like a pitch.'},
     {src:'six33',t:'System architecture',why:'Disclosure, consent and audit as separate services.'},
     {src:'six34',t:'API map',why:'What each role can call, and what it cannot.'},
-    {src:'six29',t:'Layout grid',why:'Twelve columns over the company library.'},
-    {src:'six32',t:'Design system',why:'Carbon Gray 100 and IBM Plex. Compliance by layout.'}
+    {src:'six29',t:'Layout grid',why:'Twelve columns over the company library.'}
   ],{id:'x'});
 }
-
 
 function BeforeAfter(host,pairs){
   const side=el('div','pside'); const pc=el('div','phonecol'); const nav=el('div','pnav'); host.append(side,pc,nav);
@@ -1025,7 +1113,7 @@ setInterval(()=>document.querySelectorAll('iframe').forEach(f=>{ const u=f.getAt
 let SIZE='full';
 function hxGuard(d){ try{ ['contextmenu','dragstart','selectstart'].forEach(ev=>d.addEventListener(ev,e=>e.preventDefault(),true)); }catch(e){} }
 function hxHoverable(d){ try{ if(d.__hv) return; d.__hv=1; const add=[]; for(const sh of d.styleSheets){ let rs; try{ rs=sh.cssRules }catch(e){ continue } for(const r of rs){ if(r.selectorText&&r.selectorText.includes(':hover')) add.push(r.selectorText.replace(/:hover/g,'.__hv')+'{'+r.style.cssText+'}'); } }
-  const st=d.createElement('style'); st.textContent=add.join('\n')+'\nbutton,a,[role=button],[class*=chip],[class*=pill],[class*=card],tr,li{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}\n.__lift{transform:translateY(-2px);box-shadow:0 10px 22px -12px rgba(38,38,38,.45)!important}\ntr.__lift,li.__lift{transform:none;box-shadow:inset 3px 0 0 #DD00FF!important;background-color:rgba(221,0,255,.05)!important}\n.__reveal{opacity:0;transform:translateY(14px)}\n.__in{opacity:1!important;transform:none!important;transition:opacity .35s ease,transform .35s cubic-bezier(.2,.8,.3,1)}\n.__press{box-shadow:0 0 0 3px rgba(221,0,255,.35)!important;transform:scale(.97)}'; d.head.append(st); }catch(e){} }
+  const st=d.createElement('style'); st.textContent=add.join('\n')+'\nbutton,a,[role=button],[class*=chip],[class*=pill],[class*=card],tr,li{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}\n.__lift{box-shadow:0 0 0 3px rgba(221,0,255,.28),0 6px 18px -6px rgba(221,0,255,.45)!important;outline:none!important}\ntr.__lift,li.__lift{box-shadow:inset 3px 0 0 #DD00FF!important;background-color:rgba(221,0,255,.05)!important}\n.__reveal{opacity:0;transform:translateY(14px)}\n.__in{opacity:1!important;transform:none!important;transition:opacity .35s ease,transform .35s cubic-bezier(.2,.8,.3,1)}\n.__press{box-shadow:0 0 0 3px rgba(221,0,255,.35)!important;transform:scale(.97)}'; d.head.append(st); }catch(e){} }
 function hxFrame(src){ const [w,h,t]=META[src]; const f=document.createElement('iframe'); f.width=w; f.height=h; f.style.width=w+'px'; f.style.height=h+'px'; f.dataset.src='b/'+src+'.html'; f.tabIndex=-1; f.title=t; f.setAttribute('aria-hidden','true'); f.setAttribute('scrolling','no'); f.addEventListener('load',()=>{ try{ hxGuard(f.contentDocument); hxHoverable(f.contentDocument); }catch(e){} f.__ready=true; }); return f; }
 
 /* scripted moments inside the real screens (her markup, animated in place; nothing redrawn) */
@@ -1087,12 +1175,12 @@ function reg(band){ near.observe(band); seen.observe(band);
 
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const HEROES={
-  bcaa:{slides:[{src:'bcaa21',anim:'answer',bg:'#EEF0F5',cap:'Hero · the co-pilot answers, a person decides'},{src:'bcaa01',bg:'#EEF0F5',cap:'Global portfolio · four markets at a glance'}]},
+  bcaa:{slides:[{src:'bcaa20',bg:'#F2F3F6',cap:'Metro Vancouver · the city map with a question box'}]},
   evo:{phones:['evo08','evo11','evo19']},
-  grupa:{slides:[{src:'grupa00',bg:'#FFFFFF',cap:'Hero · matches with their reasons and gaps'},{src:'grupa12',bg:'#FFFFFF',cap:'Curator queue · AI-read documents, a person confirms'}]},
-  six:{slides:[{src:'six04',bg:'#121212',cap:'Hero · the company library, chosen direction'},{src:'six06',bg:'#121212',cap:'Investor · live event with moderated Q&A'}]}
+  grupa:{slides:[{src:'grupa00',bg:'#FFFFFF',cap:'Matches with their reasons and gaps'}]},
+  six:{slides:[{src:'six12',bg:'#121212',cap:'Company profile · drill results with the qualified person'}]}
 };
-function heroFor(room){ const h=document.querySelector('.herox[data-room="'+room+'"]'); if(!h||h.__done) return; h.__done=1; Screens(h,{id:room,...HEROES[room]}); }
+function heroFor(room){ const h=document.querySelector('.herox[data-room="'+room+'"]'); if(!h||h.__done) return; h.__done=1; Screens(h,{id:room,...HEROES[room]}); Own(h); }
 addEventListener('hashchange',()=>heroFor((location.hash||'#bcaa').slice(1)));
 
 /* ---------- router ---------- */
