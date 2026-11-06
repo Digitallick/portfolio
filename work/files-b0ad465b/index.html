@@ -362,7 +362,7 @@ body[data-hero="story"] #eProto .pnav{grid-column:3;grid-row:1/3}
 .pinback{position:absolute;left:max(16px,calc(50vw - 640px));bottom:16px;z-index:6;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid #262626;background:#fff;color:#262626;font:inherit;font-size:13px;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;display:none}
 .pinband.zoomed .pinback{display:inline-flex;align-items:center}
 .pinband .stage .main iframe,.pinband .stage iframe{transition:transform .8s cubic-bezier(.3,.8,.3,1)}
-.pinring{position:absolute;z-index:6;border-radius:12px;pointer-events:none;opacity:0;transition:opacity .3s,left .8s cubic-bezier(.3,.8,.3,1),top .8s cubic-bezier(.3,.8,.3,1),width .8s cubic-bezier(.3,.8,.3,1),height .8s cubic-bezier(.3,.8,.3,1);box-shadow:0 0 0 2px rgba(38,38,38,.8),0 0 0 8px rgba(247,198,236,.75)}
+.pinring{position:absolute;z-index:6;border-radius:12px;pointer-events:none;opacity:0;transition:opacity .3s,left .8s cubic-bezier(.3,.8,.3,1),top .8s cubic-bezier(.3,.8,.3,1),width .8s cubic-bezier(.3,.8,.3,1),height .8s cubic-bezier(.3,.8,.3,1);box-shadow:0 0 0 3px rgba(221,0,255,.9),0 0 0 8px rgba(221,0,255,.22)}
 .pinring.on{opacity:1}
 .pinring b{position:absolute;left:-15px;top:-15px;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#262626;color:#FFFFFF;font-size:13px;box-shadow:0 0 0 3px #FFFFFF}
 .pinlist{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
@@ -392,12 +392,13 @@ body[data-hero="story"] #eProto .pnav{grid-column:3;grid-row:1/3}
 .ring{animation:ringpulse 1.8s ease-in-out infinite!important}
 .fbeat>.fband+.own2,.herox+.own2{margin-top:-18px}
 .edged::before,.edged::after{display:none!important}
+#v-grupa .fband .stage,#v-grupa .herox .band{box-sizing:border-box;border-top:1px solid #E4E4E4}
 #bStory,#gStory,#xStory{display:block!important}#bStory>div+div,#gStory>div+div,#xStory>div+div{margin-top:clamp(56px,8vw,110px)}#bStory>div,#gStory>div,#xStory>div{display:block}
 .act{display:grid;gap:10px;padding-top:clamp(20px,3vw,36px);border-top:1px solid #E4E4E4}.act h3{margin:0;font-family:'Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.4px;line-height:1.1}.act p{margin:0;font-size:16px;line-height:1.55;max-width:60ch;color:#262626}
 .actdots{list-style:none;margin:0 0 6px;padding:0;display:flex;gap:18px;align-items:center}.actdots li{position:relative;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid #262626;font-size:13px;font-weight:700;color:#262626;background:#FFFFFF}.actdots li.done{background:#E4E4E4;border-color:#E4E4E4;color:#5E5E5E}.actdots li.on{background:#262626;color:#FFFFFF;box-shadow:0 0 0 4px #F5C9FF}.actdots li+li::before{content:'';position:absolute;right:100%;top:50%;width:18px;border-top:1px solid #BDBDBD}
 #gSys,#xSys{margin-bottom:8px}
 #bStory>div:has(>.act)+div,#gStory>div:has(>.act)+div,#xStory>div:has(>.act)+div{margin-top:clamp(28px,3vw,40px)}
-.pinring.on{animation:ringpulse 1.8s ease-in-out infinite}@keyframes ringpulse{0%,100%{box-shadow:0 0 0 2px rgba(38,38,38,.85),0 0 0 7px rgba(221,0,255,.45)}50%{box-shadow:0 0 0 2px rgba(38,38,38,.85),0 0 0 13px rgba(221,0,255,.18)}}
+.pinring.on{animation:ringpulse 1.8s ease-in-out infinite}@keyframes ringpulse{0%,100%{box-shadow:0 0 0 3px rgba(221,0,255,.9),0 0 0 8px rgba(221,0,255,.25)}50%{box-shadow:0 0 0 3px rgba(221,0,255,.9),0 0 0 15px rgba(221,0,255,.08)}}
 #bSys{margin-bottom:8px}
 @media (max-width:900px){.roomfloat{display:none!important}}
 @media (max-width:600px){.ccard{flex-basis:84vw}.cshot{width:84vw;height:calc(84vw * 380 / 560)}.pinmk{width:28px;height:28px;font-size:12px}}
@@ -814,7 +815,7 @@ function Proto(host,cfg){
     if(hit) go(hit[1]); else { toast.textContent='Not part of this prototype'; toast.classList.add('on'); setTimeout(()=>toast.classList.remove('on'),1200); } }
   function placeRing(){ ring.classList.remove('on'); if(!cur) return; const s=scr[cur]; const h=S[cur].hint; if(!hints||!h||!s||!s.ready) return; let t=null;
     try{ t=[...s.f.contentDocument.querySelectorAll('button,a,[role=button]')].find(x=>label(x).startsWith(h)); }catch(e){}
-    if(!t) return; const r=t.getBoundingClientRect(),q=k(), fr=s.f.getBoundingClientRect(), pr=ph.getBoundingClientRect(), ox=fr.left-pr.left-ph.clientLeft, oy=fr.top-pr.top-ph.clientTop; Object.assign(ring.style,{left:(ox+r.left*q-4)+'px',top:(oy+r.top*q-4)+'px',width:(r.width*q+8)+'px',height:(r.height*q+8)+'px',borderRadius:Math.min(16,r.height*q/2+4)+'px'}); ring.classList.add('on'); if(!placeRing.__again){ placeRing.__again=1; setTimeout(()=>{ placeRing.__again=2; placeRing(); placeRing.__again=0; },1100); } }
+    if(!t) return; const r=t.getBoundingClientRect(),q=k(), fr=s.f.getBoundingClientRect(), pr=ph.getBoundingClientRect(), ox=fr.left-pr.left-ph.clientLeft, oy=fr.top-pr.top-ph.clientTop; Object.assign(ring.style,{left:(ox+r.left*q-4)+'px',top:(oy+r.top*q-4)+'px',width:(r.width*q+8)+'px',height:(r.height*q+8)+'px',borderRadius:Math.min(16,r.height*q/2+4)+'px'}); ring.classList.add('on'); ring.__follow={t,s}; if(!ring.__iv){ ring.__iv=setInterval(()=>{ const F=ring.__follow; if(!F||!ring.classList.contains('on')||!F.t.isConnected) return; try{ const r=F.t.getBoundingClientRect(),q=k(), fr=F.s.f.getBoundingClientRect(), pr=ph.getBoundingClientRect(); Object.assign(ring.style,{left:(fr.left-pr.left-ph.clientLeft+r.left*q-4)+'px',top:(fr.top-pr.top-ph.clientTop+r.top*q-4)+'px',width:(r.width*q+8)+'px',height:(r.height*q+8)+'px'}); }catch(e){} },120); } }
   function go(id,dir){ if(id===cur) return; clearTimeout(autoT);
     dir=dir??(ids.indexOf(id)>=ids.indexOf(cur)?1:-1); const n=get(id), o=cur&&scr[cur];
     if(cur && dir>0) hist.push(cur);
@@ -866,6 +867,16 @@ function Pins(host,o){
     const li=el('li',''); li.innerHTML=`<button type="button"><b class="n">${i+1}</b><span><small>${p.stage}</small><strong>${p.title}</strong><em>${p.text}</em></span></button>`;
     li.querySelector('button').onclick=()=>pick(lis[i].classList.contains('on')?-1:i); list.append(li); lis.push(li); });
   back.onclick=()=>pick(-1);
+  /* each highlight sits on a real component: found by its text (q) or snapped from the rough area to the element that fits it best */
+  const f=L.frames[o.src]; const snapAll=()=>{ try{ const d=f.contentDocument; if(!d||!d.body||!d.body.children.length||d.readyState!=='complete') return false; const W=d.defaultView, sy=W.scrollY||0;
+    const solid=e=>{ const cs=W.getComputedStyle(e), pb=e.parentElement?W.getComputedStyle(e.parentElement).backgroundColor:''; return (parseFloat(cs.borderTopWidth)>0&&cs.borderTopStyle!=='none')||cs.boxShadow!=='none'||(cs.backgroundColor!=='rgba(0, 0, 0, 0)'&&cs.backgroundColor!==pb); };
+    const card=e=>{ while(e&&e!==d.body){ const r=e.getBoundingClientRect(); if(r.width>=120&&r.height>=48&&r.width<BW*.9&&solid(e)) return e; e=e.parentElement; } return null; };
+    o.pins.forEach((p,i)=>{ let e=null;
+      if(p.q){ const w=d.createTreeWalker(d.body,NodeFilter.SHOW_TEXT); let n; const q=p.q.toLowerCase(); while(n=w.nextNode()){ if(n.nodeValue.toLowerCase().includes(q)){ e=card(n.parentElement); break; } } }
+      else { const p0=p.p0||(p.p0={...p}); const A=p0.w*p0.h; let a=d.elementFromPoint(p0.x+p0.w/2,p0.y+p0.h/2-sy), bs=1e9; while(a&&a!==d.body){ const r=a.getBoundingClientRect(); const sc=Math.abs(Math.log(r.width*r.height/A)); if(r.width<BW*.95&&r.width>=80&&sc<bs){ bs=sc; e=a; } a=a.parentElement; } if(bs>Math.log(3)) e=null; }
+      if(e){ const r=e.getBoundingClientRect(), g=6; p.x=Math.max(0,r.left-g); p.y=Math.max(0,r.top+sy-g); p.w=Math.min(BW-p.x,r.width+g*2); p.h=r.height+g*2; mks[i].style.left=((p.x+6)/BW*100)+'%'; mks[i].style.top=((p.y+6)/BH*100)+'%'; } });
+    place(L.v); return true; }catch(err){ return false; } };
+  const tm=setInterval(()=>{ if(snapAll()){ clearInterval(tm); setTimeout(snapAll,1500); } },300);
   Own(band);
 }
 /* ---------- v2: a sideways row of same-size cards, each a single detail at its real size or smaller ---------- */
@@ -899,8 +910,8 @@ function bcaa(){
   Pins(part(),{src:'bcaa21',bg:'#F2F3F6',stage:'Ask · Co-Pilot workspace',title:'Ask why. Get options, sources and a confidence level.',
     body:'Co-Pilot reads its sources, shows three options with their side effects, and says “Moderate” with the reasons. It can’t approve; approval happens in Dispatch.',
     pins:[
-      {x:265,y:130,w:760,h:840,stage:'Ask',title:'Options, sources and a confidence level.',text:'Three options with their side effects, and the confidence said in words, not “99.4%”.'},
-      {x:1035,y:130,w:385,h:1000,stage:'Boundaries',title:'What the AI can’t do is on the screen.',text:'Can explain, compare, summarise and draft. Can’t dispatch, change a price, clear a safety hold or immobilize a vehicle. Missing data is named, never filled in.'}]});
+      {q:'Conversation',x:265,y:130,w:760,h:840,stage:'Ask',title:'Options, sources and a confidence level.',text:'Three options with their side effects, and the confidence said in words, not “99.4%”.'},
+      {q:'Boundaries',x:1035,y:130,w:385,h:1000,stage:'Boundaries',title:'What the AI can’t do is on the screen.',text:'Can explain, compare, summarise and draft. Can’t dispatch, change a price, clear a safety hold or immobilize a vehicle. Missing data is named, never filled in.'}]});
   Flow(part(),[
     {stage:'Forecast · Zone deficit matrix',title:'Ranges, not points.',pain:'“−42”: one exact number from a model that can only give a range.',resp:'“11–19 bikes short”, with the band the model can actually support, every 30 minutes.',ai:true,
       screen:{src:'bcaa05'}}],{bg:'#F2F3F6'});
@@ -912,19 +923,19 @@ function bcaa(){
     body:'The alert, the proposal, the move and the proof that it worked: four steps a dispatcher follows without leaving the page.',
     pins:[
       {x:265,y:132,w:1155,h:104,stage:'Detect',title:'26 minutes of warning, not a complaint.',text:'Forecast ranges and an alert 26 minutes ahead.'},
-      {x:1078,y:245,w:342,h:600,stage:'Decide',title:'The AI proposes. A person decides.',text:'“Why this plan?” with alternatives, and the confidence said in words.'},
+      {q:'Rebalance Solver',x:1078,y:245,w:342,h:600,stage:'Decide',title:'The AI proposes. A person decides.',text:'“Why this plan?” with alternatives, and the confidence said in words.'},
       {x:612,y:245,w:466,h:660,stage:'Move',title:'A plan the crew can follow.',text:'An honest lifecycle and direct contact with the crew.'},
       {x:1078,y:885,w:342,h:160,stage:'Arrive',title:'Done means the docks say so.',text:'Completed only on evidence: dock count 6 → 16.'}]});
   Act(part(),3,'Keep it safe','Guardrails that hold after the surge, when nobody is watching.');
   Pins(part(),{src:'bcaa06',bg:'#F2F3F6',stage:'Safety · Hardware quarantine',title:'A suggestion never clears a hold.',
     body:'Evidence on the brake trace, a role-gated return to service, and an AI suggestion the lead can reject.',
-    pins:[{x:940,y:250,w:480,h:840,stage:'Evidence',title:'The brake trace decides, not the suggestion.',text:'The lead sees the evidence and can reject what Co-Pilot proposes.'}]});
+    pins:[{q:'Evidence & Telemetry',x:940,y:250,w:480,h:840,stage:'Evidence',title:'The brake trace decides, not the suggestion.',text:'The lead sees the evidence and can reject what Co-Pilot proposes.'}]});
   Pins(part(),{src:'bcaa07',bg:'#F2F3F6',stage:'Trust · GBFS feed audit',title:'Stale data is withheld, not guessed.',
     body:'Every source is marked with its age. Advice that depends on a stale source is withheld.',
-    pins:[{x:265,y:785,w:560,h:440,stage:'Source freshness',title:'A stale feed holds back the advice that needs it.',text:'The age of each feed sits beside the decision it affects.'}]});
+    pins:[{q:'Source freshness',x:265,y:785,w:560,h:440,stage:'Source freshness',title:'A stale feed holds back the advice that needs it.',text:'The age of each feed sits beside the decision it affects.'}]});
   Pins(part(),{src:'bcaa08',bg:'#F2F3F6',stage:'Learning · Pricing experiments',title:'Prices learn, inside guardrails.',
     body:'Controlled experiments with approval. The builder can’t approve their own test.',
-    pins:[{x:265,y:130,w:560,h:420,stage:'Live experiment',title:'Guardrails are armed before a test goes live.',text:'Auto-pause if margin degrades, and a pricing lead approves.'}]});
+    pins:[{q:'Live experiments',x:265,y:130,w:560,h:420,stage:'Live experiment',title:'Guardrails are armed before a test goes live.',text:'Auto-pause if margin degrades, and a pricing lead approves.'}]});
   Full($('#bSys'),'bcaa00','#FFFFFF');
   Board($('#bBoard'),[
     {src:'bcaa09',x:0,y:0,t:'Customer journey',why:'The 17:30 surge from both sides of the dock: rider and controller.'},
