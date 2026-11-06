@@ -247,6 +247,7 @@ a:hover>.mo-logo .mo-o{animation:mohop .55s cubic-bezier(.3,1.5,.5,1)}
 .tbar .min{justify-self:end;border:0;min-height:20px;padding:0 4px}
 .tbar.small .g{display:none}
 @media (prefers-reduced-motion:reduce){.rule{animation:none}}
+.edged::before,.edged::after{display:none!important}
 </style>
 
 <canvas class="bgfx" aria-hidden="true"></canvas>
@@ -451,7 +452,7 @@ function Screens(host,c){
     d.body.querySelectorAll('*').forEach(e=>{ if(e.closest('svg')&&e.tagName.toLowerCase()!=='svg') return; const leaf=e.childElementCount===0||/^(svg|img|button|input|textarea|select|canvas|video)$/i.test(e.tagName); if(!leaf) return;
       const r=e.getBoundingClientRect(); if(r.height<=0||r.width<=0) return; const cs=W.getComputedStyle(e); if(cs.position==='fixed'||cs.visibility==='hidden'||cs.opacity==='0') return; mb=Math.max(mb,r.bottom); });
     return mb>200?Math.min(h,Math.ceil(mb+24)):h; }catch(e){ return h; } };
-  const size=()=>{ const W=band.clientWidth||innerWidth; S.forEach(s=>{ const w=META[s.src][0], h=META[s.src][1]; let k=W/w; if(SIZE==='fit') k=Math.min(k,innerHeight*.86/h); s.k=k; s.H=h*k; s.f.style.transform=`translate(${(W-w*k)/2}px,0) scale(${k})`; }); band.style.height=S[cur].H+'px'; };
+  const size=()=>{ const W=band.clientWidth||innerWidth; S.forEach(s=>{ const w=META[s.src][0], h=META[s.src][1]; let k=W/w; if(SIZE==='fit') k=Math.min(k,innerHeight*.86/h); s.k=k; s.H=Math.floor(h*k)-1; s.f.style.transform=`translate(${(W-w*k)/2}px,0) scale(${k})`; }); band.style.height=S[cur].H+'px'; };
   const play=async(i)=>{ const my=++run; const s=S[i]; const live=()=>my===run && band.__vis; if(!s.f.__ready) await new Promise(r=>{ const t=setInterval(()=>{ if(s.f.__ready||my!==run){ clearInterval(t); r(); } },120); }); if(my!==run) return;
     if(s.chatY){ await new Promise(r=>{ const t=setInterval(()=>{ const y=band.getBoundingClientRect().top+s.chatY*(s.k||1); if((y>60&&y<innerHeight-12)||my!==run){ clearInterval(t); r(); } },150); }); if(my!==run) return; }
     replay(s.f); if(s.anim&&ANIM[s.anim]) await ANIM[s.anim](s.f,live,s.opt); else await sleep(5500); if(!live()) return; await sleep(s.anim==='answer'?3800:1800); if(live()) go(i+1); };

@@ -390,7 +390,8 @@ body[data-hero="story"] #eProto .pnav{grid-column:3;grid-row:1/3}
 .pinband .pinmk.on{opacity:0}
 .board .cover{background:none!important}
 .ring{animation:ringpulse 1.8s ease-in-out infinite!important}
-.fband+.own2,.band+.own2,.herox+.own2{margin-top:calc(-1 * var(--owngap,18px))}
+.fbeat>.fband+.own2,.herox+.own2{margin-top:-18px}
+.edged::before,.edged::after{display:none!important}
 #bStory,#gStory,#xStory{display:block!important}#bStory>div+div,#gStory>div+div,#xStory>div+div{margin-top:clamp(56px,8vw,110px)}#bStory>div,#gStory>div,#xStory>div{display:block}
 .act{display:grid;gap:10px;padding-top:clamp(20px,3vw,36px);border-top:1px solid #E4E4E4}.act h3{margin:0;font-family:'Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.4px;line-height:1.1}.act p{margin:0;font-size:16px;line-height:1.55;max-width:60ch;color:#262626}
 .actdots{list-style:none;margin:0 0 6px;padding:0;display:flex;gap:18px;align-items:center}.actdots li{position:relative;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;border:1px solid #262626;font-size:13px;font-weight:700;color:#262626;background:#FFFFFF}.actdots li.done{background:#E4E4E4;border-color:#E4E4E4;color:#5E5E5E}.actdots li.on{background:#262626;color:#FFFFFF;box-shadow:0 0 0 4px #F5C9FF}.actdots li+li::before{content:'';position:absolute;right:100%;top:50%;width:18px;border-top:1px solid #BDBDBD}
@@ -451,7 +452,9 @@ html{scrollbar-gutter:stable}body{margin:0}.wrap{box-sizing:border-box;padding-l
 .mmenu .ml.on{background:linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00);padding:0 8px}
 .mmenu-x{width:44px;height:44px;border-radius:50%;border:1px solid #262626;background:#fff;color:#262626;font-size:16px;cursor:pointer}
 .sitehead .in>a,.mmenu a{color:#262626}.sitehead .mmenu-btn svg{height:12px;width:16px}@media (max-width:600px){.sitehead .snav{display:none}}</style>
+<style>:root{--wash:#FFF3FE}html{background:#FFFFFF}body{background:linear-gradient(to top,var(--wash) 0%,#FFFFFF 12%)}canvas.bgfx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}.wrap{position:relative;z-index:1}</style>
 
+<canvas class="bgfx" aria-hidden="true"></canvas>
 <div class="wrap">
   <header class="sitehead"><div class="in"><a href="/" aria-label="Shany Mo, home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M176.95 70.00C179.05 69.84 182.20 69.11 184.16 68.32C186.22 67.50 187.67 66.81 188.27 66.38C188.55 66.17 188.85 66.00 188.94 66.00C189.19 66.00 191.87 63.93 193.13 62.77C193.78 62.16 194.48 61.42 194.68 61.11C194.88 60.81 195.24 60.32 195.47 60.03C196.14 59.18 196.76 58.24 197.07 57.56C197.23 57.22 197.47 56.74 197.61 56.50C198.30 55.26 198.75 54.17 198.94 53.23C199.20 51.95 199.40 51.44 199.74 51.23C200.00 51.07 200.00 50.99 200.00 46.28C200.00 42.21 199.97 41.48 199.82 41.42C199.54 41.32 199.16 40.42 198.94 39.41C198.84 38.91 198.59 38.18 198.39 37.78C198.20 37.39 198.00 36.89 197.95 36.69C197.90 36.48 197.73 36.11 197.57 35.87C197.41 35.62 197.11 35.08 196.90 34.67C196.46 33.81 194.12 30.72 193.26 29.87C192.95 29.56 192.49 29.17 192.25 29.00C192.01 28.83 191.43 28.37 190.97 27.98C190.51 27.58 189.94 27.16 189.72 27.05C189.50 26.94 188.76 26.48 188.09 26.04C187.42 25.60 186.59 25.13 186.25 25.00C185.90 24.86 185.35 24.61 185.02 24.45C184.68 24.28 184.03 24.05 183.56 23.94C183.09 23.83 182.39 23.60 182.01 23.44C181.63 23.27 180.97 23.08 180.56 23.01C180.15 22.94 179.14 22.74 178.31 22.56C176.98 22.27 176.45 22.22 173.50 22.16C171.34 22.12 169.86 22.14 169.25 22.23C167.17 22.54 164.76 23.04 163.88 23.33C163.36 23.51 162.48 23.78 161.93 23.94C161.37 24.09 160.69 24.36 160.43 24.54C160.16 24.71 159.70 24.92 159.40 25.00C159.11 25.07 158.52 25.36 158.10 25.63C157.68 25.90 157.27 26.13 157.20 26.13C156.84 26.14 153.62 28.53 152.33 29.75C151.39 30.63 149.21 33.30 148.97 33.85C148.89 34.03 148.64 34.48 148.41 34.84C147.93 35.62 147.32 36.82 147.19 37.25C147.14 37.42 146.90 38.06 146.67 38.66C146.16 39.97 145.94 40.97 145.62 43.38C145.28 45.93 145.31 47.27 145.75 50.14C146.31 53.71 147.26 56.21 149.21 59.17C150.07 60.48 150.61 61.12 152.11 62.62C153.92 64.42 154.88 65.18 156.62 66.15C158.24 67.05 159.93 67.88 160.49 68.05C160.80 68.15 161.38 68.37 161.77 68.55C162.16 68.73 162.92 68.97 163.46 69.07C164.00 69.17 164.83 69.36 165.31 69.50C166.10 69.72 167.46 69.93 168.81 70.04C170.00 70.14 175.45 70.11 176.95 70.00ZM43.53 61.99C44.42 61.75 44.39 62.08 44.35 54.33L44.31 47.38L43.97 47.03L43.62 46.69L21.81 46.66L0.00 46.62L0.00 54.37L0.00 62.12L21.53 62.12C36.11 62.12 43.21 62.08 43.53 61.99ZM170.00 56.61C169.62 56.47 168.97 56.24 168.56 56.11C168.15 55.97 167.61 55.73 167.37 55.57C167.12 55.41 166.64 55.13 166.28 54.95C165.67 54.64 164.36 53.30 163.99 52.60C163.90 52.44 163.68 52.12 163.49 51.88C163.30 51.63 162.93 50.79 162.67 50.00L162.19 48.56L162.19 46.19L162.20 43.81L162.76 42.38C163.53 40.41 164.79 38.63 166.05 37.74C167.35 36.82 168.37 36.25 168.93 36.12C170.36 35.78 172.06 35.50 172.69 35.50C173.74 35.50 176.24 35.97 176.88 36.30C178.80 37.27 179.02 37.42 180.28 38.74C181.39 39.90 181.65 40.26 182.21 41.40C182.80 42.59 182.89 42.86 183.06 44.18C183.30 46.00 183.30 46.58 183.06 48.44C182.89 49.73 182.79 50.08 182.35 50.98C182.07 51.55 181.68 52.23 181.50 52.48C180.31 54.12 178.38 55.63 176.85 56.10C176.42 56.24 175.74 56.47 175.35 56.61C174.73 56.84 174.36 56.87 172.66 56.87C170.98 56.87 170.59 56.83 170.00 56.61ZM71.45 46.82C71.59 46.78 71.78 46.60 71.86 46.43C71.96 46.20 72.00 42.57 72.00 32.78C72.00 24.56 72.05 19.14 72.13 18.67C72.28 17.69 73.11 15.90 73.83 14.99C74.13 14.60 74.76 14.02 75.22 13.71C75.98 13.19 76.21 13.10 77.50 12.86C78.81 12.61 79.06 12.60 80.32 12.73C81.08 12.81 81.97 12.95 82.29 13.05C83.07 13.28 84.57 14.29 85.18 14.98C85.72 15.58 86.66 17.16 86.86 17.79C87.19 18.81 87.25 21.26 87.25 33.50C87.25 45.84 87.26 46.23 87.49 46.52L87.73 46.81L94.83 46.88C98.74 46.91 102.11 46.90 102.32 46.84C102.56 46.79 102.77 46.63 102.86 46.43C102.96 46.20 103.00 42.59 103.00 32.64C103.00 23.62 103.04 18.93 103.13 18.45C103.29 17.59 104.18 15.77 104.85 14.92C105.12 14.59 105.72 14.05 106.20 13.72C106.98 13.19 107.20 13.10 108.50 12.86C109.81 12.61 110.06 12.60 111.32 12.73C113.11 12.92 113.67 13.09 114.78 13.82C115.87 14.54 116.50 15.22 117.22 16.49C118.21 18.21 118.16 17.38 118.24 32.71C118.31 45.60 118.33 46.38 118.54 46.59C118.74 46.80 119.26 46.82 125.85 46.88C129.75 46.91 133.11 46.89 133.33 46.84C133.59 46.78 133.77 46.63 133.87 46.40C133.97 46.14 134.00 41.90 133.97 29.81L133.93 13.56L133.47 12.00C133.21 11.14 133.00 10.35 133.00 10.25C133.00 10.14 132.69 9.42 132.31 8.65C131.77 7.55 131.37 6.96 130.48 5.93C128.90 4.10 126.67 2.38 125.22 1.89C124.85 1.76 124.32 1.54 124.04 1.40C123.76 1.25 123.12 1.04 122.61 0.93C121.95 0.77 121.60 0.62 121.34 0.36L120.98 0.00L116.91 -0.00L112.84 -0.00L112.56 0.30C112.37 0.51 111.83 0.75 110.98 1.01C109.77 1.39 109.02 1.75 107.38 2.76C106.14 3.52 105.21 4.28 103.46 6.00C102.52 6.92 101.66 7.73 101.56 7.78C101.28 7.94 100.96 7.70 100.26 6.83C98.65 4.81 95.79 2.44 94.41 1.99C94.15 1.91 93.61 1.68 93.21 1.47C92.80 1.27 92.05 1.03 91.52 0.93C90.51 0.73 90.00 0.48 90.00 0.18C90.00 0.03 89.44 0.00 85.94 0.00L81.89 0.00L81.59 0.30C81.42 0.47 80.79 0.76 80.11 0.98C78.79 1.41 77.58 1.98 76.81 2.52C76.54 2.72 75.83 3.20 75.25 3.59C74.67 3.98 73.88 4.62 73.50 5.02C72.32 6.26 72.09 6.03 72.00 3.62C71.95 2.15 71.90 1.86 71.70 1.63L71.46 1.37L64.22 1.40L56.98 1.44L56.68 1.79L56.38 2.14L56.38 24.24L56.38 46.34L56.64 46.57C56.89 46.80 57.24 46.82 63.86 46.88C71.11 46.94 71.03 46.94 71.45 46.82Z"/></svg></a><nav class="snav" aria-label="Primary"><a href="/">Home</a><a href="/work/" class="on">Work</a><a href="/inventory/">Inventory</a><a href="/lab/">Lab</a><a href="/contact/">Contact</a></nav><button class="mmenu-btn" type="button" aria-label="Open menu"><svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true"><path d="M0 1h16M0 6h16M0 11h16" stroke="currentColor" stroke-width="2"></path></svg>Menu</button></div><div class="rule"></div><p class="crumb" id="crumb"></p><div class="rule"></div></header>
   <nav class="roomnav" aria-label="Case files"><span class="lab">Case files</span><a href="/work/">All work</a><a href="#bcaa" data-r="bcaa">01 BCAA</a><a href="#evo" data-r="evo">02 Evo</a><a href="#six" data-r="six">03 6ix</a><a href="#grupa" data-r="grupa">04 Grupa</a></nav>
@@ -535,10 +538,10 @@ html{scrollbar-gutter:stable}body{margin:0}.wrap{box-sizing:border-box;padding-l
     </div>
     <div class="secthead first"><span class="eyebrow">The story</span><h2>One match, from brief to equity.</h2><p class="note">Each moment pairs the live screen with the page of thinking behind it: the three-role journey map and the three-sided flow.</p></div>
     <div class="story" id="gStory"></div>
-    <div class="secthead"><span class="eyebrow">The system</span><h2>One design system, with AI as a first-class state.</h2><p class="note">Airy, black and purple. AI-read figures carry their own mark, and nothing they say is relied on until a curator confirms it.</p></div>
-    <div id="gSys"></div>
     <div class="secthead"><span class="eyebrow">On the go</span><h2>The three decisions that happen on a phone.</h2><p class="note">Review a match, approve data-room access, reply to a candidate.</p></div>
     <div class="mphones" id="gMobile"></div>
+    <div class="secthead"><span class="eyebrow">The system</span><h2>One design system, with AI as a first-class state.</h2><p class="note">Airy, black and purple. AI-read figures carry their own mark, and nothing they say is relied on until a curator confirms it.</p></div>
+    <div id="gSys"></div>
     <div class="secthead"><span class="eyebrow">The thinking, laid out</span><h2>From three-sided flow to design system.</h2></div>
     <div id="gBoard"></div>
     <div class="secthead"><span class="eyebrow">Full case</span><h2>All 24 boards, the onboarding prototype and the system.</h2></div>
@@ -714,7 +717,7 @@ function Flow(host,beats,o){
     /* every screen in full view the first time it appears; a later moment on the same screen frames one clean component (snapped to its real edges) */
     const [BW,BH]=META[b.screen.src]; const first=true; seen.add(b.screen.src);
     const shot=first?{src:b.screen.src,x:0,y:0,w:BW,h:BH}:{...b.screen};
-    const band=el('div','fband'); band.style.setProperty('--ar',(shot.w/shot.h).toFixed(3)); if(o.bg) band.style.setProperty('--fbg',o.bg); sec.append(band);
+    const band=el('div','fband'); band.style.setProperty('--ar',ARF(shot.w,shot.h)); if(o.bg) band.style.setProperty('--fbg',o.bg); sec.append(band);
     const asks=b.screen.src==='bcaa20';
     const L=Lens(band,asks?[shot,{src:'bcaa21',x:0,y:0,w:META.bcaa21[0],h:META.bcaa21[1]}]:[shot],{cls:'main'});
     if(asks){ seen.add('bcaa21'); askLoop(L,band); }
@@ -843,7 +846,7 @@ function Pins(host,o){
   const [BW,BH]=META[o.src];
   const sec=el('article','fbeat pinbeat'); host.append(sec);
   sec.innerHTML=`<div class="fhead"><p class="time">${o.stage}</p><h3>${o.title}</h3>${o.body?`<p class="note">${o.body}</p>`:''}</div>`;
-  const band=el('div','fband pinband'); band.style.setProperty('--ar',(BW/BH).toFixed(3)); if(o.bg) band.style.setProperty('--fbg',o.bg); sec.append(band);
+  const band=el('div','fband pinband'); band.style.setProperty('--ar',ARF(BW,BH)); if(o.bg) band.style.setProperty('--fbg',o.bg); sec.append(band);
   const wide=p=>{ const w=Math.max(p.w,BW*.56), h=Math.max(p.h,w*BH/BW*.6); const cx=p.x+p.w/2, cy=p.y+p.h/2;
     const x=Math.max(0,Math.min(BW-w,cx-w/2)), y=Math.max(0,Math.min(BH-h,cy-h/2)); return {src:o.src,x,y,w,h}; };
   const L=Lens(band,[{src:o.src,x:0,y:0,w:BW,h:BH}],{cls:'main'});
@@ -880,10 +883,12 @@ function Cards(host,o){
   const fade=()=>{ const a=row.scrollLeft>4, b=row.scrollLeft+row.clientWidth<row.scrollWidth-4; row.dataset.more=(a?'l':'')+(b?'r':''); };
   row.addEventListener('scroll',fade,{passive:true}); new ResizeObserver(fade).observe(row); fade();
 }
+/* the band is cut a hair above the screen's last pixel row, so no half-pixel line of background ever shows */
+function ARF(w,h){ return String(Math.ceil(w/(h-2)*1e5)/1e5); }
 /* ---------- acts: one line and a 1 · 2 · 3 marker between parts of the story ---------- */
 function Act(host,n,title,line){ const a=el('div','act'); a.innerHTML=`<ol class="actdots" aria-label="Part ${n} of 3">${[1,2,3].map(i=>`<li class="${i===n?'on':i<n?'done':''}">${i}</li>`).join('')}</ol><h3>${title}</h3><p>${line}</p>`; host.append(a); }
 /* ---------- v2: one full screen, edge to edge, with its copyright ---------- */
-function Full(host,src,bg){ const [BW,BH]=META[src]; const band=el('div','fband'); band.style.setProperty('--ar',(BW/BH).toFixed(3)); if(bg) band.style.setProperty('--fbg',bg); host.append(band);
+function Full(host,src,bg){ const [BW,BH]=META[src]; const band=el('div','fband'); band.style.setProperty('--ar',ARF(BW,BH)); if(bg) band.style.setProperty('--fbg',bg); host.append(band);
   const L=Lens(band,[{src,x:0,y:0,w:BW,h:BH}],{cls:'main'}); Object.values(L.frames).forEach(f=>SB.add(f,()=>true)); Own(band); return L; }
 
 /* ---------- content ---------- */
@@ -994,6 +999,7 @@ function grupa(){
   Flow(part(),[
     {stage:'Deliver · Engagement',title:'Milestones, money and changes in one place.',pain:'Chasing status and invoices.',resp:'Milestones with payment status, and scope changes that both sides accept.',screen:{src:'grupa07'}},
     {stage:'Repeat · Equity record',title:'Equity he can prove later.',pain:'Equity sold as if it were cash.',resp:'Cash and equity as separate records. Equity shows its legal state, never a dollar value.',screen:{src:'grupa02'}}],bg);
+  ['grupa14','grupa15','grupa16'].forEach(id=>{ const p=el('div','phone'); $('#gMobile').append(p); Lens(p,[full(id)],{bg:'#fff'}); });
   Full($('#gSys'),'grupa20','#FFFFFF');
   Board($('#gBoard'),[
     {src:'grupa22',t:'Three-sided flow',why:'How a brief becomes a signed engagement, and how an investor reaches a company.'},
@@ -1158,7 +1164,7 @@ function Screens(host,c){
   S.forEach(s=>{ if(!s.anim) SB.add(s.f,()=>s.sl.classList.contains('on')); });
   const ctrl=el('div','ctrl'); band.append(ctrl); const dots=S.map((s,i)=>{ const b=el('button','dot'+(i?'':' on')); b.type='button'; b.setAttribute('aria-label','Show '+s.cap); b.onclick=()=>go(i,true); ctrl.append(b); return b; }); const cap=el('span','cap',S[0].cap); ctrl.append(cap);
   let cur=0, run=0, timer=0;
-  const size=()=>{ const W=band.clientWidth||innerWidth; S.forEach(s=>{ const [w,h]=META[s.src]; let k=W/w; if(SIZE==='fit') k=Math.min(k,innerHeight*.86/h); s.k=k; s.H=h*k; s.f.style.transform=`translate(${(W-w*k)/2}px,0) scale(${k})`; }); band.style.height=S[cur].H+'px'; };
+  const size=()=>{ const W=band.clientWidth||innerWidth; S.forEach(s=>{ const [w,h]=META[s.src]; let k=W/w; if(SIZE==='fit') k=Math.min(k,innerHeight*.86/h); s.k=k; s.H=Math.floor(h*k)-1; s.f.style.transform=`translate(${(W-w*k)/2}px,0) scale(${k})`; }); band.style.height=S[cur].H+'px'; };
   const play=async(i)=>{ const my=++run; const s=S[i]; const live=()=>my===run && band.__vis; if(!s.f.__ready) await new Promise(r=>{ const t=setInterval(()=>{ if(s.f.__ready||my!==run){ clearInterval(t); r(); } },120); }); if(my!==run) return;
     replay(s.f); if(s.anim&&ANIM[s.anim]) await ANIM[s.anim](s.f,live); else await sleep(5500); if(!live()) return; await sleep(s.anim==='answer'?3800:1800); if(live()) go(i+1); };
   const go=(i,user)=>{ cur=(i+S.length)%S.length; S.forEach((s,n)=>s.sl.classList.toggle('on',n===cur)); dots.forEach((b,n)=>b.classList.toggle('on',n===cur)); cap.textContent=S[cur].cap; band.style.height=S[cur].H+'px'; clearTimeout(timer); if(band.__vis) play(cur); };
@@ -1287,6 +1293,15 @@ function voice(kind){ try{ const A=window.AudioContext||window.webkitAudioContex
     try{ navigator.clipboard.writeText(t).catch(legacy); }catch(e){ legacy(); } cp.textContent='Copied ✓'; setTimeout(()=>cp.textContent='Copy email',2600); };
   addEventListener('keydown',e=>{ if(e.key==='Escape'&&!pan.hidden) pan.querySelector('.cl').click(); });
   draw(); })();
+
+(function(){ const c=$('canvas.bgfx'),x=c.getContext('2d'); const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches; const cols=['221,0,255','0,196,189','252,160,2','200,190,0']; const m={x:-9999,y:-9999};
+  let W=0,H=0,P=[],t=0; const fit=()=>{ const d=Math.min(devicePixelRatio||1,2); W=innerWidth; H=innerHeight; c.width=W*d; c.height=H*d; x.setTransform(d,0,0,d,0,0); const n=Math.min(1600,Math.round(W*H/2200)); P=[]; for(let i=0;i<n;i++) P.push({x:Math.random()*W,y:Math.random()*H,c:cols[i%4],life:Math.random()*200}); };
+  addEventListener('resize',fit); addEventListener('pointermove',e=>{ m.x=e.clientX; m.y=e.clientY; },{passive:true}); fit();
+  const draw=()=>{ t++; x.globalCompositeOperation='destination-out'; x.fillStyle='rgba(0,0,0,0.045)'; x.fillRect(0,0,W,H); x.globalCompositeOperation='source-over'; x.lineWidth=1.4;
+    for(const p of P){ let a=(Math.sin(p.x*.0022+t*.0016)+Math.cos(p.y*.0019-t*.0011)+Math.sin((p.x+p.y)*.0009))*Math.PI*.9; const dx=p.x-m.x,dy=p.y-m.y,d2=dx*dx+dy*dy; if(d2<26000) a=Math.atan2(dy,dx)+Math.PI/2+.6;
+      const nx=p.x+Math.cos(a)*1.1, ny=p.y+Math.sin(a)*1.1; x.strokeStyle='rgba('+p.c+','+(d2<26000?.40:.22)+')'; x.beginPath(); x.moveTo(p.x,p.y); x.lineTo(nx,ny); x.stroke(); p.x=nx; p.y=ny; p.life--;
+      if(p.life<0||p.x<-5||p.x>W+5||p.y<-5||p.y>H+5){ p.x=Math.random()*W; p.y=Math.random()*H; p.life=120+Math.random()*200; } } };
+  if(reduce){ for(let k=0;k<160;k++) draw(); return; } const loop=()=>{ if(!document.hidden) draw(); requestAnimationFrame(loop); }; loop(); })();
 
 (()=>{ const mm=document.getElementById('mmenu'); document.querySelector('.mmenu-btn').onclick=()=>{ mm.hidden=false; }; mm.querySelector('.mmenu-x').onclick=()=>{ mm.hidden=true; }; addEventListener('keydown',e=>{ if(e.key==='Escape') mm.hidden=true; }); })();
 </script>
