@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inventory — Shany Mo</title>
-<meta name="description" content="Every project as a ten-second case study: what it needed, what I owned, what changed.">
-<meta property="og:title" content="Inventory — Shany Mo">
-<meta property="og:description" content="Every project as a ten-second case study: what it needed, what I owned, what changed.">
+<title>Projects &amp; Initiatives | Shany Mo</title>
+<meta name="description" content="Explore Shany Mo’s product strategy, design, platform, AI and partnership work: the business need, personal contribution and outcomes where shareable.">
+<meta property="og:title" content="Projects &amp; Initiatives | Shany Mo">
+<meta property="og:description" content="Explore Shany Mo’s product strategy, design, platform, AI and partnership work: the business need, personal contribution and outcomes where shareable.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://shanymo.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Shany Mo. I turn new technology into products and revenue.">
+<meta property="og:image:alt" content="Shany Mo. I turn product strategy into products people can use.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/heros-bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -197,6 +197,7 @@ html{scrollbar-gutter:stable}
 /* Ask Mo: one type setting on every page */
 #askmo{font-family:'Neue Haas Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;letter-spacing:.5px;color:#262626}
 #askmo button,#askmo input{font-family:inherit}
+#askmo>div{display:flex;flex-direction:column;max-height:calc(100vh - 96px);max-height:calc(100dvh - 96px)}#askmo .askscroll{overflow-y:auto;min-height:0;flex:1 1 auto}
 .ask{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif}
 
 /* logo motion (5 Nov): o hops on hover everywhere; Home plays the entrance once per visit */
@@ -249,7 +250,7 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 
 <section class="topsec" style="padding: 8px 0 48px">
 <div class="rule"></div>
-<p style="margin: 0; padding: 12px 0; font-size: 13.5px">Inventory · 007 Index</p>
+<p style="margin: 0; padding: 12px 0; font-size: 13.5px">Inventory · Project index</p>
 <div class="rule"></div><h1 class="big" style="margin: 36px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; text-transform: uppercase; max-width: 1100px">Every project,<br class="b3"> read as a<br class="b3"> <span style="background: linear-gradient(90deg,#DD00FF,#00FFF7) 0 64% / 100% 74% no-repeat; box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 12px">business decision.</span></h1>
 <div class="invchips" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 40px 0 0">
 <p class="eyebrow" style="margin: 0 6px 0 0; font-size: 13.5px; letter-spacing: 0.5px; text-transform: uppercase; color: #262626">Filter by company</p>
@@ -290,11 +291,11 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 <tr id="{{r.domId}}" class="{{r.cls}}" onMouseEnter="{{r.enter}}" onMouseMove="{{move}}" onClick="{{r.tap}}" style="border-top: 1px solid #E4E4E4; vertical-align: top">
 <td style="padding: 20px 16px 20px 0">
 <p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.02rem; line-height: 1.3; text-transform: uppercase"><template sc-if value="{{r.noLink}}" hint-placeholder-val="{{ true }}"><span class="pname">{{r.project}}</span></template><template sc-if value="{{r.hasLink}}" hint-placeholder-val="{{ false }}"><a class="pname" href="{{r.link}}" target="_blank" rel="noopener" title="Visit Evo" style="color: #262626; text-decoration-color: #DD00FF; text-decoration-thickness: 2px; text-underline-offset: 4px">{{r.project}} <span aria-hidden="true"><i class="ar" aria-hidden="true"></i></span></a></template></p>
-<p style="margin: 8px 0 0; font-size: 12px"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: {{r.dot}}; margin-right: 6px"></span>{{r.co}} · {{r.years}}</p>
+<p style="margin: 8px 0 0; font-size: 12px"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: {{r.dot}}; margin-right: 6px"></span>{{r.meta}}</p>
 <p style="margin: 4px 0 0; font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: #5E5E5E">{{r.tagLine}}</p>
 <template sc-if value="{{r.showCard}}" hint-placeholder-val="{{ false }}">
 <div class="mcard" aria-hidden="true">
-<div class="mc-cover" style="background: {{r.cover}}"><span class="mc-kick">{{r.co}} · {{r.years}}</span><span class="mc-name">{{r.project}}</span>
+<div class="mc-cover" style="background: {{r.cover}}"><span class="mc-kick">{{r.meta}}</span><span class="mc-name">{{r.project}}</span>
 <div class="mc-rex"><img src="/assets/trex-fluent-anim.webp" alt=""><span class="mc-prop">{{r.prop}}</span></div><span class="mc-say">{{r.say}}</span></div>
 <div style="height: 5px; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div>
 </div>
@@ -326,9 +327,8 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 <g transform="rotate(-8 112 74)"><rect x="92" y="70" width="40" height="8" rx="3.5" fill="url(#fr)"></rect><rect x="95" y="71.5" width="30" height="2" rx="1" fill="#FFFFFF" opacity=".55"></rect></g>
 <circle cx="86" cy="80" r="1.6" fill="#E0A100"></circle><circle cx="138" cy="78" r="1.3" fill="#E0A100"></circle>
 </svg></div>
-<p style="margin: 8px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.6rem; text-transform: uppercase">No projects match. The monster ate them.</p>
-<p style="margin: 6px 0 0; font-size: 13px">He left the box. And one fry. As evidence.</p>
-<p style="margin: 8px 0 0">Try “AI”, “KYC” or “Bose”.</p>
+<p style="margin: 8px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.6rem; text-transform: uppercase">No matching projects.</p>
+<p style="margin: 8px 0 0">Try another keyword or clear the filters.</p>
 </div>
 </template>
 </div>
@@ -338,7 +338,7 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 <div class="{{peek.rexCls}}"><img src="/assets/trex-fluent-anim.webp" alt=""><span class="prop">{{peek.prop}}</span><span class="pb">{{peek.say}}</span></div>
 <div class="peek-card" ref="{{cardRef}}">
 <div style="height: 170px; padding: 18px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; background: {{peek.bg}}">
-<span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px">{{peek.co}} · {{peek.years}}</span>
+<span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px">{{peek.meta}}</span>
 <span style="font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.5rem; line-height: 1.02; text-transform: uppercase; letter-spacing: -0.5px">{{peek.project}}</span>
 </div>
 <div style="height: 6px; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div>
@@ -351,8 +351,8 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 </div>
 
 <footer style="border-top: 1px solid #262626; padding: 56px 0 72px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center">
-<a href="/work/" style="font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.6rem; text-transform: uppercase; padding: 8px 0">The full stories behind the biggest rows<i class="ar" aria-hidden="true"></i></a>
-<a href="/contact/" style="font-size: 13.5px; text-transform: uppercase; padding: 12px 0">Say hello<i class="ar" aria-hidden="true"></i></a>
+<a href="/work/" style="font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.6rem; text-transform: uppercase; padding: 8px 0">The cases behind the projects<i class="ar" aria-hidden="true"></i></a>
+<a href="/contact/" style="font-size: 13.5px; text-transform: uppercase; padding: 12px 0">Work with me<i class="ar" aria-hidden="true"></i></a>
 </footer>
 
 </div>
@@ -368,7 +368,7 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 </template>
 </div>
 </div>
-<p class="sitecopy" style="position: relative; z-index: 2; margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4; background: rgba(255,255,255,0.7)">©Made on Earth by Shany Mo while eating 🍟</p>
+<p class="sitecopy" style="position: relative; z-index: 2; margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4; background: rgba(255,255,255,0.7)">Made on Earth by Shany Mo.</p>
 </div>
 <template sc-if value="{{chatClosed}}" hint-placeholder-val="{{ true }}">
 <button class="ask" onClick="{{openChat}}" aria-expanded="false" aria-controls="askmo" style="position: fixed; right: 32px; bottom: 32px; z-index: 50; min-height: 56px; padding: 0 22px 0 18px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: #262626; box-shadow: 0 10px 30px rgba(221,0,255,0.18)">
@@ -387,13 +387,14 @@ Ask Mo
 </button>
 </div>
 <template sc-if value="{{faqMode}}" hint-placeholder-val="{{ true }}">
+<div class="askscroll">
 <div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; min-height: 180px">
-<template sc-if value="{{askNone}}" hint-placeholder-val="{{ true }}"><div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px"><p style="margin: 0; line-height: 1.55">Hi, I'm Mo's FAQ twin. Pick a question below, or type your own.</p></div></template>
+<template sc-if value="{{askNone}}" hint-placeholder-val="{{ true }}"><div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px"><p style="margin: 0; line-height: 1.55">Quick answers about my work and how we could work together. Choose a question below; for anything else, email me directly.</p></div></template>
 <template sc-if value="{{askHas}}" hint-placeholder-val="{{ false }}">
 <div style="align-self: flex-end; max-width: 85%; background: #262626; color: #FFFFFF; border-radius: 18px 18px 4px 18px; padding: 12px 16px; line-height: 1.45">{{askQ.question}}</div>
 <div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px">
 <p style="margin: 0; line-height: 1.55">{{askQ.answer}}</p>
-<p style="margin: 10px 0 0; font-size: 11px; text-transform: uppercase">Source — {{askQ.source}}</p>
+<template sc-if value="{{askQ.source}}" hint-placeholder-val="{{ true }}"><p style="margin: 10px 0 0; font-size: 11px; text-transform: uppercase">Source — {{askQ.source}}</p></template>
 </div>
 </template>
 </div>
@@ -402,14 +403,15 @@ Ask Mo
 <button class="q" onClick="{{item.pick}}" aria-pressed="{{item.pressed}}" style="{{item.style}}">{{item.question}}</button>
 </template>
 </div>
+</div>
 </template>
 <template sc-if value="{{onbMode}}" hint-placeholder-val="{{ false }}">
 <div class="askegg" aria-live="polite">
 <div style="padding: 22px 24px 6px; display: flex; gap: 16px; align-items: flex-start">
 <img src="/assets/trex-fluent-anim.webp" width="72" height="72" alt="Tickle the monster" title="Tickle me" onClick="{{askTickle}}" style="flex: none; margin: -6px -4px 0 -8px; cursor: pointer">
 <div>
-<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1.1; text-transform: uppercase">Mo's AI twin is still in onboarding.</p>
-<p style="margin: 10px 0 0; line-height: 1.55">Ironic: she redesigned onboarding at 6ix and lifted investor conversion 48%. Her twin is a slower learner. Until it graduates, the original answers faster.</p>
+<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1.1; text-transform: uppercase">I don’t have an answer to that question here.</p>
+<p style="margin: 10px 0 0; line-height: 1.55">This FAQ covers the published work and engagement information. Email hello@shanymo.com to ask me directly.</p>
 </div>
 </div>
 <div style="padding: 10px 24px 4px">
@@ -428,7 +430,7 @@ Ask Mo
 </template>
 <div style="padding: 12px 20px 18px; border-top: 1px solid #E4E4E4; display: flex; gap: 8px; align-items: center">
 <label for="ask" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Ask a question about Shany's work</label>
-<input id="ask" type="text" onKeyDown="{{onAskKey}}" placeholder="Ask anything else…" style="flex: 1; min-width: 0; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #CFCFCF; background: #FFFFFF; color: #262626; font-family: inherit; font-size: 14px">
+<input id="ask" type="text" onKeyDown="{{onAskKey}}" placeholder="Type a question…" style="flex: 1; min-width: 0; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #CFCFCF; background: #FFFFFF; color: #262626; font-family: inherit; font-size: 14px">
 <button onClick="{{send}}" aria-label="Send question" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #262626; color: #FFFFFF; cursor: pointer; display: inline-flex; align-items: center; justify-content: center">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
 </button>
@@ -495,16 +497,22 @@ class Component extends DCLogic {
   askVals() {
     const st = this.state || {};
     const qs = [
-      { question: 'What are you doing now?', answer: 'Head of Product, Strategic Ventures Incubation at BCAA since February 2025. My predictive fleet dashboard work contributed to 36% higher portfolio profitability and 33% revenue growth.', source: 'Work, 01' },
-      { question: 'Do you build with AI yourself?', answer: 'Yes. I built an evidence-backed research prototype on Gemini, Qdrant and Streamlit, and I maintain attestor, an open-source compliance checker for LLM outputs.', source: 'Lab' },
-      { question: 'Biggest partnership win?', answer: 'At EPIC Semiconductors I built a $50M+ commercial pipeline growing 29% a year, including a $7M ADAS/AV OEM opportunity.', source: 'Inventory' },
-      { question: 'Rates & salary?', answer: 'Depends on the shape: a full-time role or a consulting project. That is not in my published record, so I will not guess. Email hello@shanymo.com with a line about the role or project and Shany will answer directly.', source: 'none — guardrail' }
+      { question: 'What are you doing now?', answer: 'I’m Head of Product, Strategic Ventures Incubation at BCAA, where I lead a five-person product team and set priorities across customer applications, operations, back-office tools and analytics. My fleet-operations work contributed to portfolio results of 36% higher profitability and 33% revenue growth.', source: 'Work, 01' },
+      { question: 'Do you build with AI yourself?', answer: 'Yes. I built a research prototype with Gemini, Qdrant and Streamlit, connecting retrieval and tool workflows to source-linked synthesis. My Lab also includes attestor and regulated-ai-pm: hands-on work on AI-output checks, product workflows and evaluations.', source: 'Lab' },
+      { question: 'Biggest partnership example?', answer: 'At EPIC Semiconductors, I developed enterprise and government partnerships around sensing technology and machine-learning applications. The work built a $50M+ opportunity pipeline growing 29% year over year, including a $7M ADAS/AV OEM opportunity. Those are pipeline and opportunity figures, not booked revenue.', source: 'Inventory' },
+      { question: 'Rates and salary?', answer: 'Scope and engagement type determine the conversation. Email hello@shanymo.com with the role or product problem, expected commitment and timeline, and we can discuss fit.', source: 'Contact' },
+      { question: 'What kinds of roles are a fit?', answer: 'Director or Head of Product roles in Series A+ companies, and product or venture-lead roles in enterprise incubation. I’m interested in mandates that combine discovery, experience design, hands-on experimentation and the authority to turn learning into delivery.', source: 'Contact' },
+      { question: 'Can I hire you for a project?', answer: 'Yes. Bring me a product decision or build: a new opportunity to define, an experience to improve, a prototype to test, or a build/buy/partner choice. Tell me the problem, the outcome you need and your timeline on the Contact page.', source: 'Contact' },
+      { question: 'How is your approach different?', answer: 'I connect the business case, the experience and the working product. I can lead the product direction and team, then get hands-on with design and AI prototypes to test the riskiest assumptions. Partnerships are part of that judgment: not everything valuable needs to be built in-house.', source: 'Work' },
+      { question: 'Do you advise founders or investors?', answer: 'Yes. I’m a Product Executive in Residence at Mighty Capital, supporting product and market diligence. I also contribute to Products That Count’s AI Council and served on its 2025 Product Awards Advisory Board for AI & Data. For independent advisory work, tell me the product or market decision you need help with.', source: 'Contact' },
+      { question: 'What is your design background?', answer: 'My background combines interaction design at Simon Fraser University and software engineering at the University of Tehran. The portfolio brings that combination into product journeys, state models, interfaces and prototypes.', source: '' }
     ];
     const qi = (st.askq === undefined || st.askq === null) ? -1 : st.askq;
     const items = [
-      { label: 'Contact me to make awesomeness', href: '/contact/' },
-      { label: 'Working from Earth', href: '/' },
-      { label: 'Made on Earth by Shany Mo while eating 🍟', href: '/' },
+      { label: 'Product strategy', href: '/work/' },
+      { label: 'Design', href: '/work/' },
+      { label: 'Hands-on building', href: '/lab/' },
+      { label: 'Vancouver, Canada', href: '/contact/' },
       { label: 'hello@shanymo.com', href: 'mailto:hello@shanymo.com' }
     ];
     const askMarquee = [];
@@ -526,28 +534,28 @@ class Component extends DCLogic {
     super(props);
     this.state = { co: 'All', q: '' };
     const R = (co, years, project, need, owned, changed) => ({ co, years, project, need, owned, changed });
-    const RA = '[dates]';
+    const RA = '';
     this.rows = [
-      R('Applied AI', '2026 → now', 'Agentic research & diligence platform', 'Research for regulated finance that can prove every claim.', 'Discovery, architecture, prototype and evals.', '5 committed design partners from 50 interviews'),
-      R('Applied AI', 'Open source', 'attestor', 'Audit evidence for LLM outputs in regulated industries.', 'Author and maintainer.', 'Public on GitHub, finance pack included'),
-      R('Applied AI', 'Open source', 'regulated-ai-pm', 'PM skills for shipping AI features in regulated products.', 'Author; an AI agent plugin with evals.', 'Public on GitHub, worked example included'),
-      R('BCAA', '2025 → now', 'Predictive fleet dashboard', 'Turn telemetry from 2,500 cars and 600+ e-bikes into pricing and rebalancing calls.', 'Product lead, from POC to operational deployment.', '+36% portfolio profitability, +33% revenue (contributing)'),
-      R('BCAA', '2025 → now', 'Monolith to modular AWS', 'Ship faster and cheaper across a multi-product portfolio.', 'Requirements and build-buy-partner calls with engineering.', '+40% delivery velocity, −53% operating cost'),
+      R('Independent builds', '2026 → now', 'Agentic research & diligence platform', 'Research for regulated finance that can prove every claim.', 'Discovery, architecture, prototype and evals.', '5 committed design partners from 50 interviews'),
+      R('Independent builds', 'Open source', 'attestor', 'Audit evidence for LLM outputs in regulated industries.', 'Author and maintainer.', 'Public on GitHub, finance pack included'),
+      R('Independent builds', 'Open source', 'regulated-ai-pm', 'PM skills for shipping AI features in regulated products.', 'Author; an AI agent plugin with evals.', 'Public on GitHub, worked example included'),
+      R('BCAA', '2025 → now', 'Predictive fleet dashboard', 'Use fleet telemetry and demand insights to guide pricing tests and proactive rebalancing.', 'Product lead, from POC to operational deployment.', 'Fleet-operations proof of concept developed and approved rollout led'),
+      R('BCAA', '2025 → now', 'Monolith to modular AWS', 'Ship faster and cheaper across a multi-product portfolio.', 'Requirements and build-buy-partner calls with engineering.', '40% higher feature-delivery velocity; 53% lower operating costs'),
       R('BCAA', '2025 → now', 'Product team & governance', 'Meet SOC 2 expectations without slowing delivery.', 'Built the team, delivery standards and controls.', '−45% audit cycles, 93% of compliance gaps closed'),
-      R('BCAA', '2025 → now', 'EVO: EVOLVE portfolio', 'Prioritize apps, fleet ops, back office and analytics for 250K users in seven markets.', 'Portfolio strategy and prioritization.', '[one result for the portfolio]'),
-      R('Guidepoint', '2023–2025', 'Gen Z mobile banking', 'Fix a high-churn onboarding journey in South Asia.', 'A/B-tested onboarding, incentives and premium pricing.', '+32% premium conversion'),
-      R('Guidepoint', '2023–2025', 'Family office reporting', 'Replace manual reporting for a family office under $500M AUM.', 'Product strategy and delivery as consultant.', '70% of account sources unified, daily automation'),
+      R('BCAA', '2025 → now', 'EVO: EVOLVE portfolio', 'Prioritize apps, fleet ops, back office and analytics for 250K users in seven markets.', 'Portfolio strategy and prioritization.', 'Contributed to portfolio results: 36% higher profitability and 33% revenue growth'),
+      R('Guidepoint engagement', '2023–2025', 'Gen Z mobile banking', 'Fix a high-churn onboarding journey in South Asia.', 'A/B-tested onboarding, incentives and premium pricing.', '+32% premium conversion'),
+      R('Guidepoint engagement', '2023–2025', 'Family office reporting', 'Replace manual reporting for a family office under $500M AUM.', 'Product strategy and delivery as consultant.', '70% of account sources unified, daily automation'),
       R('Grupa', '2022–2023', 'Three-sided venture marketplace', 'Replace spreadsheet sourcing between VCs, startups and talent.', 'Head of Product, 0→1.', '+40% vetted talent network'),
       R('Grupa', '2022–2023', 'Self-serve intake & KYC', 'Manual screening was capping supply growth.', 'Intake, automated KYC and the matching model.', '−60% talent onboarding time'),
-      R('6ix Inc.', '2020–2022', 'Investor Experience Platform (IXP)', 'Let issuers host, run and monetize their own investor summits.', 'Product lead for the issuer side, with partners.', 'Part of the shift to recurring SaaS, ~20% revenue growth a year'),
-      R('6ix Inc.', '2020–2022', 'Investor Discovery Platform (IDP)', 'Give investors one place to discover and research companies.', 'Product lead for the investor side.', '[one result for IDP]'),
+      R('6ix Inc.', '2020–2022', 'Investor Experience Platform (IXP)', 'Let issuers host, run and monetize their own investor summits.', 'Product lead for the issuer side, with partners.', 'Part of the shift to recurring SaaS; company revenue grew about 20% year over year'),
+      R('6ix Inc.', '2020–2022', 'Investor Discovery Platform (IDP)', 'Give investors one place to discover and research companies.', 'Product lead for the investor side.', ''),
       R('6ix Inc.', '2020–2022', 'Onboarding, KYC & activation', 'Investors dropped off before activating.', 'Redesign of the full issuer–investor onboarding.', '+48% investor conversion, −25% support demand'),
-      R('6ix Inc.', '2020–2022', 'Subscription architecture', 'Billing and payments without a costly in-house build.', 'Cloud-native architecture and API selection.', '−65% projected development cost'),
-      R('EPIC', '2015–2020', 'Sensing platform commercialization', 'Find markets for a sensing chip with ML applications.', 'Cross-vertical strategy and partnerships with Tier 1 and 2 companies and governments.', '$50M+ pipeline, growing 29% a year'),
-      R('EPIC', '2015–2020', 'Automotive ADAS/AV', 'Prove the chip in a demanding automotive use case.', 'Partner discovery and co-development with automotive partners.', '$7M OEM opportunity'),
+      R('6ix Inc.', '2020–2022', 'Subscription architecture', 'Billing and payments without a costly in-house build.', 'Cloud-native architecture and API selection.', '65% lower projected development cost versus the in-house estimate'),
+      R('EPIC', '2015–2020', 'Sensing platform commercialization', 'Find markets for a sensing chip with ML applications.', 'Cross-vertical strategy and partnerships with Tier 1 and 2 companies and governments.', '$50M+ opportunity pipeline, growing 29% year over year'),
+      R('EPIC', '2015–2020', 'Automotive ADAS/AV', 'Prove the chip in a demanding automotive use case.', 'Partner discovery and co-development with automotive partners.', '$7M ADAS/AV OEM opportunity'),
       R('EPIC', '2015–2020', 'Developer console', 'Let partner engineers test sensor behavior themselves.', 'Product lead, 0→1.', 'Reusable integration workflows across verticals'),
-      R('EPIC', '2015–2020', 'Smart banknote', 'Keep physical cash traceable and fraud-resistant in a digital economy.', 'Go-to-market and use-case development with a national central bank.', '[stage or result]'),
-      R('EPIC', '2015–2020', 'Smart cities', 'Better urban decisions without rebuilding infrastructure.', 'Go-to-market with national and city governments in three countries.', '[stage or result]'),
+      R('EPIC', '2015–2020', 'Smart banknote', 'Keep physical cash traceable and fraud-resistant in a digital economy.', 'Use-case exploration with a national central bank.', '[stage or result]'),
+      R('EPIC', '2015–2020', 'Smart cities', 'Better urban decisions without rebuilding infrastructure.', 'Market and use-case development with government stakeholders.', '[stage or result]'),
       R('EPIC', '2015–2020', 'Smart car (Carfield)', 'Turn cars into sensing machines: occupant ID, smart seats, anti-pinch.', 'Product marketing strategy and use cases.', '[stage or result]'),
       R('EPIC', '2015–2020', 'Smart retail', 'Grab-and-go, auto payment and live inventory without new infrastructure.', 'Product marketing strategy and use cases.', '[stage or result]'),
       R('EPIC', '2015–2020', 'Smart home', 'Connected devices that talk without batteries or hubs.', 'Product marketing lead, lead generation, conference strategy.', '[stage or result]'),
@@ -555,8 +563,8 @@ class Component extends DCLogic {
       R('EPIC', '2015–2020', 'Sensing body patch', 'Dust-sized, battery-free vital-sign monitoring.', 'Product marketing strategy and use cases.', '[stage or result]'),
       R('EPIC', '2015–2020', 'IoT Dots for hearing', 'Contactless, gesture-controlled hearing aids.', 'Product marketing strategy and use cases.', '[stage or result]'),
       R('EPIC', '2015–2020', 'Smart warehousing', 'Real-time safety, anti-theft and emergency response in warehouses.', 'Product marketing strategy.', '[stage or result]'),
-      R('ResponsiveAds', RA, 'Fluid self-serve platform', 'Every responsive ad was built by hand for each format.', 'Head of Product, Partnerships & GTM.', 'Up to 10× faster production, +20% annual revenue'),
-      R('ResponsiveAds', RA, 'Publisher partnerships', 'Premium publishers needed native rich media at scale.', 'Partnerships with Red Bull Media House, Mashable, NBCUniversal.', 'Campaigns for Amazon Prime, Adidas, Hulu'),
+      R('ResponsiveAds', '2012–2015', 'Fluid self-serve platform', 'Every responsive ad was built by hand for each format.', 'Head of Product, Partnerships & GTM.', 'Up to 10× faster production, +20% annual revenue'),
+      R('ResponsiveAds', '2012–2015', 'Publisher partnerships', 'Premium publishers needed native rich media at scale.', 'Partnerships with Red Bull Media House, Mashable, NBCUniversal.', 'Campaigns for Amazon Prime, Adidas, Hulu'),
       R('ResponsiveAds', RA, 'Bose QuietComfort 35 × Mashable', 'The native leg of a Grey London global launch.', 'Display strategy, creative direction, partnership.', 'Three full-bleed video units with parallax'),
       R('ResponsiveAds', RA, 'Bose QuietComfort 35 × Red Bull', 'Reach young sports fans for the same launch.', 'Display strategy, creative direction, partnership.', 'Immersive audio and video units'),
       R('ResponsiveAds', RA, 'Amazon Prime: The Grand Tour × Guardian', 'The native leg of two season launches.', 'Strategy, creative direction, portfolio management.', 'Push-downs, lightboxes, billboards, takeovers'),
@@ -572,14 +580,13 @@ class Component extends DCLogic {
       R('ResponsiveAds', RA, 'Ford × Bloomberg CityLab', '“Design the Streets of the Future” awareness, with DarkHorse.', 'Product and project management.', 'A gamified choose-your-future HTML5 environment'),
       R('ResponsiveAds', RA, 'Olay Skin Advisor × Mashable', 'Drive installs of Olay’s Skin Advisor app.', 'Display strategy, creative direction, partnership.', 'Custom-animation units across devices'),
       R('ResponsiveAds', RA, 'More brand launches (15)', 'Publisher-native launches for Google Pixel, Amazon Prime, eBay (×4), GoPro, LG OLED, Nissan Leaf, Spotify, Microsoft, Wendy’s, Morgan Stanley, IBM and Avocados From Mexico.', 'Project management through creative direction.', 'Shipped as native rich media for publisher partners'),
-      R('Ogaco', '2011–2016', 'iKazoo', 'Prove a playful instrument could double as a game controller and remote.', 'Co-founder: product design and operations.', 'Featured by CNET'),
-      R('Ogaco', '2011–2016', 'Snappi', 'Gesture control for smart devices via a clip-on optical sensor.', 'Product design and operations.', '[licensed? stage?]'),
-      R('Ogaco', '2011–2016', 'Interactive board game', 'Board games with a sensing hub and connected play pieces.', 'Product design and operations.', '[licensed? stage?]'),
-      R('Ogaco', '2011–2016', 'Biogaco', 'Gameplay driven by heart, muscle and brain signals.', 'Product operations.', '[licensed? stage?]'),
-      R('Ogaco', '2011–2016', 'Bi-O-Watch', 'A battery-free wearable that tracks movement, impact and strength.', 'Product operations.', '[licensed? stage?]'),
-      R('Ogaco', '2011–2016', 'e-Brain', 'A home hub that runs smart gadgets by touch, voice and gesture.', 'Product operations.', '[licensed? stage?]'),
-      R('Ogaco', '2011–2016', 'Diagnostic glove', 'Fingertip electrodes that read vital signs in people and animals.', 'Product operations.', '[licensed? stage?]'),
-      R('Ogaco', '2011–2016', 'Optical pen', '[what it did]', 'Product design and operations.', '[licensed? stage?]')
+      R('Ogaco', '', 'iKazoo', 'Prove a playful instrument could double as a game controller and remote.', 'Co-founder: product design and operations.', 'Featured by CNET'),
+      R('Ogaco', '', 'Snappi', 'Gesture control for smart devices via a clip-on optical sensor.', 'Product design and operations.', '[licensed? stage?]'),
+      R('Ogaco', '', 'Interactive board game', 'Board games with a sensing hub and connected play pieces.', 'Product design and operations.', '[licensed? stage?]'),
+      R('Ogaco', '', 'Biogaco', 'Gameplay driven by heart, muscle and brain signals.', 'Product operations.', '[licensed? stage?]'),
+      R('Ogaco', '', 'Bi-O-Watch', 'A battery-free wearable that tracks movement, impact and strength.', 'Product operations.', '[licensed? stage?]'),
+      R('Ogaco', '', 'e-Brain', 'A home hub that runs smart gadgets by touch, voice and gesture.', 'Product operations.', '[licensed? stage?]'),
+      R('Ogaco', '', 'Diagnostic glove', 'Fingertip electrodes that read vital signs in people and animals.', 'Product operations.', '[licensed? stage?]')
     ];
     const T = {
       'Predictive fleet dashboard': ['AI', 'Mobility', 'IoT'],
@@ -610,7 +617,7 @@ class Component extends DCLogic {
     this.rows.forEach((r) => { r.tags = T[r.project] || byCo[r.co] || []; r.tagLine = r.tags.join(' · '); });
     // Confidentiality and links. EPIC: partnership-led, confidential. Guidepoint: confidential clients.
     this.rows.forEach((r) => {
-      r.conf = r.co === 'EPIC' ? 'Confidential · partnership-led' : (r.co === 'Guidepoint' ? 'Confidential client' : '');
+      r.conf = r.co === 'EPIC' ? 'Confidential · partnership-led' : (r.co === 'Guidepoint engagement' ? 'Confidential client' : '');
       r.hasConf = !!r.conf;
       r.link = (r.project === 'Predictive fleet dashboard' || r.project === 'EVO: EVOLVE portfolio') ? 'https://evo.ca' : '';
       r.hasLink = !!r.link; r.noLink = !r.link;
@@ -620,9 +627,13 @@ class Component extends DCLogic {
       if (empty) r.stampFix = 'Concept';
       if (r.co === 'EPIC' && empty) { r.stampFix = ''; }
       if (r.conf) r.stampFix = '🔒 Confidential';
+      if (r.project === 'Investor Experience Platform (IXP)' || r.project === 'Fluid self-serve platform') r.stampFix = 'Commercial outcome';
+      r.hideStamp = r.project === 'Investor Discovery Platform (IDP)';
+      r.meta = r.years ? r.co + ' · ' + r.years : r.co;
     });
   }
   componentDidMount() {
+    try { const h = decodeURIComponent((location.hash || '').replace(/^#/, '')); if (h.indexOf('q=') === 0) { this.setState({ q: h.slice(2) }); setTimeout(() => { const t = document.getElementById('invq'); if (t && t.scrollIntoView) t.scrollIntoView({ block: 'center' }); }, 400); } } catch (e) {}
     // scrollable chip rows: show which edge hides more, and peek once when the row first scrolls
     const chipCheck = () => { document.querySelectorAll('.chips').forEach((c) => {
       const over = c.scrollWidth > c.clientWidth + 4; if (!over) { c.removeAttribute('data-more'); return; }
@@ -772,9 +783,9 @@ class Component extends DCLogic {
     return { logoOpacity: tone === 'Solid' ? '1' : tone === 'Softer' ? '0.38' : '0.55', logos: L.map(one).concat(L.map((o, i) => one(o, i + L.length))) };
   }
   renderVals() {
-    const covers = { 'BCAA': '#F5C9FF', 'Applied AI': '#B8FFFC', 'Guidepoint': '#FFE2B0', 'Grupa': '#FFFFA8', '6ix Inc.': '#B8FFFC', 'EPIC': '#F5C9FF', 'ResponsiveAds': '#FFE2B0', 'Ogaco': '#FFFFA8' };
+    const covers = { 'BCAA': '#F5C9FF', 'Applied AI': '#B8FFFC', 'Guidepoint': '#FFE2B0', 'Grupa': '#FFFFA8', '6ix Inc.': '#B8FFFC', 'EPIC': '#F5C9FF', 'ResponsiveAds': '#FFE2B0', 'Ogaco': '#FFFFA8', 'Independent builds': '#B8FFFC', 'Guidepoint engagement': '#FFE2B0' };
     this.rows.forEach((r, i) => { r.id = i; });
-    const dots = { 'BCAA': '#DD00FF', 'Applied AI': '#00C4BD', 'Guidepoint': '#FCA002', 'Grupa': '#DD00FF', '6ix Inc.': '#00C4BD', 'EPIC': '#FCA002', 'ResponsiveAds': '#DD00FF', 'Ogaco': '#00C4BD' };
+    const dots = { 'BCAA': '#DD00FF', 'Applied AI': '#00C4BD', 'Guidepoint': '#FCA002', 'Grupa': '#DD00FF', '6ix Inc.': '#00C4BD', 'EPIC': '#FCA002', 'ResponsiveAds': '#DD00FF', 'Ogaco': '#00C4BD', 'Independent builds': '#00C4BD', 'Guidepoint engagement': '#FCA002' };
     const gaps = this.props.showGaps ?? true;
     const co = this.state.co;
     const q = (this.state.q || '').toLowerCase().trim();
@@ -790,9 +801,9 @@ class Component extends DCLogic {
         showCard: this.state.open === r.id || this.state.flash === r.id, cover: covers[r.co] || '#F2F2F2',
         enter: (e) => { this.setState({ hover: r.id }); if (e) this.placePeek(e.clientX, e.clientY); },
         dot: dots[r.co],
-        hasStamp: (this.props.stamps ?? true),
-        stamp: r.stampFix ? r.stampFix : r.years.indexOf('now') >= 0 ? 'In play' : (gap ? ((r.co === 'EPIC' || r.co === 'Ogaco') ? 'Concept' : 'To confirm') : (/^(Shipped|Public|Three|Immersive|Push|Parallax|Animated|Music|Gamified|Edge|Omnichannel|Distortion|A gamified|Custom|Campaigns|Featured)/.test(r.changed) ? 'Shipped' : 'Paid out')),
-        stampColor: r.stampFix ? (r.conf ? '#262626' : '#9A5A00') : r.years.indexOf('now') >= 0 ? '#00756F' : (gap ? '#9A5A00' : (/^(Shipped|Public|Three|Immersive|Push|Parallax|Animated|Music|Gamified|Edge|Omnichannel|Distortion|A gamified|Custom|Campaigns|Featured)/.test(r.changed) ? '#262626' : '#C000D8')),
+        hasStamp: (this.props.stamps ?? true) && !r.hideStamp,
+        stamp: r.stampFix ? r.stampFix : r.years.indexOf('now') >= 0 ? 'In progress' : 'Shipped',
+        stampColor: r.stampFix === 'Commercial outcome' ? '#C000D8' : r.stampFix ? (r.conf ? '#262626' : '#9A5A00') : r.years.indexOf('now') >= 0 ? '#00756F' : '#262626',
         changedStyle: gap
           ? 'display: inline-block; padding: 2px 8px; border-radius: 6px; background: #FFF3FE; border: 1px dashed #C000D8; color: #8A00A3; font-size: 13px'
           : "font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; line-height: 1.4"
@@ -809,23 +820,23 @@ class Component extends DCLogic {
       };
     });
     rows.forEach((x) => { const st = x.stamp || '';
-      const m = st.indexOf('Confidential') >= 0 ? ['🔒', 'shh. confidential.'] : st === 'Shipped' ? ['🍟', 'shipped. snack time.'] : st === 'Paid out' ? ['💸', 'this one paid out.'] : st === 'In play' ? ['⚡', 'still cooking.'] : st === 'Concept' ? ['❓', 'a concept. hmm…'] : ['', 'to confirm'];
+      const m = st.indexOf('Confidential') >= 0 ? ['🔒', 'shh. confidential.'] : st === 'Shipped' ? ['🍟', 'shipped. snack time.'] : st === 'Commercial outcome' ? ['💸', 'this one paid out.'] : st === 'In progress' ? ['⚡', 'still cooking.'] : st === 'Concept' ? ['❓', 'a concept. hmm…'] : ['', 'to confirm'];
       x.prop = m[0]; x.say = m[1]; });
     const gapCount = this.rows.filter((r) => r.changed.charAt(0) === '[').length;
     const h = this.state.hover;
     const hr = (h === undefined || h === null) ? null : this.rows[h];
     const peek = hr ? {
-      co: hr.co, years: hr.years, project: hr.project, bg: covers[hr.co] || '#F2F2F2',
+      co: hr.co, years: hr.years, meta: hr.meta, project: hr.project, bg: covers[hr.co] || '#F2F2F2',
       headline: hr.changed.charAt(0) === '[' ? hr.need : hr.changed,
-      kicker: 'Cover placeholder · real image coming',
+      kicker: '',
       ...(() => { const hm = rows.find((x) => x.id === hr.id) || {}; const st = hm.stamp || '';
         if (st.indexOf('Confidential') >= 0) return { rexCls: 'peekrex conf', prop: '🔒', say: 'shh. confidential.' };
         if (st === 'Shipped') return { rexCls: 'peekrex ship', prop: '🍟', say: 'shipped. snack time.' };
-        if (st === 'Paid out') return { rexCls: 'peekrex paid', prop: '💸', say: 'this one paid out.' };
-        if (st === 'In play') return { rexCls: 'peekrex live', prop: '⚡', say: 'still cooking.' };
+        if (st === 'Commercial outcome') return { rexCls: 'peekrex paid', prop: '💸', say: 'this one paid out.' };
+        if (st === 'In progress') return { rexCls: 'peekrex live', prop: '⚡', say: 'still cooking.' };
         if (st === 'Concept') return { rexCls: 'peekrex think', prop: '❓', say: 'a concept. hmm…' };
         return { rexCls: 'peekrex', prop: '', say: 'to confirm' }; })()
-    } : { co: '', years: '', project: '', bg: '#FFFFFF', headline: '', kicker: '', rexCls: 'peekrex', prop: '', say: '' };
+    } : { co: '', years: '', meta: '', project: '', bg: '#FFFFFF', headline: '', kicker: '', rexCls: 'peekrex', prop: '', say: '' };
     return { ...this.logoVals(), ...this.menuVals(), ...this.askVals(), ...this.askExtra(), 
       filters, rows,
       wiggle: (e) => { if (e && e.stopPropagation) e.stopPropagation(); const el = e && e.currentTarget; if (!el) return; el.classList.remove('wig'); void el.offsetWidth; el.classList.add('wig'); if (this.wasEmpty) this.moVoice('whimper'); },
@@ -872,7 +883,7 @@ class Component extends DCLogic {
       bgMove: (e) => { if (e) { this.mx = e.clientX; this.my = e.clientY; } },
       fetchRef: (el) => { if (el) this.fetchEl = el; },
       fetchSay: this.state.fetching ? 'fetched one!' : 'throw me a project',
-      countLabel: 'Worked with · worked for · ' + (rows.length === this.rows.length ? this.rows.length + ' projects' : rows.length + ' of ' + this.rows.length + ' projects')
+      countLabel: 'Worked with · Worked for · ' + (rows.length === this.rows.length ? 'Selected projects and initiatives' : rows.length + (rows.length === 1 ? ' matching project' : ' matching projects'))
     };
   }
 }

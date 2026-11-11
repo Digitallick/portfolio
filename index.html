@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shany Mo — Design &amp; Product</title>
-<meta name="description" content="I turn new technology into products and revenue. Product, design and AI work by Shany Mo.">
-<meta property="og:title" content="Shany Mo — Design &amp; Product">
-<meta property="og:description" content="I turn new technology into products and revenue. Product, design and AI work by Shany Mo.">
+<title>Shany Mo | Product Strategy &amp; Design</title>
+<meta name="description" content="Product strategy, design and hands-on building for scaling teams and enterprise ventures. Explore Shany Mo’s work or discuss a role, project or advisory need.">
+<meta property="og:title" content="Shany Mo | Product Strategy &amp; Design">
+<meta property="og:description" content="Product strategy, design and hands-on building for scaling teams and enterprise ventures. Explore Shany Mo’s work or discuss a role, project or advisory need.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://shanymo.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Shany Mo. I turn new technology into products and revenue.">
+<meta property="og:image:alt" content="Shany Mo. I turn product strategy into products people can use.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/heros-bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -118,6 +118,7 @@ html{scrollbar-gutter:stable}
 /* Ask Mo: one type setting on every page */
 #askmo{font-family:'Neue Haas Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;letter-spacing:.5px;color:#262626}
 #askmo button,#askmo input{font-family:inherit}
+#askmo>div{display:flex;flex-direction:column;max-height:calc(100vh - 96px);max-height:calc(100dvh - 96px)}#askmo .askscroll{overflow-y:auto;min-height:0;flex:1 1 auto}
 .ask{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif}
 
 /* logo motion (5 Nov): o hops on hover everywhere; Home plays the entrance once per visit */
@@ -165,9 +166,12 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 
 <main style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; padding: 8px 0 24px">
 
-<h1 class="hh" style="margin: 28px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; text-transform: uppercase; max-width: 1200px">I turn <span style="background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) 0 64% / 100% 74% no-repeat; box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 10px">new technology</span><br class="b3"> into products<br class="b3"> and revenue.</h1>
+<h1 class="hh" style="margin: 28px 0 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: clamp(2.4rem, 5.6vw, 5rem); line-height: 1.02; letter-spacing: -1.5px; text-transform: uppercase; max-width: 1200px">I turn <span style="background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) 0 64% / 100% 74% no-repeat; box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 10px">product strategy</span><br class="b3"> into products<br class="b3"> people can use.</h1>
+<p class="hsub" style="margin: 22px 0 0; font-size: 1.05rem; line-height: 1.55; max-width: 720px">Strategy, design and hands-on building for scaling teams and enterprise ventures.</p>
+<p class="hcred" style="margin: 8px 0 0; font-size: 13.5px; line-height: 1.5; max-width: 720px"><span style="white-space: nowrap">Product Executive in Residence, Mighty Capital</span>&nbsp;· <span style="white-space: nowrap">AI Council Contributor, Products That Count</span></p>
+<div class="hcta" style="display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 0"><a href="/work/" class="btn" style="display: inline-flex; align-items: center; height: 56px; box-sizing: border-box; padding: 0 26px; border-radius: 999px; background: #262626; color: #FFFFFF; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px">Explore the work<i class="ar" aria-hidden="true"></i></a><a href="/contact/" class="btn" style="display: inline-flex; align-items: center; height: 56px; box-sizing: border-box; padding: 0 26px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; color: #262626; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 14px">Work with me<i class="ar" aria-hidden="true"></i></a></div>
 
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 40px 0 28px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 36px 0 28px">
 <p class="eyebrow" style="margin: 0 6px 0 0; font-size: 13.5px; letter-spacing: 0.5px; text-transform: uppercase; color: #262626">What are you building?</p>
 <div role="tablist" aria-label="Lenses" class="chips" style="display: flex; flex-wrap: wrap; gap: 8px">
 <template sc-for list="{{lenses}}" as="l" hint-placeholder-count="6">
@@ -206,7 +210,7 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 </template>
 </div>
 </div>
-<p class="sitecopy" style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4; background: rgba(255,255,255,0.7)">©Made on Earth by Shany Mo while eating 🍟</p>
+<p class="sitecopy" style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4; background: rgba(255,255,255,0.7)">Made on Earth by Shany Mo.</p>
 
 <template sc-if value="{{chatClosed}}" hint-placeholder-val="{{ true }}">
 <button class="ask" onClick="{{openChat}}" aria-expanded="false" aria-controls="askmo" style="position: absolute; right: 32px; bottom: 64px; min-height: 56px; padding: 0 22px 0 18px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: #262626; box-shadow: 0 10px 30px rgba(221,0,255,0.18)">
@@ -225,13 +229,14 @@ Ask Mo
 </button>
 </div>
 <template sc-if value="{{faqMode}}" hint-placeholder-val="{{ true }}">
+<div class="askscroll">
 <div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; min-height: 180px">
-<template sc-if value="{{askNone}}" hint-placeholder-val="{{ true }}"><div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px"><p style="margin: 0; line-height: 1.55">Hi, I'm Mo's FAQ twin. Pick a question below, or type your own.</p></div></template>
+<template sc-if value="{{askNone}}" hint-placeholder-val="{{ true }}"><div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px"><p style="margin: 0; line-height: 1.55">Quick answers about my work and how we could work together. Choose a question below; for anything else, email me directly.</p></div></template>
 <template sc-if value="{{askHas}}" hint-placeholder-val="{{ false }}">
 <div style="align-self: flex-end; max-width: 85%; background: #262626; color: #FFFFFF; border-radius: 18px 18px 4px 18px; padding: 12px 16px; line-height: 1.45">{{q.question}}</div>
 <div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px">
 <p style="margin: 0; line-height: 1.55">{{q.answer}}</p>
-<p style="margin: 10px 0 0; font-size: 11px; text-transform: uppercase">Source — {{q.source}}</p>
+<template sc-if value="{{q.source}}" hint-placeholder-val="{{ true }}"><p style="margin: 10px 0 0; font-size: 11px; text-transform: uppercase">Source — {{q.source}}</p></template>
 </div>
 </template>
 </div>
@@ -240,14 +245,15 @@ Ask Mo
 <button class="q" onClick="{{item.pick}}" aria-pressed="{{item.pressed}}" style="{{item.style}}">{{item.question}}</button>
 </template>
 </div>
+</div>
 </template>
 <template sc-if value="{{onbMode}}" hint-placeholder-val="{{ false }}">
 <div class="egg" aria-live="polite">
 <div style="padding: 22px 24px 6px; display: flex; gap: 16px; align-items: flex-start">
 <img src="{{animSrc}}" width="72" height="72" alt="Tickle the monster" title="Tickle me" onClick="{{askTickle}}" style="flex: none; margin: -6px -4px 0 -8px; cursor: pointer">
 <div>
-<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1.1; text-transform: uppercase">Mo's AI twin is still in onboarding.</p>
-<p style="margin: 10px 0 0; line-height: 1.55">Ironic: she redesigned onboarding at 6ix and lifted investor conversion 48%. Her twin is a slower learner. Until it graduates, the original answers faster.</p>
+<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1.1; text-transform: uppercase">I don’t have an answer to that question here.</p>
+<p style="margin: 10px 0 0; line-height: 1.55">This FAQ covers the published work and engagement information. Email hello@shanymo.com to ask me directly.</p>
 </div>
 </div>
 <div style="padding: 10px 24px 4px">
@@ -266,7 +272,7 @@ Ask Mo
 </template>
 <div style="padding: 12px 20px 18px; border-top: 1px solid #E4E4E4; display: flex; gap: 8px; align-items: center">
 <label for="ask" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Ask a question about Shany's work</label>
-<input id="ask" type="text" onKeyDown="{{onAskKey}}" placeholder="Ask anything else…" style="flex: 1; min-width: 0; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #CFCFCF; background: #FFFFFF; color: #262626; font-family: inherit; font-size: 14px">
+<input id="ask" type="text" onKeyDown="{{onAskKey}}" placeholder="Type a question…" style="flex: 1; min-width: 0; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #CFCFCF; background: #FFFFFF; color: #262626; font-family: inherit; font-size: 14px">
 <button onClick="{{send}}" aria-label="Send question" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #262626; color: #FFFFFF; cursor: pointer; display: inline-flex; align-items: center; justify-content: center">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
 </button>
@@ -343,12 +349,12 @@ class Component extends DCLogic {
     this.setCanvas = (el) => { this.canvas = el; };
     this.setSlot = (el) => { this.slot = el; };
     this.data = [
-      { label: '0 → 1', where: 'Grupa · Head of Product, Fintech Marketplace', headline: 'Three sides, one marketplace', body: 'VCs, startups and vetted talent, matched digitally instead of by spreadsheet.', metric: '−60%', note: 'Talent onboarding time. Vetted network up 40%.', href: '/work/', cta: 'The bet' },
-      { label: 'AI', where: 'Agentic Research & Diligence Platform · 2026', headline: 'Show your sources, or say nothing', body: 'An evidence-backed research agent for wealth management, built hands-on with golden-set evals and human review.', metric: '50→5', note: '50 discovery interviews in, 5 committed design partners out.', href: '/work/', cta: 'The bet' },
-      { label: 'Transformation', where: 'BCAA · Head of Product, Strategic Ventures · now', headline: 'Telemetry into profit', body: 'A predictive fleet dashboard for Evo Car Share and Evolve e-bikes, while moving the platform from a monolith to AWS.', metric: '+36%', note: 'Portfolio profitability, with revenue up 33%.', href: '/work/', cta: 'The bet' },
-      { label: 'Innovation', where: 'EPIC Semiconductors · Director, Product Commercialization', headline: 'A chip with no category, until we made one', body: 'A 0→1 developer console let partners like Adidas, GE, Mercedes-Benz and Razer test a new sensing chip themselves.', metric: '$50M+', note: 'Commercial pipeline, growing 29% a year.', href: '/work/', cta: 'The bet' },
-      { label: 'Partnerships', where: '6ix Inc. · VP Product Management', headline: 'Partner first, build second', body: 'Moved 6ix from bespoke investor-relations services to recurring SaaS, delivered through a partner model and a buy-not-build subscription stack.', metric: '~20%', note: 'Revenue growth a year. Development cost projected 65% lower.', href: '/work/', cta: 'The bet' },
-      { label: 'Design', where: 'Guidepoint · Product Strategy Consultant', headline: 'Fix the journey, fix the revenue', body: 'Rebuilt a high-churn Gen Z mobile banking journey in South Asia: shorter onboarding, better activation incentives, smarter upgrade triggers.', metric: '+32%', note: 'Premium conversion.', href: '/inventory/', cta: 'The project' }
+      { label: '0 → 1', where: 'Grupa · Head of Product, Fintech Marketplace', headline: 'Three sides, one marketplace', body: 'Built a venture marketplace connecting VCs, startups and vetted talent. Self-service intake, automated KYC and matching replaced spreadsheet-run sourcing.', metric: '−60%', note: 'Less talent onboarding time · 40% growth in the vetted talent network.', href: '/work/#case-grupa', cta: 'Read the case' },
+      { label: 'AI', where: 'Independent build · Research & diligence platform · 2026', headline: 'Show your sources, or say nothing', body: 'I built a wealth-management research prototype connecting retrieval, source-linked synthesis and human review. Discovery shaped the scope; golden-set evaluations shaped the checks.', metric: '50→5', note: '50 discovery interviews · 5 committed design partners.', href: '/lab/#research-agent', cta: 'Explore the build' },
+      { label: 'Transformation', where: 'BCAA · Head of Product, Strategic Ventures Incubation', headline: 'Better decisions from fleet telemetry', body: 'Led a fleet-operations proof of concept and its approved rollout, using telemetry to support pricing tests and proactive rebalancing. Alongside it, I shaped product requirements and build/buy/partner decisions for AWS modernization.', metric: '+36%', note: 'Contributed to portfolio results: 36% higher profitability · 33% revenue growth.', href: '/work/#case-bcaa', cta: 'Read the case' },
+      { label: 'Strategy', where: 'EPIC Semiconductors · Director, Product Commercialization', headline: 'A chip with no category, until we made one', body: 'Turned sensing technology into use cases, partner pilots and commercial opportunities. I also led a 0→1 developer console so internal and partner engineers could test potential applications.', metric: '$50M+', note: 'Opportunity pipeline · 29% year-over-year pipeline growth.', href: '/inventory/#q=EPIC', cta: 'Explore the projects' },
+      { label: 'Partnerships', where: '6ix · VP Product Management, Capital Markets Platform', headline: 'Partner first, build second', body: 'Led the shift from bespoke investor-relations services to recurring SaaS. Built the product team and partner delivery model, selecting APIs and subscription infrastructure instead of building commodity capabilities in-house.', metric: '~20%', note: 'About 20% annual revenue growth · 65% lower projected development cost versus the in-house estimate.', href: '/work/#case-six', cta: 'Read the case' },
+      { label: 'Design', where: 'Product Strategy Consultant · Guidepoint engagement', headline: 'A clearer journey. A stronger upgrade case.', body: 'Redesigned a Gen Z mobile banking journey in South Asia, testing onboarding, activation incentives, premium pricing and upgrade triggers.', metric: '+32%', note: '32% increase in premium conversion.', href: '/inventory/#q=Gen%20Z', cta: 'Explore the project' }
     ];
   }
   palette() {
@@ -556,10 +562,15 @@ class Component extends DCLogic {
       };
     });
     const qs = [
-      { question: 'What are you doing now?', answer: 'Head of Product, Strategic Ventures Incubation at BCAA since February 2025. My predictive fleet dashboard work contributed to 36% higher portfolio profitability and 33% revenue growth.', source: 'Work, 01' },
-      { question: 'Do you build with AI yourself?', answer: 'Yes. I built an evidence-backed research prototype on Gemini, Qdrant and Streamlit, and I maintain attestor, an open-source compliance checker for LLM outputs.', source: 'Lab' },
-      { question: 'Biggest partnership win?', answer: 'At EPIC Semiconductors I built a $50M+ commercial pipeline growing 29% a year, including a $7M ADAS/AV OEM opportunity.', source: 'Inventory' },
-      { question: 'Rates & salary?', answer: 'Depends on the shape: a full-time role or a consulting project. That is not in my published record, so I will not guess. Email hello@shanymo.com with a line about the role or project and Shany will answer directly.', source: 'none — guardrail' }
+      { question: 'What are you doing now?', answer: 'I’m Head of Product, Strategic Ventures Incubation at BCAA, where I lead a five-person product team and set priorities across customer applications, operations, back-office tools and analytics. My fleet-operations work contributed to portfolio results of 36% higher profitability and 33% revenue growth.', source: 'Work, 01' },
+      { question: 'Do you build with AI yourself?', answer: 'Yes. I built a research prototype with Gemini, Qdrant and Streamlit, connecting retrieval and tool workflows to source-linked synthesis. My Lab also includes attestor and regulated-ai-pm: hands-on work on AI-output checks, product workflows and evaluations.', source: 'Lab' },
+      { question: 'Biggest partnership example?', answer: 'At EPIC Semiconductors, I developed enterprise and government partnerships around sensing technology and machine-learning applications. The work built a $50M+ opportunity pipeline growing 29% year over year, including a $7M ADAS/AV OEM opportunity. Those are pipeline and opportunity figures, not booked revenue.', source: 'Inventory' },
+      { question: 'Rates and salary?', answer: 'Scope and engagement type determine the conversation. Email hello@shanymo.com with the role or product problem, expected commitment and timeline, and we can discuss fit.', source: 'Contact' },
+      { question: 'What kinds of roles are a fit?', answer: 'Director or Head of Product roles in Series A+ companies, and product or venture-lead roles in enterprise incubation. I’m interested in mandates that combine discovery, experience design, hands-on experimentation and the authority to turn learning into delivery.', source: 'Contact' },
+      { question: 'Can I hire you for a project?', answer: 'Yes. Bring me a product decision or build: a new opportunity to define, an experience to improve, a prototype to test, or a build/buy/partner choice. Tell me the problem, the outcome you need and your timeline on the Contact page.', source: 'Contact' },
+      { question: 'How is your approach different?', answer: 'I connect the business case, the experience and the working product. I can lead the product direction and team, then get hands-on with design and AI prototypes to test the riskiest assumptions. Partnerships are part of that judgment: not everything valuable needs to be built in-house.', source: 'Work' },
+      { question: 'Do you advise founders or investors?', answer: 'Yes. I’m a Product Executive in Residence at Mighty Capital, supporting product and market diligence. I also contribute to Products That Count’s AI Council and served on its 2025 Product Awards Advisory Board for AI & Data. For independent advisory work, tell me the product or market decision you need help with.', source: 'Contact' },
+      { question: 'What is your design background?', answer: 'My background combines interaction design at Simon Fraser University and software engineering at the University of Tehran. The portfolio brings that combination into product journeys, state models, interfaces and prototypes.', source: '' }
     ];
     const qa = this.state.q;
     const questions = qs.map((d, i) => {
@@ -572,9 +583,10 @@ class Component extends DCLogic {
       };
     });
     const items = [
-      { label: 'Contact me to make awesomeness', href: '/contact/' },
-      { label: 'Working from Earth', href: '/' },
-      { label: 'Made on Earth by Shany Mo while eating 🍟', href: '/' },
+      { label: 'Product strategy', href: '/work/' },
+      { label: 'Design', href: '/work/' },
+      { label: 'Hands-on building', href: '/lab/' },
+      { label: 'Vancouver, Canada', href: '/contact/' },
       { label: 'hello@shanymo.com', href: 'mailto:hello@shanymo.com' }
     ];
     const marquee = [];
