@@ -3,7 +3,7 @@ ErrorDocument 404 /404.html
 Options -Indexes
 DirectoryIndex index.html
 <IfModule mod_headers.c>
-  SetEnvIf Host "^staging\." IS_STAGING
+  SetEnvIf Host "(^staging\.|\.hostingersite\.com$)" IS_STAGING
   Header set X-Robots-Tag "noindex, nofollow" env=IS_STAGING
 </IfModule>
 <IfModule mod_rewrite.c>
