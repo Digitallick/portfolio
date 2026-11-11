@@ -480,13 +480,13 @@ html{scrollbar-gutter:stable}body{margin:0}.wrap{box-sizing:border-box;padding-l
   <!-- BCAA -->
   <section id="v-bcaa" hidden>
     <div class="hero room-h">
-      <span class="eyebrow">BCAA × Evo · Fleet operations · Evidence-led decisions</span>
+      <span class="eyebrow">BCAA × Evo · Operator console · Fleet operations</span>
       <h1>From fleet telemetry to operating decisions.</h1>
       <p class="lede">At BCAA, I built and lead a five-person product team across customer applications, operational platforms, back-office tools and analytics. I developed an AI-enabled fleet-operations proof of concept and led its approved rollout, using telemetry and demand insights to support pricing tests and proactive rebalancing.</p>
       <p class="lede" style="margin-top:12px">The walkthrough uses illustrative data to explain the operating experience and decision controls. Historical business results are identified separately below.</p>
       <div class="bandchips"><span>Portfolio contribution: +36% profitability</span><span>+33% revenue</span></div>
       <div id="bHero"></div>
-      <div class="facts"><div><b>Role</b><span>Head of Product, Strategic Ventures Incubation · 2025–present</span></div><div><b>The call</b><span>Put telemetry to work in pricing and rebalancing decisions, while making separate product requirements and build/buy/partner choices for modernization.</span></div><div><b>I owned</b><span>Product-team leadership, portfolio priorities, the fleet-operations proof of concept and its approved rollout.</span></div><div><b>Result</b><span>Contributed to 36% higher portfolio profitability and 33% revenue growth. Separate modernization work increased feature-delivery velocity 40% and reduced operating costs 53%.</span></div></div>
+      <div class="facts"><div><b>Role</b><span>Head of Product, Strategic Ventures Incubation · 2025–present</span></div><div><b>The call</b><span>Put telemetry to work in pricing and rebalancing decisions, while making separate product requirements and build/buy/partner choices for modernization.</span></div><div><b>I owned</b><span>The fleet-operations proof of concept and its approved rollout, with product-team leadership.</span></div><div><b>Result</b><span>Contributed to 36% higher portfolio profitability and 33% revenue growth. Separate modernization work increased feature-delivery velocity 40% and reduced operating costs 53%.</span></div></div>
       <div class="herox" data-room="bcaa"></div>
     </div>
 
@@ -507,16 +507,17 @@ html{scrollbar-gutter:stable}body{margin:0}.wrap{box-sizing:border-box;padding-l
   <!-- EVO -->
   <section id="v-evo" hidden>
     <div class="hero room-h">
-      <span class="eyebrow">BCAA × Evo + Evolve · Rider experience · Case-study walkthrough</span>
+      <span class="eyebrow">BCAA × Evo + Evolve · Customer app · Rider experience</span>
       <h1>A clearer ride, from sign-up to trip ended.</h1>
       <p class="lede">My BCAA portfolio work spans customer applications, fleet operations, back-office tools and analytics. This case focuses on the rider journey and the trip and billing states behind it.</p>
       <p class="lede" style="margin-top:12px">Explore an illustrative experience for cars and e-bikes: find a vehicle, understand the price, request an unlock and confirm the trip has ended.</p>
       <div class="bandchips"><span>Rider experience</span><span>Trip and billing states</span><span>Cars + e-bikes</span><span>Interactive walkthrough</span></div>
-      <div class="facts"><div><b>Role</b><span>Head of Product, Strategic Ventures Incubation · 2025–present</span></div><div><b>The call</b><span>Make requests, pending states and confirmed outcomes distinguishable across the rider journey.</span></div><div><b>I owned</b><span>Portfolio strategy and prioritization across customer applications, operational platforms, back-office tools and analytics. This walkthrough focuses on the rider experience.</span></div><div><b>Result</b><span>A connected walkthrough of discovery, ride selection, unlock, parking, trip completion and billing.</span></div></div>
+      <div class="facts"><div><b>Role</b><span>Head of Product, Strategic Ventures Incubation · 2025–present</span></div><div><b>The call</b><span>Make requests, pending states and confirmed outcomes distinguishable across the rider journey.</span></div><div><b>I owned</b><span>The rider journey for cars and e-bikes, and the trip and billing state model behind it.</span></div><div><b>Result</b><span>A connected walkthrough of discovery, ride selection, unlock, parking, trip completion and billing.</span></div></div>
       <div class="herox" data-room="evo"></div>
     </div>
 
     <div class="secthead first"><span class="eyebrow">Explore the rider experience</span><h2>Tap through a ride.</h2><p class="note">Use the buttons inside the phone<span class="dsk">, or jump between steps</span>.</p></div>
+    <div id="eAct" style="margin-bottom:24px"></div>
     <div class="proto" id="eProto"></div>
 
     <div class="secthead"><span class="eyebrow">Side by side</span><h2>Compare the journeys, step by step.</h2><p class="note">Drag the line to compare the reference experience and the walkthrough design.</p></div>
@@ -956,27 +957,29 @@ function bcaa(){
 
 function evo(){
   const S={
-    evo06:{name:'Welcome',group:'Start',line:'First launch: what the app does, in one sentence, and one button.',hint:'Get started',links:[['Get started','evo07'],['Skip','evo07']]},
-    evo07:{name:'Sign in',group:'Start',line:'Email, Google, Apple, or an existing BCAA account.',hint:'Log in',links:[['Log in','evo08'],['G','evo08'],['Continue with Apple','evo08'],['BCAA','evo08']]},
-    evo08:{name:'Home',group:'Find',line:'Every nearby vehicle on one map, with the destination search on top.',hint:'Where to go',links:[['Where to go','evo09'],['Ride now','evo10'],['Trips','evo20'],['Wallet','evo21'],['Profile','evo23']]},
-    evo09:{name:'Where to?',group:'Find',line:'Each destination shows whether parking is allowed there, before you ride.',hint:'Rainbow Park',links:[['Back','evo08'],['Rainbow Park','evo10'],['Lost Lake','evo10'],['Meadow Park','evo10'],['Set on map','evo10']]},
-    evo10:{name:'Choose a ride',group:'Book',line:'Ride types side by side, so the choice is about the trip, not the brand.',hint:'Confirm ride',links:[['Back','evo09'],['Confirm ride','evo11']]},
-    evo11:{name:'Ride confirmation',group:'Book',line:'Price, member savings and the rules, before anything unlocks.',hint:'Scan and unlock',links:[['Back','evo10'],['Scan and unlock','evo12']]},
-    evo12:{name:'Scan to unlock',group:'Unlock',line:'Scan the code on the vehicle.',hint:'Unlock',links:[['Back','evo11'],['Scan the QR','evo13'],['Unlock','evo13']]},
-    evo13:{name:'Unlocking',group:'Unlock',line:'Progress while the vehicle responds, and a way out.',links:[['Back','evo11'],['Cancel request','evo11']],auto:['evo14',2600]},
-    evo14:{name:'Riding',group:'Ride',line:'The trip in progress: stop over, or end it.',hint:'End trip',links:[['End trip','evo15']]},
-    evo15:{name:'Parking',group:'Park',line:'Where you can leave it, and what to do if the zone is full.',hint:'Park here',links:[['Back to ride','evo14'],['Park here','evo16']]},
-    evo16:{name:'Camera permission',group:'Park',line:'Asked at the moment it is needed, with the reason.',hint:'Allow camera',links:[['Allow camera','evo17'],['Not now','evo15']]},
-    evo17:{name:'Parking photo',group:'Park',line:'One photo shows where the vehicle was left.',hint:'Take parking photo',links:[['Close camera','evo15'],['Take parking photo','evo18']]},
-    evo18:{name:'Verifying',group:'End',line:'The photo is checked before the trip closes.',links:[['Something wrong','evo22']],auto:['evo19',3000]},
-    evo19:{name:'Trip ended',group:'End',line:'Cost, time and distance, settled. Problems reported from here.',hint:'Done',links:[['Close','evo08'],['Done','evo08'],['Report a problem','evo22']]},
-    evo20:{name:'My trips',group:'Account',line:'Past rides, and one tap to ride again.',hint:'Ride again',links:[['Home','evo08'],['Wallet','evo21'],['Profile','evo23'],['Ride again','evo10']]},
-    evo21:{name:'Wallet',group:'Account',line:'One wallet for every vehicle type.',hint:'Home',links:[['Home','evo08'],['Trips','evo20'],['Profile','evo23']]},
-    evo23:{name:'Profile',group:'Account',line:'Account, membership and help.',hint:'Home',links:[['Report an issue','evo22'],['Home','evo08'],['Trips','evo20'],['Wallet','evo21']]},
-    evo22:{name:'Report a problem',group:'Help',line:'A damaged or unsafe vehicle reported in seconds.',hint:'Send report',links:[['Back to trip','evo19'],['Send report','evo19']]}
+    evo06:{name:'Welcome',group:'Find and choose',line:'First launch: what the app does, in one sentence, and one button.',hint:'Get started',links:[['Get started','evo07'],['Skip','evo07']]},
+    evo07:{name:'Sign in',group:'Find and choose',line:'Email, Google, Apple, or an existing BCAA account.',hint:'Log in',links:[['Log in','evo08'],['G','evo08'],['Continue with Apple','evo08'],['BCAA','evo08']]},
+    evo08:{name:'Home',group:'Find and choose',line:'Every nearby vehicle on one map, with the destination search on top.',hint:'Where to go',links:[['Where to go','evo09'],['Ride now','evo10'],['Trips','evo20'],['Wallet','evo21'],['Profile','evo23']]},
+    evo09:{name:'Where to?',group:'Find and choose',line:'Each destination shows whether parking is allowed there, before you ride.',hint:'Rainbow Park',links:[['Back','evo08'],['Rainbow Park','evo10'],['Lost Lake','evo10'],['Meadow Park','evo10'],['Set on map','evo10']]},
+    evo10:{name:'Choose a ride',group:'Find and choose',line:'Ride types side by side, so the choice is about the trip, not the brand.',hint:'Confirm ride',links:[['Back','evo09'],['Confirm ride','evo11']]},
+    evo11:{name:'Ride confirmation',group:'Find and choose',line:'Price, member savings and the rules, before anything unlocks.',hint:'Scan and unlock',links:[['Back','evo10'],['Scan and unlock','evo12']]},
+    evo12:{name:'Scan to unlock',group:'Unlock and ride',line:'Scan the code on the vehicle.',hint:'Unlock',links:[['Back','evo11'],['Scan the QR','evo13'],['Unlock','evo13']]},
+    evo13:{name:'Unlocking',group:'Unlock and ride',line:'Progress while the vehicle responds, and a way out.',links:[['Back','evo11'],['Cancel request','evo11']],auto:['evo14',2600]},
+    evo14:{name:'Riding',group:'Unlock and ride',line:'The trip in progress: stop over, or end it.',hint:'End trip',links:[['End trip','evo15']]},
+    evo15:{name:'Parking',group:'Unlock and ride',line:'Where you can leave it, and what to do if the zone is full.',hint:'Park here',links:[['Back to ride','evo14'],['Park here','evo16']]},
+    evo16:{name:'Camera permission',group:'Unlock and ride',line:'Asked at the moment it is needed, with the reason.',hint:'Allow camera',links:[['Allow camera','evo17'],['Not now','evo15']]},
+    evo17:{name:'Parking photo',group:'Unlock and ride',line:'One photo shows where the vehicle was left.',hint:'Take parking photo',links:[['Close camera','evo15'],['Take parking photo','evo18']]},
+    evo18:{name:'Verifying',group:'End and settle',line:'The photo is checked before the trip closes.',links:[['Something wrong','evo22']],auto:['evo19',3000]},
+    evo19:{name:'Trip ended',group:'End and settle',line:'Cost, time and distance, settled. Problems reported from here.',hint:'Done',links:[['Close','evo08'],['Done','evo08'],['Report a problem','evo22']]},
+    evo20:{name:'My trips',group:'End and settle',line:'Past rides, and one tap to ride again.',hint:'Ride again',links:[['Home','evo08'],['Wallet','evo21'],['Profile','evo23'],['Ride again','evo10']]},
+    evo21:{name:'Wallet',group:'End and settle',line:'One wallet for every vehicle type.',hint:'Home',links:[['Home','evo08'],['Trips','evo20'],['Profile','evo23']]},
+    evo23:{name:'Profile',group:'End and settle',line:'Account, membership and help.',hint:'Home',links:[['Report an issue','evo22'],['Home','evo08'],['Trips','evo20'],['Wallet','evo21']]},
+    evo22:{name:'Report a problem',group:'End and settle',line:'A damaged or unsafe vehicle reported in seconds.',hint:'Send report',links:[['Back to trip','evo19'],['Send report','evo19']]}
   };
   Proto($('#eProto'),{compare:false,screens:S,start:'evo06',before:{evo06:'before/evo06.webp',evo07:'before/evo07.webp',evo08:'before/evo08.webp',evo09:'before/evo09.webp',evo10:'before/evo10.webp',evo11:'before/evo11.webp',evo16:'before/evo16.webp',evo21:'before/evo21.webp',evo23:'before/evo23.webp',evo15:'before/evo15.webp',evo20:'before/evo20.webp',evo22:'before/evo22.webp'},
-    groups:[['Start',['evo06','evo07']],['Find',['evo08','evo09']],['Book',['evo10','evo11']],['Unlock',['evo12','evo13']],['Ride',['evo14']],['Park',['evo15','evo16','evo17']],['End',['evo18','evo19']],['Account',['evo20','evo21','evo23']],['Help',['evo22']]]});
+    groups:[['1 · Find and choose',['evo06','evo07','evo08','evo09','evo10','evo11']],['2 · Unlock and ride',['evo12','evo13','evo14','evo15','evo16','evo17']],['3 · End and settle',['evo18','evo19','evo20','evo21','evo23','evo22']]]});
+  (()=>{ const host=$('#eAct'); if(!host) return; const A={'Find and choose':[1,'Find a vehicle, then see the price and the rules before anything unlocks.'],'Unlock and ride':[2,'Request the unlock, ride, and park where it is allowed.'],'End and settle':[3,'Confirm the trip has ended, then the charge, past trips and the wallet.']};
+    let cur=''; const tick=()=>{ const g=document.querySelector('#eProto .grp'); const k=g?g.textContent.split(' · ')[0].trim():'Find and choose'; if(k===cur||!A[k]) return; cur=k; host.innerHTML=''; Act(host,A[k][0],k,A[k][1]); }; tick(); setInterval(tick,300); })();
   BeforeAfter($('#eBA'),[
     {id:'evo06',name:'First screen',before:'A logo on black, then a menu.',after:'What the app does in one sentence, and one button.'},
     {id:'evo07',name:'Sign in',before:'Email and password only. New riders have to find “Become a Member”.',after:'Email, Google, Apple or an existing BCAA account.'},

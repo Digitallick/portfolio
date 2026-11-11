@@ -626,7 +626,8 @@ class Component extends DCLogic {
       if (empty) r.stampFix = 'Concept';
       if (r.co === 'EPIC' && empty) { r.stampFix = ''; }
       if (r.conf) r.stampFix = '🔒 Confidential';
-      if (r.project === 'Investor Experience Platform (IXP)' || r.project === 'Fluid self-serve platform') r.stampFix = 'Commercial outcome';
+      if (r.project === 'Investor Experience Platform (IXP)' || r.project === 'Fluid self-serve platform' || r.project === 'EVO: EVOLVE portfolio') r.stampFix = 'Commercial outcome';
+      if (r.project === 'Agentic research & diligence platform') r.stampFix = 'Concept';
       r.hideStamp = r.project === 'Investor Discovery Platform (IDP)';
       r.meta = r.years ? r.co + ' · ' + r.years : r.co;
     });
@@ -801,8 +802,8 @@ class Component extends DCLogic {
         enter: (e) => { this.setState({ hover: r.id }); if (e) this.placePeek(e.clientX, e.clientY); },
         dot: dots[r.co],
         hasStamp: (this.props.stamps ?? true) && !r.hideStamp,
-        stamp: r.stampFix ? r.stampFix : r.years.indexOf('now') >= 0 ? 'In progress' : 'Shipped',
-        stampColor: r.stampFix === 'Commercial outcome' ? '#C000D8' : r.stampFix ? (r.conf ? '#262626' : '#9A5A00') : r.years.indexOf('now') >= 0 ? '#00756F' : '#262626',
+        stamp: r.stampFix ? r.stampFix : 'Shipped',
+        stampColor: r.stampFix === 'Commercial outcome' ? '#C000D8' : r.stampFix ? (r.conf ? '#262626' : '#9A5A00') : '#262626',
         changedStyle: gap
           ? 'display: inline-block; padding: 2px 8px; border-radius: 6px; background: #FFF3FE; border: 1px dashed #C000D8; color: #8A00A3; font-size: 13px'
           : "font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; line-height: 1.4"
