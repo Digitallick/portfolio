@@ -11,7 +11,7 @@
 <meta property="og:image" content="https://shanymo.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Shany Mo. I turn product strategy into products people can use.">
+<meta property="og:image:alt" content="Shany Mo. I turn new technology into products people use.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/heros-bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -41,8 +41,9 @@ html,body{overflow-x:clip}
 .cta.dark{background:#262626;color:#FFFFFF;box-shadow:0 6px 0 -1px #00FFF7,0 11px 0 -1px #DD00FF}
 .cta.light{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box;border:2px solid transparent;color:#262626}
 .cta:hover{transform:translateY(-2px) rotate(-1deg)}
+.mqtrack{display:flex;width:max-content;animation:mqmarq 150s linear infinite}@keyframes mqmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}.mqtrack a{color:#262626}@media (prefers-reduced-motion:reduce){.mqtrack{animation:none}}.siteribbon,.sitecopy{position:relative;z-index:3;background:#FFFFFF !important}
 @media (max-width:600px){.cta{white-space:nowrap;padding:0 20px;font-size:14px}}
-.fit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%;max-width:1120px;margin:26px auto 0;pointer-events:auto;text-align:left}.fit p{margin:0;background:rgba(255,255,255,.93);border:1px solid #E4E4E4;border-radius:18px;padding:14px 18px;font-size:14.5px;line-height:1.5;box-shadow:0 10px 24px -16px rgba(38,38,38,.35)}.fit p:first-child{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:16px;line-height:1.35}.pit .big{font-size:clamp(3rem,6.4vw,6.4rem)}.ctas{align-items:center}.ctas .mini{position:static !important;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.ctas .mini a,.ctas .mini button{min-height:56px;padding:0 22px}@media (max-width:1199px){.pit.boxed{height:auto !important;min-height:calc(100svh - 262px) !important}.pit .over{position:relative;inset:auto;padding-bottom:96px}}@media (max-width:600px){.ctas .mini{width:100%}.pit.boxed{min-height:calc(100svh - 214px) !important}.pit .over{padding-top:28px !important}.ctas .mini a,.ctas .mini button{min-height:48px}}@media (min-width:1200px){.pit.boxed{height:calc(100vh - 262px) !important;height:calc(100svh - 262px) !important}}@media (min-width:601px){.pit.boxed .over{padding-top:clamp(20px,4vh,48px) !important}}@media (max-width:900px){.fit{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:6px}.fit p{flex:0 0 82%;scroll-snap-align:start}}
+.fit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%;max-width:1120px;margin:26px auto 0;pointer-events:auto;text-align:left}.fit p{margin:0;background:rgba(255,255,255,.93);border:1px solid #E4E4E4;border-radius:18px;padding:14px 18px;font-size:14.5px;line-height:1.5;box-shadow:0 10px 24px -16px rgba(38,38,38,.35)}.fit p:first-child{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;font-size:16px;line-height:1.35}.pit .big{font-size:clamp(3rem,6.4vw,6.4rem)}.ctas{align-items:center}.pit .hint{display:none !important}.ctas .mini{position:static !important;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.ctas .mini a,.ctas .mini button{min-height:56px;padding:0 22px}@media (max-width:1199px){.pit.boxed{height:auto !important;min-height:calc(100svh - 262px) !important}.pit .over{position:relative;inset:auto;padding-bottom:96px}}@media (max-width:600px){.ctas .mini{width:100%}.pit.boxed{min-height:calc(100svh - 214px) !important}.pit .over{padding-top:28px !important}.ctas .mini a,.ctas .mini button{min-height:48px}}@media (min-width:1200px){.pit.boxed{height:calc(100vh - 300px) !important;height:calc(100svh - 300px) !important}}@media (min-width:601px){.pit.boxed .over{padding-top:clamp(20px,4vh,48px) !important}}@media (max-width:900px){.fit{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:6px}.fit p{flex:0 0 82%;scroll-snap-align:start}}
 .mini a:hover,.mini button:hover{border-color:#262626}
 .mini{position:absolute;left:20px;bottom:18px;display:flex;gap:10px;flex-wrap:wrap;pointer-events:auto}
 .mini a,.mini button{background:rgba(255,255,255,.92);border:1px solid #CFCFCF;border-radius:999px;min-height:44px;display:inline-flex;align-items:center;padding:0 18px;font-size:13.5px;text-transform:uppercase;letter-spacing:.6px;text-decoration:none;color:#262626;cursor:pointer;font-family:inherit}
@@ -159,8 +160,20 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 </div>
 <p class="hint">Grab one · click to make the pile jump</p>
 </section>
-<p class="sitecopy" style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4">Made on Earth by Shany Mo.</p>
 </div>
+<div class="siteribbon" style="position: relative; overflow: hidden; border-top: 1px solid #E4E4E4; padding: 10px 0; background: rgba(255,255,255,0.7)">
+<div class="mqtrack" style="font-size: 11px; align-items: center">
+<template sc-for list="{{askMarquee}}" as="m" hint-placeholder-count="12">
+<span style="display: inline-flex; align-items: center; gap: 10px; padding-right: 12px; white-space: nowrap">
+<span aria-hidden="true">←</span>
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><path d="M9 9h.01M15 9h.01"></path></svg>
+<span aria-hidden="true">→</span>
+<a href="{{m.href}}" tabindex="{{m.tab}}" style="text-decoration: none">{{m.label}}</a>
+</span>
+</template>
+</div>
+</div>
+<p class="sitecopy" style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4">Made on Earth by Shany Mo.</p>
 </div>
 
 <template sc-if value="{{mailOpen}}" hint-placeholder-val="{{ false }}">
@@ -324,7 +337,9 @@ class Component extends DCLogic {
   renderVals() {
     const st = this.state, role = st.kind === 'role';
     const open = (kind) => this.setState({ mail: true, kind, subject: kind === 'role' ? '🦖 A leadership role' : kind === 'project' ? '🦖 A product project' : kind === 'advisory' ? '🦖 Advisory or diligence' : '🦖 Discuss an opportunity' });
-    return { ...this.menuVals(),
+    const askMarquee = []; const mqi = [['Product strategy', '/work/'], ['Design', '/work/'], ['Hands-on building', '/lab/'], ['hello@shanymo.com', 'mailto:hello@shanymo.com']];
+    for (let r = 0; r < 8; r++) mqi.forEach((it) => askMarquee.push({ label: it[0], href: it[1], tab: r === 0 ? '0' : '-1' }));
+    return { ...this.menuVals(), askMarquee,
       pitRef: (el) => { if (el) this.pitEl = el; },
       pitCls: (this.props.frame || 'Boxed') === 'Boxed' ? 'pit boxed' : 'pit',
       hire: () => open('role'), project: () => open('project'), advisory: () => open('advisory'), sayHello: () => open('any'),
