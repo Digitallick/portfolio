@@ -133,8 +133,8 @@ mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 1
 .abhl .band{background:linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) 0 64%/100% 74% no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;text-shadow:none}
 .abblurb{position:absolute;right:0;top:clamp(28px,7vh,80px);width:min(360px,30vw);margin:0;z-index:2;font-size:15px;line-height:1.55;background:rgba(255,255,255,.88);padding:14px 18px;border-radius:18px;border:1px solid #E4E4E4}
 .abblurb p{margin:0}.abblurb p+p{margin-top:10px}
-.abchips{position:absolute;right:0;bottom:20px;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;z-index:3;max-width:50%}
-.abchip{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid #CFCFCF;background:rgba(255,255,255,.92);display:inline-flex;align-items:center;font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:#262626}
+.abchips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.abchip{min-height:36px;padding:0 14px;border-radius:999px;border:1px solid #CFCFCF;background:rgba(255,255,255,.92);display:inline-flex;align-items:center;font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:#262626}
 .abact{position:absolute;left:0;bottom:20px;z-index:3;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
 .abhint{margin:0;font-size:11px;text-transform:uppercase;letter-spacing:.8px;background:rgba(255,255,255,.88);padding:6px 10px;border-radius:999px;display:flex;gap:8px;align-items:center}
 .abhint i{display:inline-block;width:34px;height:2px;background:linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00);border-radius:2px;position:relative}
@@ -156,8 +156,25 @@ mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 1
 -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 26%,#000 74%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 26%,#000 74%,transparent 100%)}
 .abblurb{order:3;margin:0}
 .abact{order:4;position:relative;bottom:auto;margin:20px 0 16px}.abhint{display:none}
-.abchips{order:5;position:relative;right:auto;bottom:auto;max-width:none;justify-content:flex-start;margin:0 0 20px}
+
 }
+</style>
+<style>
+.ask{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box;border:2px solid transparent;transition:transform .2s ease}
+.ask:hover{transform:translateY(-2px) rotate(-1deg)}
+.askegg{animation:askpop .35s ease-out}
+@keyframes askpop{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}}
+@media (max-width:900px){.panel{left:16px !important;right:16px !important;width:auto !important}}
+@media (prefers-reduced-motion:reduce){.mqtrack{animation:none}.ask:hover{transform:none}}
+.askwig{animation:askwig .7s cubic-bezier(.3,1.6,.5,1)}
+@keyframes askwig{0%{transform:rotate(0) scale(1)}20%{transform:rotate(-14deg) scale(1.1)}40%{transform:rotate(12deg) scale(.95)}60%{transform:rotate(-8deg)}80%{transform:rotate(5deg)}100%{transform:rotate(0) scale(1)}}
+.panel,.ask{font-family:'Neue Haas Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;color:#262626;letter-spacing:.5px}
+/* Ask Mo: one type setting on every page */
+#askmo{font-family:'Neue Haas Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;letter-spacing:.5px;color:#262626}
+#askmo button,#askmo input{font-family:inherit}
+#askmo>div{display:flex;flex-direction:column;max-height:calc(100vh - 96px);max-height:calc(100dvh - 96px)}
+#askmo .askscroll{overflow-y:auto;min-height:0;flex:1 1 auto}
+.ask{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif}
 </style>
 </head>
 <body>
@@ -182,10 +199,9 @@ mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 1
 <div class="rule" style="margin-bottom: 0"></div>
 <section class="abstage" aria-label="About Shany">
 <h1 class="H abhl">Product, design and the business case, <span class="band">owned together.</span></h1>
-<div class="abblurb"><p>I lead product and design teams from the first idea to scale: clarifying the customer and the business case, shaping the experience, and building prototypes to test it before teams commit.</p><p>Alongside that work, I support product and market diligence as a Product Executive in Residence, contribute to an AI council, and served on a 2025 product awards advisory board for AI &amp; Data. I’m open to leadership roles, and selectively to projects and advisory.</p></div>
+<div class="abblurb"><p>I lead product and design teams from the first idea to scale: clarifying the customer and the business case, shaping the experience, and building prototypes to test it before teams commit.</p><p>Alongside that work, I support product and market diligence as a Product Executive in Residence, contribute to an AI council, and served on a 2025 product awards advisory board for AI &amp; Data. I’m open to leadership roles, and selectively to projects and advisory.</p><div class="abchips" role="list"><span class="abchip" role="listitem">0→1</span><span class="abchip" role="listitem">Scale</span><span class="abchip" role="listitem">Design</span><span class="abchip" role="listitem">AI</span><span class="abchip" role="listitem">Partnerships</span></div></div>
 <div class="abbust" role="img" aria-label="A glass portrait traced in flowing coloured lines. It turns as you move your mouse."><canvas id="fig" aria-hidden="true"></canvas></div>
 <div class="abact"><p class="abhint">Move your mouse · it turns <i id="dial"></i></p><span class="abwrap"><span class="abpeek" aria-hidden="true"><img src="/assets/trex-fluent-3d.png" alt=""></span><button class="cta light H" onClick="{{sayHello}}">Write to me<i class="ar" aria-hidden="true"></i></button></span></div>
-<div class="abchips" role="list"><span class="abchip" role="listitem">0→1</span><span class="abchip" role="listitem">Scale</span><span class="abchip" role="listitem">Design</span><span class="abchip" role="listitem">AI</span><span class="abchip" role="listitem">Partnerships</span></div>
 </section>
 </div>
 <p class="sitecopy" style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4">©Made on Earth by Shany Mo while eating 🍟</p>
@@ -205,6 +221,74 @@ mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 1
 <div class="mfoot"><span style="font-size: 12px; color: #5E5E5E">Opens in your email app, ready to send.</span><button class="cta dark H" style="min-height: 48px; padding: 0 22px; box-shadow: none" onClick="{{send}}">Send<i class="ar" aria-hidden="true"></i></button></div>
 </div>
 </div>
+</template>
+<template sc-if value="{{chatClosed}}" hint-placeholder-val="{{ true }}">
+<button class="ask" onClick="{{openChat}}" aria-expanded="false" aria-controls="askmo" style="position: fixed; right: 32px; bottom: 32px; z-index: 50; min-height: 56px; padding: 0 22px 0 18px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 15px; text-transform: uppercase; color: #262626; box-shadow: 0 10px 30px rgba(221,0,255,0.18)">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>
+Ask Mo
+</button>
+</template>
+
+<template sc-if value="{{chatOpen}}" hint-placeholder-val="{{ false }}">
+<section id="askmo" class="panel" aria-label="Ask Mo" style="position: fixed; right: 32px; bottom: 32px; z-index: 50; width: 420px; border-radius: 26px; padding: 2px; background: linear-gradient(135deg,#DD00FF,#00FFF7,#FCA002,#FFFF00); box-shadow: 0 24px 60px rgba(38,38,38,0.18)">
+<div style="background: #FFFFFF; border-radius: 24px; overflow: hidden">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 14px 20px; border-bottom: 1px solid #E4E4E4">
+<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 18px">Ask Mo <span style="font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.5px">— FAQ mode</span></p>
+<button onClick="{{closeChat}}" aria-label="Close Ask Mo" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #CFCFCF; background: #FFFFFF; color: #262626; cursor: pointer; display: inline-flex; align-items: center; justify-content: center">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+</div>
+<template sc-if value="{{faqMode}}" hint-placeholder-val="{{ true }}">
+<div class="askscroll">
+<div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; min-height: 180px">
+<template sc-if value="{{askNone}}" hint-placeholder-val="{{ true }}"><div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px"><p style="margin: 0; line-height: 1.55">Quick answers about my work and how we could work together. Choose a question below; for anything else, email me directly.</p></div></template>
+<template sc-if value="{{askHas}}" hint-placeholder-val="{{ false }}">
+<div style="align-self: flex-end; max-width: 85%; background: #262626; color: #FFFFFF; border-radius: 18px 18px 4px 18px; padding: 12px 16px; line-height: 1.45">{{askQ.question}}</div>
+<div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px">
+<p style="margin: 0; line-height: 1.55">{{askQ.answer}}</p>
+<template sc-if value="{{askQ.source}}" hint-placeholder-val="{{ true }}"><p style="margin: 10px 0 0; font-size: 11px; text-transform: uppercase">Source — {{askQ.source}}</p></template>
+</div>
+</template>
+</div>
+<div style="padding: 0 20px 14px; display: flex; flex-wrap: wrap; gap: 6px">
+<template sc-for list="{{askQuestions}}" as="item" hint-placeholder-count="4">
+<button class="q" onClick="{{item.pick}}" aria-pressed="{{item.pressed}}" style="{{item.style}}">{{item.question}}</button>
+</template>
+</div>
+</div>
+</template>
+<template sc-if value="{{onbMode}}" hint-placeholder-val="{{ false }}">
+<div class="askegg" aria-live="polite">
+<div style="padding: 22px 24px 6px; display: flex; gap: 16px; align-items: flex-start">
+<img src="/assets/trex-fluent-anim.webp" width="72" height="72" alt="Tickle the monster" title="Tickle me" onClick="{{askTickle}}" style="flex: none; margin: -6px -4px 0 -8px; cursor: pointer">
+<div>
+<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1.1; text-transform: uppercase">I don’t have an answer to that question here.</p>
+<p style="margin: 10px 0 0; line-height: 1.55">This FAQ covers the published work and engagement information. Email hello@shanymo.com to ask me directly.</p>
+</div>
+</div>
+<div style="padding: 10px 24px 4px">
+<div style="display: flex; justify-content: space-between; font-size: 11px; text-transform: uppercase; margin-bottom: 6px"><span>Onboarding progress</span><span>99%</span></div>
+<div style="height: 8px; border-radius: 999px; background: #EFEFEF; overflow: hidden"><div style="height: 100%; width: 99%; background: linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00)"></div></div>
+<p style="margin: 6px 0 0; font-size: 11px">Stuck at 99% since lunch. Suspected cause: fries.</p>
+</div>
+<div style="padding: 16px 24px 6px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<button onClick="{{askCopy}}" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; background: #262626; color: #FFFFFF; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px; border: 0; cursor: pointer; font-family: inherit; font-size: 13px">{{copyLabel}}</button>
+<a href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 999px; border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00) border-box; text-decoration: none; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; text-transform: uppercase; font-size: 13px">LinkedIn<i class="ar" aria-hidden="true"></i></a>
+</div>
+<div style="padding: 4px 24px 10px; text-align: center">
+<button onClick="{{backToFaq}}" style="min-height: 44px; padding: 0 12px; border: 0; background: transparent; color: #262626; cursor: pointer; font-family: inherit; font-size: 13px; text-decoration: underline">← Back to the FAQs</button>
+</div>
+</div>
+</template>
+<div style="padding: 12px 20px 18px; border-top: 1px solid #E4E4E4; display: flex; gap: 8px; align-items: center">
+<label for="ask" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Ask a question about Shany's work</label>
+<input id="ask" type="text" onKeyDown="{{onAskKey}}" placeholder="Type a question…" style="flex: 1; min-width: 0; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid #CFCFCF; background: #FFFFFF; color: #262626; font-family: inherit; font-size: 14px">
+<button onClick="{{askSend}}" aria-label="Send question" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #262626; color: #FFFFFF; cursor: pointer; display: inline-flex; align-items: center; justify-content: center">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</button>
+</div>
+</div>
+</section>
 </template>
 <template sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
 <div class="mmenu" role="dialog" aria-modal="true" aria-label="Menu">
@@ -379,6 +463,68 @@ window.__startFig=function(){if(window.__figOn||!document.getElementById("fig"))
 
 class Component extends DCLogic {
   menuVals() { const st = this.state || {}; return { menuOpen: !!st.menu, openMenu: () => this.setState({ menu: true }), closeMenu: () => this.setState({ menu: false }) }; }
+  moneyRain() {
+    const panel = document.getElementById('askmo'); if (!panel || !panel.animate) return;
+    const box = panel.firstElementChild || panel; if (getComputedStyle(box).position === 'static') box.style.position = 'relative';
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const em = ['💰', '💵', '💸', '💲', '🤑'], n = reduce ? 6 : 70, H = box.clientHeight || 400, W = box.clientWidth || 400;
+    for (let i = 0; i < n; i++) {
+      const s = document.createElement('span'); s.textContent = em[i % em.length]; s.setAttribute('aria-hidden', 'true');
+      s.style.cssText = 'position:absolute;top:-40px;left:' + (Math.random() * (W - 20)) + 'px;font-size:' + (16 + Math.random() * 22) + 'px;pointer-events:none;z-index:5;will-change:transform';
+      box.appendChild(s);
+      const dur = reduce ? 1 : 1100 + Math.random() * 1300, rot = (Math.random() - .5) * 720, drift = (Math.random() - .5) * 80;
+      const an = s.animate([{ transform: 'translate(0,0) rotate(0)', opacity: 1 }, { transform: 'translate(' + drift + 'px,' + (H + 80) + 'px) rotate(' + rot + 'deg)', opacity: 1 }], { duration: dur, delay: Math.random() * 500, easing: 'cubic-bezier(.4,.05,.7,1)', fill: 'both' });
+      an.onfinish = () => s.remove();
+    }
+  }
+  askExtra() {
+    const st = this.state || {};
+    return {
+      copyLabel: st.copied ? 'Copied ✓' : 'Copy email',
+      askCopy: () => {
+        const t = 'hello@shanymo.com'; let ok = false;
+        const legacy = () => { try { const x = document.createElement('textarea'); x.value = t; document.body.appendChild(x); x.select(); document.execCommand('copy'); x.remove(); } catch (e) {} };
+        try { if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(t).catch(legacy); ok = true; } } catch (e) {}
+        if (!ok) legacy();
+        this.setState({ copied: true }); clearTimeout(this.copyT); this.copyT = setTimeout(() => this.setState({ copied: false }), 2600);
+      },
+      askTickle: (e) => { const el = e && e.currentTarget; if (!el) return; this.moVoice('rawr'); el.classList.remove('askwig'); void el.offsetWidth; el.classList.add('askwig'); }
+    };
+  }
+  askVals() {
+    const st = this.state || {};
+    const qs = [
+      { question: 'What are you doing now?', answer: 'I’m Head of Product, Strategic Ventures Incubation at BCAA, where I lead a five-person product team and set priorities across customer applications, operations, back-office tools and analytics. My fleet-operations work contributed to portfolio results of 36% higher profitability and 33% revenue growth.', source: 'Work, 01' },
+      { question: 'Do you build with AI yourself?', answer: 'Yes. I built a research prototype with Gemini, Qdrant and Streamlit, connecting retrieval and tool workflows to source-linked synthesis. My Lab also includes attestor and regulated-ai-pm: hands-on work on AI-output checks, product workflows and evaluations.', source: 'Lab' },
+      { question: 'Biggest partnership example?', answer: 'At EPIC Semiconductors, I developed enterprise and government partnerships around sensing technology and machine-learning applications. The work built a $50M+ opportunity pipeline growing 29% year over year, including a $7M ADAS/AV OEM opportunity. Those are pipeline and opportunity figures, not booked revenue.', source: 'Inventory' },
+      { question: 'Rates and salary?', answer: 'Scope and engagement type determine the conversation. Email hello@shanymo.com with the role or product problem, expected commitment and timeline, and we can discuss fit.', source: 'Contact' },
+      { question: 'What kinds of roles are a fit?', answer: 'Director or Head of Product roles in Series A+ companies, and product or venture-lead roles in enterprise incubation. I’m interested in mandates that combine discovery, experience design, hands-on experimentation and the authority to turn learning into delivery.', source: 'Contact' },
+      { question: 'Can I hire you for a project?', answer: 'Yes. Bring me a product decision or build: a new opportunity to define, an experience to improve, a prototype to test, or a build/buy/partner choice. Tell me the problem, the outcome you need and your timeline on the Contact page.', source: 'Contact' },
+      { question: 'How is your approach different?', answer: 'I connect the business case, the experience and the working product. I can lead the product direction and team, then get hands-on with design and AI prototypes to test the riskiest assumptions. Partnerships are part of that judgment: not everything valuable needs to be built in-house.', source: 'Work' },
+      { question: 'Do you advise founders or investors?', answer: 'Yes. I’m a Product Executive in Residence at Mighty Capital, supporting product and market diligence. I also contribute to Products That Count’s AI Council and served on its 2025 Product Awards Advisory Board for AI & Data. For independent advisory work, tell me the product or market decision you need help with.', source: 'Contact' },
+      { question: 'What is your design background?', answer: 'My background combines interaction design at Simon Fraser University and software engineering at the University of Tehran. The portfolio brings that combination into product journeys, state models, interfaces and prototypes.', source: '' }
+    ];
+    const qi = (st.askq === undefined || st.askq === null) ? -1 : st.askq;
+    const items = [
+      { label: 'Product strategy', href: '/work/' },
+      { label: 'Design', href: '/work/' },
+      { label: 'Hands-on building', href: '/lab/' },
+      { label: 'hello@shanymo.com', href: 'mailto:hello@shanymo.com' }
+    ];
+    const askMarquee = [];
+    for (let r = 0; r < 8; r++) items.forEach((it) => askMarquee.push({ label: it.label, href: it.href, tab: r === 0 ? '0' : '-1' }));
+    return {
+      askMarquee,
+      chatOpen: !!st.chat, chatClosed: !st.chat,
+      openChat: () => this.setState({ chat: true }), closeChat: () => this.setState({ chat: false }),
+      faqMode: st.askmode !== 'onb', onbMode: st.askmode === 'onb',
+      askSend: () => this.setState({ askmode: 'onb' }),
+      onAskKey: (e) => { if (e && e.key === 'Enter') { if (e.preventDefault) e.preventDefault(); this.setState({ askmode: 'onb' }); } },
+      backToFaq: () => this.setState({ askmode: 'faq' }),
+      askQuestions: qs.map((d, i) => ({ question: d.question, pressed: qi === i ? 'true' : 'false', pick: () => { this.setState({ askq: i }); if (/salary/i.test(d.question)) this.moneyRain(); }, style: 'min-height: 44px; padding: 0 14px; border-radius: 999px; cursor: pointer; font-family: inherit; font-size: 13px; letter-spacing: 0.3px; ' + (qi === i ? 'background: #262626; color: #FFFFFF; border: 1px solid #262626' : 'background: #FFFFFF; color: #262626; border: 1px solid #CFCFCF') })),
+      askQ: qs[qi] || qs[0], askHas: qi >= 0, askNone: qi < 0
+    };
+  }
   constructor(props) {
     super(props);
     this.state = { mail: false, kind: 'role', from: '', subject: '🦖 A leadership role', msg: '', copied: false };
@@ -417,7 +563,7 @@ class Component extends DCLogic {
     const open = (kind) => this.setState({ mail: true, kind, subject: kind === 'role' ? '🦖 A leadership role' : kind === 'project' ? '🦖 A product project' : kind === 'advisory' ? '🦖 Advisory or diligence' : '🦖 Discuss an opportunity' });
     const askMarquee = []; const mqi = [['Product strategy', '/work/'], ['Design', '/work/'], ['Hands-on building', '/lab/'], ['hello@shanymo.com', 'mailto:hello@shanymo.com']];
     for (let r = 0; r < 8; r++) mqi.forEach((it) => askMarquee.push({ label: it[0], href: it[1], tab: r === 0 ? '0' : '-1' }));
-    return { ...this.menuVals(), askMarquee,
+    return { ...this.menuVals(), ...this.askVals(), ...this.askExtra(), askMarquee,
       pitRef: (el) => { if (el) this.pitEl = el; },
       pitCls: (this.props.frame || 'Boxed') === 'Boxed' ? 'pit boxed' : 'pit',
       hire: () => open('role'), project: () => open('project'), advisory: () => open('advisory'), sayHello: () => open('any'),
