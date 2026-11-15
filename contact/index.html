@@ -140,9 +140,10 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 #askmo .askscroll{overflow-y:auto;min-height:0;flex:1 1 auto}
 .ask{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif}
 </style>
+<style>.mailbox{z-index:90 !important}</style>
 </head>
 <body>
-<noscript><div style="max-width:760px;margin:24px auto;padding:0 16px;font-family:Helvetica,Arial,sans-serif;line-height:1.5"><p><a href="/">Home</a> · <a href="/work/">Work</a> · <a href="/lab/">Lab</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a></p><h1>Let’s build the right thing.</h1><p>For Series A+ teams and enterprise ventures building what comes next.</p><p>Bring me in when you need a clearer product direction, an experience people can use, and a practical way to test the idea.</p><p>Product leadership, focused consulting or advisory: clarify the customer and business case, design the journey, build a prototype, or decide what to build, buy or deliver through partners.</p><p>Alongside my operating work, I’m a Product Executive in Residence at Mighty Capital, supporting product and market diligence. At Products That Count, I contribute to the AI Council and served on the 2025 Product Awards Advisory Board for AI &amp; Data.</p><p>hello@shanymo.com · <a href="https://www.linkedin.com/in/shanymo/">LinkedIn</a></p></div></noscript>
+<noscript><div style="max-width:760px;margin:24px auto;padding:0 16px;font-family:Helvetica,Arial,sans-serif;line-height:1.5"><p><a href="/">Home</a> · <a href="/work/">Work</a> · <a href="/lab/">Lab</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a></p><h1>Let’s build the right thing.</h1><p>For Series A+ teams and enterprise ventures building what comes next.</p><p>hello@shanymo.com · <a href="https://www.linkedin.com/in/shanymo/">LinkedIn</a></p></div></noscript>
 <template id="dc-tpl">
 
 <div style="color: #262626; font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; letter-spacing: 0.5px">
@@ -184,7 +185,7 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 <div class="mailbox" role="dialog" aria-modal="true" aria-label="Write to Shany" onClick="{{bgClose}}">
 <div class="mail" style="font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #262626; letter-spacing: .3px">
 <div class="bar"><i style="background:#DD00FF"></i><i style="background:#FCA002"></i><i style="background:#00FFF7"></i><span style="margin-left: 8px">New message</span><button onClick="{{closeMail}}" aria-label="Close" style="margin-left: auto; background: transparent; border: 0; color: #FFFFFF; font-size: 16px; cursor: pointer">✕</button></div>
-<div class="mintro"><p class="lead">Bring me in when you need a clearer product direction, an experience people can use, and a practical way to test the idea.</p><p>Product leadership, focused consulting or advisory: clarify the customer and business case, design the journey, build a prototype, or decide what to build, buy or deliver through partners.</p><p>Alongside my operating work, I’m a Product Executive in Residence at Mighty Capital, supporting product and market diligence. At Products That Count, I contribute to the AI Council and served on the 2025 Product Awards Advisory Board for AI &amp; Data.</p></div>
+
 <div class="mrow"><label>To</label><span>hello@shanymo.com</span></div>
 <div class="mrow"><label>About</label><div class="seg"><button class="{{segRole}}" onClick="{{hire}}">A leadership role</button><button class="{{segProj}}" onClick="{{project}}">A product project</button><button class="{{segAdv}}" onClick="{{advisory}}">Advisory or diligence</button></div></div>
 <div class="mrow"><label for="cf-from">From</label><input id="cf-from" type="email" placeholder="you@company.com" value="{{from}}" onInput="{{onFrom}}"></div>
