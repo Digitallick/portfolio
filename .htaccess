@@ -13,6 +13,9 @@ DirectoryIndex index.html
   # old WordPress addresses
   RewriteRule ^bets/?$ /work/ [L,R=301]
   RewriteRule ^ads/?$ /work/ [L,R=301]
+  # Inventory now lives under Work
+  RewriteRule ^inventory/?$ /work/inventory/ [L,R=301]
+  RewriteRule ^inventory/(.+)$ /work/inventory/$1 [L,R=301]
 </IfModule>
 <IfModule mod_expires.c>
   ExpiresActive On
