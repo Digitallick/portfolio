@@ -1,0 +1,29 @@
+/* Site-wide type rules (one scale: 11 · 13 · 15 · 17 · 22 · 30 · 44 · 64 + one headline size) */
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/screens/ibm-plex-mono-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/screens/ibm-plex-mono-latin-500-normal.woff2) format('woff2')}
+
+/* 1. One headline style on every page */
+h1.big,.room-h>h1,#pg h1,h1.abhl{font-size:clamp(2.4rem,5.6vw,4.75rem) !important;line-height:.96 !important;letter-spacing:-.025em !important}
+
+/* 2. Sentences get no letter spacing; uppercase labels keep theirs */
+p,li,dd,td,blockquote,textarea,.pb,.lede,.pf-b,.note{letter-spacing:0 !important}
+p.meta{letter-spacing:.06em !important}
+
+/* 3. Reading text: 17 for paragraphs, 15 for dense rows and side notes, line height 1.5 */
+.work p.t,p.t{font-size:17px !important;line-height:1.5 !important}
+.room-h p.lede,.hero p.lede,.intro p.lede,.leadbeat p.lede{font-size:19px !important;line-height:1.5 !important}
+p.note{font-size:17px !important;line-height:1.5 !important}
+.act p{font-size:17px !important;line-height:1.5 !important}
+#pg .brief dd{font-size:15px !important;line-height:1.5 !important}
+#pg .brief dd.p{font-size:17px !important;line-height:1.4 !important}
+#pg .try li{font-size:15px !important}
+#pg .try p{font-size:15px !important;line-height:1.5 !important}
+#pg .row .pb{font-size:15px !important}
+#pg .row .pf{font-size:12px !important}
+.abblurb p{font-size:16px !important;line-height:1.5 !important}
+
+/* 4. Nothing smaller than 11px */
+.stamp,.mc-say,[style*="font-size: 10.5px"],[style*="font-size:10.5px"],[style*="font-size: 10px"]{font-size:11px !important}
+
+/* 5. Line length: paragraphs stop at ~70 characters */
+p.t,p.note,.act p,.room-h p.lede{max-width:68ch}

@@ -1330,4 +1330,5 @@ function voice(kind){ try{ const A=window.AudioContext||window.webkitAudioContex
   if(reduce){ for(let k=0;k<160;k++) draw(); return; } const loop=()=>{ if(!document.hidden) draw(); requestAnimationFrame(loop); }; loop(); })();
 
 (()=>{ const mm=document.getElementById('mmenu'); document.querySelector('.mmenu-btn').onclick=()=>{ mm.hidden=false; }; mm.querySelector('.mmenu-x').onclick=()=>{ mm.hidden=true; }; addEventListener('keydown',e=>{ if(e.key==='Escape') mm.hidden=true; }); })();
-</script>
+</script><link rel="stylesheet" href="/assets/type.css">
+
