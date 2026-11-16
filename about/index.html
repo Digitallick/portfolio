@@ -139,11 +139,14 @@ mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 1
 .abhint{margin:0;font-size:11px;text-transform:uppercase;letter-spacing:.8px;background:rgba(255,255,255,.88);padding:6px 10px;border-radius:999px;display:flex;gap:8px;align-items:center}
 .abhint i{display:inline-block;width:34px;height:2px;background:linear-gradient(90deg,#DD00FF,#00FFF7,#FCA002,#FFFF00);border-radius:2px;position:relative}
 .abhint i::after{content:"";position:absolute;top:-3px;left:var(--p,0%);width:8px;height:8px;border-radius:50%;background:#262626;transform:translateX(-50%)}
+.abrow{position:relative;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.abli{background:rgba(255,255,255,.92);border:1px solid #CFCFCF;border-radius:999px;min-height:56px;display:inline-flex;align-items:center;padding:0 22px;font-size:13.5px;text-transform:uppercase;letter-spacing:.6px;text-decoration:none;color:#262626}
+.abli:hover{border-color:#262626;color:#262626}
 .abwrap{position:relative;display:inline-block}.abwrap .cta{position:relative;z-index:2}
 .abpeek{position:absolute;right:4px;top:50%;width:54px;height:54px;z-index:1;transform:translate(0,-50%);opacity:0;pointer-events:none;transition:transform .45s cubic-bezier(.3,1.5,.5,1),opacity .2s}
 .abpeek img{display:block;width:100%;height:100%;transform-origin:50% 100%}
-.abwrap:hover .abpeek,.abwrap:focus-within .abpeek{transform:translate(78px,-58%);opacity:1}
-.abwrap:hover .abpeek img,.abwrap:focus-within .abpeek img{animation:abhop .62s cubic-bezier(.3,.7,.4,1) .3s infinite}
+.abrow.peek .abpeek{transform:translate(78px,-58%);opacity:1}
+.abrow.peek .abpeek img{animation:abhop .62s cubic-bezier(.3,.7,.4,1) .3s infinite}
 @keyframes abhop{0%{transform:translateY(0) scale(1.08,.9)}18%{transform:translateY(0) scale(.95,1.06)}45%{transform:translateY(-18px) rotate(-6deg) scale(1)}70%{transform:translateY(0) scale(1.06,.92)}100%{transform:translateY(0) scale(1)}}
 @media (hover:none){.abpeek{transform:translate(72px,-58%);opacity:1}.abpeek img{animation:abhop .62s cubic-bezier(.3,.7,.4,1) .6s 3}}
 @media (prefers-reduced-motion:reduce){.abpeek{transition:none}.abpeek img{animation:none!important}}
@@ -202,7 +205,7 @@ mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 1
 <h1 class="H abhl">Product, design and the business case, <span class="band">owned together.</span></h1>
 <div class="abblurb"><p>I lead product and design teams from the first idea to scale: clarifying the customer and the business case, shaping the experience, and building prototypes to test it before teams commit.</p><p>Alongside that work, I support product and market diligence as a Product Executive in Residence, contribute to an AI council, and served on a 2025 product awards advisory board for AI &amp; Data. I’m open to leadership roles, and selectively to projects and advisory.</p><div class="abchips" role="list"><span class="abchip" role="listitem">0→1</span><span class="abchip" role="listitem">Scale</span><span class="abchip" role="listitem">Design</span><span class="abchip" role="listitem">AI</span><span class="abchip" role="listitem">Partnerships</span></div></div>
 <div class="abbust" role="img" aria-label="A glass portrait traced in flowing coloured lines. It turns as you move your mouse."><canvas id="fig" aria-hidden="true"></canvas></div>
-<div class="abact"><p class="abhint">Move your mouse · it turns <i id="dial"></i></p><span class="abwrap"><span class="abpeek" aria-hidden="true"><img src="/assets/trex-fluent-3d.png" alt=""></span><button class="cta light H" onClick="{{sayHello}}">Write to me<i class="ar" aria-hidden="true"></i></button></span></div>
+<div class="abact"><p class="abhint">Move your mouse · it turns <i id="dial"></i></p><span class="abrow"><span class="abwrap"><button class="cta light H" onClick="{{sayHello}}">Write to me<i class="ar" aria-hidden="true"></i></button></span><a class="abli" href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener">LinkedIn<i class="ar" aria-hidden="true"></i></a><span class="abpeek" aria-hidden="true"><img src="/assets/trex-fluent-3d.png" alt=""></span></span></div>
 </section>
 </div>
 <p class="sitecopy" style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4">©Made on Earth by Shany Mo while eating 🍟</p>
@@ -582,5 +585,6 @@ class Component extends DCLogic {
 
 DC.mount(Component, {"frame":{"editor":"enum","options":["Boxed","Full-bleed"],"default":"Boxed"},"objects":{"editor":"enum","options":["Mixed","Monsters only","Treats only"],"default":"Mixed"},"$preview":{"width":1440,"height":900}});
 </script>
+<script>(function(){function t(e,on){var w=e.target.closest&&e.target.closest(".abwrap");if(!w)return;var r=w.closest(".abrow");if(r)r.classList.toggle("peek",on)}document.addEventListener("mouseover",function(e){t(e,true)});document.addEventListener("mouseout",function(e){var w=e.target.closest&&e.target.closest(".abwrap");if(w&&!w.contains(e.relatedTarget))t(e,false)});document.addEventListener("focusin",function(e){t(e,true)});document.addEventListener("focusout",function(e){t(e,false)})})();</script>
 </body>
 </html>
