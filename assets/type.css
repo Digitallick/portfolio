@@ -44,7 +44,7 @@ p.t,p.note,.act p,.room-h p.lede{max-width:68ch}
 #pg .idx{padding-bottom:60px !important}
 @media (min-width:641px){.abact{bottom:36px !important}}
 @media (min-width:641px) and (max-height:800px){.abchips{display:none !important}}
-.pit.boxed{margin-bottom:16px !important}
+.pit.boxed{margin-bottom:36px !important}
 
 @media (max-width:1100px){.screen main{padding-bottom:41px !important}}
 @media (max-width:640px){.abact{margin-bottom:36px !important}}
