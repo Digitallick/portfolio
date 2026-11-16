@@ -53,3 +53,8 @@ p.t,p.note,.act p,.room-h p.lede{max-width:68ch}
 div:has(> .siteribbon):not(.screen){display:flex !important;flex-direction:column !important;min-height:100vh;min-height:100svh}
 div:has(> .siteribbon) > .siteribbon{margin-top:auto !important}
 div:has(> .siteribbon) > :first-child{flex:0 0 auto}
+
+/* 9. Work header uses the same menu font as every other page */
+header.site .nav a{padding:12px 8px !important;margin:0 -8px !important;line-height:normal !important}
+@media (min-width:641px){header.site{padding-bottom:32px !important}}
+header.site .nav,header.site .nav a{font-family:'Neue Haas Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif !important}
