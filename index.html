@@ -231,7 +231,7 @@ Ask Mo
 <section id="askmo" class="panel" aria-label="Ask Mo" style="position: absolute; right: 32px; bottom: 64px; z-index: 30; width: 420px; border-radius: 26px; padding: 2px; background: linear-gradient(135deg,#DD00FF,#00FFF7,#FCA002,#FFFF00); box-shadow: 0 24px 60px rgba(38,38,38,0.18)">
 <div style="background: #FFFFFF; border-radius: 24px; overflow: hidden">
 <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 14px 20px; border-bottom: 1px solid #E4E4E4">
-<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 18px">Ask Mo <span style="font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.5px">— FAQ mode</span></p>
+<p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 18px">Ask Mo <span style="font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 12px; letter-spacing: 0.5px">— your concierge</span></p>
 <button onClick="{{closeChat}}" aria-label="Close Ask Mo" style="width: 44px; height: 44px; border-radius: 50%; border: 1px solid #CFCFCF; background: #FFFFFF; color: #262626; cursor: pointer; display: inline-flex; align-items: center; justify-content: center">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
 </button>
@@ -239,7 +239,7 @@ Ask Mo
 <template sc-if value="{{faqMode}}" hint-placeholder-val="{{ true }}">
 <div class="askscroll">
 <div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; min-height: 180px">
-<template sc-if value="{{askNone}}" hint-placeholder-val="{{ true }}"><div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px"><p style="margin: 0; line-height: 1.55">Quick answers about my work and how we could work together. Choose a question below; for anything else, email me directly.</p></div></template>
+<template sc-if value="{{askNone}}" hint-placeholder-val="{{ true }}"><div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px"><p style="margin: 0; line-height: 1.55">I’m Mo’s concierge. Ask about my work, the roles I’m open to or how we could work together. For anything off the record, email me directly.</p></div></template>
 <template sc-if value="{{askHas}}" hint-placeholder-val="{{ false }}">
 <div style="align-self: flex-end; max-width: 85%; background: #262626; color: #FFFFFF; border-radius: 18px 18px 4px 18px; padding: 12px 16px; line-height: 1.45">{{q.question}}</div>
 <div style="align-self: flex-start; max-width: 92%; background: #FFF3FE; border-radius: 18px 18px 18px 4px; padding: 14px 16px">
@@ -261,7 +261,7 @@ Ask Mo
 <img src="{{animSrc}}" width="72" height="72" alt="Tickle the monster" title="Tickle me" onClick="{{askTickle}}" style="flex: none; margin: -6px -4px 0 -8px; cursor: pointer">
 <div>
 <p style="margin: 0; font-family: 'TeX Gyre Heros', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1.1; text-transform: uppercase">I don’t have an answer to that question here.</p>
-<p style="margin: 10px 0 0; line-height: 1.55">This FAQ covers the published work and engagement information. Email hello@shanymo.com to ask me directly.</p>
+<p style="margin: 10px 0 0; line-height: 1.55">I answer from the published record only. Email hello@shanymo.com to ask me directly.</p>
 </div>
 </div>
 <div style="padding: 10px 24px 4px">
@@ -572,6 +572,8 @@ class Component extends DCLogic {
     const qs = [
       { question: 'What are you doing now?', answer: 'I’m Head of Product, Strategic Ventures Incubation at BCAA, where I lead a five-person product team and set priorities across customer applications, operations, back-office tools and analytics. My fleet-operations work contributed to portfolio results of 36% higher profitability and 33% revenue growth.', source: 'Work, 01' },
       { question: 'Do you build with AI yourself?', answer: 'Yes. I built a research prototype with Gemini, Qdrant and Streamlit, connecting retrieval and tool workflows to source-linked synthesis. My Playground also includes attestor and regulated-ai-pm: hands-on work on AI-output checks, product workflows and evaluations.', source: 'Playground' },
+      { question: 'What is the Playground?', answer: 'Experiments you can run in your browser: attestor, regulated-ai-pm, the diligence platform and this concierge. Each one shows the problem it solves, the proof and the code, so you can try it yourself.', source: 'Playground' },
+      { question: 'What is the diligence platform?', answer: 'An agentic research and diligence platform for regulated finance. Every claim links to its source, attestor checks each draft, and a human signs off before anything ships. Built on Gemini, Qdrant and Streamlit, with 5 committed design partners from 50 discovery interviews.', source: 'Playground' },
       { question: 'Biggest partnership example?', answer: 'At EPIC Semiconductors, I developed enterprise and government partnerships around sensing technology and machine-learning applications. The work built a $50M+ opportunity pipeline growing 29% year over year, including a $7M ADAS/AV OEM opportunity. Those are pipeline and opportunity figures, not booked revenue.', source: 'Inventory' },
       { question: 'Rates and salary?', answer: 'Scope and engagement type determine the conversation. Email hello@shanymo.com with the role or product problem, expected commitment and timeline, and we can discuss fit.', source: 'Contact' },
       { question: 'What kinds of roles are a fit?', answer: 'Director or Head of Product roles in Series A+ companies, and product or venture-lead roles in enterprise incubation. I’m interested in mandates that combine discovery, experience design, hands-on experimentation and the authority to turn learning into delivery.', source: 'Contact' },
