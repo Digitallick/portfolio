@@ -141,9 +141,10 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 .ask{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif}
 </style>
 <style>.mailbox{z-index:90 !important}</style>
+<style>@media (min-width:1200px){.pit.boxed{height:calc(100vh - 256px) !important;height:calc(100svh - 256px) !important}}@media (max-width:1199px){.pit.boxed{min-height:calc(100svh - 256px) !important}}</style>
 </head>
 <body>
-<noscript><div style="max-width:760px;margin:24px auto;padding:0 16px;font-family:Helvetica,Arial,sans-serif;line-height:1.5"><p><a href="/">Home</a> · <a href="/work/">Work</a> · <a href="/lab/">Lab</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a></p><h1>Let’s build the right thing.</h1><p>For Series A+ teams and enterprise ventures building what comes next.</p><p>hello@shanymo.com · <a href="https://www.linkedin.com/in/shanymo/">LinkedIn</a></p></div></noscript>
+<noscript><div style="max-width:760px;margin:24px auto;padding:0 16px;font-family:Helvetica,Arial,sans-serif;line-height:1.5"><p><a href="/">Home</a> · <a href="/work/">Work</a> · <a href="/playground/">Playground</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a></p><h1>Let’s build the right thing.</h1><p>For Series A+ teams and enterprise ventures building what comes next.</p><p>hello@shanymo.com · <a href="https://www.linkedin.com/in/shanymo/">LinkedIn</a></p></div></noscript>
 <template id="dc-tpl">
 
 <div style="color: #262626; font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; letter-spacing: 0.5px">
@@ -153,7 +154,7 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 <nav aria-label="Primary" class="nav-links" style="font-size: 13.5px; text-transform: uppercase">
 <a href="/" style="text-decoration: none; padding: 12px 0">Home</a>
 <a href="/work/" style="text-decoration: none; padding: 12px 0">Work</a>
-<a href="/lab/" style="text-decoration: none; padding: 12px 0">Lab</a>
+<a href="/playground/" style="text-decoration: none; padding: 12px 0">Playground</a>
 <a href="/about/" style="text-decoration: none; padding: 12px 0">About</a>
 <a href="/contact/" aria-current="page" style="text-decoration: underline; text-decoration-color: #F2C400; text-decoration-thickness: 3px; text-underline-offset: 6px; padding: 12px 0">Contact</a>
 </nav>
@@ -177,6 +178,18 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 </div>
 <p class="hint">Grab one · click to make the pile jump</p>
 </section>
+</div>
+<div class="siteribbon" style="position: relative; overflow: hidden; border-top: 1px solid #E4E4E4; padding: 10px 0; background: rgba(255,255,255,0.7)">
+<div class="mqtrack" style="font-size: 11px; align-items: center">
+<template sc-for list="{{askMarquee}}" as="m" hint-placeholder-count="12">
+<span style="display: inline-flex; align-items: center; gap: 10px; padding-right: 12px; white-space: nowrap">
+<span aria-hidden="true">←</span>
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><path d="M9 9h.01M15 9h.01"></path></svg>
+<span aria-hidden="true">→</span>
+<a href="{{m.href}}" tabindex="{{m.tab}}" style="text-decoration: none">{{m.label}}</a>
+</span>
+</template>
+</div>
 </div>
 <p class="sitecopy" style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4">©Made on Earth by Shany Mo while eating 🍟</p>
 </div>
@@ -273,7 +286,7 @@ Ask Mo
 <nav aria-label="Mobile" style="margin-top: 40px; display: flex; flex-direction: column; gap: 8px">
 <a class="ml" href="/">Home</a>
 <a class="ml" href="/work/">Work</a>
-<a class="ml" href="/lab/">Lab</a>
+<a class="ml" href="/playground/">Playground</a>
 <a class="ml" href="/about/">About</a>
 <a class="ml on" href="/contact/" aria-current="page">Contact</a>
 </nav>
@@ -325,7 +338,7 @@ class Component extends DCLogic {
     const st = this.state || {};
     const qs = [
       { question: 'What are you doing now?', answer: 'I’m Head of Product, Strategic Ventures Incubation at BCAA, where I lead a five-person product team and set priorities across customer applications, operations, back-office tools and analytics. My fleet-operations work contributed to portfolio results of 36% higher profitability and 33% revenue growth.', source: 'Work, 01' },
-      { question: 'Do you build with AI yourself?', answer: 'Yes. I built a research prototype with Gemini, Qdrant and Streamlit, connecting retrieval and tool workflows to source-linked synthesis. My Lab also includes attestor and regulated-ai-pm: hands-on work on AI-output checks, product workflows and evaluations.', source: 'Lab' },
+      { question: 'Do you build with AI yourself?', answer: 'Yes. I built a research prototype with Gemini, Qdrant and Streamlit, connecting retrieval and tool workflows to source-linked synthesis. My Playground also includes attestor and regulated-ai-pm: hands-on work on AI-output checks, product workflows and evaluations.', source: 'Playground' },
       { question: 'Biggest partnership example?', answer: 'At EPIC Semiconductors, I developed enterprise and government partnerships around sensing technology and machine-learning applications. The work built a $50M+ opportunity pipeline growing 29% year over year, including a $7M ADAS/AV OEM opportunity. Those are pipeline and opportunity figures, not booked revenue.', source: 'Inventory' },
       { question: 'Rates and salary?', answer: 'Scope and engagement type determine the conversation. Email hello@shanymo.com with the role or product problem, expected commitment and timeline, and we can discuss fit.', source: 'Contact' },
       { question: 'What kinds of roles are a fit?', answer: 'Director or Head of Product roles in Series A+ companies, and product or venture-lead roles in enterprise incubation. I’m interested in mandates that combine discovery, experience design, hands-on experimentation and the authority to turn learning into delivery.', source: 'Contact' },
@@ -338,7 +351,7 @@ class Component extends DCLogic {
     const items = [
       { label: 'Product strategy', href: '/work/' },
       { label: 'Design', href: '/work/' },
-      { label: 'Hands-on building', href: '/lab/' },
+      { label: 'Hands-on building', href: '/playground/' },
       { label: 'hello@shanymo.com', href: 'mailto:hello@shanymo.com' }
     ];
     const askMarquee = [];
@@ -477,7 +490,7 @@ class Component extends DCLogic {
   renderVals() {
     const st = this.state, role = st.kind === 'role';
     const open = (kind) => this.setState({ mail: true, kind, subject: kind === 'role' ? '🦖 A leadership role' : kind === 'project' ? '🦖 A product project' : kind === 'advisory' ? '🦖 Advisory or diligence' : '🦖 Discuss an opportunity' });
-    const askMarquee = []; const mqi = [['Product strategy', '/work/'], ['Design', '/work/'], ['Hands-on building', '/lab/'], ['hello@shanymo.com', 'mailto:hello@shanymo.com']];
+    const askMarquee = []; const mqi = [['Product strategy', '/work/'], ['Design', '/work/'], ['Hands-on building', '/playground/'], ['hello@shanymo.com', 'mailto:hello@shanymo.com']];
     for (let r = 0; r < 8; r++) mqi.forEach((it) => askMarquee.push({ label: it[0], href: it[1], tab: r === 0 ? '0' : '-1' }));
     return { ...this.menuVals(), ...this.askVals(), ...this.askExtra(), askMarquee,
       pitRef: (el) => { if (el) this.pitEl = el; },

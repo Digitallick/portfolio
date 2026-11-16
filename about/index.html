@@ -124,7 +124,7 @@ a:hover>.mo-logo .mo-o,.mo-logo:hover .mo-o{animation:mohop .55s cubic-bezier(.3
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "@id": "https://shanymo.com/#person", "name": "Shany Mo", "url": "https://shanymo.com/", "image": "https://shanymo.com/assets/og.png", "jobTitle": "Head of Product, Strategic Ventures Incubation", "worksFor": {"@type": "Organization", "name": "BCAA"}, "description": "Product strategy and design leader who still builds: strategy, design and hands-on building for scaling teams and enterprise ventures.", "knowsAbout": ["Product strategy", "Product management", "0→1 products", "Experience design", "AI product development", "Partnerships", "Build, buy or partner decisions"], "hasOccupation": [{"@type": "Role", "roleName": "Product Executive in Residence", "memberOf": {"@type": "Organization", "name": "Mighty Capital"}}, {"@type": "Role", "roleName": "AI Council Contributor", "memberOf": {"@type": "Organization", "name": "Products That Count"}}], "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Simon Fraser University"}, {"@type": "CollegeOrUniversity", "name": "University of Tehran"}], "email": "mailto:hello@shanymo.com", "sameAs": ["https://www.linkedin.com/in/shanymo/"]}</script>
 <style>
-.abstage{position:relative;height:calc(100vh - 197px);height:calc(100svh - 197px);min-height:560px;overflow:hidden}
+.abstage{position:relative;height:calc(100vh - 234px);height:calc(100svh - 234px);min-height:520px;overflow:hidden}
 .abbust{position:absolute;left:52%;bottom:0;height:116%;aspect-ratio:1049/1032;transform:translateX(-50%);pointer-events:none;user-select:none;overflow:hidden;
 -webkit-mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 12%,#000 78%,transparent 100%);
 mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 12%,#000 78%,transparent 100%);-webkit-mask-composite:source-in;mask-composite:intersect}
@@ -180,9 +180,10 @@ mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 1
 .ask{font-family:'TeX Gyre Heros','Helvetica Neue',Helvetica,Arial,sans-serif}
 </style>
 <style>.mailbox{z-index:90 !important}</style>
+<style>@media (max-height:800px) and (min-width:641px){.abblurb{font-size:13.5px;line-height:1.45;padding:12px 14px;top:24px!important}.abhl{top:24px!important}.abchips{margin-top:10px;gap:6px}.abchip{min-height:30px;padding:0 11px;font-size:12px}.abhint{display:none}}</style>
 </head>
 <body>
-<noscript><div style="max-width:760px;margin:24px auto;padding:0 16px;font-family:Helvetica,Arial,sans-serif;line-height:1.5"><p><a href="/">Home</a> · <a href="/work/">Work</a> · <a href="/lab/">Lab</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a></p><h1>Product, design and the business case, owned together.</h1><p>I lead product and design teams from the first idea to scale: clarifying the customer and the business case, shaping the experience, and building prototypes to test it before teams commit.</p><p>Alongside that work, I support product and market diligence as a Product Executive in Residence, contribute to an AI council, and served on a 2025 product awards advisory board for AI &amp; Data. I’m open to leadership roles, and selectively to projects and advisory.</p><p><a href="mailto:hello@shanymo.com">hello@shanymo.com</a></p></div></noscript>
+<noscript><div style="max-width:760px;margin:24px auto;padding:0 16px;font-family:Helvetica,Arial,sans-serif;line-height:1.5"><p><a href="/">Home</a> · <a href="/work/">Work</a> · <a href="/playground/">Playground</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a></p><h1>Product, design and the business case, owned together.</h1><p>I lead product and design teams from the first idea to scale: clarifying the customer and the business case, shaping the experience, and building prototypes to test it before teams commit.</p><p>Alongside that work, I support product and market diligence as a Product Executive in Residence, contribute to an AI council, and served on a 2025 product awards advisory board for AI &amp; Data. I’m open to leadership roles, and selectively to projects and advisory.</p><p><a href="mailto:hello@shanymo.com">hello@shanymo.com</a></p></div></noscript>
 <template id="dc-tpl">
 
 <div style="color: #262626; font-family: 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; letter-spacing: 0.5px">
@@ -192,7 +193,7 @@ mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 1
 <nav aria-label="Primary" class="nav-links" style="font-size: 13.5px; text-transform: uppercase">
 <a href="/" style="text-decoration: none; padding: 12px 0">Home</a>
 <a href="/work/" style="text-decoration: none; padding: 12px 0">Work</a>
-<a href="/lab/" style="text-decoration: none; padding: 12px 0">Lab</a>
+<a href="/playground/" style="text-decoration: none; padding: 12px 0">Playground</a>
 <a href="/about/" aria-current="page" style="text-decoration: underline; text-decoration-color: #F2C400; text-decoration-thickness: 3px; text-underline-offset: 6px; padding: 12px 0">About</a>
 <a href="/contact/" style="text-decoration: none; padding: 12px 0">Contact</a>
 </nav>
@@ -207,6 +208,18 @@ mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 1
 <div class="abbust" role="img" aria-label="A glass portrait traced in flowing coloured lines. It turns as you move your mouse."><canvas id="fig" aria-hidden="true"></canvas></div>
 <div class="abact"><p class="abhint">Move your mouse · it turns <i id="dial"></i></p><span class="abrow"><span class="abwrap"><button class="cta light H" onClick="{{sayHello}}">Write to me<i class="ar" aria-hidden="true"></i></button></span><a class="abli" href="https://www.linkedin.com/in/shanymo/" target="_blank" rel="noopener">LinkedIn<i class="ar" aria-hidden="true"></i></a><span class="abpeek" aria-hidden="true"><img src="/assets/trex-fluent-3d.png" alt=""></span></span></div>
 </section>
+</div>
+<div class="siteribbon" style="position: relative; overflow: hidden; border-top: 1px solid #E4E4E4; padding: 10px 0; background: rgba(255,255,255,0.7)">
+<div class="mqtrack" style="font-size: 11px; align-items: center">
+<template sc-for list="{{askMarquee}}" as="m" hint-placeholder-count="12">
+<span style="display: inline-flex; align-items: center; gap: 10px; padding-right: 12px; white-space: nowrap">
+<span aria-hidden="true">←</span>
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><path d="M9 9h.01M15 9h.01"></path></svg>
+<span aria-hidden="true">→</span>
+<a href="{{m.href}}" tabindex="{{m.tab}}" style="text-decoration: none">{{m.label}}</a>
+</span>
+</template>
+</div>
 </div>
 <p class="sitecopy" style="margin: 0; padding: 12px 0; text-align: center; font-size: 11px; border-top: 1px solid #E4E4E4">©Made on Earth by Shany Mo while eating 🍟</p>
 </div>
@@ -303,7 +316,7 @@ Ask Mo
 <nav aria-label="Mobile" style="margin-top: 40px; display: flex; flex-direction: column; gap: 8px">
 <a class="ml" href="/">Home</a>
 <a class="ml" href="/work/">Work</a>
-<a class="ml" href="/lab/">Lab</a>
+<a class="ml" href="/playground/">Playground</a>
 <a class="ml on" href="/about/" aria-current="page">About</a>
 <a class="ml" href="/contact/">Contact</a>
 </nav>
@@ -499,7 +512,7 @@ class Component extends DCLogic {
     const st = this.state || {};
     const qs = [
       { question: 'What are you doing now?', answer: 'I’m Head of Product, Strategic Ventures Incubation at BCAA, where I lead a five-person product team and set priorities across customer applications, operations, back-office tools and analytics. My fleet-operations work contributed to portfolio results of 36% higher profitability and 33% revenue growth.', source: 'Work, 01' },
-      { question: 'Do you build with AI yourself?', answer: 'Yes. I built a research prototype with Gemini, Qdrant and Streamlit, connecting retrieval and tool workflows to source-linked synthesis. My Lab also includes attestor and regulated-ai-pm: hands-on work on AI-output checks, product workflows and evaluations.', source: 'Lab' },
+      { question: 'Do you build with AI yourself?', answer: 'Yes. I built a research prototype with Gemini, Qdrant and Streamlit, connecting retrieval and tool workflows to source-linked synthesis. My Playground also includes attestor and regulated-ai-pm: hands-on work on AI-output checks, product workflows and evaluations.', source: 'Playground' },
       { question: 'Biggest partnership example?', answer: 'At EPIC Semiconductors, I developed enterprise and government partnerships around sensing technology and machine-learning applications. The work built a $50M+ opportunity pipeline growing 29% year over year, including a $7M ADAS/AV OEM opportunity. Those are pipeline and opportunity figures, not booked revenue.', source: 'Inventory' },
       { question: 'Rates and salary?', answer: 'Scope and engagement type determine the conversation. Email hello@shanymo.com with the role or product problem, expected commitment and timeline, and we can discuss fit.', source: 'Contact' },
       { question: 'What kinds of roles are a fit?', answer: 'Director or Head of Product roles in Series A+ companies, and product or venture-lead roles in enterprise incubation. I’m interested in mandates that combine discovery, experience design, hands-on experimentation and the authority to turn learning into delivery.', source: 'Contact' },
@@ -512,7 +525,7 @@ class Component extends DCLogic {
     const items = [
       { label: 'Product strategy', href: '/work/' },
       { label: 'Design', href: '/work/' },
-      { label: 'Hands-on building', href: '/lab/' },
+      { label: 'Hands-on building', href: '/playground/' },
       { label: 'hello@shanymo.com', href: 'mailto:hello@shanymo.com' }
     ];
     const askMarquee = [];
@@ -565,7 +578,7 @@ class Component extends DCLogic {
   renderVals() {
     const st = this.state, role = st.kind === 'role';
     const open = (kind) => this.setState({ mail: true, kind, subject: kind === 'role' ? '🦖 A leadership role' : kind === 'project' ? '🦖 A product project' : kind === 'advisory' ? '🦖 Advisory or diligence' : '🦖 Discuss an opportunity' });
-    const askMarquee = []; const mqi = [['Product strategy', '/work/'], ['Design', '/work/'], ['Hands-on building', '/lab/'], ['hello@shanymo.com', 'mailto:hello@shanymo.com']];
+    const askMarquee = []; const mqi = [['Product strategy', '/work/'], ['Design', '/work/'], ['Hands-on building', '/playground/'], ['hello@shanymo.com', 'mailto:hello@shanymo.com']];
     for (let r = 0; r < 8; r++) mqi.forEach((it) => askMarquee.push({ label: it[0], href: it[1], tab: r === 0 ? '0' : '-1' }));
     return { ...this.menuVals(), ...this.askVals(), ...this.askExtra(), askMarquee,
       pitRef: (el) => { if (el) this.pitEl = el; },
