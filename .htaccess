@@ -13,6 +13,8 @@ DirectoryIndex index.html
   # old WordPress addresses
   RewriteRule ^bets/?$ /work/ [L,R=301]
   RewriteRule ^ads/?$ /work/ [L,R=301]
+  # Working docs live in the repo but are not served
+  RewriteRule ^docs/ - [F,L]
   # Lab is now Playground
   RewriteRule ^lab/?$ /playground/ [L,R=301]
   RewriteRule ^lab/(.+)$ /playground/$1 [L,R=301]
