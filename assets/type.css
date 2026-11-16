@@ -48,3 +48,8 @@ p.t,p.note,.act p,.room-h p.lede{max-width:68ch}
 
 @media (max-width:1100px){.screen main{padding-bottom:41px !important}}
 @media (max-width:640px){.abact{margin-bottom:36px !important}}
+
+/* 8. Footer always ends at the bottom of the screen, like Home (no gap under the copyright) */
+div:has(> .siteribbon):not(.screen){display:flex !important;flex-direction:column !important;min-height:100vh;min-height:100svh}
+div:has(> .siteribbon) > .siteribbon{margin-top:auto !important}
+div:has(> .siteribbon) > :first-child{flex:0 0 auto}
