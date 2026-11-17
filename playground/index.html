@@ -776,5 +776,67 @@ class Component extends DCLogic {
 
 DC.mount(Component, {"frame":{"editor":"enum","options":["Boxed","Full-bleed"],"default":"Boxed"},"objects":{"editor":"enum","options":["Mixed","Monsters only","Treats only"],"default":"Mixed"},"$preview":{"width":1440,"height":900}});
 </script>
+<style>
+/* Playground evidence files: results.csv, method.txt, notes.md */
+.sheet{font:12.5px/1.2 'IBM Plex Mono',monospace;border-collapse:collapse;color:#262626;background:#fff;width:max-content;min-width:100%}
+.sheet th,.sheet td{border:1px solid #DADADA;padding:5px 8px;text-align:left;white-space:nowrap;font-weight:400}
+.sheet thead th{background:#F1F1EF;color:#777;text-align:center;font-size:11px}
+.sheet td.rn{background:#F1F1EF;color:#999;text-align:right;width:24px;font-size:11px}
+.sheet tr.hd td{color:#777}
+.sheet td.num{text-align:right}
+.sheet td.todo{color:#b08900;background:#FFFBEA}
+.sheet td.sel{outline:2px solid #1a73e8;outline-offset:-2px}
+.sheetwrap{overflow:auto;padding:0}
+.fx{display:flex;gap:8px;align-items:center;font:12px 'IBM Plex Mono',monospace;border-bottom:1px solid #DADADA;padding:5px 8px;color:#555;background:#fff}
+.fx b{color:#999;font-weight:400;border-right:1px solid #DADADA;padding-right:8px}
+.plain{white-space:pre;font:13px/1.55 'IBM Plex Mono',monospace;padding:14px 16px;color:#262626}
+.ide .ftabs{overflow-x:auto;scrollbar-width:none}.ide .ftabs::-webkit-scrollbar{display:none}.ide .ftabs button{flex:0 0 auto}
+</style>
+<script>
+(function(){
+var ORDER=['attestor','kit','replay','ask'];
+var SK=[{"label":"Discovery synthesis","makes":"Job stories, pains and evidence strength from interviews","basis":"Teresa Torres, Alan Klement and The Mom Test","happy":[0.71,0.29],"trap":[1,0.8]},{"label":"PR-FAQ","makes":"A press release and FAQ written before building","basis":"Amazon's Working Backwards","happy":[1,0.33],"trap":[1,0.2]},{"label":"AI feature brief","makes":"The brief: failure modes, guardrails, cost and rollout","basis":"Microsoft HAX, Google PAIR and NIST AI RMF","happy":[1,0.06],"trap":[1,0.6]},{"label":"Eval plan","makes":"Harm-weighted thresholds, golden set and release gates","basis":"Hamel Husain and Shreya Shankar on evals","happy":[0.93,0.29],"trap":[1,0]},{"label":"Pre-mortem","makes":"Failure stories sorted into tigers, paper tigers and elephants","basis":"Gary Klein and Shreyas Doshi","happy":[0.83,0.33],"trap":[1,0]},{"label":"Launch readiness","makes":"A go / no-go review with evidence for every item","basis":"Google SRE launch practice and NIST AI RMF","happy":[0.9,0],"trap":[1,0.4]},{"label":"Stakeholder update","makes":"A one-page executive update, bottom line first","basis":"BLUF and Amazon narrative memos","happy":[0.67,0.25],"trap":[1,0.8]}];
+var avg=function(k,i){return (SK.reduce(function(t,s){return t+s[k][i]},0)/(SK.length||1)).toFixed(2)};
+var T='[to confirm]';
+var X={
+ attestor:{csv:[['memo','verdict','block','warn','total'],['bad','BLOCK',5,4,9],['borderline','WARN',0,1,1],['good','PASS',0,0,0],['',''],['n','3 memos'],['run','16 Nov 2026 · browser port'],['matches python pkg','yes, on these 3 memos'],['baseline (general AI)','[to run]']],
+  method:'draft + sources\n   │\n   ▼\nsplit into claims ── one sentence = one claim\n   │\n   ▼\n6 checks ── grounding · phantom citation · coverage\n   │        wording · personal data · disclosures\n   ▼\nverdict ── PASS | WARN | BLOCK\n   │\n   ▼\nreviewer reads only what failed',
+  notes:'# why rules, not a second model\na second model shares the first one\'s blind spots\nand can answer differently each time.\ncompliance needs the same verdict for the same text,\nand a rule a reviewer can cite.\n\n# limits\n- overstatement is caught only as a missing source\n- one wording finding per sentence\n- figures are matched, not interpreted\n\n# reproduce\ngit clone https://github.com/digitallick/attestor',
+  margin:['n = 3 memos · bad → BLOCK (5 block, 4 warn) · see results.csv','limit: overstatement is caught only as a missing source'],
+  row:['attestor','alive','8/8 planted problems · BLOCK','3 memos','general AI: [to run]','overstatement = missing source only','github ↗']},
+ kit:{csv:null,
+  method:'request (a real PM task)\n   │\n   ├── normal version\n   └── trap version (one planted problem)\n          │\n          ▼\n   run with skill  |  run without skill\n          │\n          ▼\n   score 0.00 – 1.00 per run\n          │\n          ▼\n   pass if trap(with) > trap(without)',
+  notes:'# why skills, not a better prompt\ngeneral assistants skip the step a regulated review\nasks for first: the guardrail, the testable claim,\nthe release gate. each skill encodes a known method\nso that step is the default.\n\n# limits\n- one planted trap per skill\n- runs and scorer per skill: '+T+'\n\n# reproduce\ngit clone https://github.com/digitallick/regulated-ai-pm',
+  margin:['trap: 1.00 with the skill vs '+avg('trap',1)+' without · 7 skills','runs per skill: '+T],
+  row:['regulated-ai-pm','alive','trap 1.00 vs '+avg('trap',1),'7 skills','without the skill','runs per skill '+T,'github ↗']},
+ replay:{csv:[['metric','value','note'],['discovery interviews',50,'wealth · VC · M&A'],['committed design partners',5,''],['pilot results',T,''],['stages live in demo','1 of 5','check stage runs attestor']],
+  method:'question in\n   │\n   ▼\nretrieve ── 3 sources attached\n   │\n   ▼\ndraft with citations ── every sentence marked [S#]\n   │\n   ▼\ncheck ── attestor, before anyone sees it\n   │\n   ▼\na human signs off',
+  notes:'# why\nanalysts can\'t use drafts they can\'t defend.\nsourcing, checking and sign-off are part of the\npipeline, not added after it.\n\n# limits\n- prototype: the demo replays recorded stages;\n  only the check stage runs live\n- pilot results: '+T+'\n\n# reproduce\ncode not public · ask for a walkthrough',
+  margin:['50 interviews → 5 committed design partners','pilot results: '+T],
+  row:['diligence-platform','hatching','5 design partners','50 interviews','—','pilots '+T,'private']},
+ ask:{csv:[['metric','value'],['set answers',11],['answers cite a source page','yes'],['typed questions','keyword match'],['off-record','→ email']],
+  method:'question (picked or typed)\n   │\n   ▼\nmatch keywords against faq.json\n   │\n   ├── match    → answer + source page\n   └── no match → hand-off to email',
+  notes:'# why\nfirst questions repeat. answering them from the\npublished record, with sources, means it can\'t\ninvent a claim about me.\n\n# limits\n- keywords, not understanding\n- set answers only\n\n# reproduce\nruns in this page · no server',
+  margin:['11 set answers, each with its source page','limit: keywords, not understanding'],
+  row:['ask-mo','hatching','11 set answers','11','—','keywords only','this page']}
+};
+X.kit.csv=[['skill','trap_with','trap_without','normal_with','normal_without']].concat(SK.map(function(s){return [s.label.toLowerCase(),s.trap[0].toFixed(2),s.trap[1].toFixed(2),s.happy[0].toFixed(2),s.happy[1].toFixed(2)]})).concat([['avg',avg('trap',0),avg('trap',1),avg('happy',0),avg('happy',1)],['',''],['n per skill',T]]);
+function esc(t){return String(t).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+function sheet(rows,first){var cols=Math.max.apply(null,rows.map(function(r){return r.length}));var h='<table class="sheet"><thead><tr><th></th>';for(var c=0;c<cols;c++)h+='<th>'+String.fromCharCode(65+c)+'</th>';h+='</tr></thead><tbody>';
+ rows.forEach(function(r,i){h+='<tr'+(i===0?' class="hd"':'')+'><td class="rn">'+(i+1)+'</td>';for(var c=0;c<cols;c++){var v=r[c]===undefined?'':r[c];var cl=(typeof v==='number'||/^[\d.]+$/.test(v))?'num':'';if(/\[to (confirm|run)\]/.test(v))cl='todo';if(first&&i===1&&c===0)cl+=' sel';h+='<td class="'+cl+'">'+esc(v)+'</td>'}h+='</tr>'});return h+'</tbody></table>'}
+function cur(){var e=document.querySelector('#ents .ent[aria-current="true"]');return ORDER[e?+e.dataset.k:0]}
+/* option 1: extra files in the editor */
+function addTabs(){var R=document.getElementById('R');if(!R)return;var ide=R.querySelector('.ide');if(!ide||ide.dataset.x)return;ide.dataset.x=1;var id=ide.dataset.id,d=X[id];if(!d)return;
+ var ft=ide.querySelector('.ftabs');if(!ft){ft=document.createElement('div');ft.className='ftabs';ft.dataset.made=1;ft.setAttribute('role','tablist');var code=ide.querySelector('[data-code]');code.parentNode.insertBefore(ft,code)}
+ var code=ide.querySelector('[data-code]'),saved=null;
+ if(ft.dataset.made){var b0=document.createElement('button');b0.setAttribute('role','tab');b0.setAttribute('aria-selected','true');b0.textContent='match.js';ft.appendChild(b0);b0.addEventListener('click',function(){ft.querySelectorAll('button').forEach(function(o){o.setAttribute('aria-selected',o===b0)});if(saved!==null){code.innerHTML=saved;code.style.padding='';saved=null}})}
+ [['results.csv','csv'],['method.txt','method'],['notes.md','notes']].forEach(function(f){var b=document.createElement('button');b.setAttribute('role','tab');b.dataset.x=f[1];b.setAttribute('aria-selected','false');b.textContent=f[0];ft.appendChild(b);
+  b.addEventListener('click',function(ev){ev.stopPropagation();ft.querySelectorAll('button').forEach(function(o){o.setAttribute('aria-selected',o===b)});if(saved===null)saved=code.innerHTML;code.style.padding='0';
+   if(f[1]==='csv'){var c0=d.csv[1]||[];code.innerHTML='<div class="fx"><b>A2</b>'+esc(c0[0]||'')+'</div><div class="sheetwrap">'+sheet(d.csv,true)+'</div>'}
+   else code.innerHTML='<div class="plain">'+esc(d[f[1]])+'</div>'})});
+ ft.querySelectorAll('button[data-f]').forEach(function(o){o.addEventListener('click',function(){ft.querySelectorAll('button[data-x]').forEach(function(x){x.setAttribute('aria-selected','false')});saved=null},true)})}
+setInterval(addTabs,400);
+})();
+</script>
 </body>
 </html>
