@@ -778,6 +778,7 @@ DC.mount(Component, {"frame":{"editor":"enum","options":["Boxed","Full-bleed"],"
 </script>
 <style>
 /* Playground evidence files: results.csv, method.txt, notes.md */
+.ide.xrow{display:flex !important;flex-direction:column}.ide.xrow>*{flex:0 0 auto}.ide.xrow>[data-code]{flex:1 1 0;min-height:0;overflow:auto}.ide.xrow>[data-panel]{flex:1.15 1 0;min-height:0;overflow:auto}#pg .ide.xrow>[data-code]{flex:0 0 260px}#pg .ide.xrow>[data-panel]{flex:0 0 300px}
 .sheet{font:12.5px/1.2 'IBM Plex Mono',monospace;border-collapse:collapse;color:#262626;background:#fff;width:max-content;min-width:100%}
 .sheet th,.sheet td{border:1px solid #DADADA;padding:5px 8px;text-align:left;white-space:nowrap;font-weight:400}
 .sheet thead th{background:#F1F1EF;color:#777;text-align:center;font-size:11px}
@@ -827,7 +828,7 @@ function sheet(rows,first){var cols=Math.max.apply(null,rows.map(function(r){ret
 function cur(){var e=document.querySelector('#ents .ent[aria-current="true"]');return ORDER[e?+e.dataset.k:0]}
 /* option 1: extra files in the editor */
 function addTabs(){var R=document.getElementById('R');if(!R)return;var ide=R.querySelector('.ide');if(!ide||ide.dataset.x)return;ide.dataset.x=1;var id=ide.dataset.id,d=X[id];if(!d)return;
- var ft=ide.querySelector('.ftabs');if(!ft){ft=document.createElement('div');ft.className='ftabs';ft.dataset.made=1;ft.setAttribute('role','tablist');var code=ide.querySelector('[data-code]');code.parentNode.insertBefore(ft,code)}
+ var ft=ide.querySelector('.ftabs');if(!ft){ft=document.createElement('div');ft.className='ftabs';ft.dataset.made=1;ide.classList.add('xrow');ft.setAttribute('role','tablist');var code=ide.querySelector('[data-code]');code.parentNode.insertBefore(ft,code)}
  var code=ide.querySelector('[data-code]'),saved=null;
  if(ft.dataset.made){var b0=document.createElement('button');b0.setAttribute('role','tab');b0.setAttribute('aria-selected','true');b0.textContent='match.js';ft.appendChild(b0);b0.addEventListener('click',function(){ft.querySelectorAll('button').forEach(function(o){o.setAttribute('aria-selected',o===b0)});if(saved!==null){code.innerHTML=saved;code.style.padding='';saved=null}})}
  [['results.csv','csv'],['method.txt','method'],['notes.md','notes']].forEach(function(f){var b=document.createElement('button');b.setAttribute('role','tab');b.dataset.x=f[1];b.setAttribute('aria-selected','false');b.textContent=f[0];ft.appendChild(b);
